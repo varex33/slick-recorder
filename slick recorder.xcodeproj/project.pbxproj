@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		724D9CA86CE189AB51872182 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4FA13F706AF332C89955CE /* Pods.framework */; };
+		787C61F41BE53EBF0094E514 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787C61F31BE53EBF0094E514 /* ViewController.swift */; };
+		787C61F61BE56F960094E514 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787C61F51BE56F960094E514 /* Settings.swift */; };
+		78DF054A1BC707690013485A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF05491BC707690013485A /* AppDelegate.swift */; };
+		78DF054F1BC707690013485A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78DF054D1BC707690013485A /* Main.storyboard */; };
+		78DF05511BC707690013485A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78DF05501BC707690013485A /* Images.xcassets */; };
+		78DF05541BC707690013485A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DF05521BC707690013485A /* LaunchScreen.xib */; };
+		78DF05601BC707690013485A /* slick_recorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF055F1BC707690013485A /* slick_recorderTests.swift */; };
+		78DF056A1BC857390013485A /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF05691BC857390013485A /* RecordSoundsViewController.swift */; };
+		78DF056C1BC85E720013485A /* AudioUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF056B1BC85E720013485A /* AudioUrl.swift */; };
+		78DF05701BC983800013485A /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF056F1BC983800013485A /* PlaySoundsViewController.swift */; };
+		78F7A3CB1BD40045000406BE /* RecordingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7A3CA1BD40045000406BE /* RecordingsTableViewController.swift */; };
+		78F7A3CF1BD47334000406BE /* PlayRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7A3CE1BD47334000406BE /* PlayRecordingViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78DF055A1BC707690013485A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78DF053C1BC707690013485A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78DF05431BC707690013485A;
+			remoteInfo = "slick recorder";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E4FA13F706AF332C89955CE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		787C61F31BE53EBF0094E514 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		787C61F51BE56F960094E514 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		78DF05441BC707690013485A /* slick recorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slick recorder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DF05481BC707690013485A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78DF05491BC707690013485A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78DF054E1BC707690013485A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78DF05501BC707690013485A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		78DF05531BC707690013485A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		78DF05591BC707690013485A /* slick recorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "slick recorderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DF055E1BC707690013485A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78DF055F1BC707690013485A /* slick_recorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slick_recorderTests.swift; sourceTree = "<group>"; };
+		78DF05691BC857390013485A /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
+		78DF056B1BC85E720013485A /* AudioUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUrl.swift; sourceTree = "<group>"; };
+		78DF056F1BC983800013485A /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		78F7A3CA1BD40045000406BE /* RecordingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsTableViewController.swift; sourceTree = "<group>"; };
+		78F7A3CE1BD47334000406BE /* PlayRecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRecordingViewController.swift; sourceTree = "<group>"; };
+		B36FDBB19021B9BA0FB0BD04 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D1A5F7C000303A209A940D14 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78DF05411BC707690013485A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				724D9CA86CE189AB51872182 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78DF05561BC707690013485A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		253E86F604358D50F84BDDA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B36FDBB19021B9BA0FB0BD04 /* Pods.debug.xcconfig */,
+				D1A5F7C000303A209A940D14 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		78DF053B1BC707690013485A = {
+			isa = PBXGroup;
+			children = (
+				78DF05461BC707690013485A /* slick recorder */,
+				78DF055C1BC707690013485A /* slick recorderTests */,
+				78DF05451BC707690013485A /* Products */,
+				253E86F604358D50F84BDDA1 /* Pods */,
+				8E5DF8AB53E4E66C47308E73 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		78DF05451BC707690013485A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78DF05441BC707690013485A /* slick recorder.app */,
+				78DF05591BC707690013485A /* slick recorderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78DF05461BC707690013485A /* slick recorder */ = {
+			isa = PBXGroup;
+			children = (
+				78DF05491BC707690013485A /* AppDelegate.swift */,
+				787C61F31BE53EBF0094E514 /* ViewController.swift */,
+				78DF054D1BC707690013485A /* Main.storyboard */,
+				787C61F51BE56F960094E514 /* Settings.swift */,
+				78DF05691BC857390013485A /* RecordSoundsViewController.swift */,
+				78DF056F1BC983800013485A /* PlaySoundsViewController.swift */,
+				78F7A3CA1BD40045000406BE /* RecordingsTableViewController.swift */,
+				78F7A3CE1BD47334000406BE /* PlayRecordingViewController.swift */,
+				78DF056B1BC85E720013485A /* AudioUrl.swift */,
+				78DF05501BC707690013485A /* Images.xcassets */,
+				78DF05521BC707690013485A /* LaunchScreen.xib */,
+				78DF05471BC707690013485A /* Supporting Files */,
+			);
+			path = "slick recorder";
+			sourceTree = "<group>";
+		};
+		78DF05471BC707690013485A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78DF05481BC707690013485A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78DF055C1BC707690013485A /* slick recorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				78DF055F1BC707690013485A /* slick_recorderTests.swift */,
+				78DF055D1BC707690013485A /* Supporting Files */,
+			);
+			path = "slick recorderTests";
+			sourceTree = "<group>";
+		};
+		78DF055D1BC707690013485A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78DF055E1BC707690013485A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E5DF8AB53E4E66C47308E73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E4FA13F706AF332C89955CE /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78DF05431BC707690013485A /* slick recorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78DF05631BC707690013485A /* Build configuration list for PBXNativeTarget "slick recorder" */;
+			buildPhases = (
+				682FCE819868B1F58A9B32E8 /* Check Pods Manifest.lock */,
+				78DF05401BC707690013485A /* Sources */,
+				78DF05411BC707690013485A /* Frameworks */,
+				78DF05421BC707690013485A /* Resources */,
+				0AF3CDE22E67E4508287FAFF /* Embed Pods Frameworks */,
+				AD82400BD7E5DC9DA598B0FD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "slick recorder";
+			productName = "slick recorder";
+			productReference = 78DF05441BC707690013485A /* slick recorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78DF05581BC707690013485A /* slick recorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78DF05661BC707690013485A /* Build configuration list for PBXNativeTarget "slick recorderTests" */;
+			buildPhases = (
+				78DF05551BC707690013485A /* Sources */,
+				78DF05561BC707690013485A /* Frameworks */,
+				78DF05571BC707690013485A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78DF055B1BC707690013485A /* PBXTargetDependency */,
+			);
+			name = "slick recorderTests";
+			productName = "slick recorderTests";
+			productReference = 78DF05591BC707690013485A /* slick recorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78DF053C1BC707690013485A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = MBPRO;
+				TargetAttributes = {
+					78DF05431BC707690013485A = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					78DF05581BC707690013485A = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 78DF05431BC707690013485A;
+					};
+				};
+			};
+			buildConfigurationList = 78DF053F1BC707690013485A /* Build configuration list for PBXProject "slick recorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78DF053B1BC707690013485A;
+			productRefGroup = 78DF05451BC707690013485A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78DF05431BC707690013485A /* slick recorder */,
+				78DF05581BC707690013485A /* slick recorderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78DF05421BC707690013485A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78DF054F1BC707690013485A /* Main.storyboard in Resources */,
+				78DF05541BC707690013485A /* LaunchScreen.xib in Resources */,
+				78DF05511BC707690013485A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78DF05571BC707690013485A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AF3CDE22E67E4508287FAFF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		682FCE819868B1F58A9B32E8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AD82400BD7E5DC9DA598B0FD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78DF05401BC707690013485A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78DF056A1BC857390013485A /* RecordSoundsViewController.swift in Sources */,
+				78F7A3CF1BD47334000406BE /* PlayRecordingViewController.swift in Sources */,
+				787C61F61BE56F960094E514 /* Settings.swift in Sources */,
+				78F7A3CB1BD40045000406BE /* RecordingsTableViewController.swift in Sources */,
+				78DF056C1BC85E720013485A /* AudioUrl.swift in Sources */,
+				787C61F41BE53EBF0094E514 /* ViewController.swift in Sources */,
+				78DF05701BC983800013485A /* PlaySoundsViewController.swift in Sources */,
+				78DF054A1BC707690013485A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78DF05551BC707690013485A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78DF05601BC707690013485A /* slick_recorderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78DF055B1BC707690013485A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78DF05431BC707690013485A /* slick recorder */;
+			targetProxy = 78DF055A1BC707690013485A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		78DF054D1BC707690013485A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78DF054E1BC707690013485A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		78DF05521BC707690013485A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78DF05531BC707690013485A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78DF05611BC707690013485A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		78DF05621BC707690013485A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78DF05641BC707690013485A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B36FDBB19021B9BA0FB0BD04 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "slick recorder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		78DF05651BC707690013485A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1A5F7C000303A209A940D14 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "slick recorder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		78DF05671BC707690013485A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "slick recorderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/slick recorder.app/slick recorder";
+			};
+			name = Debug;
+		};
+		78DF05681BC707690013485A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "slick recorderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/slick recorder.app/slick recorder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78DF053F1BC707690013485A /* Build configuration list for PBXProject "slick recorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78DF05611BC707690013485A /* Debug */,
+				78DF05621BC707690013485A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78DF05631BC707690013485A /* Build configuration list for PBXNativeTarget "slick recorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78DF05641BC707690013485A /* Debug */,
+				78DF05651BC707690013485A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78DF05661BC707690013485A /* Build configuration list for PBXNativeTarget "slick recorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78DF05671BC707690013485A /* Debug */,
+				78DF05681BC707690013485A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78DF053C1BC707690013485A /* Project object */;
+}
