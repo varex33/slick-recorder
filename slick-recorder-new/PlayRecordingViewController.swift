@@ -149,7 +149,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
         audioSlider.maximumValue = Float(player.duration)
         audioSlider.setValue(Float(player.currentTime), animated: true)
 //        timeLabel.text = NSString(format: "%.2f : %.2f", current_time, total) as String
-        timeLabel.text = NSString(format: "%.2d:%.2d:%.2f ",minutes, seconds, timer) as String
+        timeLabel.text = NSString(format: "%.2d:%.2d:%.2f",minutes, seconds, timer) as String
 
     }
 

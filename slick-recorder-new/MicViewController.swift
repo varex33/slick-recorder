@@ -14,15 +14,18 @@ protocol PlayerDelegate : class {
 }
 
 
-class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate, EZMicrophoneDelegate {
+    
+    var wave: WaveForm = WaveForm()
     
     @IBOutlet weak var btnResumeRecording: UIButton!
     
-    @IBOutlet weak var recButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var btnPause: UIButton!
     @IBOutlet weak var btnPlay: UIButton!
     
+    @IBOutlet weak var wavePlot: EZAudioPlotGL?
+     var microphone: EZMicrophone!
     
     var fileName: String? // save the name of recorded file
     
@@ -44,34 +47,30 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         btnResumeRecording.hidden = true
         // Do any additional setup after loading the view.
         
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.hidesBottomBarWhenPushed = true
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func doneButton(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        //  Translation to Swift from EZAUDIO Objective C code
         
+        // Customizing the audio plot that'll show the current microphone input/recording
+        //
+//        wavePlot?.backgroundColor = UIColor(red: 0.984, green: 0.71, blue: 0.365, alpha: 1)
+//        wavePlot?.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
 
-    }
-    
-    @IBAction func startRecording(sender: UIButton) {
-        // Show stop button when recording starts
-        btnPause.hidden = false
-        recButton.hidden = true
+        wavePlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+        wavePlot?.plotType = EZPlotType.Rolling
+        wavePlot?.shouldFill = true
+        wavePlot?.shouldMirror = true
+        
+        // Create an instance of the microphone and tell it to use this view controller instance as the delegate
+        microphone = EZMicrophone(delegate: self, startsImmediately: true);
+        
+        // Start Recording
+        
         print("recording started ..")
         
         // Create Audio Session
         
         // Recording Settings
         let recordSettings = [
-            //            AVFormatIDKey: kAudioFormatMPEG4AAC
+//            AVFormatIDKey: kAudioFormatMPEG4AAC
             AVSampleRateKey: 16000.0,
             
             ] as [String: AnyObject]
@@ -89,7 +88,33 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
             recorder.record()
             recorder.delegate = self
         }
+        
+        // Show pause button while recording
+        btnPause.hidden = false
+
+        
     }
+    
+    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        self.wavePlot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
+        });
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.hidesBottomBarWhenPushed = true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func doneButton(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer, error: NSError?) {
         print(error!)
     }
@@ -140,8 +165,9 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     @IBAction func stopRecording(sender: UIButton) {
         recorder.stop()
-        recButton.enabled = true
-        recButton.hidden = false
+        btnResumeRecording.enabled = true
+//        recButton.enabled = true
+//        recButton.hidden = false
         btnPause.hidden = true
     }
     

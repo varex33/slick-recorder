@@ -7,58 +7,127 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EFD1FF643346FF85C83679F659672CA /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A9CC436274DE3C844E56A2FA9EFE6B /* Stream.swift */; };
-		15E38285D89D2B17CD3C6D61C711E584 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		30A8F35FCAB29F5FBFC9F3F7E25A3B6B /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAE55B6DC848CA61DAAE92F23B316E /* ServerTrustPolicy.swift */; };
-		3A046F75C8773C91BF880A8CEF12B2AB /* SwiftyDropbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E090DCE242F64EC8EC922736415BB473 /* SwiftyDropbox-dummy.m */; };
-		3E9392CB5BD9C0CC47B04EDB40639558 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B482BF0D7A16C3810F0AC31FC58D1BE0 /* Validation.swift */; };
-		55093D159D5F538487EC2289C8285BCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */; };
-		5AEB131DF5BF8B6D96F961E06E04533E /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBFB1BBDBC073B313F179BC092FE67 /* Files.swift */; };
-		61137E758A762DBADEAAE6454CB06EA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */; };
-		69A447D12E60E5C3451DA30C6BB4BF7F /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A650CCB1D9C1B6722191EC3C48EE2405 /* Manager.swift */; };
-		848CEFBFC69DEBAF0E18885F3269F439 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F983337BAA7FCBAC3B5A716E9BF8DFC /* ResponseSerialization.swift */; };
-		87588ED002BECE5DF24202EB14FECF4C /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216F106A044F875CE72A150DD85DCDC1 /* Client.swift */; };
-		9077ECA2FA7B9C5D73365490A3D8898F /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1751897DE361819B5B9D14229F6450 /* Download.swift */; };
-		9D770C67A85EB893DC4FC66831957966 /* SwiftyDropbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 538549F357B443924EFFC89507B1A45B /* SwiftyDropbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A215FAB60CB15B6E5FA3A15E9E350D7D /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F859D439E16B9AE39B1E297B8A3CA85F /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6D972C5F43034A28BDB828217B684D2 /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DEDF3BC3011F14B0EBC31EF2912A68 /* Sharing.swift */; };
-		A8B5EDB7371475F62767B297B1A10CDE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22906E93A235C7BA5A7507FF8716965B /* ParameterEncoding.swift */; };
-		AF259CF33F8AE5969D018266BE61BDD2 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9FE7480B49136A18FB55327AEC9EF /* Users.swift */; };
-		C1479658CEA231AA22837D1F3EEC5760 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A01E170B9DF9ACC72855903974A738B /* SecurityUtil.m */; };
-		C6805E3EAC3EA4D01E215602F0F670C2 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6CEFAE86ECCCBE39526B6300D3293 /* Auth.swift */; };
-		C8AF736EB3DFE8A04468D72628AD562C /* SecurityUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CDA012CC6B76C17265402480702109B /* SecurityUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC9E0F4DA5CB56196C5CD57AF831BC46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */; };
-		CCB8A6159097E788827EB5F4E5096813 /* DropboxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1DCAF346782CFBE773153EEAB0AB6 /* DropboxClient.swift */; };
-		D39B20327B1DAF6D8753ED5685DDE6DC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7CCD092B2686BC4973039107A5C59 /* MultipartFormData.swift */; };
-		D8136D3B59D4753690000387A8082B54 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B76F5A291ADE45AA57E35AAF47A415 /* Alamofire-dummy.m */; };
-		E45DA2920B2761BD041B5B4CCB27B15F /* BabelSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6181B01B914D0D1AAC2E72943B9750 /* BabelSerializers.swift */; };
-		E655A167783DF7F2686B7BC5683564D8 /* BabelValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B8D5A3B52D3BB06BCB1D64FBF6E91 /* BabelValidators.swift */; };
-		E6D041ABFBB48D9F1D8AA96E7D4C6C34 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC38331FB6686A835CBCD974DB8F7CFA /* Result.swift */; };
-		E7B226D8BB16471AD63665A794036E44 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B2EFAF89CC62F56667D216593C402C /* Upload.swift */; };
-		E816509B4E3564E1A117CBDC0D845D69 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE367D45DA28248349D6C43DFC70D6C0 /* Alamofire.swift */; };
-		F16FEF1CB9703FE1887C8A618B84B7C6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7247DD4AFF77ABF92BA9519E65C36 /* Request.swift */; };
-		F4BEDFB5398BEAFD8773DA3D07A8139D /* SwiftyDropbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F6A700EB2969D3A5C4571181424D340 /* SwiftyDropbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5734EF939D48DC1A0AE15ABB97BE9AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */; };
-		F65E9E4A525D0AD04680C3F4CB23F27A /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE1F95F519342B9266EB69B23B4336CF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82661696676642CB85C7DAECB6DA280 /* Error.swift */; };
+		048C2CF88075F00658C826D63FA56315 /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCB4181AB07FB40479F145E2821A7FB /* EZPlot.m */; };
+		0C16CD4EC7A54E3EDA13CE953C877B81 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
+		0D58BDE3907BA7DE4055DF97E844EDA8 /* EZAudioFloatData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC2342E208C9B3532BDA7F1864BCCD0 /* EZAudioFloatData.m */; };
+		0D752FCCB6F74C8121837C377623BBA8 /* EZOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B27C18C8F100703B7411FB3623DCF0 /* EZOutput.m */; };
+		0EFD1FF643346FF85C83679F659672CA /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4711C9E4FD1434B139552966DB5440D /* Stream.swift */; };
+		1121F72C55FE61BF7862AB80DE5C252D /* BabelValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A61EC45D38215A24B7E84762ED880 /* BabelValidators.swift */; };
+		144647B98725CD3445178F02C5C7593B /* EZAudioFloatConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2158259ED5D62CD3E8462EE1D78540 /* EZAudioFloatConverter.m */; };
+		160564F40D913B70CDC5F842C20587A9 /* EZAudioFFT.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E23049E9B084DD0174BBE01C181F82 /* EZAudioFFT.m */; };
+		1CA52AFA90462BA53DF229FB2690FEBF /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 84A136DC02F7E735C3B92CB95DD186FB /* TPCircularBuffer.c */; };
+		20F47D3CFB1BF8B28404EB06E17DA983 /* EZAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD1FF51108719C4086B44F5DDC1A16A /* EZAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21052F39840C000451336BDDE087DEA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
+		22548636623D057D799F6DF34859F15E /* SwiftyDropbox.h in Headers */ = {isa = PBXBuildFile; fileRef = A063B3F24AAA2CC651BB36FA67053624 /* SwiftyDropbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		279725D27633FC93DAD75142E0CA4C21 /* EZAudioFloatConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 096E475AFA7187FD797A19BAF6A3138E /* EZAudioFloatConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A0F0A2508E908917F12CE0243517A28 /* TPCircularBuffer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 24AFB04C53BF2B29D36EE12EAA0F0679 /* TPCircularBuffer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C5996ACDE4403D2D502807884C3FF7A /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C7377140B56924A1BC040306E160 /* Sharing.swift */; };
+		2FF8B344EB4D5BD8865604BA2F48AA67 /* EZOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE3D9EAA4E39DF58F173823D3C9535B /* EZOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3036059399576F63123F2F63F6D95E82 /* SwiftyDropbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B6CBEBC247E1581792FC36EBA1848E /* SwiftyDropbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30A8F35FCAB29F5FBFC9F3F7E25A3B6B /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFDBC8D925FC26648B8378DE860FF5B /* ServerTrustPolicy.swift */; };
+		32A4E742DF3B37F80DD5084022ACA7B6 /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 20FF9FFB9963DFA797A7A960EBB94441 /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38A62A8A4E77FC9504F79735972CF51C /* TPCircularBuffer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10078B3E46DCEC08A790BE1CDF086043 /* TPCircularBuffer-dummy.m */; };
+		39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 48CEFA685E1078ADBA2048252281A98E /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E9392CB5BD9C0CC47B04EDB40639558 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8995DB619BBF9D1584F814BBC5C36 /* Validation.swift */; };
+		44B8E42D6E8EE3E0524DFA98CB377D0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
+		4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEE9577A1CFD707EE8152BB73B0139 /* EZAudioUtilities.m */; };
+		52C2705DB40262B8928D9EB3A02B31BB /* EZAudioPlotGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A19A85C281E709C1AFE202D26F53521 /* EZAudioPlotGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		555EDB63D0933185850181BB795D1757 /* EZAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F3EEFFE096F7E59A733211AEAC4797 /* EZAudioFile.m */; };
+		5759E1633AB2AF8D732882034BE6A0EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
+		593CC7717DE07063E27DFC943986913C /* EZAudioPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = CB245C0D431BCFCB31F1D1794008909E /* EZAudioPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		59E09171382D6891D9A33F22E847E131 /* EZAudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 414C01C180BFACE9B2CB6BCFEA56ECC1 /* EZAudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD593AB5E6DED3712043D43FEA43F53 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FCCA5DA6EF45F8E36FCBE7ABAC7413 /* Users.swift */; };
+		5B9AF696C3DA1C8D0FFB1BC72736F24D /* EZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 391A06F85BECA88CFF122D52FD4FDD80 /* EZAudioPlayer.m */; };
+		5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = B10620C1CE9503E96BC8D9021C44C461 /* EZRecorder.m */; };
+		60C72C457C8AC8A5CFD6D055CF123649 /* BabelSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD085B71E71779737CDE0C0B7D3F2736 /* BabelSerializers.swift */; };
+		61137E758A762DBADEAAE6454CB06EA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
+		62E5E44FC43C225CFDD494B96B4BFA0E /* SecurityUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B31C017224C092DE82EAE7673BB6AB1 /* SecurityUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		670463425EBAD31BDF5AC15A8B463DE1 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7B6381D24B3E6A615AE03D381E987 /* SecurityUtil.m */; };
+		69A447D12E60E5C3451DA30C6BB4BF7F /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD5ADCF26C4C8345E4DF9F983B5F8F /* Manager.swift */; };
+		6D2C5F1BC28D8BA676BC798D445AC7E8 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = A4ED2383BCF6FEF1D37098AE99F37F05 /* TPCircularBuffer.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6E739730785C355ECB014B6BEF854C0D /* EZMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = 6342C7A25652FEC05D5BB39905191F3D /* EZMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F9C968B05D02757F0B477D341C879F7 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F4968E909BE30E9A488F97E85316872 /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72EC1ECA88D2DCC3DCABA09ECB087D9F /* EZAudioPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D61BA092B4C00702BFDB0F4106E9BC /* EZAudioPlot.m */; };
+		82D88EC77FD734D0DBD5547DE857B377 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C750CEEBD0FCB8A885A87BBBBFCDD27 /* Accelerate.framework */; };
+		848CEFBFC69DEBAF0E18885F3269F439 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0529231D4F13077BFEE2EBCDC579C75 /* ResponseSerialization.swift */; };
+		84FEF3DF870A7333ADDEC3F0E2C5D1C1 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6691BA10803AE1A7790952A7FE3A6BBE /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86D303C98C39D2076C8F28C660C452E3 /* EZAudioDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 606E3FBEEC90B2094D46EA9575793034 /* EZAudioDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD97DBC0B1915AF4438EB7FF8E72E19 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72988F7D1529977FF4AAA621ABD8557B /* Client.swift */; };
+		8F6964629CECB7A8CB10B3EAB0B86F9A /* TPCircularBuffer+AudioBufferList.h in Headers */ = {isa = PBXBuildFile; fileRef = 894A75859079994DA330E3D574F7A8D1 /* TPCircularBuffer+AudioBufferList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9077ECA2FA7B9C5D73365490A3D8898F /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99960E7A5B80F6F2C304CD58205458D /* Download.swift */; };
+		9504F6C58BFE0BD0F71F0E22AD50ED73 /* EZAudioPlotGL.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9FC8398E84B6219F66FF8D2DD4E11 /* EZAudioPlotGL.m */; };
+		96DBE3A3486BECA8950824B11373720D /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9927C82009821789ED4156C8B4BA1206 /* EZMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 380AC2EECE2015EC4B1D3155DB463B09 /* EZMicrophone.m */; };
+		9D0E304F20B176BF33D6AE23CF6E600B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFD45B881FF0D76949E5362DD1CD674 /* Alamofire.framework */; };
+		A1D943CB8A4C64CF85FDCBE113171ACE /* TPCircularBuffer+AudioBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = 53872F7BA72E9436A4EFB94359CAB09C /* TPCircularBuffer+AudioBufferList.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A215FAB60CB15B6E5FA3A15E9E350D7D /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5726F825E045AAD9E0E062DDC07C1786 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7114123845731BEB62F911783CB3A1C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7EA7346A352A15F67228D78B65105A /* GLKit.framework */; };
+		A8B5EDB7371475F62767B297B1A10CDE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B798C747B09CBBDC5819511D24B70 /* ParameterEncoding.swift */; };
+		A9E55B79610B0DA9694E5B85F3309889 /* EZAudioFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 05B357D014E2BB7CD831E414F587C2BF /* EZAudioFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AECD157D67D5476DD7E36F49946CC09A /* EZAudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = DA4F9C54D812EE4FE49628FDA2A85A05 /* EZAudioDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B16F1321E047054651BA451A6F9EB7A6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165D976BFA6B137A5A6003A743A928AB /* AudioToolbox.framework */; };
+		B1FCCA6C435787351F76AA10C59BB945 /* EZAudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71E92820B6812F9DDEA471F7ED6DDE /* EZAudio-dummy.m */; };
+		B51FB9E6A881A6B6F466DA1E29347E6F /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB885EB92F6211FE8AA71A062A30526 /* Files.swift */; };
+		B950D61809F1FE73B009AD6CEC57E396 /* EZPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F012D47D8A1759D7E7D97D681CBAAF /* EZPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB52792A18A6B1BCDE8E11D33538F58C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4DEAB08189CC80861AFE5B7AD68CF /* Auth.swift */; };
+		BD6752FF69879F57E20AFF591F605531 /* EZAudioUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F47330C5C7F0869BBECDE42090441A /* EZAudioUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD8A0C43D88D95AF8555391F9734F559 /* SwiftyDropbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48143E857068570986DAEA974C0F31F5 /* SwiftyDropbox-dummy.m */; };
+		D39B20327B1DAF6D8753ED5685DDE6DC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279CD60FB582EFEBF0278AF23CFC76EF /* MultipartFormData.swift */; };
+		D4825C79AF93929DB23D19CAA03D5A6B /* EZAudioDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701D5D6C2B26222A283C6E84C550D1F /* EZAudioDisplayLink.m */; };
+		D5AD4575375228383422C3B7A5218327 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
+		D8066517E6029512E485DD79B9C12CD1 /* EZAudioFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A9AB60B0CC90442592005C0B3EB1552 /* EZAudioFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8136D3B59D4753690000387A8082B54 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E70411EFD88AE6923D87C34343E1A2CD /* Alamofire-dummy.m */; };
+		DF2620A17006BE1EA4CFDF1391951FB4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165D976BFA6B137A5A6003A743A928AB /* AudioToolbox.framework */; };
+		E0A752A13B9F1E6DA87803279914F488 /* DropboxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7343B99BB174D0F34509D21CC7B75 /* DropboxClient.swift */; };
+		E6D041ABFBB48D9F1D8AA96E7D4C6C34 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D7C54E3A96B9E01DF5B2C3D0AE33F /* Result.swift */; };
+		E7B226D8BB16471AD63665A794036E44 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816783172D4B1284D0472935D053A8DD /* Upload.swift */; };
+		E816509B4E3564E1A117CBDC0D845D69 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B616116E72EA2BC241E80A8C7B0A7 /* Alamofire.swift */; };
+		F16FEF1CB9703FE1887C8A618B84B7C6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6E952E941D5CD4B967EE84E095849 /* Request.swift */; };
+		F1F0FF89D47FF317FE466BA3E8110503 /* EZAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0788877F4F4B19110FD7D8A6244CDB27 /* EZAudioDevice.m */; };
+		F307A784C6DB630B885E1FD28DF468AB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 167DC31FCF26891AAAB1C83794C89725 /* AVFoundation.framework */; };
+		F330F40464BBCD50479F04D5DBBA5585 /* TPCircularBuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D72194C85AC686ED473E65FACE4A8CD /* TPCircularBuffer.framework */; };
+		F5613C4EB9D2500636782C986CAC16A7 /* EZAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = D006FA3DA6129F36E247101A761DA80F /* EZAudio.m */; };
+		F8F61DAE346C6B0BD7CCB10DCA43AC78 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = 4275EA835EAAE7BE1EB9E1A0C153E0CB /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE1F95F519342B9266EB69B23B4336CF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D112AFA228BE2FF5C3FA7BD012AD3 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1B27937AD2F4B505DD0F041BF8F99490 /* PBXContainerItemProxy */ = {
+		057C0E2D78ACCC533E72E6696C213D58 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4B2F30D90D85A544E9EFE2A49D392C25;
 			remoteInfo = Alamofire;
 		};
-		907E0B994F28A6C342669648C26E4D6C /* PBXContainerItemProxy */ = {
+		4A841EF7562E1360AE266A6BA606723C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 03111BDFC9B6B6CDDC0AE8CBCCAA168D;
+			remoteGlobalIDString = 584043DB422D53888A67B4DB0A3C5EB6;
 			remoteInfo = SwiftyDropbox;
 		};
-		98FB33C8BF7AB442646B5595D86BD2F2 /* PBXContainerItemProxy */ = {
+		6824A2D9F8C8B082B0B44DABFFF20F9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A065AE49C9E63F308170DB1B8FA6DC6C;
+			remoteInfo = TPCircularBuffer;
+		};
+		79493135EAB29708C71DBB670438A790 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 001DFDFFBDE1DAFDF55B9CFE184B2781;
+			remoteInfo = EZAudio;
+		};
+		7C78E3A1E9CB4790A7DD8DF69D68C230 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A065AE49C9E63F308170DB1B8FA6DC6C;
+			remoteInfo = TPCircularBuffer;
+		};
+		CD050E5D1827014278B7A90C42E24933 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -68,58 +137,113 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00B2EFAF89CC62F56667D216593C402C /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
-		064E1A0EBDF7D95E047F522D65603BDF /* SwiftyDropbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyDropbox.modulemap; sourceTree = "<group>"; };
-		0F6A700EB2969D3A5C4571181424D340 /* SwiftyDropbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyDropbox.h; path = Source/SwiftyDropbox.h; sourceTree = "<group>"; };
-		1A1751897DE361819B5B9D14229F6450 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
-		216F106A044F875CE72A150DD85DCDC1 /* Client.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Source/Client.swift; sourceTree = "<group>"; };
-		22906E93A235C7BA5A7507FF8716965B /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		261640CA6D9E5EF88A006345C5C73082 /* SwiftyDropbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDropbox-prefix.pch"; sourceTree = "<group>"; };
+		01F3EEFFE096F7E59A733211AEAC4797 /* EZAudioFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFile.m; path = EZAudio/EZAudioFile.m; sourceTree = "<group>"; };
+		05B357D014E2BB7CD831E414F587C2BF /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = EZAudio/EZAudioFile.h; sourceTree = "<group>"; };
+		0701D5D6C2B26222A283C6E84C550D1F /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
+		0788877F4F4B19110FD7D8A6244CDB27 /* EZAudioDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDevice.m; path = EZAudio/EZAudioDevice.m; sourceTree = "<group>"; };
+		096E475AFA7187FD797A19BAF6A3138E /* EZAudioFloatConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatConverter.h; path = EZAudio/EZAudioFloatConverter.h; sourceTree = "<group>"; };
+		0DC2342E208C9B3532BDA7F1864BCCD0 /* EZAudioFloatData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatData.m; path = EZAudio/EZAudioFloatData.m; sourceTree = "<group>"; };
+		10078B3E46DCEC08A790BE1CDF086043 /* TPCircularBuffer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPCircularBuffer-dummy.m"; sourceTree = "<group>"; };
+		10B6CBEBC247E1581792FC36EBA1848E /* SwiftyDropbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDropbox-umbrella.h"; sourceTree = "<group>"; };
+		165D976BFA6B137A5A6003A743A928AB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		167DC31FCF26891AAAB1C83794C89725 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		176D112AFA228BE2FF5C3FA7BD012AD3 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
+		177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1807E7B0A8687EA194D0275D2C59488F /* SwiftyDropbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDropbox-prefix.pch"; sourceTree = "<group>"; };
+		1F8098826A53BDFBF408D7C9C48CD76B /* EZAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EZAudio.modulemap; sourceTree = "<group>"; };
+		20FF9FFB9963DFA797A7A960EBB94441 /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
+		21F47330C5C7F0869BBECDE42090441A /* EZAudioUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioUtilities.h; path = EZAudio/EZAudioUtilities.h; sourceTree = "<group>"; };
+		24AFB04C53BF2B29D36EE12EAA0F0679 /* TPCircularBuffer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-umbrella.h"; sourceTree = "<group>"; };
+		24E6E952E941D5CD4B967EE84E095849 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		25A4DEAB08189CC80861AFE5B7AD68CF /* Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = Source/Auth.swift; sourceTree = "<group>"; };
+		279CD60FB582EFEBF0278AF23CFC76EF /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		2A2158259ED5D62CD3E8462EE1D78540 /* EZAudioFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatConverter.m; path = EZAudio/EZAudioFloatConverter.m; sourceTree = "<group>"; };
+		2B3E6A9BEEC2EA747900464F3F5054BD /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		2BE9FE7480B49136A18FB55327AEC9EF /* Users.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Source/Users.swift; sourceTree = "<group>"; };
-		3A01E170B9DF9ACC72855903974A738B /* SecurityUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SecurityUtil.m; path = Source/SecurityUtil.m; sourceTree = "<group>"; };
-		4D764CC03D6DEEDE5113906C1368AF97 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		538549F357B443924EFFC89507B1A45B /* SwiftyDropbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDropbox-umbrella.h"; sourceTree = "<group>"; };
-		57AAE55B6DC848CA61DAAE92F23B316E /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		5A36F8E00340390FF6C90B51B549C263 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		6588F4984C5F22BC5A83597BFB63638B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A7F5A14485E8676DE797DB9F4E9658E /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C750CEEBD0FCB8A885A87BBBBFCDD27 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		30193535625DC796A26A3F3665439268 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30D7343B99BB174D0F34509D21CC7B75 /* DropboxClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropboxClient.swift; path = Source/DropboxClient.swift; sourceTree = "<group>"; };
+		34B27C18C8F100703B7411FB3623DCF0 /* EZOutput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZOutput.m; path = EZAudio/EZOutput.m; sourceTree = "<group>"; };
+		380AC2EECE2015EC4B1D3155DB463B09 /* EZMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZMicrophone.m; path = EZAudio/EZMicrophone.m; sourceTree = "<group>"; };
+		391A06F85BECA88CFF122D52FD4FDD80 /* EZAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlayer.m; path = EZAudio/EZAudioPlayer.m; sourceTree = "<group>"; };
+		3F4968E909BE30E9A488F97E85316872 /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPCircularBuffer.h; sourceTree = "<group>"; };
+		414C01C180BFACE9B2CB6BCFEA56ECC1 /* EZAudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-umbrella.h"; sourceTree = "<group>"; };
+		4275EA835EAAE7BE1EB9E1A0C153E0CB /* EZAudioFloatData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatData.h; path = EZAudio/EZAudioFloatData.h; sourceTree = "<group>"; };
+		43EEE9577A1CFD707EE8152BB73B0139 /* EZAudioUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioUtilities.m; path = EZAudio/EZAudioUtilities.m; sourceTree = "<group>"; };
+		45F7B6381D24B3E6A615AE03D381E987 /* SecurityUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SecurityUtil.m; path = Source/SecurityUtil.m; sourceTree = "<group>"; };
+		48143E857068570986DAEA974C0F31F5 /* SwiftyDropbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyDropbox-dummy.m"; sourceTree = "<group>"; };
+		48CEFA685E1078ADBA2048252281A98E /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = EZAudio/EZRecorder.h; sourceTree = "<group>"; };
+		4CF18BB79B439C9CD93D7FD7DD7AE1DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E3D7C54E3A96B9E01DF5B2C3D0AE33F /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		50A8995DB619BBF9D1584F814BBC5C36 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		51479BE63624DE87CC9A53662EACA16B /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		517AE8E22873B2C4824B8653121A8760 /* EZAudio.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EZAudio.xcconfig; sourceTree = "<group>"; };
+		53872F7BA72E9436A4EFB94359CAB09C /* TPCircularBuffer+AudioBufferList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = "TPCircularBuffer+AudioBufferList.c"; sourceTree = "<group>"; };
+		568B01A568858D72254B406A0C303DD4 /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F012D47D8A1759D7E7D97D681CBAAF /* EZPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZPlot.h; path = EZAudio/EZPlot.h; sourceTree = "<group>"; };
+		5726F825E045AAD9E0E062DDC07C1786 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		5A19A85C281E709C1AFE202D26F53521 /* EZAudioPlotGL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlotGL.h; path = EZAudio/EZAudioPlotGL.h; sourceTree = "<group>"; };
+		5A9AB60B0CC90442592005C0B3EB1552 /* EZAudioFFT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFFT.h; path = EZAudio/EZAudioFFT.h; sourceTree = "<group>"; };
+		5B31C017224C092DE82EAE7673BB6AB1 /* SecurityUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SecurityUtil.h; path = Source/SecurityUtil.h; sourceTree = "<group>"; };
+		606E3FBEEC90B2094D46EA9575793034 /* EZAudioDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDisplayLink.h; path = EZAudio/EZAudioDisplayLink.h; sourceTree = "<group>"; };
+		6342C7A25652FEC05D5BB39905191F3D /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
+		6454712B991EC0E4886C8F3D466AFB12 /* TPCircularBuffer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer-prefix.pch"; sourceTree = "<group>"; };
+		6691BA10803AE1A7790952A7FE3A6BBE /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = EZAudio/TPCircularBuffer.h; sourceTree = "<group>"; };
+		69E23049E9B084DD0174BBE01C181F82 /* EZAudioFFT.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFFT.m; path = EZAudio/EZAudioFFT.m; sourceTree = "<group>"; };
+		6D72194C85AC686ED473E65FACE4A8CD /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E1C05CBF7D9972B9C86EF42DDDE1B25 /* SwiftyDropbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyDropbox.xcconfig; sourceTree = "<group>"; };
+		72988F7D1529977FF4AAA621ABD8557B /* Client.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Source/Client.swift; sourceTree = "<group>"; };
+		75BD5ADCF26C4C8345E4DF9F983B5F8F /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		79DEDF3BC3011F14B0EBC31EF2912A68 /* Sharing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sharing.swift; path = Source/Sharing.swift; sourceTree = "<group>"; };
-		81AF1B6C60E081F77EF1429F082761EC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD1FF51108719C4086B44F5DDC1A16A /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = EZAudio/EZAudioPlayer.h; sourceTree = "<group>"; };
+		7D252D02BE05D313F2BBC6F95883D032 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FFDBC8D925FC26648B8378DE860FF5B /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		816783172D4B1284D0472935D053A8DD /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		84A136DC02F7E735C3B92CB95DD186FB /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = EZAudio/TPCircularBuffer.c; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		885B798C747B09CBBDC5819511D24B70 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		894A75859079994DA330E3D574F7A8D1 /* TPCircularBuffer+AudioBufferList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPCircularBuffer+AudioBufferList.h"; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		8CDA012CC6B76C17265402480702109B /* SecurityUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SecurityUtil.h; path = Source/SecurityUtil.h; sourceTree = "<group>"; };
-		900BAACE683909CCEB0AF207C60374C6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95BBFB1BBDBC073B313F179BC092FE67 /* Files.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Files.swift; path = Source/Files.swift; sourceTree = "<group>"; };
+		895A61EC45D38215A24B7E84762ED880 /* BabelValidators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelValidators.swift; path = Source/BabelValidators.swift; sourceTree = "<group>"; };
+		8CB885EB92F6211FE8AA71A062A30526 /* Files.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Files.swift; path = Source/Files.swift; sourceTree = "<group>"; };
+		959E56878F818EE889DA659A31244D51 /* EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-prefix.pch"; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		9A7B8D5A3B52D3BB06BCB1D64FBF6E91 /* BabelValidators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelValidators.swift; path = Source/BabelValidators.swift; sourceTree = "<group>"; };
-		9CD1DCAF346782CFBE773153EEAB0AB6 /* DropboxClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropboxClient.swift; path = Source/DropboxClient.swift; sourceTree = "<group>"; };
-		9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9F983337BAA7FCBAC3B5A716E9BF8DFC /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		A0A9CC436274DE3C844E56A2FA9EFE6B /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
-		A650CCB1D9C1B6722191EC3C48EE2405 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
-		A7B76F5A291ADE45AA57E35AAF47A415 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		AD74D66695E0EE23C8CB38B69C076E62 /* SwiftyDropbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyDropbox.xcconfig; sourceTree = "<group>"; };
-		B482BF0D7A16C3810F0AC31FC58D1BE0 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		9F042891A2EBDEEBE5F657F35EBF7515 /* SwiftyDropbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyDropbox.modulemap; sourceTree = "<group>"; };
+		A0529231D4F13077BFEE2EBCDC579C75 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		A063B3F24AAA2CC651BB36FA67053624 /* SwiftyDropbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyDropbox.h; path = Source/SwiftyDropbox.h; sourceTree = "<group>"; };
+		A4ED2383BCF6FEF1D37098AE99F37F05 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = TPCircularBuffer.c; sourceTree = "<group>"; };
+		A99960E7A5B80F6F2C304CD58205458D /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		ABFD45B881FF0D76949E5362DD1CD674 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE3D9EAA4E39DF58F173823D3C9535B /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = EZAudio/EZOutput.h; sourceTree = "<group>"; };
+		AFCB4181AB07FB40479F145E2821A7FB /* EZPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZPlot.m; path = EZAudio/EZPlot.m; sourceTree = "<group>"; };
+		B10620C1CE9503E96BC8D9021C44C461 /* EZRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZRecorder.m; path = EZAudio/EZRecorder.m; sourceTree = "<group>"; };
+		B21F0BDE39F70D0BAD12BF01044387AA /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		B4711C9E4FD1434B139552966DB5440D /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
+		B87A41F5E84C1EEF9506A8FE7DF086CB /* TPCircularBuffer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPCircularBuffer.xcconfig; sourceTree = "<group>"; };
+		B95F5AC39927194EF928D00B372F9CD7 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyDropbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C3D7CCD092B2686BC4973039107A5C59 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		C82661696676642CB85C7DAECB6DA280 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
-		C87C45665EB54EBCDC42BDAA1C04FA44 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyDropbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD255E0DCB457D850BFBAB2889E35180 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		BF2022D0C9961654D6B816153455C8E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB245C0D431BCFCB31F1D1794008909E /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = EZAudio/EZAudioPlot.h; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		CC6181B01B914D0D1AAC2E72943B9750 /* BabelSerializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelSerializers.swift; path = Source/BabelSerializers.swift; sourceTree = "<group>"; };
-		CDF7247DD4AFF77ABF92BA9519E65C36 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		CE367D45DA28248349D6C43DFC70D6C0 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		CDE165E3DC80D19CA8A8E8E5EAA4B538 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDFC05380AEA6EF3773F4E0463A92D02 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		D006FA3DA6129F36E247101A761DA80F /* EZAudio.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudio.m; path = EZAudio/EZAudio.m; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D0DA08DE6BB175CB1525F05A924175EA /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		D0D61BA092B4C00702BFDB0F4106E9BC /* EZAudioPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlot.m; path = EZAudio/EZAudioPlot.m; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		E090DCE242F64EC8EC922736415BB473 /* SwiftyDropbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyDropbox-dummy.m"; sourceTree = "<group>"; };
+		DA4F9C54D812EE4FE49628FDA2A85A05 /* EZAudioDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDevice.h; path = EZAudio/EZAudioDevice.h; sourceTree = "<group>"; };
+		DD7EA7346A352A15F67228D78B65105A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		E31B616116E72EA2BC241E80A8C7B0A7 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		E381C7377140B56924A1BC040306E160 /* Sharing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sharing.swift; path = Source/Sharing.swift; sourceTree = "<group>"; };
+		E6FCCA5DA6EF45F8E36FCBE7ABAC7413 /* Users.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Source/Users.swift; sourceTree = "<group>"; };
+		E70411EFD88AE6923D87C34343E1A2CD /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F859D439E16B9AE39B1E297B8A3CA85F /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		FBC6CEFAE86ECCCBE39526B6300D3293 /* Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = Source/Auth.swift; sourceTree = "<group>"; };
-		FC38331FB6686A835CBCD974DB8F7CFA /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		F577572349C15DC7FAE15AB7E30B5C62 /* TPCircularBuffer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TPCircularBuffer.modulemap; sourceTree = "<group>"; };
+		FA71E92820B6812F9DDEA471F7ED6DDE /* EZAudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EZAudio-dummy.m"; sourceTree = "<group>"; };
+		FD085B71E71779737CDE0C0B7D3F2736 /* BabelSerializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelSerializers.swift; path = Source/BabelSerializers.swift; sourceTree = "<group>"; };
+		FED9FC8398E84B6219F66FF8D2DD4E11 /* EZAudioPlotGL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlotGL.m; path = EZAudio/EZAudioPlotGL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,105 +255,181 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37260D9A2463181E88E4CE44A077B3AB /* Frameworks */ = {
+		523C575A0346BEAEA4E417A6848C69B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5734EF939D48DC1A0AE15ABB97BE9AB /* Foundation.framework in Frameworks */,
+				44B8E42D6E8EE3E0524DFA98CB377D0A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2FF611B9E8BE0D7852FE593C36BBAFF /* Frameworks */ = {
+		7B39E1612FB288650D4607FB8FE489B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55093D159D5F538487EC2289C8285BCE /* Alamofire.framework in Frameworks */,
-				CC9E0F4DA5CB56196C5CD57AF831BC46 /* Foundation.framework in Frameworks */,
+				B16F1321E047054651BA451A6F9EB7A6 /* AudioToolbox.framework in Frameworks */,
+				21052F39840C000451336BDDE087DEA3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8D313200A4FB7CEB46CF7ED5AF1861 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0E304F20B176BF33D6AE23CF6E600B /* Alamofire.framework in Frameworks */,
+				D5AD4575375228383422C3B7A5218327 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC58AFD2104C1BA0DD4166015D73112A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82D88EC77FD734D0DBD5547DE857B377 /* Accelerate.framework in Frameworks */,
+				DF2620A17006BE1EA4CFDF1391951FB4 /* AudioToolbox.framework in Frameworks */,
+				F307A784C6DB630B885E1FD28DF468AB /* AVFoundation.framework in Frameworks */,
+				5759E1633AB2AF8D732882034BE6A0EE /* Foundation.framework in Frameworks */,
+				A7114123845731BEB62F911783CB3A1C /* GLKit.framework in Frameworks */,
+				F330F40464BBCD50479F04D5DBBA5585 /* TPCircularBuffer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05EB10A441648A126ACDCF8DBD65FA55 /* SwiftyDropbox */ = {
+		1BF4345532F4467A6E12EE3E583E519F /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				FBC6CEFAE86ECCCBE39526B6300D3293 /* Auth.swift */,
-				CC6181B01B914D0D1AAC2E72943B9750 /* BabelSerializers.swift */,
-				9A7B8D5A3B52D3BB06BCB1D64FBF6E91 /* BabelValidators.swift */,
-				216F106A044F875CE72A150DD85DCDC1 /* Client.swift */,
-				9CD1DCAF346782CFBE773153EEAB0AB6 /* DropboxClient.swift */,
-				95BBFB1BBDBC073B313F179BC092FE67 /* Files.swift */,
-				8CDA012CC6B76C17265402480702109B /* SecurityUtil.h */,
-				3A01E170B9DF9ACC72855903974A738B /* SecurityUtil.m */,
-				79DEDF3BC3011F14B0EBC31EF2912A68 /* Sharing.swift */,
-				0F6A700EB2969D3A5C4571181424D340 /* SwiftyDropbox.h */,
-				2BE9FE7480B49136A18FB55327AEC9EF /* Users.swift */,
-				06848CBD2EC46CDBAC8BA5D8B20349EE /* Support Files */,
-			);
-			path = SwiftyDropbox;
-			sourceTree = "<group>";
-		};
-		06848CBD2EC46CDBAC8BA5D8B20349EE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6588F4984C5F22BC5A83597BFB63638B /* Info.plist */,
-				064E1A0EBDF7D95E047F522D65603BDF /* SwiftyDropbox.modulemap */,
-				AD74D66695E0EE23C8CB38B69C076E62 /* SwiftyDropbox.xcconfig */,
-				E090DCE242F64EC8EC922736415BB473 /* SwiftyDropbox-dummy.m */,
-				261640CA6D9E5EF88A006345C5C73082 /* SwiftyDropbox-prefix.pch */,
-				538549F357B443924EFFC89507B1A45B /* SwiftyDropbox-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyDropbox";
-			sourceTree = "<group>";
-		};
-		25308A143ED5AA82593A7E1D950849C4 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		3EC41F55772903AA3827C5B926CCA423 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				900BAACE683909CCEB0AF207C60374C6 /* Alamofire.framework */,
-				81AF1B6C60E081F77EF1429F082761EC /* Pods.framework */,
-				C87C45665EB54EBCDC42BDAA1C04FA44 /* SwiftyDropbox.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4172AB891A668DE847A86DAAB590BB53 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				CE367D45DA28248349D6C43DFC70D6C0 /* Alamofire.swift */,
-				1A1751897DE361819B5B9D14229F6450 /* Download.swift */,
-				C82661696676642CB85C7DAECB6DA280 /* Error.swift */,
-				A650CCB1D9C1B6722191EC3C48EE2405 /* Manager.swift */,
-				C3D7CCD092B2686BC4973039107A5C59 /* MultipartFormData.swift */,
-				22906E93A235C7BA5A7507FF8716965B /* ParameterEncoding.swift */,
-				CDF7247DD4AFF77ABF92BA9519E65C36 /* Request.swift */,
-				9F983337BAA7FCBAC3B5A716E9BF8DFC /* ResponseSerialization.swift */,
-				FC38331FB6686A835CBCD974DB8F7CFA /* Result.swift */,
-				57AAE55B6DC848CA61DAAE92F23B316E /* ServerTrustPolicy.swift */,
-				A0A9CC436274DE3C844E56A2FA9EFE6B /* Stream.swift */,
-				00B2EFAF89CC62F56667D216593C402C /* Upload.swift */,
-				B482BF0D7A16C3810F0AC31FC58D1BE0 /* Validation.swift */,
-				C79154B2E4DF31496867258F5A0907F2 /* Support Files */,
+				E31B616116E72EA2BC241E80A8C7B0A7 /* Alamofire.swift */,
+				A99960E7A5B80F6F2C304CD58205458D /* Download.swift */,
+				176D112AFA228BE2FF5C3FA7BD012AD3 /* Error.swift */,
+				75BD5ADCF26C4C8345E4DF9F983B5F8F /* Manager.swift */,
+				279CD60FB582EFEBF0278AF23CFC76EF /* MultipartFormData.swift */,
+				885B798C747B09CBBDC5819511D24B70 /* ParameterEncoding.swift */,
+				24E6E952E941D5CD4B967EE84E095849 /* Request.swift */,
+				A0529231D4F13077BFEE2EBCDC579C75 /* ResponseSerialization.swift */,
+				4E3D7C54E3A96B9E01DF5B2C3D0AE33F /* Result.swift */,
+				7FFDBC8D925FC26648B8378DE860FF5B /* ServerTrustPolicy.swift */,
+				B4711C9E4FD1434B139552966DB5440D /* Stream.swift */,
+				816783172D4B1284D0472935D053A8DD /* Upload.swift */,
+				50A8995DB619BBF9D1584F814BBC5C36 /* Validation.swift */,
+				2EFDE5C9929D626EC964C726DDAFDDF7 /* Support Files */,
 			);
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		59B91F212518421F271EBA85D5530651 /* Frameworks */ = {
+		1D77E66D1B7792D74B62FBF79E63AB03 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */,
-				25308A143ED5AA82593A7E1D950849C4 /* iOS */,
+				1F8098826A53BDFBF408D7C9C48CD76B /* EZAudio.modulemap */,
+				517AE8E22873B2C4824B8653121A8760 /* EZAudio.xcconfig */,
+				FA71E92820B6812F9DDEA471F7ED6DDE /* EZAudio-dummy.m */,
+				959E56878F818EE889DA659A31244D51 /* EZAudio-prefix.pch */,
+				414C01C180BFACE9B2CB6BCFEA56ECC1 /* EZAudio-umbrella.h */,
+				7D252D02BE05D313F2BBC6F95883D032 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/EZAudio";
+			sourceTree = "<group>";
+		};
+		1E3F4D3F28A52F12D61937B6F748F7F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B3E6A9BEEC2EA747900464F3F5054BD /* Alamofire.framework */,
+				568B01A568858D72254B406A0C303DD4 /* EZAudio.framework */,
+				30193535625DC796A26A3F3665439268 /* Pods.framework */,
+				B95F5AC39927194EF928D00B372F9CD7 /* SwiftyDropbox.framework */,
+				51479BE63624DE87CC9A53662EACA16B /* TPCircularBuffer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22936FD9898FC76E6D41A54F34A479DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BF4345532F4467A6E12EE3E583E519F /* Alamofire */,
+				9E28F6CB7FAAFDE65000ED16384AB1D8 /* EZAudio */,
+				BF6C3186B792EEB253C6D05360D645C0 /* SwiftyDropbox */,
+				DA1C55A9A32BECBB61E75D39D3A3C961 /* TPCircularBuffer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2EFDE5C9929D626EC964C726DDAFDDF7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD255E0DCB457D850BFBAB2889E35180 /* Alamofire.modulemap */,
+				CDFC05380AEA6EF3773F4E0463A92D02 /* Alamofire.xcconfig */,
+				E70411EFD88AE6923D87C34343E1A2CD /* Alamofire-dummy.m */,
+				B21F0BDE39F70D0BAD12BF01044387AA /* Alamofire-prefix.pch */,
+				5726F825E045AAD9E0E062DDC07C1786 /* Alamofire-umbrella.h */,
+				BF2022D0C9961654D6B816153455C8E9 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		5AE51FF9189F3B38999E81A4C2E90B7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABFD45B881FF0D76949E5362DD1CD674 /* Alamofire.framework */,
+				6D72194C85AC686ED473E65FACE4A8CD /* TPCircularBuffer.framework */,
+				9F196D328C20AC3205CB72A7F5EDAA48 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C0FA78A2B6B0E7E11C54CADB3E1FB01 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				20FF9FFB9963DFA797A7A960EBB94441 /* EZAudio.h */,
+				D006FA3DA6129F36E247101A761DA80F /* EZAudio.m */,
+				DA4F9C54D812EE4FE49628FDA2A85A05 /* EZAudioDevice.h */,
+				0788877F4F4B19110FD7D8A6244CDB27 /* EZAudioDevice.m */,
+				606E3FBEEC90B2094D46EA9575793034 /* EZAudioDisplayLink.h */,
+				0701D5D6C2B26222A283C6E84C550D1F /* EZAudioDisplayLink.m */,
+				5A9AB60B0CC90442592005C0B3EB1552 /* EZAudioFFT.h */,
+				69E23049E9B084DD0174BBE01C181F82 /* EZAudioFFT.m */,
+				05B357D014E2BB7CD831E414F587C2BF /* EZAudioFile.h */,
+				01F3EEFFE096F7E59A733211AEAC4797 /* EZAudioFile.m */,
+				096E475AFA7187FD797A19BAF6A3138E /* EZAudioFloatConverter.h */,
+				2A2158259ED5D62CD3E8462EE1D78540 /* EZAudioFloatConverter.m */,
+				4275EA835EAAE7BE1EB9E1A0C153E0CB /* EZAudioFloatData.h */,
+				0DC2342E208C9B3532BDA7F1864BCCD0 /* EZAudioFloatData.m */,
+				7AD1FF51108719C4086B44F5DDC1A16A /* EZAudioPlayer.h */,
+				391A06F85BECA88CFF122D52FD4FDD80 /* EZAudioPlayer.m */,
+				CB245C0D431BCFCB31F1D1794008909E /* EZAudioPlot.h */,
+				D0D61BA092B4C00702BFDB0F4106E9BC /* EZAudioPlot.m */,
+				5A19A85C281E709C1AFE202D26F53521 /* EZAudioPlotGL.h */,
+				FED9FC8398E84B6219F66FF8D2DD4E11 /* EZAudioPlotGL.m */,
+				21F47330C5C7F0869BBECDE42090441A /* EZAudioUtilities.h */,
+				43EEE9577A1CFD707EE8152BB73B0139 /* EZAudioUtilities.m */,
+				6342C7A25652FEC05D5BB39905191F3D /* EZMicrophone.h */,
+				380AC2EECE2015EC4B1D3155DB463B09 /* EZMicrophone.m */,
+				ADE3D9EAA4E39DF58F173823D3C9535B /* EZOutput.h */,
+				34B27C18C8F100703B7411FB3623DCF0 /* EZOutput.m */,
+				56F012D47D8A1759D7E7D97D681CBAAF /* EZPlot.h */,
+				AFCB4181AB07FB40479F145E2821A7FB /* EZPlot.m */,
+				48CEFA685E1078ADBA2048252281A98E /* EZRecorder.h */,
+				B10620C1CE9503E96BC8D9021C44C461 /* EZRecorder.m */,
+				84A136DC02F7E735C3B92CB95DD186FB /* TPCircularBuffer.c */,
+				6691BA10803AE1A7790952A7FE3A6BBE /* TPCircularBuffer.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		6894538C128454DF429231CF4CFDCBA2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CF18BB79B439C9CD93D7FD7DD7AE1DF /* Info.plist */,
+				9F042891A2EBDEEBE5F657F35EBF7515 /* SwiftyDropbox.modulemap */,
+				6E1C05CBF7D9972B9C86EF42DDDE1B25 /* SwiftyDropbox.xcconfig */,
+				48143E857068570986DAEA974C0F31F5 /* SwiftyDropbox-dummy.m */,
+				1807E7B0A8687EA194D0275D2C59488F /* SwiftyDropbox-prefix.pch */,
+				10B6CBEBC247E1581792FC36EBA1848E /* SwiftyDropbox-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyDropbox";
 			sourceTree = "<group>";
 		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
@@ -250,15 +450,50 @@
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
+		79800E650BDAEFF8B63323A272732D8B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDE165E3DC80D19CA8A8E8E5EAA4B538 /* Info.plist */,
+				F577572349C15DC7FAE15AB7E30B5C62 /* TPCircularBuffer.modulemap */,
+				B87A41F5E84C1EEF9506A8FE7DF086CB /* TPCircularBuffer.xcconfig */,
+				10078B3E46DCEC08A790BE1CDF086043 /* TPCircularBuffer-dummy.m */,
+				6454712B991EC0E4886C8F3D466AFB12 /* TPCircularBuffer-prefix.pch */,
+				24AFB04C53BF2B29D36EE12EAA0F0679 /* TPCircularBuffer-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TPCircularBuffer";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				59B91F212518421F271EBA85D5530651 /* Frameworks */,
-				E657D4B973AB08AA3D706CEFC97E635E /* Pods */,
-				3EC41F55772903AA3827C5B926CCA423 /* Products */,
+				5AE51FF9189F3B38999E81A4C2E90B7D /* Frameworks */,
+				22936FD9898FC76E6D41A54F34A479DB /* Pods */,
+				1E3F4D3F28A52F12D61937B6F748F7F2 /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		9E28F6CB7FAAFDE65000ED16384AB1D8 /* EZAudio */ = {
+			isa = PBXGroup;
+			children = (
+				5C0FA78A2B6B0E7E11C54CADB3E1FB01 /* Core */,
+				1D77E66D1B7792D74B62FBF79E63AB03 /* Support Files */,
+			);
+			path = EZAudio;
+			sourceTree = "<group>";
+		};
+		9F196D328C20AC3205CB72A7F5EDAA48 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2C750CEEBD0FCB8A885A87BBBBFCDD27 /* Accelerate.framework */,
+				165D976BFA6B137A5A6003A743A928AB /* AudioToolbox.framework */,
+				167DC31FCF26891AAAB1C83794C89725 /* AVFoundation.framework */,
+				177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */,
+				DD7EA7346A352A15F67228D78B65105A /* GLKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
@@ -269,47 +504,89 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		C79154B2E4DF31496867258F5A0907F2 /* Support Files */ = {
+		BF6C3186B792EEB253C6D05360D645C0 /* SwiftyDropbox */ = {
 			isa = PBXGroup;
 			children = (
-				6A7F5A14485E8676DE797DB9F4E9658E /* Alamofire.modulemap */,
-				D0DA08DE6BB175CB1525F05A924175EA /* Alamofire.xcconfig */,
-				A7B76F5A291ADE45AA57E35AAF47A415 /* Alamofire-dummy.m */,
-				5A36F8E00340390FF6C90B51B549C263 /* Alamofire-prefix.pch */,
-				F859D439E16B9AE39B1E297B8A3CA85F /* Alamofire-umbrella.h */,
-				4D764CC03D6DEEDE5113906C1368AF97 /* Info.plist */,
+				25A4DEAB08189CC80861AFE5B7AD68CF /* Auth.swift */,
+				FD085B71E71779737CDE0C0B7D3F2736 /* BabelSerializers.swift */,
+				895A61EC45D38215A24B7E84762ED880 /* BabelValidators.swift */,
+				72988F7D1529977FF4AAA621ABD8557B /* Client.swift */,
+				30D7343B99BB174D0F34509D21CC7B75 /* DropboxClient.swift */,
+				8CB885EB92F6211FE8AA71A062A30526 /* Files.swift */,
+				5B31C017224C092DE82EAE7673BB6AB1 /* SecurityUtil.h */,
+				45F7B6381D24B3E6A615AE03D381E987 /* SecurityUtil.m */,
+				E381C7377140B56924A1BC040306E160 /* Sharing.swift */,
+				A063B3F24AAA2CC651BB36FA67053624 /* SwiftyDropbox.h */,
+				E6FCCA5DA6EF45F8E36FCBE7ABAC7413 /* Users.swift */,
+				6894538C128454DF429231CF4CFDCBA2 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
+			path = SwiftyDropbox;
 			sourceTree = "<group>";
 		};
-		E657D4B973AB08AA3D706CEFC97E635E /* Pods */ = {
+		DA1C55A9A32BECBB61E75D39D3A3C961 /* TPCircularBuffer */ = {
 			isa = PBXGroup;
 			children = (
-				4172AB891A668DE847A86DAAB590BB53 /* Alamofire */,
-				05EB10A441648A126ACDCF8DBD65FA55 /* SwiftyDropbox */,
+				A4ED2383BCF6FEF1D37098AE99F37F05 /* TPCircularBuffer.c */,
+				3F4968E909BE30E9A488F97E85316872 /* TPCircularBuffer.h */,
+				53872F7BA72E9436A4EFB94359CAB09C /* TPCircularBuffer+AudioBufferList.c */,
+				894A75859079994DA330E3D574F7A8D1 /* TPCircularBuffer+AudioBufferList.h */,
+				79800E650BDAEFF8B63323A272732D8B /* Support Files */,
 			);
-			name = Pods;
+			path = TPCircularBuffer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		19C9C7B7209D3A475A965F386B2098F7 /* Headers */ = {
+		52CD04CE97D6D06165F52E026E4734B5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8AF736EB3DFE8A04468D72628AD562C /* SecurityUtil.h in Headers */,
-				9D770C67A85EB893DC4FC66831957966 /* SwiftyDropbox-umbrella.h in Headers */,
-				F4BEDFB5398BEAFD8773DA3D07A8139D /* SwiftyDropbox.h in Headers */,
+				96DBE3A3486BECA8950824B11373720D /* Pods-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB98F405862C093BB1A899B8648EF93D /* Headers */ = {
+		C7BD282155501A087675F4A38797613E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F65E9E4A525D0AD04680C3F4CB23F27A /* Pods-umbrella.h in Headers */,
+				62E5E44FC43C225CFDD494B96B4BFA0E /* SecurityUtil.h in Headers */,
+				3036059399576F63123F2F63F6D95E82 /* SwiftyDropbox-umbrella.h in Headers */,
+				22548636623D057D799F6DF34859F15E /* SwiftyDropbox.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBA339127917E209C75C1CD350CF53A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59E09171382D6891D9A33F22E847E131 /* EZAudio-umbrella.h in Headers */,
+				32A4E742DF3B37F80DD5084022ACA7B6 /* EZAudio.h in Headers */,
+				AECD157D67D5476DD7E36F49946CC09A /* EZAudioDevice.h in Headers */,
+				86D303C98C39D2076C8F28C660C452E3 /* EZAudioDisplayLink.h in Headers */,
+				D8066517E6029512E485DD79B9C12CD1 /* EZAudioFFT.h in Headers */,
+				A9E55B79610B0DA9694E5B85F3309889 /* EZAudioFile.h in Headers */,
+				279725D27633FC93DAD75142E0CA4C21 /* EZAudioFloatConverter.h in Headers */,
+				F8F61DAE346C6B0BD7CCB10DCA43AC78 /* EZAudioFloatData.h in Headers */,
+				20F47D3CFB1BF8B28404EB06E17DA983 /* EZAudioPlayer.h in Headers */,
+				593CC7717DE07063E27DFC943986913C /* EZAudioPlot.h in Headers */,
+				52C2705DB40262B8928D9EB3A02B31BB /* EZAudioPlotGL.h in Headers */,
+				BD6752FF69879F57E20AFF591F605531 /* EZAudioUtilities.h in Headers */,
+				6E739730785C355ECB014B6BEF854C0D /* EZMicrophone.h in Headers */,
+				2FF8B344EB4D5BD8865604BA2F48AA67 /* EZOutput.h in Headers */,
+				B950D61809F1FE73B009AD6CEC57E396 /* EZPlot.h in Headers */,
+				39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */,
+				84FEF3DF870A7333ADDEC3F0E2C5D1C1 /* TPCircularBuffer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D09E1AFA7912B388CB967B9A97B2638A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F6964629CECB7A8CB10B3EAB0B86F9A /* TPCircularBuffer+AudioBufferList.h in Headers */,
+				2A0F0A2508E908917F12CE0243517A28 /* TPCircularBuffer-umbrella.h in Headers */,
+				6F9C968B05D02757F0B477D341C879F7 /* TPCircularBuffer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,22 +601,43 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		03111BDFC9B6B6CDDC0AE8CBCCAA168D /* SwiftyDropbox */ = {
+		001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 295CE937756589A0DFB7F16D09BF6C22 /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */;
+			buildConfigurationList = CB53830DCDB9CCC560962769E044284E /* Build configuration list for PBXNativeTarget "EZAudio" */;
 			buildPhases = (
-				52C6261A1A65BD012A556A2CC9AD4FE7 /* Sources */,
-				F2FF611B9E8BE0D7852FE593C36BBAFF /* Frameworks */,
-				19C9C7B7209D3A475A965F386B2098F7 /* Headers */,
+				1D8398944ED0221D02D46C25ED617450 /* Sources */,
+				FC58AFD2104C1BA0DD4166015D73112A /* Frameworks */,
+				CEBA339127917E209C75C1CD350CF53A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3B6F5D616E42A23238B6EEA2FFA6D8AA /* PBXTargetDependency */,
+				B5A87059A1D25494E4D13D434313CD90 /* PBXTargetDependency */,
 			);
-			name = SwiftyDropbox;
-			productName = SwiftyDropbox;
-			productReference = C87C45665EB54EBCDC42BDAA1C04FA44 /* SwiftyDropbox.framework */;
+			name = EZAudio;
+			productName = EZAudio;
+			productReference = 568B01A568858D72254B406A0C303DD4 /* EZAudio.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		11934AC5ADAB9CA2C5242903DD003306 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E50C80A2EB285048AAF4155BF18C3FAE /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				E4E763CB4BB4C7098B08D66F66750173 /* Sources */,
+				523C575A0346BEAEA4E417A6848C69B5 /* Frameworks */,
+				52CD04CE97D6D06165F52E026E4734B5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A83453BA3FB91A500C50E3C4428F88AC /* PBXTargetDependency */,
+				7265A332FDB7CD013CA6858CA9B4F96D /* PBXTargetDependency */,
+				DF2B86547B9E849688161F3CB50DC61C /* PBXTargetDependency */,
+				B2C03AC9DA82D4928A2FAACEB1ED4790 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 30193535625DC796A26A3F3665439268 /* Pods.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4B2F30D90D85A544E9EFE2A49D392C25 /* Alamofire */ = {
@@ -356,26 +654,42 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 900BAACE683909CCEB0AF207C60374C6 /* Alamofire.framework */;
+			productReference = 2B3E6A9BEEC2EA747900464F3F5054BD /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		93FEC8EBE6D4F1E80A223B65B652BF5D /* Pods */ = {
+		584043DB422D53888A67B4DB0A3C5EB6 /* SwiftyDropbox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88A3267423D259CF6BDB41DE5A930886 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = A012F36F8D87DCFC43000A8EAEB3A5AB /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */;
 			buildPhases = (
-				FF33406E72866C1CFBB9176B9A3E3C27 /* Sources */,
-				37260D9A2463181E88E4CE44A077B3AB /* Frameworks */,
-				AB98F405862C093BB1A899B8648EF93D /* Headers */,
+				A78AE9EE53591881E784B9AA61F01218 /* Sources */,
+				BC8D313200A4FB7CEB46CF7ED5AF1861 /* Frameworks */,
+				C7BD282155501A087675F4A38797613E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4E1059829082C4088D753B1AB46E737F /* PBXTargetDependency */,
-				6FD9740AF8D678F955B34078F7D1714B /* PBXTargetDependency */,
+				65AA1BB945B06E1E9E52BEA696DC5D92 /* PBXTargetDependency */,
 			);
-			name = Pods;
-			productName = Pods;
-			productReference = 81AF1B6C60E081F77EF1429F082761EC /* Pods.framework */;
+			name = SwiftyDropbox;
+			productName = SwiftyDropbox;
+			productReference = B95F5AC39927194EF928D00B372F9CD7 /* SwiftyDropbox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A065AE49C9E63F308170DB1B8FA6DC6C /* TPCircularBuffer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652B6E36CEBEB54B74D699A7F2BDD86D /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */;
+			buildPhases = (
+				37382C1F0A38B21268D74ACB5487C061 /* Sources */,
+				7B39E1612FB288650D4607FB8FE489B8 /* Frameworks */,
+				D09E1AFA7912B388CB967B9A97B2638A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TPCircularBuffer;
+			productName = TPCircularBuffer;
+			productReference = 51479BE63624DE87CC9A53662EACA16B /* TPCircularBuffer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -395,32 +709,51 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 3EC41F55772903AA3827C5B926CCA423 /* Products */;
+			productRefGroup = 1E3F4D3F28A52F12D61937B6F748F7F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4B2F30D90D85A544E9EFE2A49D392C25 /* Alamofire */,
-				93FEC8EBE6D4F1E80A223B65B652BF5D /* Pods */,
-				03111BDFC9B6B6CDDC0AE8CBCCAA168D /* SwiftyDropbox */,
+				001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */,
+				11934AC5ADAB9CA2C5242903DD003306 /* Pods */,
+				584043DB422D53888A67B4DB0A3C5EB6 /* SwiftyDropbox */,
+				A065AE49C9E63F308170DB1B8FA6DC6C /* TPCircularBuffer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		52C6261A1A65BD012A556A2CC9AD4FE7 /* Sources */ = {
+		1D8398944ED0221D02D46C25ED617450 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6805E3EAC3EA4D01E215602F0F670C2 /* Auth.swift in Sources */,
-				E45DA2920B2761BD041B5B4CCB27B15F /* BabelSerializers.swift in Sources */,
-				E655A167783DF7F2686B7BC5683564D8 /* BabelValidators.swift in Sources */,
-				87588ED002BECE5DF24202EB14FECF4C /* Client.swift in Sources */,
-				CCB8A6159097E788827EB5F4E5096813 /* DropboxClient.swift in Sources */,
-				5AEB131DF5BF8B6D96F961E06E04533E /* Files.swift in Sources */,
-				C1479658CEA231AA22837D1F3EEC5760 /* SecurityUtil.m in Sources */,
-				A6D972C5F43034A28BDB828217B684D2 /* Sharing.swift in Sources */,
-				3A046F75C8773C91BF880A8CEF12B2AB /* SwiftyDropbox-dummy.m in Sources */,
-				AF259CF33F8AE5969D018266BE61BDD2 /* Users.swift in Sources */,
+				B1FCCA6C435787351F76AA10C59BB945 /* EZAudio-dummy.m in Sources */,
+				F5613C4EB9D2500636782C986CAC16A7 /* EZAudio.m in Sources */,
+				F1F0FF89D47FF317FE466BA3E8110503 /* EZAudioDevice.m in Sources */,
+				D4825C79AF93929DB23D19CAA03D5A6B /* EZAudioDisplayLink.m in Sources */,
+				160564F40D913B70CDC5F842C20587A9 /* EZAudioFFT.m in Sources */,
+				555EDB63D0933185850181BB795D1757 /* EZAudioFile.m in Sources */,
+				144647B98725CD3445178F02C5C7593B /* EZAudioFloatConverter.m in Sources */,
+				0D58BDE3907BA7DE4055DF97E844EDA8 /* EZAudioFloatData.m in Sources */,
+				5B9AF696C3DA1C8D0FFB1BC72736F24D /* EZAudioPlayer.m in Sources */,
+				72EC1ECA88D2DCC3DCABA09ECB087D9F /* EZAudioPlot.m in Sources */,
+				9504F6C58BFE0BD0F71F0E22AD50ED73 /* EZAudioPlotGL.m in Sources */,
+				4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */,
+				9927C82009821789ED4156C8B4BA1206 /* EZMicrophone.m in Sources */,
+				0D752FCCB6F74C8121837C377623BBA8 /* EZOutput.m in Sources */,
+				048C2CF88075F00658C826D63FA56315 /* EZPlot.m in Sources */,
+				5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */,
+				1CA52AFA90462BA53DF229FB2690FEBF /* TPCircularBuffer.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37382C1F0A38B21268D74ACB5487C061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D943CB8A4C64CF85FDCBE113171ACE /* TPCircularBuffer+AudioBufferList.c in Sources */,
+				38A62A8A4E77FC9504F79735972CF51C /* TPCircularBuffer-dummy.m in Sources */,
+				6D2C5F1BC28D8BA676BC798D445AC7E8 /* TPCircularBuffer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,39 +778,237 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FF33406E72866C1CFBB9176B9A3E3C27 /* Sources */ = {
+		A78AE9EE53591881E784B9AA61F01218 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15E38285D89D2B17CD3C6D61C711E584 /* Pods-dummy.m in Sources */,
+				BB52792A18A6B1BCDE8E11D33538F58C /* Auth.swift in Sources */,
+				60C72C457C8AC8A5CFD6D055CF123649 /* BabelSerializers.swift in Sources */,
+				1121F72C55FE61BF7862AB80DE5C252D /* BabelValidators.swift in Sources */,
+				8CD97DBC0B1915AF4438EB7FF8E72E19 /* Client.swift in Sources */,
+				E0A752A13B9F1E6DA87803279914F488 /* DropboxClient.swift in Sources */,
+				B51FB9E6A881A6B6F466DA1E29347E6F /* Files.swift in Sources */,
+				670463425EBAD31BDF5AC15A8B463DE1 /* SecurityUtil.m in Sources */,
+				2C5996ACDE4403D2D502807884C3FF7A /* Sharing.swift in Sources */,
+				CD8A0C43D88D95AF8555391F9734F559 /* SwiftyDropbox-dummy.m in Sources */,
+				5AD593AB5E6DED3712043D43FEA43F53 /* Users.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4E763CB4BB4C7098B08D66F66750173 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C16CD4EC7A54E3EDA13CE953C877B81 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3B6F5D616E42A23238B6EEA2FFA6D8AA /* PBXTargetDependency */ = {
+		65AA1BB945B06E1E9E52BEA696DC5D92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = 4B2F30D90D85A544E9EFE2A49D392C25 /* Alamofire */;
-			targetProxy = 1B27937AD2F4B505DD0F041BF8F99490 /* PBXContainerItemProxy */;
+			targetProxy = CD050E5D1827014278B7A90C42E24933 /* PBXContainerItemProxy */;
 		};
-		4E1059829082C4088D753B1AB46E737F /* PBXTargetDependency */ = {
+		7265A332FDB7CD013CA6858CA9B4F96D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EZAudio;
+			target = 001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */;
+			targetProxy = 79493135EAB29708C71DBB670438A790 /* PBXContainerItemProxy */;
+		};
+		A83453BA3FB91A500C50E3C4428F88AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = 4B2F30D90D85A544E9EFE2A49D392C25 /* Alamofire */;
-			targetProxy = 98FB33C8BF7AB442646B5595D86BD2F2 /* PBXContainerItemProxy */;
+			targetProxy = 057C0E2D78ACCC533E72E6696C213D58 /* PBXContainerItemProxy */;
 		};
-		6FD9740AF8D678F955B34078F7D1714B /* PBXTargetDependency */ = {
+		B2C03AC9DA82D4928A2FAACEB1ED4790 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TPCircularBuffer;
+			target = A065AE49C9E63F308170DB1B8FA6DC6C /* TPCircularBuffer */;
+			targetProxy = 7C78E3A1E9CB4790A7DD8DF69D68C230 /* PBXContainerItemProxy */;
+		};
+		B5A87059A1D25494E4D13D434313CD90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TPCircularBuffer;
+			target = A065AE49C9E63F308170DB1B8FA6DC6C /* TPCircularBuffer */;
+			targetProxy = 6824A2D9F8C8B082B0B44DABFFF20F9F /* PBXContainerItemProxy */;
+		};
+		DF2B86547B9E849688161F3CB50DC61C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyDropbox;
-			target = 03111BDFC9B6B6CDDC0AE8CBCCAA168D /* SwiftyDropbox */;
-			targetProxy = 907E0B994F28A6C342669648C26E4D6C /* PBXContainerItemProxy */;
+			target = 584043DB422D53888A67B4DB0A3C5EB6 /* SwiftyDropbox */;
+			targetProxy = 4A841EF7562E1360AE266A6BA606723C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B10C4CD8B8E801D7A4CEE5CD56F83A0 /* Release */ = {
+		1E2580D42CB50E793C85826F5EF75E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B87A41F5E84C1EEF9506A8FE7DF086CB /* TPCircularBuffer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TPCircularBuffer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		40C123A0630F0350B32B963B15F1BD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 517AE8E22873B2C4824B8653121A8760 /* EZAudio.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EZAudio/EZAudio-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EZAudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EZAudio/EZAudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = EZAudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4B63DC43AC47829E7B4B10F17EC36619 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B87A41F5E84C1EEF9506A8FE7DF086CB /* TPCircularBuffer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TPCircularBuffer/TPCircularBuffer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPCircularBuffer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPCircularBuffer/TPCircularBuffer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TPCircularBuffer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		70B7F0C6A67FFEB0231B9578604C1F3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDFC05380AEA6EF3773F4E0463A92D02 /* Alamofire.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7F6238B9BC63D0E931880BA55CC6DAE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E1C05CBF7D9972B9C86EF42DDDE1B25 /* SwiftyDropbox.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDropbox/SwiftyDropbox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyDropbox/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyDropbox/SwiftyDropbox.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyDropbox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		88F223C380001E3B62F357AA4723E359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E1C05CBF7D9972B9C86EF42DDDE1B25 /* SwiftyDropbox.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDropbox/SwiftyDropbox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyDropbox/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyDropbox/SwiftyDropbox.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyDropbox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9A98D3D0DCEEA6ADFC391A9BBA9C8B50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
 			buildSettings = {
@@ -507,9 +1038,9 @@
 			};
 			name = Release;
 		};
-		70B7F0C6A67FFEB0231B9578604C1F3F /* Release */ = {
+		9C65AA379D5885662980724FA4C9CFDD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0DA08DE6BB175CB1525F05A924175EA /* Alamofire.xcconfig */;
+			baseConfigurationReference = CDFC05380AEA6EF3773F4E0463A92D02 /* Alamofire.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -524,8 +1055,36 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9F2BB4773FF1AFEE705C15E81D014872 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 517AE8E22873B2C4824B8653121A8760 /* EZAudio.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EZAudio/EZAudio-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EZAudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EZAudio/EZAudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EZAudio;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,65 +1092,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		7B9515BFA4399C15489C63EB610E2CAF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9C65AA379D5885662980724FA4C9CFDD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0DA08DE6BB175CB1525F05A924175EA /* Alamofire.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -632,9 +1132,9 @@
 			};
 			name = Debug;
 		};
-		ACA6A6D803EF88FA3E8C618DC9C7593A /* Release */ = {
+		AA2A638149B744D3899622E75D5FC3F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD74D66695E0EE23C8CB38B69C076E62 /* SwiftyDropbox.xcconfig */;
+			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -643,21 +1143,25 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDropbox/SwiftyDropbox-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyDropbox/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyDropbox/SwiftyDropbox.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftyDropbox;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -693,51 +1197,23 @@
 			};
 			name = Release;
 		};
-		FD632A5E3F3726358835BAA94A999C07 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD74D66695E0EE23C8CB38B69C076E62 /* SwiftyDropbox.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDropbox/SwiftyDropbox-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyDropbox/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyDropbox/SwiftyDropbox.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftyDropbox;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		295CE937756589A0DFB7F16D09BF6C22 /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FD632A5E3F3726358835BAA94A999C07 /* Debug */,
-				ACA6A6D803EF88FA3E8C618DC9C7593A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
 				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		652B6E36CEBEB54B74D699A7F2BDD86D /* Build configuration list for PBXNativeTarget "TPCircularBuffer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E2580D42CB50E793C85826F5EF75E6A /* Debug */,
+				4B63DC43AC47829E7B4B10F17EC36619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -751,11 +1227,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88A3267423D259CF6BDB41DE5A930886 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		A012F36F8D87DCFC43000A8EAEB3A5AB /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7B9515BFA4399C15489C63EB610E2CAF /* Debug */,
-				0B10C4CD8B8E801D7A4CEE5CD56F83A0 /* Release */,
+				7F6238B9BC63D0E931880BA55CC6DAE3 /* Debug */,
+				88F223C380001E3B62F357AA4723E359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB53830DCDB9CCC560962769E044284E /* Build configuration list for PBXNativeTarget "EZAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40C123A0630F0350B32B963B15F1BD01 /* Debug */,
+				9F2BB4773FF1AFEE705C15E81D014872 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E50C80A2EB285048AAF4155BF18C3FAE /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA2A638149B744D3899622E75D5FC3F9 /* Debug */,
+				9A98D3D0DCEEA6ADFC391A9BBA9C8B50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

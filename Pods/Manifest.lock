@@ -1,9 +1,17 @@
 PODS:
   - Alamofire (2.0.2)
+  - EZAudio (1.1.2):
+    - EZAudio/Full (= 1.1.2)
+  - EZAudio/Core (1.1.2)
+  - EZAudio/Full (1.1.2):
+    - EZAudio/Core
+    - TPCircularBuffer (~> 0.0)
   - SwiftyDropbox (0.5):
     - Alamofire (~> 2.0.0-beta.3)
+  - TPCircularBuffer (0.0.1)
 
 DEPENDENCIES:
+  - EZAudio (~> 1.1.2)
   - SwiftyDropbox (from `git@github.com:dropbox/SwiftyDropbox.git`, branch `swift-2.0`,
     tag `0.6`)
 
@@ -21,6 +29,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
+  EZAudio: 01373de2b1257b77be1bf13753fb1c4ea8a9777e
   SwiftyDropbox: 6fd0775b45a404c48252d53d44f1708d11a618bd
+  TPCircularBuffer: 949e9632b9fb99b7274d7b2296ee22bff5841e35
 
 COCOAPODS: 0.39.0
