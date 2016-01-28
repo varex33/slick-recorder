@@ -82,11 +82,20 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        self.tableView.delegate = self
+        
 
         
     }
     override func viewWillAppear(animated: Bool) {
 //        self.tabBar.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        fillRecordingsArray()
+        self.tableView.reloadData()
+
+        print("calling view did appear")
     }
     
     // Function to delete recordings

@@ -42,10 +42,10 @@ class ViewController: UITabBarController, UITabBarControllerDelegate{
                 if let newTableController = navigationViewController.topViewController as? RecordingsTableViewController{
                     newTableController.fillRecordingsArray();
                          newTableController.tableView.reloadData()
-
                 }
             }
-        }/*
+        }
+        /*
     if let vc = storyboard!.instantiateViewControllerWithIdentifier("micStoryboard") as? MicViewController {
             self.presentViewController(vc, animated: true, completion: nil)
         }

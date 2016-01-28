@@ -22,7 +22,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var btnPause: UIButton!
-    @IBOutlet weak var btnPlay: UIButton!
+//    @IBOutlet weak var btnPlay: UIButton!
     
     @IBOutlet weak var wavePlot: EZAudioPlotGL?
      var microphone: EZMicrophone!
@@ -109,12 +109,12 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+/*
     @IBAction func doneButton(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
+  */
     func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer, error: NSError?) {
         print(error!)
     }
@@ -124,12 +124,12 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         if flag == true{
             recordedAudio.audioUrl = recorder.url
             recordedAudio.audioTitle = recorder.url.lastPathComponent
-            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
+//            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
             print("recording finished")
         }
         
     }
-    
+  /*
     @IBAction func playRecording(sender: UIButton) {
         //       let dir = audioPath.getRecordingDirectory()
         do{
@@ -146,10 +146,10 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
             player.delegate = self
             player.prepareToPlay()
             player.play()
-            btnPlay.enabled = false
+//            btnPlay.enabled = false
         }
     }
-    
+
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         self.delegate?.soundFinished(self)
         
@@ -161,7 +161,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
             print("still playing")
         }
     }
-    
+ */
     
     @IBAction func stopRecording(sender: UIButton) {
         recorder.stop()
@@ -169,6 +169,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
 //        recButton.enabled = true
 //        recButton.hidden = false
         btnPause.hidden = true
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func pauseRecording(sender: UIButton) {
@@ -186,7 +187,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     }
     
     // MARK: - Navigation
-    
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
@@ -199,5 +200,5 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         audio.recordedAudio = data
     }
     
-    
+    */
 }
