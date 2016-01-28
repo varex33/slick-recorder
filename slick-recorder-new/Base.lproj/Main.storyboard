@@ -134,11 +134,12 @@
                         <outlet property="btnResumeRecording" destination="fDD-nd-QMo" id="jOv-bw-W45"/>
                         <outlet property="stopButton" destination="EwQ-qa-6mJ" id="5gw-1u-Fxd"/>
                         <outlet property="wavePlot" destination="hJC-r2-kbU" id="zb3-FJ-MG9"/>
+                        <segue destination="Up4-oM-bz0" kind="show" identifier="stopRecording" id="eEg-XP-o84"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Va1-s6-guY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="764"/>
+            <point key="canvasLocation" x="1676" y="2172"/>
         </scene>
         <!--Recordings-->
         <scene sceneID="OME-48-Ofz">
@@ -206,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p82-Yw-lIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="1439"/>
+            <point key="canvasLocation" x="1571" y="1451"/>
         </scene>
         <!--Recordings-->
         <scene sceneID="8u7-wv-u6O">
@@ -328,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoW-gu-G4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="2182"/>
+            <point key="canvasLocation" x="938" y="2172"/>
         </scene>
         <!--Recorded Files-->
         <scene sceneID="P1E-4S-r1J">
@@ -377,4 +378,7 @@
         <image name="rec-label-button" width="50" height="50"/>
         <image name="toolicon" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eEg-XP-o84"/>
+    </inferredMetricsTieBreakers>
 </document>

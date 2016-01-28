@@ -37,7 +37,9 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
         do{
             
             showRecordingTime()
-            let fullName = NSURL(fileURLWithPath: dir+"/"+fileName)
+//            let fullName = NSURL(fileURLWithPath: dir+"/"+fileName)
+            let fullName = NSURL(fileURLWithPath: dir+"/"+recordedAudio.audioTitle)
+
             player = try? AVAudioPlayer(contentsOfURL: fullName )
 //            player = try? AVAudioPlayer(contentsOfURL: recordedAudio.audioUrl )
             btnPlay.enabled = false
@@ -58,7 +60,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
         updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         updater_running = true
     }
-    
+/*
     func setTabBarVisible(visible: Bool, animated: Bool) {
         // hide tab bar
         let frame = self.tabBarController?.tabBar.frame
@@ -88,6 +90,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
     func tabBarIsVisible() -> Bool {
         return self.tabBarController?.tabBar.frame.origin.y < UIScreen.mainScreen().bounds.height
     }
+*/
     
     override func viewWillDisappear(animated: Bool) {
         if playing == true {

@@ -153,10 +153,12 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let recordingName = recordings[indexPath.row]
+//        let recordingName = recordings[indexPath.row]
 
-        // we only need to send the audio name because the path is always the same
-       self.performSegueWithIdentifier("playAudioCell", sender: recordingName)
+        // save recording name in recordedAudio object
+        recordedAudio.audioTitle = recordings[indexPath.row]
+
+       self.performSegueWithIdentifier("playAudioCell", sender: recordedAudio)
         
     }
     
@@ -206,10 +208,10 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         let player: PlayRecordingViewController = segue.destinationViewController as! PlayRecordingViewController
         
         // we only need to send the audio file name to play so sender is casted as string
-        let data = sender as! String
-//        let data = sender as! RecordedAudio
-        player.fileName = data
-//        player.recordedAudio = data
+//        let data = sender as! String
+        let data = sender as? RecordedAudio
+//        player.fileName = data
+        player.recordedAudio = data
         
         // Hide tabbar on next scene (playRecording)
         let destViewController = segue.destinationViewController as! PlayRecordingViewController

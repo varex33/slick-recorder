@@ -124,7 +124,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         if flag == true{
             recordedAudio.audioUrl = recorder.url
             recordedAudio.audioTitle = recorder.url.lastPathComponent
-            //fileName = recorder.url.lastPathComponent
+            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
             print("recording finished")
         }
         
@@ -184,14 +184,20 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         btnResumeRecording.hidden = true
         print("recording after pause")
     }
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        let audio: PlayRecordingViewController = segue.destinationViewController as! PlayRecordingViewController
+        
+        // cast sender as the object we will use to send the audio name and path
+        let data = sender as! RecordedAudio
+
+        // Pass the selected object to the new view controller.
+        audio.recordedAudio = data
     }
-    */
+    
     
 }
