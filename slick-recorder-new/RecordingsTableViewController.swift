@@ -23,6 +23,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     
     func fillRecordingsArray(){
         let audioDir = fileUrl.getRecordingDirectory()
+//        recordedAudio.audioTitle = fileUrl.getRecordingDirectory()
         do{
             let allRecordings = (try NSFileManager.defaultManager().contentsOfDirectoryAtPath(audioDir)) as [String]
             // Remove all recordings from array when rows are added or deleted so user can see only available rows
@@ -30,37 +31,40 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
             for name in allRecordings{
                 recordings.append(name)
 
-                
                 // get DATE substring from original file name
-                let dateRange = name.startIndex.advancedBy(0)..<name.startIndex.advancedBy(12)
+                let dateRange = name.startIndex.advancedBy(0)..<name.startIndex.advancedBy(11)
                 let strDate = name.substringWithRange(dateRange)
                 
                 //get TIME substring from original file name
                 let timeRange = name.startIndex.advancedBy(14)..<name.startIndex.advancedBy(25)
-                let strTime = name.substringWithRange(timeRange)
+//                let strTime = name.substringWithRange(timeRange)
               //  print(strTime)
                 
                 // convert string to date
                 formatDate.dateStyle = .MediumStyle
-                let recordingDate = formatDate.dateFromString(strDate)
-                
-                // Detect if date have changed
-                if count == 0 {
-                     tempDate = recordingDate!
-                    print("first date")
- //                   let strDate = formatDate.stringFromDate(recordingDate!)
- //                   let defaults = NSUserDefaults.standardUserDefaults()
-//                    defaults.setValuesForKeysWithDictionary(strDate: )
-                }
-                else if tempDate != recordingDate{
-                    print("save new date")
-                    tempDate = recordingDate!
-//                    flag = false
+                if let recordingDate = formatDate.dateFromString(strDate)
+                {
+                    // Detect if date have changed
+                    if count == 0 {
+                         tempDate = recordingDate
+                        print("first date: \(recordingDate)")
+     //                   let strDate = formatDate.stringFromDate(recordingDate!)
+     //                   let defaults = NSUserDefaults.standardUserDefaults()
+    //                    defaults.setValuesForKeysWithDictionary(strDate: )
+                    }
+                    else if tempDate != recordingDate{
+                        print("save new date \(recordingDate)")
+                        tempDate = recordingDate
+    //                    flag = false
+                    }
+                    else{
+                        print("same date \(recordingDate)")
+                       // print(recordingDate!)
+     //                   flag = false
+                    }
                 }
                 else{
-                    print("same date")
-                   // print(recordingDate!)
- //                   flag = false
+                    print("error processing date")
                 }
 
                 count++
@@ -70,8 +74,6 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         catch{
             print("error filling array")
         }
-        // Sort Array by Date, lastest recording on top
-        recordings.sortInPlace({$0 > $1})
     }
     
     override func viewDidLoad() {
@@ -79,6 +81,9 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         // Before showing table we must call fillRecordingsArray to populate Array of Recordings
         fillRecordingsArray()
         
+        // Sort Array by Date, lastest recording on top
+        recordings.sortInPlace(){$0 < $1}
+
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
@@ -95,7 +100,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         fillRecordingsArray()
         self.tableView.reloadData()
 
-        print("calling view did appear")
+//        print("calling view did appear")
     }
     
     // Function to delete recordings

@@ -59,8 +59,6 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         wavePlot?.shouldFill = true
         wavePlot?.shouldMirror = true
         
-        // Create an instance of the microphone and tell it to use this view controller instance as the delegate
-        microphone = EZMicrophone(delegate: self, startsImmediately: true);
         
         // Start Recording
         
@@ -68,6 +66,27 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
         // Create Audio Session
         
+        let recordSettings = [
+            AVSampleRateKey: 16000.0
+            
+            ] as [String: AnyObject]
+
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            recorder = try AVAudioRecorder(URL: audioPath.getUrl(), settings:recordSettings)
+
+        } catch let error as NSError? {
+            recorder = nil
+            print("This is the error:\(error!)")
+
+        }
+        
+        // Create an instance of the microphone and tell it to use this view controller instance as the delegate
+        microphone = EZMicrophone(delegate: self, startsImmediately: true)
+
+        
+        /*
         // Recording Settings
         let recordSettings = [
 //            AVFormatIDKey: kAudioFormatMPEG4AAC
@@ -83,6 +102,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
             recorder = nil
             print(error!)
         }
+        */
         if recorder != nil{
             recorder.prepareToRecord()
             recorder.record()
@@ -91,12 +111,11 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
         // Show pause button while recording
         btnPause.hidden = false
-
         
     }
     
     func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        dispatch_async(dispatch_get_main_queue(), {() -> Void in
         self.wavePlot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
         });
     }

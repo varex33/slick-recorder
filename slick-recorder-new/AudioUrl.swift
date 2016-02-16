@@ -9,22 +9,13 @@
 import Foundation
 // Class to get the path of the audio file
 class AudioUrl{
-    
-    var fileName: String{
-        let date = NSDate()
-        let dateFormatter = NSDateFormatter()
-        //        dateFormatter.dateFormat = "yyyy-MM-dd 'at' HH:mm"
-        // Set Names for Date and Time
-        dateFormatter.dateStyle = .MediumStyle
-        dateFormatter.timeStyle = .MediumStyle
-        return  dateFormatter.stringFromDate(date)
-    }
+    var recordedAudio: RecordedAudio!
     func getRecordingDirectory()->String{
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         return path[0]
     }
     func getUrl()->NSURL{
-        let url = (getRecordingDirectory() as NSString).stringByAppendingPathComponent(fileName+" .wav")
+        let url = (getRecordingDirectory() as NSString).stringByAppendingPathComponent(recordedAudio.fileName+" .wav")
         let finalUrl = NSURL(fileURLWithPath: url)
         return finalUrl
     }

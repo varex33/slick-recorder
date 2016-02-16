@@ -11,17 +11,23 @@ import AVFoundation
 import SwiftyDropbox
 
 
-class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
+class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAudioPlayerDelegate{
     
 //    @IBOutlet weak var circularProgress: UIView!
     @IBOutlet weak var btnStop: UIButton!
-    @IBOutlet weak var btnPlay: UIButton!
+    //@IBOutlet weak var btnPlay: UIButton!
+    @IBOutlet weak var audioPlot: EZAudioPlotGL!
+    
+    // EZAUDIO
+    var ezPlayer : EZAudioPlayer!
+    var audioFile: EZAudioFile!
+    
     @IBOutlet weak var audioSlider: UISlider!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var totalTime: UILabel!
 
     var player: AVAudioPlayer!
-    var fileName: String! // Saves the file Name recived from Table View
+//    var fileName: String! // Saves the file Name recived from Table View
     var recordedAudio: RecordedAudio!
     var dirPath = AudioUrl() // Get the directory path of the recording
 
@@ -35,18 +41,39 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
         super.viewDidLoad()
         let dir = dirPath.getRecordingDirectory()
         do{
-            
-            showRecordingTime()
-//            let fullName = NSURL(fileURLWithPath: dir+"/"+fileName)
+            // PATH TO AUDIO FILE
             let fullName = NSURL(fileURLWithPath: dir+"/"+recordedAudio.audioTitle)
 
+  //          print("This is the name \(recordedAudio.audioTitle)")
+            showRecordingTime()
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            
+            // EZAUDIO CONFIGURATION
+            audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+            audioPlot?.plotType = EZPlotType.Buffer
+            audioPlot?.shouldFill = true
+            audioPlot?.shouldMirror = true
+            ezPlayer = EZAudioPlayer(delegate: self)
+           // ezPlayer.shouldLoop = true
+            try session.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+            // call EZAudio function to process the waveform
+            openFile(fullName)
+         //   ezPlayer.play()
+            
+            // PLAY AUDIO FILE
             player = try? AVAudioPlayer(contentsOfURL: fullName )
-//            player = try? AVAudioPlayer(contentsOfURL: recordedAudio.audioUrl )
-            btnPlay.enabled = false
+           // player = try? AVAudioPlayer(contentsOfURL: recordedAudio.audioUrl )
+         //   btnPlay.enabled = false
+            
             player.delegate = self
             player.prepareToPlay()
             player.play()
-            audioSlider.continuous = false
+
+ //           audioSlider.continuous = false
+        }
+        catch let error as NSError?{
+            print("Error intiating audio session \(error)")
         }
         // Cloud Button showed to the right of Navigation Bar
         let cloudButton = UIImage(named: "cloud")
@@ -54,18 +81,40 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
 
     }
     
+    func openFile(filePath: NSURL){
+        
+//        self.audioFile = [EZAudioFile audioFileWithURL:filePathURL];
+        audioFile = EZAudioFile(URL: filePath)
+        //
+        // Plot the whole waveform
+        //
+        audioPlot?.plotType = EZPlotType.Buffer
+        audioPlot?.shouldFill = true
+        audioPlot?.shouldMirror = true
+        
+        let waveData = audioFile.getWaveformData()
+        self.audioPlot.updateBuffer(waveData.buffers[0], withBufferSize: waveData.bufferSize)
+        
+        //
+        // Play the audio file
+        //
+//        [self.player setAudioFile:self.audioFile];
+        ezPlayer.audioFile = audioFile
+
+    }
+
     func showRecordingTime(){
         updater = CADisplayLink(target: self, selector: Selector("updateProgress"))
         updater.frameInterval = 1
         updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         updater_running = true
     }
-/*
+
     func setTabBarVisible(visible: Bool, animated: Bool) {
         // hide tab bar
         let frame = self.tabBarController?.tabBar.frame
         let height = frame?.size.height
-        var offsetY = (visible ? -height! : height)
+        let offsetY = (visible ? -height! : height)
 //        println ("offsetY = \(offsetY)")
         
         // zero duration means no animation
@@ -90,8 +139,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
     func tabBarIsVisible() -> Bool {
         return self.tabBarController?.tabBar.frame.origin.y < UIScreen.mainScreen().bounds.height
     }
-*/
-    
+
+
     override func viewWillDisappear(animated: Bool) {
         if playing == true {
             player.stop()
@@ -118,7 +167,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
         // starts playing track again if it had been playing
         if (wasPlaying == true) {
             player.play()
-            wasPlaying == false
+            wasPlaying = false
         }
         
     }
@@ -129,7 +178,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
         updater.frameInterval = 1
         updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         updater_running = true
-        btnPlay.enabled = false
+//        btnPlay.enabled = false
         totalTime.hidden = true
         timeLabel.hidden = false
         player.delegate = self
@@ -158,7 +207,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
 
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         if flag == true{
-            btnPlay.enabled = true
+//            btnPlay.enabled = true
             updateProgress()
             
             //show playing time in h/m/s format
@@ -174,7 +223,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
     
     @IBAction func stopPlaying(sender: UIButton) {
         player.stop()
-        btnPlay.enabled = true
+//        btnPlay.enabled = true
     }
     
     
@@ -206,16 +255,16 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate{
             // Upload a file
             //  let fileData = "Hello!".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
             // Get Recording Path
-            let recordingPath = dirPath.getRecordingDirectory()+"/"+fileName
+            let recordingPath = dirPath.getRecordingDirectory()+"/"+recordedAudio.audioTitle
             let data = NSData(contentsOfFile: recordingPath)
             
-            client.filesUpload(path: "/"+fileName, body: data!).response { response, error in
+            client.filesUpload(path: "/"+recordedAudio.audioTitle, body: data!).response { response, error in
                 if let metadata = response {
                     print("Uploaded file name: \(metadata.name)")
                     print("Uploaded file revision: \(metadata.rev)")
                     
                     // Get file (or folder) metadata
-                    client.filesGetMetadata(path: "/"+self.fileName).response { response, error in
+                    client.filesGetMetadata(path: "/"+self.recordedAudio.audioTitle).response { response, error in
                         if let metadata = response {
                             //  print("Name: \(metadata.name)")
                             if let file = metadata as? Files.FileMetadata {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WJh-Jh-vhB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WJh-Jh-vhB">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -202,17 +202,17 @@
         <scene sceneID="8u7-wv-u6O">
             <objects>
                 <tableViewController id="kLJ-Xc-jhn" customClass="RecordingsTableViewController" customModule="slick_recorder_new" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="wxF-92-W9N">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="45" sectionHeaderHeight="18" sectionFooterHeight="18" id="wxF-92-W9N">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recordingCell" textLabel="U6G-MY-Bde" detailTextLabel="7Yn-1Q-xdb" style="IBUITableViewCellStyleSubtitle" id="0m9-5y-V1N">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recordingCell" textLabel="U6G-MY-Bde" detailTextLabel="7Yn-1Q-xdb" rowHeight="45" style="IBUITableViewCellStyleSubtitle" id="0m9-5y-V1N">
+                                <rect key="frame" x="0.0" y="114" width="600" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0m9-5y-V1N" id="GIX-XE-P1k">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U6G-MY-Bde">
@@ -259,14 +259,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvb-4U-MYM">
-                                <rect key="frame" x="200" y="80" width="200" height="200"/>
-                                <state key="normal" image="new-play"/>
-                                <connections>
-                                    <action selector="playSelectedRecording:" destination="Up4-oM-bz0" eventType="touchUpInside" id="cuX-9k-pK6"/>
-                                </connections>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LqA-8k-fTE">
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LqA-8k-fTE">
                                 <rect key="frame" x="148" y="301" width="304" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Kyf-73-mo2"/>
@@ -276,13 +269,13 @@
                                     <action selector="progressSlider:" destination="Up4-oM-bz0" eventType="valueChanged" id="190-CT-GHm"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeE-ho-maV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeE-ho-maV">
                                 <rect key="frame" x="210" y="347" width="181" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDl-bS-cCB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDl-bS-cCB">
                                 <rect key="frame" x="210" y="347" width="181" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="181" id="mgf-pG-XT0"/>
@@ -292,7 +285,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVq-2L-Ms5">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVq-2L-Ms5">
                                 <rect key="frame" x="244" y="426" width="113" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="113" id="0SS-Yd-Ai9"/>
@@ -303,23 +296,28 @@
                                     <action selector="stopPlaying:" destination="Up4-oM-bz0" eventType="touchUpInside" id="6a1-YN-DHI"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5Q-uR-jJx" customClass="EZAudioPlotGL">
+                                <rect key="frame" x="20" y="112" width="560" height="167"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Mvb-4U-MYM" firstAttribute="top" secondItem="8Ee-BA-BD2" secondAttribute="bottom" constant="16" id="BJs-3Q-DIP"/>
-                            <constraint firstItem="Mvb-4U-MYM" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="BbY-QB-9m2"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="v5Q-uR-jJx" secondAttribute="leading" id="0HN-jd-aEt"/>
+                            <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="v5Q-uR-jJx" secondAttribute="bottom" constant="272" id="2ZL-Vh-jqB"/>
+                            <constraint firstItem="v5Q-uR-jJx" firstAttribute="top" secondItem="8Ee-BA-BD2" secondAttribute="bottom" constant="48" id="Csk-0l-0oD"/>
                             <constraint firstItem="eVq-2L-Ms5" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="NGb-eQ-72G"/>
                             <constraint firstItem="gDl-bS-cCB" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="USR-Ux-mal"/>
                             <constraint firstItem="gDl-bS-cCB" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="16" id="YrJ-Jv-fmz"/>
                             <constraint firstItem="oeE-ho-maV" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="b14-TH-5vc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v5Q-uR-jJx" secondAttribute="trailing" id="hrj-8g-LK4"/>
                             <constraint firstItem="LqA-8k-fTE" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="kto-bC-6E2"/>
-                            <constraint firstItem="LqA-8k-fTE" firstAttribute="top" secondItem="Mvb-4U-MYM" secondAttribute="bottom" constant="21" id="kv9-u6-KuJ"/>
                             <constraint firstItem="eVq-2L-Ms5" firstAttribute="top" secondItem="gDl-bS-cCB" secondAttribute="bottom" constant="35" id="sqt-F0-kx3"/>
                             <constraint firstItem="oeE-ho-maV" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="16" id="vWQ-wN-wwe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="audioPlot" destination="v5Q-uR-jJx" id="H5K-Ux-rB3"/>
                         <outlet property="audioSlider" destination="LqA-8k-fTE" id="t3p-LK-7r6"/>
-                        <outlet property="btnPlay" destination="Mvb-4U-MYM" id="xTB-Ai-Mwo"/>
                         <outlet property="btnStop" destination="eVq-2L-Ms5" id="eVK-Dh-OV7"/>
                         <outlet property="timeLabel" destination="oeE-ho-maV" id="pGW-OM-gef"/>
                         <outlet property="totalTime" destination="gDl-bS-cCB" id="Cyd-X4-Sh4"/>
@@ -372,7 +370,6 @@
         <image name="black-stop-button-v1" width="120" height="60"/>
         <image name="list-icon" width="25" height="25"/>
         <image name="mic-icon" width="25" height="25"/>
-        <image name="new-play" width="200" height="200"/>
         <image name="toolicon" width="24" height="24"/>
     </resources>
 </document>
