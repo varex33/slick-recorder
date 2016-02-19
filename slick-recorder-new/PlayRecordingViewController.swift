@@ -15,8 +15,9 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
 //    @IBOutlet weak var circularProgress: UIView!
     @IBOutlet weak var btnStop: UIButton!
-    //@IBOutlet weak var btnPlay: UIButton!
+    @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var audioPlot: EZAudioPlotGL!
+    @IBOutlet weak var btnPause: UIButton!
     
     // EZAUDIO
     var ezPlayer : EZAudioPlayer!
@@ -76,9 +77,10 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             print("Error intiating audio session \(error)")
         }
         // Cloud Button showed to the right of Navigation Bar
+        /*
         let cloudButton = UIImage(named: "cloud")
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(image: cloudButton, style: .Plain, target: self, action: "uploadFileToCloud"), animated: true)
-
+        */
     }
     
     func openFile(filePath: NSURL){
@@ -172,27 +174,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         
     }
     
-    @IBAction func playSelectedRecording(sender: UIButton) {
-    if (playing == false) {
-        updater = CADisplayLink(target: self, selector: Selector("updateProgress"))
-        updater.frameInterval = 1
-        updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        updater_running = true
-//        btnPlay.enabled = false
-        totalTime.hidden = true
-        timeLabel.hidden = false
-        player.delegate = self
-        player.prepareToPlay()
-        player.play()
-        updateProgress()
-        }
-    else {
-        updateProgress()
-        player.pause()
-        playing = false
-        }
-    }
-    
+       
     func updateProgress() {
         let timer = player.currentTime
         let seconds = NSInteger(player.currentTime/60)
@@ -219,15 +201,52 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             totalTime.hidden = false
             totalTime.text = NSString(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds) as String
         }
+        btnPlay.hidden = false
+        btnPause.hidden = true
     }
+    
+    @IBAction func playSelectedRecording(sender: UIButton) {
+        if (playing == false) {
+            updater = CADisplayLink(target: self, selector: Selector("updateProgress"))
+            updater.frameInterval = 1
+            updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            updater_running = true
+            //        btnPlay.enabled = false
+            btnPause.hidden = false
+            btnPlay.hidden = true
+            totalTime.hidden = true
+            timeLabel.hidden = false
+            player.delegate = self
+            player.prepareToPlay()
+            player.play()
+            updateProgress()
+        }
+        else {
+            updateProgress()
+            player.pause()
+            playing = false
+        }
+    }
+
     
     @IBAction func stopPlaying(sender: UIButton) {
         player.stop()
 //        btnPlay.enabled = true
     }
     
+    @IBAction func pausePlaying(sender: UIButton) {
+        player.stop()
+        btnPause.hidden = true
+        btnPlay.hidden = false
+    }
+    @IBAction func btnStop(sender: UIButton) {
+        player.stop()
+        player.currentTime = 0
+        btnPause.hidden = true
+        btnPlay.hidden = false
+    }
     
-    func uploadFileToCloud(){
+    @IBAction func uploadToCloud(sender: UIButton) {
         // Verify user is logged into Dropbox
         if let client = Dropbox.authorizedClient {
             
@@ -284,9 +303,39 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         else{
             print("User not authorized in Dropbox")
         }
+
+    }
+    
+    
+    @IBAction func deleteAudioFile(sender: UIButton) {
+
+        /*** Pop up confirmation to delete file ***/
+        
+        let alert = UIAlertController(title: "Delete Audio File", message: "Are you sure?", preferredStyle: .Alert)
+        let actionYes = UIAlertAction(title: "Yes", style: .Default, handler: {(alert: UIAlertAction!) in
+            if self.dirPath.deleteRecording(self.recordedAudio.audioTitle){
+                // Navigate back to tableview once file is deleted
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+            else{
+                print("error while deleting file")
+            }
+        })
+        let actionNo = UIAlertAction(title: "No", style: .Default, handler: {(alert: UIAlertAction) in
+//            self.btnPause.hidden = true
+//            self.btnPlay.hidden = false
+            self.player.play()
+        })
+        alert.addAction(actionYes)
+        alert.addAction(actionNo)
+        presentViewController(alert, animated: true, completion: nil)
+        
         
     }
     
+    func deleteAudioFile(){
+        performSegueWithIdentifier("playAudioCell", sender: nil)
+    }
 
     /*
     // MARK: - Navigation

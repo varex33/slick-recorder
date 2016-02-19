@@ -142,7 +142,9 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         cell.detailTextLabel?.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb"
         
         // Color Cell Text
-        cell.backgroundColor = UIColor.blackColor()
+//        cell.backgroundColor = UIColor(red: 0.8, green: 0.6, blue: 0.8, alpha: 1)
+        cell.backgroundColor = UIColor.darkGrayColor()
+
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.detailTextLabel?.textColor = UIColor.whiteColor()
 
