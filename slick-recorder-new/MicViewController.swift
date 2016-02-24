@@ -14,16 +14,16 @@ protocol PlayerDelegate : class {
 }
 
 
-class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate, EZMicrophoneDelegate {
+class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate, EZMicrophoneDelegate,EZRecorderDelegate, EZAudioPlayerDelegate {
     
-    var wave: WaveForm = WaveForm()
+//    var wave: WaveForm = WaveForm()
     
     @IBOutlet weak var btnResumeRecording: UIButton!
     
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var btnPause: UIButton!
-//    @IBOutlet weak var btnPlay: UIButton!
     
+    /*** EZAdio declarations ****/
     @IBOutlet weak var wavePlot: EZAudioPlotGL?
      var microphone: EZMicrophone!
     
@@ -39,20 +39,15 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     var recordedAudio = RecordedAudio()
     
-    var delegate : PlayerDelegate?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         btnResumeRecording.hidden = true
-        // Do any additional setup after loading the view.
-        
+
         //  Translation to Swift from EZAUDIO Objective C code
         
         // Customizing the audio plot that'll show the current microphone input/recording
-        //
-//        wavePlot?.backgroundColor = UIColor(red: 0.984, green: 0.71, blue: 0.365, alpha: 1)
-//        wavePlot?.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
 
         wavePlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
         wavePlot?.plotType = EZPlotType.Rolling
@@ -84,7 +79,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
         // Create an instance of the microphone and tell it to use this view controller instance as the delegate
         microphone = EZMicrophone(delegate: self, startsImmediately: true)
-
+        
         
         /*
         // Recording Settings
@@ -148,39 +143,6 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         }
         
     }
-  /*
-    @IBAction func playRecording(sender: UIButton) {
-        //       let dir = audioPath.getRecordingDirectory()
-        do{
-            //            let fullName = NSURL(fileURLWithPath: dir+"/"+fileName!)
-            //            player = try? AVAudioPlayer(contentsOfURL: fullName)
-            player = try? AVAudioPlayer(contentsOfURL: recordedAudio.audioUrl)
-            
-        }
-        if player == nil{
-            print("error while playing")
-        }
-        if player != nil{
-            print("recording playing")
-            player.delegate = self
-            player.prepareToPlay()
-            player.play()
-//            btnPlay.enabled = false
-        }
-    }
-
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        self.delegate?.soundFinished(self)
-        
-        if flag == true{
-            btnPlay.enabled = true
-            print("finished playing")
-        }
-        else{
-            print("still playing")
-        }
-    }
- */
     
     @IBAction func stopRecording(sender: UIButton) {
         recorder.stop()
@@ -196,12 +158,14 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         print("recording paused")
         btnPause.hidden = true
         btnResumeRecording.hidden = false
+        microphone.stopFetchingAudio()
     }
     
     @IBAction func resumeRecording(sender: UIButton) {
         recorder.record()
         btnPause.hidden = false
         btnResumeRecording.hidden = true
+        microphone.startFetchingAudio()
         print("recording after pause")
     }
     

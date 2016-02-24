@@ -18,6 +18,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var audioPlot: EZAudioPlotGL!
     @IBOutlet weak var btnPause: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     // EZAUDIO
     var ezPlayer : EZAudioPlayer!
@@ -40,6 +41,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressBar.setProgress(0, animated: false)
         let dir = dirPath.getRecordingDirectory()
         do{
             // PATH TO AUDIO FILE
@@ -83,8 +85,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         */
     }
     
-    func openFile(filePath: NSURL){
-        
+    func openFile(filePath: NSURL){        
 //        self.audioFile = [EZAudioFile audioFileWithURL:filePathURL];
         audioFile = EZAudioFile(URL: filePath)
         //
@@ -288,10 +289,33 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                             //  print("Name: \(metadata.name)")
                             if let file = metadata as? Files.FileMetadata {
                                 
+                                /**** Pop up to show upload progress ****/
+                                let target = Int(file.size / 1000) // Total file size
+                                var counter = 0
+                                
+                                while counter < target{
+                                    counter++
+                                    // value converts the file size to a value from 0 to 100 so we can measure the progress
+                                    let value = Float(counter) / Float(target) * 100
+                                    
+                                    self.progressBar.setProgress(value/100, animated: false)
+                                    
+                                    //print("\(value/100)%")
+                                }
                                 print("This is a file.")
                                 print("File size: \(file.size)")
                                 print("int size: \(Int(file.size / 1000))")
                             }
+                            
+                            
+                            /*
+                            var uploadProgress: UIProgressView!
+                            uploadProgress.setProgress(0, animated: true)
+                            let uploadView = UIAlertView(title: "upload audio", message: "upoading", delegate: self, cancelButtonTitle: "Cancel")
+                            uploadView.addSubview(uploadProgress)
+                            uploadView.show()
+                            */
+                            
                             
                         } else {
                             print(error!)
