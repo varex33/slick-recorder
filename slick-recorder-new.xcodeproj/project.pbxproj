@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2689896F2A77D30E04105267 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CA68E9E337DECDAB5175E6 /* Pods.framework */; };
 		789004EC1C2206BE00A43D25 /* MicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789004EB1C2206BE00A43D25 /* MicViewController.swift */; };
-		78ADC4391C07B78A0042DCB7 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ADC4381C07B78A0042DCB7 /* KDCircularProgress.swift */; };
 		78ADC43B1C0A53ED0042DCB7 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ADC43A1C0A53ED0042DCB7 /* RecordedAudio.swift */; };
 		78C737081BF50D6B00C66C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C737071BF50D6B00C66C7D /* AppDelegate.swift */; };
 		78C7370A1BF50D6B00C66C7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C737091BF50D6B00C66C7D /* ViewController.swift */; };
@@ -45,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		789004EB1C2206BE00A43D25 /* MicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicViewController.swift; sourceTree = "<group>"; };
-		78ADC4381C07B78A0042DCB7 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		78ADC43A1C0A53ED0042DCB7 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		78C737041BF50D6B00C66C7D /* slick-recorder-new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slick-recorder-new.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C737071BF50D6B00C66C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				78C7370B1BF50D6B00C66C7D /* Main.storyboard */,
 				78C7373D1BF6F4ED00C66C7D /* Settings.swift */,
 				78C7373B1BF6E26900C66C7D /* PlayRecordingViewController.swift */,
-				78ADC4381C07B78A0042DCB7 /* KDCircularProgress.swift */,
 				78C737101BF50D6B00C66C7D /* LaunchScreen.storyboard */,
 				78CDCEA21C5AC6CD00D9E2B8 /* Assets.xcassets */,
 				78C737131BF50D6B00C66C7D /* Info.plist */,
@@ -367,7 +364,6 @@
 				78C7370A1BF50D6B00C66C7D /* ViewController.swift in Sources */,
 				78C737361BF6DAB800C66C7D /* RecordSounds.swift in Sources */,
 				78C737381BF6E0B100C66C7D /* AudioUrl.swift in Sources */,
-				78ADC4391C07B78A0042DCB7 /* KDCircularProgress.swift in Sources */,
 				78C7373E1BF6F4ED00C66C7D /* Settings.swift in Sources */,
 				78ADC43B1C0A53ED0042DCB7 /* RecordedAudio.swift in Sources */,
 				78C7373A1BF6E14900C66C7D /* RecordingsTableViewController.swift in Sources */,

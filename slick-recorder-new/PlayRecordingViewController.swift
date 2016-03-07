@@ -13,7 +13,7 @@ import SwiftyDropbox
 
 class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAudioPlayerDelegate{
     
-//    @IBOutlet weak var circularProgress: UIView!
+    //    @IBOutlet weak var circularProgress: UIView!
     @IBOutlet weak var btnStop: UIButton!
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var audioPlot: EZAudioPlotGL!
@@ -27,17 +27,18 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBOutlet weak var audioSlider: UISlider!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var totalTime: UILabel!
-
+    
     var player: AVAudioPlayer!
-//    var fileName: String! // Saves the file Name recived from Table View
+    //    var fileName: String! // Saves the file Name recived from Table View
     var recordedAudio: RecordedAudio!
     var dirPath = AudioUrl() // Get the directory path of the recording
-
+    
     // variables used to update UISlider when playing a sound
     var updater : CADisplayLink! = nil // tracks the time into the track
     var updater_running : Bool = false // did the updater start?
     var playing : Bool = false //indicates if track started playing
-
+    
+    var previewView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +47,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         do{
             // PATH TO AUDIO FILE
             let fullName = NSURL(fileURLWithPath: dir+"/"+recordedAudio.audioTitle)
-
-  //          print("This is the name \(recordedAudio.audioTitle)")
+            
+            //          print("This is the name \(recordedAudio.audioTitle)")
             showRecordingTime()
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
@@ -58,22 +59,22 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             audioPlot?.shouldFill = true
             audioPlot?.shouldMirror = true
             ezPlayer = EZAudioPlayer(delegate: self)
-           // ezPlayer.shouldLoop = true
+            // ezPlayer.shouldLoop = true
             try session.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
             // call EZAudio function to process the waveform
             openFile(fullName)
-         //   ezPlayer.play()
+            //   ezPlayer.play()
             
             // PLAY AUDIO FILE
             player = try? AVAudioPlayer(contentsOfURL: fullName )
-           // player = try? AVAudioPlayer(contentsOfURL: recordedAudio.audioUrl )
-         //   btnPlay.enabled = false
+            // player = try? AVAudioPlayer(contentsOfURL: recordedAudio.audioUrl )
+            //   btnPlay.enabled = false
             
             player.delegate = self
             player.prepareToPlay()
             player.play()
-
- //           audioSlider.continuous = false
+            
+            //           audioSlider.continuous = false
         }
         catch let error as NSError?{
             print("Error intiating audio session \(error)")
@@ -85,8 +86,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         */
     }
     
-    func openFile(filePath: NSURL){        
-//        self.audioFile = [EZAudioFile audioFileWithURL:filePathURL];
+    func openFile(filePath: NSURL){
+        //        self.audioFile = [EZAudioFile audioFileWithURL:filePathURL];
         audioFile = EZAudioFile(URL: filePath)
         //
         // Plot the whole waveform
@@ -101,24 +102,24 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         //
         // Play the audio file
         //
-//        [self.player setAudioFile:self.audioFile];
+        //        [self.player setAudioFile:self.audioFile];
         ezPlayer.audioFile = audioFile
-
+        
     }
-
+    
     func showRecordingTime(){
         updater = CADisplayLink(target: self, selector: Selector("updateProgress"))
         updater.frameInterval = 1
         updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         updater_running = true
     }
-
+    
     func setTabBarVisible(visible: Bool, animated: Bool) {
         // hide tab bar
         let frame = self.tabBarController?.tabBar.frame
         let height = frame?.size.height
         let offsetY = (visible ? -height! : height)
-//        println ("offsetY = \(offsetY)")
+        //        println ("offsetY = \(offsetY)")
         
         // zero duration means no animation
         let duration:NSTimeInterval = (animated ? 0.3 : 0.0)
@@ -142,8 +143,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     func tabBarIsVisible() -> Bool {
         return self.tabBarController?.tabBar.frame.origin.y < UIScreen.mainScreen().bounds.height
     }
-
-
+    
+    
     override func viewWillDisappear(animated: Bool) {
         if playing == true {
             player.stop()
@@ -153,7 +154,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         super.viewWillDisappear(animated)
     }
     
-       override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -175,7 +176,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         
     }
     
-       
+    
     func updateProgress() {
         let timer = player.currentTime
         let seconds = NSInteger(player.currentTime/60)
@@ -183,14 +184,14 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         audioSlider.minimumValue = 0.0
         audioSlider.maximumValue = Float(player.duration)
         audioSlider.setValue(Float(player.currentTime), animated: true)
-//        timeLabel.text = NSString(format: "%.2f : %.2f", current_time, total) as String
+        //        timeLabel.text = NSString(format: "%.2f : %.2f", current_time, total) as String
         timeLabel.text = NSString(format: "%.2d:%.2d:%.2f",minutes, seconds, timer) as String
-
+        
     }
-
+    
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         if flag == true{
-//            btnPlay.enabled = true
+            //            btnPlay.enabled = true
             updateProgress()
             
             //show playing time in h/m/s format
@@ -228,11 +229,11 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             playing = false
         }
     }
-
+    
     
     @IBAction func stopPlaying(sender: UIButton) {
         player.stop()
-//        btnPlay.enabled = true
+        //        btnPlay.enabled = true
     }
     
     @IBAction func pausePlaying(sender: UIButton) {
@@ -289,7 +290,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                             //  print("Name: \(metadata.name)")
                             if let file = metadata as? Files.FileMetadata {
                                 
-                                /**** Pop up to show upload progress ****/
+                                /****** Show upload progress ****/
+                                /*
                                 let target = Int(file.size / 1000) // Total file size
                                 var counter = 0
                                 
@@ -298,23 +300,37 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                                     // value converts the file size to a value from 0 to 100 so we can measure the progress
                                     let value = Float(counter) / Float(target) * 100
                                     
-                                    self.progressBar.setProgress(value/100, animated: false)
+                                    /*** Pop Up Upload ***/
+                                    self.previewView = UIView(frame: CGRectMake(25, 250, 250, 100))
+                                    self.previewView.backgroundColor = UIColor(red: 5 , green: 5, blue: 5, alpha: 0.5)
+                                    self.view.addSubview(self.previewView)
+                                    
+                                    // Label inside view
+                                    let label = UILabel(frame: CGRectMake(10, -5, 200, 100))
+                                    label.text = "Upload progress"
+                                    self.previewView.addSubview(label)
+                                    
+                                    // Progressview inside view
+                                    let progressBar = UIProgressView(frame: CGRectMake(5, 60, 150, 10))
+                                    self.previewView.addSubview(progressBar)
+                                    progressBar.setProgress(value/100, animated: false)
+                                    
+                                    //self.progressBar.setProgress(value/100, animated: false)
                                     
                                     //print("\(value/100)%")
                                 }
+                                if counter == target{
+                                    self.previewView.hidden = true
+                                    self.previewView.removeFromSuperview()
+
+                                    print("counter \(counter)")
+
+                                }*/
+                                
                                 print("This is a file.")
                                 print("File size: \(file.size)")
                                 print("int size: \(Int(file.size / 1000))")
                             }
-                            
-                            
-                            /*
-                            var uploadProgress: UIProgressView!
-                            uploadProgress.setProgress(0, animated: true)
-                            let uploadView = UIAlertView(title: "upload audio", message: "upoading", delegate: self, cancelButtonTitle: "Cancel")
-                            uploadView.addSubview(uploadProgress)
-                            uploadView.show()
-                            */
                             
                             
                         } else {
@@ -327,12 +343,12 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         else{
             print("User not authorized in Dropbox")
         }
-
+        
     }
     
     
     @IBAction func deleteAudioFile(sender: UIButton) {
-
+        
         /*** Pop up confirmation to delete file ***/
         
         let alert = UIAlertController(title: "Delete Audio File", message: "Are you sure?", preferredStyle: .Alert)
@@ -346,9 +362,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             }
         })
         let actionNo = UIAlertAction(title: "No", style: .Default, handler: {(alert: UIAlertAction) in
-//            self.btnPause.hidden = true
-//            self.btnPlay.hidden = false
-            self.player.play()
+            self.btnPause.hidden = true
+            self.btnPlay.hidden = false
         })
         alert.addAction(actionYes)
         alert.addAction(actionNo)
@@ -360,7 +375,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     func deleteAudioFile(){
         performSegueWithIdentifier("playAudioCell", sender: nil)
     }
-
+    
     /*
     // MARK: - Navigation
     
