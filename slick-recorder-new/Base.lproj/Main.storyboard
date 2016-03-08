@@ -306,12 +306,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aiD-Qt-4Qr">
-                                <rect key="frame" x="178" y="513" width="245" height="2"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="iya-Bc-Ta0"/>
-                                </constraints>
-                            </progressView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5Q-uR-jJx" customClass="EZAudioPlotGL">
                                 <rect key="frame" x="62" y="91" width="476" height="149"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -328,9 +322,7 @@
                             <constraint firstItem="ynm-Ng-r40" firstAttribute="leading" secondItem="TIY-B6-wDw" secondAttribute="leadingMargin" id="SbR-gD-SrK"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="6tF-xh-njN" secondAttribute="bottom" constant="112" id="VpP-bq-k0e"/>
                             <constraint firstItem="v5Q-uR-jJx" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="bKo-xd-FXc"/>
-                            <constraint firstItem="aiD-Qt-4Qr" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="bjr-Pz-DNc"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="afP-eG-Pbj" secondAttribute="bottom" constant="26" id="c2u-yN-Aax"/>
-                            <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="aiD-Qt-4Qr" secondAttribute="bottom" constant="36" id="dOf-q9-bsy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eVq-2L-Ms5" secondAttribute="trailing" constant="60" id="l0s-ip-eh9"/>
                             <constraint firstItem="afP-eG-Pbj" firstAttribute="trailing" secondItem="TIY-B6-wDw" secondAttribute="trailingMargin" id="m42-tN-54d"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="ynm-Ng-r40" secondAttribute="bottom" constant="25" id="pKB-V8-MUL"/>
@@ -347,7 +339,6 @@
                         <outlet property="btnPause" destination="6tF-xh-njN" id="oLp-Rr-5kj"/>
                         <outlet property="btnPlay" destination="HBB-TW-2dc" id="JjV-ji-ZQj"/>
                         <outlet property="btnStop" destination="eVq-2L-Ms5" id="eVK-Dh-OV7"/>
-                        <outlet property="progressBar" destination="aiD-Qt-4Qr" id="ui8-cH-oq3"/>
                         <outlet property="timeLabel" destination="oeE-ho-maV" id="pGW-OM-gef"/>
                         <outlet property="totalTime" destination="gDl-bS-cCB" id="Cyd-X4-Sh4"/>
                     </connections>

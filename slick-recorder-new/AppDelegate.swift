@@ -28,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let authResult = Dropbox.handleRedirectURL(url) {
             switch authResult {
-            case .Success(_):
+            case .Success(let token):
                 print("Success! User is logged into Dropbox.")
-            case .Error( _, let description):
+            case .Error( let error, let description):
                 print("Error: \(description)")
             }
         }

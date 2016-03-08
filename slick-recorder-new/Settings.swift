@@ -27,7 +27,8 @@ class Settings: UIViewController{
         // Show dropbox user name on settings window
         if let client = Dropbox.authorizedClient {
             // Get the current user's account info
-            client.usersGetCurrentAccount().response { response, error in
+//            client.usersGetCurrentAccount().response { response, error in
+            client.users.getCurrentAccount().response{ response, error in
                 if let account = response {
                     self.userName.text = account.name.givenName
                 } else {
@@ -50,7 +51,7 @@ class Settings: UIViewController{
     }
 
     @IBAction func dropboxSwitch(sender: UISwitch) {
-        
+//        Dropbox.authorizeFromController(self)
         NSUserDefaults.standardUserDefaults().setBool(dropboxSwitch.on, forKey: "open")
 
         if sender.on {

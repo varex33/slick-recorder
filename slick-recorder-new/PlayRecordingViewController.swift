@@ -18,7 +18,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var audioPlot: EZAudioPlotGL!
     @IBOutlet weak var btnPause: UIButton!
-    @IBOutlet weak var progressBar: UIProgressView!
+
     
     // EZAUDIO
     var ezPlayer : EZAudioPlayer!
@@ -42,7 +42,6 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressBar.setProgress(0, animated: false)
         let dir = dirPath.getRecordingDirectory()
         do{
             // PATH TO AUDIO FILE
@@ -253,7 +252,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         if let client = Dropbox.authorizedClient {
             
             // Get the current user's account info
-            client.usersGetCurrentAccount().response { response, error in
+            client.users.getCurrentAccount().response{ response, error in
                 if let account = response {
                     print("Hello \(account.name.givenName)")
                 } else {
@@ -262,7 +261,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             }
             
             // List folder
-            client.filesListFolder(path: "").response { response, error in
+//            client.users.getCurrentAccount().response{ response, error in
+            client.files.listFolder(path: "").response { response, error in
                 if let result = response {
                     print("Folder contents:")
                     for entry in result.entries {
@@ -279,28 +279,19 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             let recordingPath = dirPath.getRecordingDirectory()+"/"+recordedAudio.audioTitle
             let data = NSData(contentsOfFile: recordingPath)
             
-            client.filesUpload(path: "/"+recordedAudio.audioTitle, body: data!).response { response, error in
+            client.files.upload(path: "/"+recordedAudio.audioTitle, body: data!).response { response, error in
                 if let metadata = response {
                     print("Uploaded file name: \(metadata.name)")
                     print("Uploaded file revision: \(metadata.rev)")
                     
                     // Get file (or folder) metadata
-                    client.filesGetMetadata(path: "/"+self.recordedAudio.audioTitle).response { response, error in
+                    client.files.getMetadata(path: "/"+self.recordedAudio.audioTitle).response { response, error in
                         if let metadata = response {
                             //  print("Name: \(metadata.name)")
                             if let file = metadata as? Files.FileMetadata {
                                 
-                                /****** Show upload progress ****/
-                                /*
-                                let target = Int(file.size / 1000) // Total file size
-                                var counter = 0
+                                /****** Subview to show upload progress ****/
                                 
-                                while counter < target{
-                                    counter++
-                                    // value converts the file size to a value from 0 to 100 so we can measure the progress
-                                    let value = Float(counter) / Float(target) * 100
-                                    
-                                    /*** Pop Up Upload ***/
                                     self.previewView = UIView(frame: CGRectMake(25, 250, 250, 100))
                                     self.previewView.backgroundColor = UIColor(red: 5 , green: 5, blue: 5, alpha: 0.5)
                                     self.view.addSubview(self.previewView)
@@ -309,23 +300,34 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                                     let label = UILabel(frame: CGRectMake(10, -5, 200, 100))
                                     label.text = "Upload progress"
                                     self.previewView.addSubview(label)
+                                
+                                client.files.upload(path: recordingPath, body: data!).progress({(bytesWritten : Int64, totalBytesWritten : Int64, totalBytesExpectedToWrite : Int64) -> Void in
                                     
-                                    // Progressview inside view
-                                    let progressBar = UIProgressView(frame: CGRectMake(5, 60, 150, 10))
-                                    self.previewView.addSubview(progressBar)
-                                    progressBar.setProgress(value/100, animated: false)
+                                    let uploadProgress : Float  = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite) as Float;
+                                  //  print(uploadProgress)
                                     
-                                    //self.progressBar.setProgress(value/100, animated: false)
-                                    
-                                    //print("\(value/100)%")
-                                }
-                                if counter == target{
-                                    self.previewView.hidden = true
-                                    self.previewView.removeFromSuperview()
+                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                        // Progressview inside view
+                                        let progressBar = UIProgressView(frame: CGRectMake(5, 60, 200, 10))
+                                        let progressLabel = UILabel(frame: CGRectMake(80, 60, 150, 40))
+                                        self.previewView.addSubview(progressBar)
+                                        self.previewView.addSubview(progressLabel)
 
-                                    print("counter \(counter)")
-
-                                }*/
+                                        // Upadate progress bar
+                                        progressBar.progress = uploadProgress
+                                        // Show progress in label
+//                                        progressLabel.text = "\(uploadProgress * 100)%"
+                                        progressLabel.text = "\(uploadProgress)%"
+                                        
+                                        
+                                        // If upload is completed delete pop up
+                                        if totalBytesWritten == totalBytesExpectedToWrite{
+                                            self.previewView.removeFromSuperview()
+                                        }
+                                        
+                                    });
+                                    
+                                });
                                 
                                 print("This is a file.")
                                 print("File size: \(file.size)")

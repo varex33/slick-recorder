@@ -7,385 +7,306 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		048C2CF88075F00658C826D63FA56315 /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCB4181AB07FB40479F145E2821A7FB /* EZPlot.m */; };
-		0C16CD4EC7A54E3EDA13CE953C877B81 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		0D58BDE3907BA7DE4055DF97E844EDA8 /* EZAudioFloatData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC2342E208C9B3532BDA7F1864BCCD0 /* EZAudioFloatData.m */; };
-		0D752FCCB6F74C8121837C377623BBA8 /* EZOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B27C18C8F100703B7411FB3623DCF0 /* EZOutput.m */; };
-		0EFD1FF643346FF85C83679F659672CA /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4711C9E4FD1434B139552966DB5440D /* Stream.swift */; };
-		1121F72C55FE61BF7862AB80DE5C252D /* BabelValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895A61EC45D38215A24B7E84762ED880 /* BabelValidators.swift */; };
-		144647B98725CD3445178F02C5C7593B /* EZAudioFloatConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2158259ED5D62CD3E8462EE1D78540 /* EZAudioFloatConverter.m */; };
-		160564F40D913B70CDC5F842C20587A9 /* EZAudioFFT.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E23049E9B084DD0174BBE01C181F82 /* EZAudioFFT.m */; };
-		1CA52AFA90462BA53DF229FB2690FEBF /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 84A136DC02F7E735C3B92CB95DD186FB /* TPCircularBuffer.c */; };
-		20F47D3CFB1BF8B28404EB06E17DA983 /* EZAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD1FF51108719C4086B44F5DDC1A16A /* EZAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22548636623D057D799F6DF34859F15E /* SwiftyDropbox.h in Headers */ = {isa = PBXBuildFile; fileRef = A063B3F24AAA2CC651BB36FA67053624 /* SwiftyDropbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		279725D27633FC93DAD75142E0CA4C21 /* EZAudioFloatConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 096E475AFA7187FD797A19BAF6A3138E /* EZAudioFloatConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C5996ACDE4403D2D502807884C3FF7A /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381C7377140B56924A1BC040306E160 /* Sharing.swift */; };
-		2FF8B344EB4D5BD8865604BA2F48AA67 /* EZOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE3D9EAA4E39DF58F173823D3C9535B /* EZOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3036059399576F63123F2F63F6D95E82 /* SwiftyDropbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B6CBEBC247E1581792FC36EBA1848E /* SwiftyDropbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30A8F35FCAB29F5FBFC9F3F7E25A3B6B /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFDBC8D925FC26648B8378DE860FF5B /* ServerTrustPolicy.swift */; };
-		32A4E742DF3B37F80DD5084022ACA7B6 /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 20FF9FFB9963DFA797A7A960EBB94441 /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 48CEFA685E1078ADBA2048252281A98E /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E9392CB5BD9C0CC47B04EDB40639558 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8995DB619BBF9D1584F814BBC5C36 /* Validation.swift */; };
-		44B8E42D6E8EE3E0524DFA98CB377D0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
-		4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEE9577A1CFD707EE8152BB73B0139 /* EZAudioUtilities.m */; };
-		52C2705DB40262B8928D9EB3A02B31BB /* EZAudioPlotGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A19A85C281E709C1AFE202D26F53521 /* EZAudioPlotGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		555EDB63D0933185850181BB795D1757 /* EZAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F3EEFFE096F7E59A733211AEAC4797 /* EZAudioFile.m */; };
-		5759E1633AB2AF8D732882034BE6A0EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
-		593CC7717DE07063E27DFC943986913C /* EZAudioPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = CB245C0D431BCFCB31F1D1794008909E /* EZAudioPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		59E09171382D6891D9A33F22E847E131 /* EZAudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 414C01C180BFACE9B2CB6BCFEA56ECC1 /* EZAudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AD593AB5E6DED3712043D43FEA43F53 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FCCA5DA6EF45F8E36FCBE7ABAC7413 /* Users.swift */; };
-		5B9AF696C3DA1C8D0FFB1BC72736F24D /* EZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 391A06F85BECA88CFF122D52FD4FDD80 /* EZAudioPlayer.m */; };
-		5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = B10620C1CE9503E96BC8D9021C44C461 /* EZRecorder.m */; };
-		60C72C457C8AC8A5CFD6D055CF123649 /* BabelSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD085B71E71779737CDE0C0B7D3F2736 /* BabelSerializers.swift */; };
-		61137E758A762DBADEAAE6454CB06EA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
-		62E5E44FC43C225CFDD494B96B4BFA0E /* SecurityUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B31C017224C092DE82EAE7673BB6AB1 /* SecurityUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		670463425EBAD31BDF5AC15A8B463DE1 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7B6381D24B3E6A615AE03D381E987 /* SecurityUtil.m */; };
-		69A447D12E60E5C3451DA30C6BB4BF7F /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD5ADCF26C4C8345E4DF9F983B5F8F /* Manager.swift */; };
-		6E739730785C355ECB014B6BEF854C0D /* EZMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = 6342C7A25652FEC05D5BB39905191F3D /* EZMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72EC1ECA88D2DCC3DCABA09ECB087D9F /* EZAudioPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D61BA092B4C00702BFDB0F4106E9BC /* EZAudioPlot.m */; };
-		82D88EC77FD734D0DBD5547DE857B377 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C750CEEBD0FCB8A885A87BBBBFCDD27 /* Accelerate.framework */; };
-		848CEFBFC69DEBAF0E18885F3269F439 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0529231D4F13077BFEE2EBCDC579C75 /* ResponseSerialization.swift */; };
-		84FEF3DF870A7333ADDEC3F0E2C5D1C1 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6691BA10803AE1A7790952A7FE3A6BBE /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86D303C98C39D2076C8F28C660C452E3 /* EZAudioDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 606E3FBEEC90B2094D46EA9575793034 /* EZAudioDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8CD97DBC0B1915AF4438EB7FF8E72E19 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72988F7D1529977FF4AAA621ABD8557B /* Client.swift */; };
-		9077ECA2FA7B9C5D73365490A3D8898F /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99960E7A5B80F6F2C304CD58205458D /* Download.swift */; };
-		9504F6C58BFE0BD0F71F0E22AD50ED73 /* EZAudioPlotGL.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9FC8398E84B6219F66FF8D2DD4E11 /* EZAudioPlotGL.m */; };
-		96DBE3A3486BECA8950824B11373720D /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9927C82009821789ED4156C8B4BA1206 /* EZMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 380AC2EECE2015EC4B1D3155DB463B09 /* EZMicrophone.m */; };
-		9D0E304F20B176BF33D6AE23CF6E600B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFD45B881FF0D76949E5362DD1CD674 /* Alamofire.framework */; };
-		A215FAB60CB15B6E5FA3A15E9E350D7D /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5726F825E045AAD9E0E062DDC07C1786 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7114123845731BEB62F911783CB3A1C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7EA7346A352A15F67228D78B65105A /* GLKit.framework */; };
-		A8B5EDB7371475F62767B297B1A10CDE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B798C747B09CBBDC5819511D24B70 /* ParameterEncoding.swift */; };
-		A9E55B79610B0DA9694E5B85F3309889 /* EZAudioFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 05B357D014E2BB7CD831E414F587C2BF /* EZAudioFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AECD157D67D5476DD7E36F49946CC09A /* EZAudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = DA4F9C54D812EE4FE49628FDA2A85A05 /* EZAudioDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1FCCA6C435787351F76AA10C59BB945 /* EZAudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71E92820B6812F9DDEA471F7ED6DDE /* EZAudio-dummy.m */; };
-		B51FB9E6A881A6B6F466DA1E29347E6F /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB885EB92F6211FE8AA71A062A30526 /* Files.swift */; };
-		B950D61809F1FE73B009AD6CEC57E396 /* EZPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F012D47D8A1759D7E7D97D681CBAAF /* EZPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB52792A18A6B1BCDE8E11D33538F58C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4DEAB08189CC80861AFE5B7AD68CF /* Auth.swift */; };
-		BD6752FF69879F57E20AFF591F605531 /* EZAudioUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F47330C5C7F0869BBECDE42090441A /* EZAudioUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD8A0C43D88D95AF8555391F9734F559 /* SwiftyDropbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48143E857068570986DAEA974C0F31F5 /* SwiftyDropbox-dummy.m */; };
-		D39B20327B1DAF6D8753ED5685DDE6DC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279CD60FB582EFEBF0278AF23CFC76EF /* MultipartFormData.swift */; };
-		D4825C79AF93929DB23D19CAA03D5A6B /* EZAudioDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701D5D6C2B26222A283C6E84C550D1F /* EZAudioDisplayLink.m */; };
-		D5AD4575375228383422C3B7A5218327 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */; };
-		D8066517E6029512E485DD79B9C12CD1 /* EZAudioFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A9AB60B0CC90442592005C0B3EB1552 /* EZAudioFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8136D3B59D4753690000387A8082B54 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E70411EFD88AE6923D87C34343E1A2CD /* Alamofire-dummy.m */; };
-		DF2620A17006BE1EA4CFDF1391951FB4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165D976BFA6B137A5A6003A743A928AB /* AudioToolbox.framework */; };
-		E0A752A13B9F1E6DA87803279914F488 /* DropboxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7343B99BB174D0F34509D21CC7B75 /* DropboxClient.swift */; };
-		E6D041ABFBB48D9F1D8AA96E7D4C6C34 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D7C54E3A96B9E01DF5B2C3D0AE33F /* Result.swift */; };
-		E7B226D8BB16471AD63665A794036E44 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816783172D4B1284D0472935D053A8DD /* Upload.swift */; };
-		E816509B4E3564E1A117CBDC0D845D69 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31B616116E72EA2BC241E80A8C7B0A7 /* Alamofire.swift */; };
-		F16FEF1CB9703FE1887C8A618B84B7C6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6E952E941D5CD4B967EE84E095849 /* Request.swift */; };
-		F1F0FF89D47FF317FE466BA3E8110503 /* EZAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0788877F4F4B19110FD7D8A6244CDB27 /* EZAudioDevice.m */; };
-		F307A784C6DB630B885E1FD28DF468AB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 167DC31FCF26891AAAB1C83794C89725 /* AVFoundation.framework */; };
-		F330F40464BBCD50479F04D5DBBA5585 /* TPCircularBuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D72194C85AC686ED473E65FACE4A8CD /* TPCircularBuffer.framework */; };
-		F5613C4EB9D2500636782C986CAC16A7 /* EZAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = D006FA3DA6129F36E247101A761DA80F /* EZAudio.m */; };
-		F8F61DAE346C6B0BD7CCB10DCA43AC78 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = 4275EA835EAAE7BE1EB9E1A0C153E0CB /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE1F95F519342B9266EB69B23B4336CF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176D112AFA228BE2FF5C3FA7BD012AD3 /* Error.swift */; };
+		06130DD733638893E3C6575CF1190FA3 /* BabelSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA698B41846F46A0FDF97C7725C330 /* BabelSerializers.swift */; };
+		06432C122D1CAE536122A621A3A86DC9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD0FA7EE743F01B3A6385702606A408 /* Alamofire.framework */; };
+		095406039B4D371E48D08B38A2975AC8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F4FC0E96AD28B5B64833CA278759FB /* Error.swift */; };
+		0A7C708EABEBB243413F207BF29E2EEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73DA709F2748233DD3740D060F7C86F /* Foundation.framework */; };
+		0B2C8AE2E0E41295AFF65E3A35BBA88B /* EZAudioFFT.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E536400C6FDC344C9FDD1E4F407B0D /* EZAudioFFT.m */; };
+		0FECC8D25EC8363F00C283B4F8910B5B /* EZAudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4765B5252C245E055263040FBE6D9958 /* EZAudio-dummy.m */; };
+		1074CF5E52B27E7931256039F3C0D0BD /* EZAudioUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D1204DE2D998264DC925F79260E7C /* EZAudioUtilities.m */; };
+		10C6F976C46C18269EC43DA531673AC8 /* SecurityUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = F70F91F9B188D2D46403A99CDCB263CD /* SecurityUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		156FBB280289B6753A30B28D8F620A47 /* SharingRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811054473AAF5BDB36F8E7DF4C3B6F24 /* SharingRoutes.swift */; };
+		16102E4E35FAA0FC4161282FECE56469 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1CB46F62A43CF6AA9D349A9A4BE7B /* Timeline.swift */; };
+		19CC031EB2BD46801DB27D0A451FF78F /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 06683FD4412C9BE38575E7BB110AA071 /* SecurityUtil.m */; };
+		1D3142712C36E98107619897B89C150B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0047A76CCCD086E1923AE1E859EF1 /* GLKit.framework */; };
+		20EFED6687563F9EEB47E935E5E82A82 /* EZAudioDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D72B54739289F27EC6C9C04ECB37E9F3 /* EZAudioDisplayLink.m */; };
+		27642F5D229E425924BCEFE1D890FC1A /* EZAudioPlotGL.m in Sources */ = {isa = PBXBuildFile; fileRef = D17F9662011149A31FFE09953A8C1191 /* EZAudioPlotGL.m */; };
+		2D3405986FC586FA6C0A5E0B6BA7E64E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA859431C17222392E1AFC33AFF52321 /* Validation.swift */; };
+		3228E20764B3FF8F81F38012775FA0B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73DA709F2748233DD3740D060F7C86F /* Foundation.framework */; };
+		34CCDCA848A701466256BC2927DA8856 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4E7F1A4160A4BE2173BB435CECF74 /* NetworkReachabilityManager.swift */; };
+		34EB675F84CE1CB5AE7B86DBA190B5E5 /* SwiftyDropbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63016B888CE848E7C5186AD1DA9BB1BF /* SwiftyDropbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3550E5A9A47ED6B8D4346C336805BE1A /* EZMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = B9ACF52981BCFE7DB147D6BFF53D7D23 /* EZMicrophone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3627BE59787CBAE4B7B24EA5D1BC1E32 /* EZAudioUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 420B5561AF22CA1B94F286E8E6FFBEDE /* EZAudioUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		372D7F5B9398BD48C891F9409AD261C5 /* FilesRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C64A577588B7382F87C46576E84BBC /* FilesRoutes.swift */; };
+		399022E0FFB04E9032B6A42C2449BA2A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3E4A352DE480B6C6D780AAD09E9BB /* Files.swift */; };
+		3AA555574B18AC7510094E8255D5595F /* EZAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = DD064BF2EE95450126BCF09E45D7AE96 /* EZAudio.m */; };
+		3B99A19C494DA8538542BB1690AE03BF /* EZAudioPlotGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 382A958011A29C9E77CA40385446F32E /* EZAudioPlotGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EA8F215C9C1432D74E5CCA4834AA8C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CD916A79B39E6FD4C300444B0AD51 /* ResponseSerialization.swift */; };
+		4081EA628AF0B73AC51FFB9D7AB3B89E /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821210C4C30D59D610DA533DDDFC5B0 /* Manager.swift */; };
+		469A28EF273185EF037DF3F68590A65E /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7D275AA0CE457FBE3943DE922DF855 /* Client.swift */; };
+		49EE1C058B166D56D86D480CF037B519 /* EZAudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 553DA59B2FB69F6D71ED60A1F40252A7 /* EZAudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5392B7409B94E0D7DB182E76FEF24371 /* EZAudioFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F64729C98EFE7A24D55CCE3AA79E79A /* EZAudioFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54EA18DA6BF9C03BA13FE7C1F8A5F7AE /* EZAudioPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = CC33EA5D09578E3F8024408FCF280794 /* EZAudioPlot.m */; };
+		5BC19E6E0F199276003F0AF96838BCE5 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFDBACA9501FC9A5D8068EEBE78A7C1 /* Upload.swift */; };
+		5CB05FBCB32D21E194B5ECF680CB6AE0 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BE36B1B978F4547F08C51B2471FABD /* Download.swift */; };
+		62E8346F03C03E7F4D631361F325689E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46DD54BF673B492DC6CCAE8E2C7E09 /* Response.swift */; };
+		639EDA0E26C0B0976959BF51EDB6981B /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A334C06BC07A528B219C0F939B8FC9B6 /* Sharing.swift */; };
+		65B9020C5A7BAFB87CEF1FB7D7970093 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65D64AF7E2DC94B43E2FE076154E33BB /* EZAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0683E70714F309717687AF35A1BBFBF0 /* EZAudioPlayer.m */; };
+		6A214027FE89DD7E039093A8FE171F17 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66451F9872D82EC8D098DC2327E41D1 /* Users.swift */; };
+		6A5CC0C310BD7F489342DC318802B331 /* EZOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA78D320C4963D45A79D426902C2FFB /* EZOutput.m */; };
+		6B1C823D068B7E280D3563052832E091 /* SwiftyDropbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE44435A10CC1E306D1B5DD98C203 /* SwiftyDropbox-dummy.m */; };
+		6BCB7AA84C9815BA766882D86D034371 /* EZAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BF2A5627EB8BC7830AF8E2D88EBAF5 /* EZAudioDevice.m */; };
+		6C51E5EFB1E02C9080989817EDB6039C /* EZAudioFloatData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F47A28C8BBEF1E6634F9C9104DF582A /* EZAudioFloatData.m */; };
+		7105AADA76BF50B76ED3159C8CE97D30 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6BABD0F368051E9C941304FBD72EE8 /* Team.swift */; };
+		71A0FEA19C44E479932A55922E9822CC /* UsersRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815AC9745CEF561F7EDE229EE556F9AF /* UsersRoutes.swift */; };
+		7685DD8498C2F9774068F0DAA07C79A6 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6431E074303EB28810FD1B82ADFC6C /* OAuth.swift */; };
+		7B48852C4D848FA2DA416A98F6425869 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E25A6CDEDF7C80FAF532F2B39C4355D /* ServerTrustPolicy.swift */; };
+		829850FBCE04A6D846CE258C355C9CDE /* DropboxUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EF971681D07A2C0C9A0705BEAA96A1 /* DropboxUtil.swift */; };
+		858710C352224DFDB75AAD05C9E03C50 /* EZAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 75456168EFEF4EC37D08FA5839E7AD23 /* EZAudioFile.m */; };
+		8DFCBA1D7B9551AEDFFC7FB0FC81D9C2 /* EZOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3F71F0F11FE73AE95B49175A2DBCE /* EZOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EB11202167FCDDF1257AAAB1D1FB244 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1849BA6CFF0F38219F9C3A1A5EB830 /* Alamofire.swift */; };
+		92A0332F3227006E2BB2CAB3EE332F84 /* EZPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = E74080BF38F2FE03D56D8812907C1D0D /* EZPlot.m */; };
+		9469DF81ECB494E84675969B5E13374C /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8E6FCE873AE5C00EFB8B13BB036A1DB /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9984834866B88EC823F4F7B531C854F1 /* DropboxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C76B84A0F542E185D81318743AB08 /* DropboxClient.swift */; };
+		9B292B2028D1820FBF1753D6C3C9717B /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7A8833E742B8816EC3315877A9156 /* Auth.swift */; };
+		9C483D6FC55AD732D4466F276FA76A95 /* EZAudioFloatConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 224732070E38B6D39A5CAFAFA1529501 /* EZAudioFloatConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A896AD647EBB56EB06F17C6759F90DEF /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 4364CE75DEA08464162C6FD95BCC52E5 /* TPCircularBuffer.c */; };
+		A8F42F1E91ABF34D9F8034133577E31D /* BabelValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA06FE17E4AB7D7F3653AC62E3B078F /* BabelValidators.swift */; };
+		A9891F01657A2D34772A2EF8E73CC68F /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B593983F40BCADE3BFC978C32D051A /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA314156AC500125F4078EE968DB14C6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52C2CF016A584373653407B6875BFD /* Result.swift */; };
+		AAA2CC04F78534B201412EBBB16DEA89 /* EZAudioDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = A6305D346D110D7C6595BDA89D1F0AC1 /* EZAudioDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABA8B5E03274A380CAD2E95EDFC35D6B /* EZPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = D3C71EEA5B017B36EEA33DB00099A847 /* EZPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADF19C953CE2A7D0B72EC93A81FCCC26 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5AAD94E4274EA52F2478128F931C07 /* Alamofire-dummy.m */; };
+		AE4CF87C02C042DF13ED5B21C4FDC1E0 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FAB5717A1D3173BDC3579D7880AF2 /* Stream.swift */; };
+		B0AFE65EFEB459959AD5C042AA56E797 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D499AC2408EA85CB0FBD6DE4DBAF75 /* Async.swift */; };
+		B3BE2B1BE7644B42473CCEB99B9E1ECD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED55FA7F45234CA3B298AE643661D5D /* AudioToolbox.framework */; };
+		B5B5030AED3770FBCC2E11BDD20F0F0F /* SwiftyDropbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 64DDEFFCEEE8BEBE65F465389BCAB570 /* SwiftyDropbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F7215924E31E3D795B5D3904ADD3A6 /* EZAudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 51E8C1354E1DF1F845810DAA0B0186EF /* EZAudioDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA885281602D968B641936B077FC9B62 /* EZMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = E137CE202D508E10B1D70C363BCC62A5 /* EZMicrophone.m */; };
+		BCDF3E92307E2E7B8C0B1D8F3C78A620 /* EZAudioFloatConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDF5EF7E346BDA50DDE1F6F0160C38 /* EZAudioFloatConverter.m */; };
+		BE41196F6A3903E59C3306FE3F8B43FE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74C1CE3D32AF99CC5F9FA70ABF44F5 /* Notifications.swift */; };
+		C0DB70AB368765DC64BFB5FEA75E0696 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA97BB6B2D92AC3B26CBFEBEFA1EB5 /* ParameterEncoding.swift */; };
+		C7B6DD7C0456C50289A2C381DFE9FA3F /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F15C73BE5716EE105DDD63128C28D4 /* MultipartFormData.swift */; };
+		C9115B715243EF6C5A919C36A649CB02 /* EZAudioPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = B19E0BCFE979FC0A7C817E2B50AF7024 /* EZAudioPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF3398B64472A645E5A0A4D71887E3A5 /* EZRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E46C1A13476B3B9D8077EF4A348EDD /* EZRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6F7260A4D8B3547086589B5A865599B /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E21E405B073AE692DF397FC383291EE /* TPCircularBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCB0FB7B0CE051884B06027FA90E2173 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE16A7C847D167D9908175436B27005 /* AVFoundation.framework */; };
+		DE01C3CC0DF24A2BBF2453E83ADD811E /* EZAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8438F16037C331A79ACC0E9C6FA93039 /* EZAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6F7DD6DC60B28F88DDE32B5310E8DE2 /* EZAudioFloatData.h in Headers */ = {isa = PBXBuildFile; fileRef = 74324B2F7CA57B8EDE4CC889CD1FD252 /* EZAudioFloatData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAE0DF87FD44D81528CD46857EE754C4 /* EZRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C7D060BA03BD80C1A805C86C46969E /* EZRecorder.m */; };
+		EC75F8F222A3AB9EDD24167CD882443F /* EZAudioFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = 25263754ADD5697492594AD36682CE0C /* EZAudioFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9BEC8972579358670289426DF3CAC1 /* Request.swift */; };
+		F022D6523B18913E5E2ED74F93525FCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73DA709F2748233DD3740D060F7C86F /* Foundation.framework */; };
+		F122852D68D079EAB689E79B75467DF2 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
+		F82198F34DD14753A42F4328CD5E7A6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73DA709F2748233DD3740D060F7C86F /* Foundation.framework */; };
+		FE8FDE0E9CE99311D4F22EDFCFCDD537 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2E86617AE50FB3E780771D662FD715 /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		057C0E2D78ACCC533E72E6696C213D58 /* PBXContainerItemProxy */ = {
+		172A844EF504C72CC0D9ABC352FCA6E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4B2F30D90D85A544E9EFE2A49D392C25;
-			remoteInfo = Alamofire;
-		};
-		4A841EF7562E1360AE266A6BA606723C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 584043DB422D53888A67B4DB0A3C5EB6;
+			remoteGlobalIDString = 945EC9F349CC760FD91DAC61CE94C770;
 			remoteInfo = SwiftyDropbox;
 		};
-		79493135EAB29708C71DBB670438A790 /* PBXContainerItemProxy */ = {
+		39E808117BBB67F16D366EFAC29BCC2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 001DFDFFBDE1DAFDF55B9CFE184B2781;
+			remoteGlobalIDString = AFE7EB5AF6BE103D8BA438EBD8A9EE8B;
 			remoteInfo = EZAudio;
 		};
-		CD050E5D1827014278B7A90C42E24933 /* PBXContainerItemProxy */ = {
+		495A8348DFD9805FEC9669E128D7556B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4B2F30D90D85A544E9EFE2A49D392C25;
+			remoteGlobalIDString = 79C040AFDDCE1BCBF6D8B5EB0B85887F;
+			remoteInfo = Alamofire;
+		};
+		B98A9428FFF48D41F82B10D0A6A31A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79C040AFDDCE1BCBF6D8B5EB0B85887F;
 			remoteInfo = Alamofire;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01F3EEFFE096F7E59A733211AEAC4797 /* EZAudioFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFile.m; path = EZAudio/EZAudioFile.m; sourceTree = "<group>"; };
-		05B357D014E2BB7CD831E414F587C2BF /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = EZAudio/EZAudioFile.h; sourceTree = "<group>"; };
-		0701D5D6C2B26222A283C6E84C550D1F /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
-		0788877F4F4B19110FD7D8A6244CDB27 /* EZAudioDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDevice.m; path = EZAudio/EZAudioDevice.m; sourceTree = "<group>"; };
-		096E475AFA7187FD797A19BAF6A3138E /* EZAudioFloatConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatConverter.h; path = EZAudio/EZAudioFloatConverter.h; sourceTree = "<group>"; };
-		0DC2342E208C9B3532BDA7F1864BCCD0 /* EZAudioFloatData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatData.m; path = EZAudio/EZAudioFloatData.m; sourceTree = "<group>"; };
-		10B6CBEBC247E1581792FC36EBA1848E /* SwiftyDropbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDropbox-umbrella.h"; sourceTree = "<group>"; };
-		165D976BFA6B137A5A6003A743A928AB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
-		167DC31FCF26891AAAB1C83794C89725 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		176D112AFA228BE2FF5C3FA7BD012AD3 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
-		177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		1807E7B0A8687EA194D0275D2C59488F /* SwiftyDropbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDropbox-prefix.pch"; sourceTree = "<group>"; };
-		1F8098826A53BDFBF408D7C9C48CD76B /* EZAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EZAudio.modulemap; sourceTree = "<group>"; };
-		20FF9FFB9963DFA797A7A960EBB94441 /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
-		21F47330C5C7F0869BBECDE42090441A /* EZAudioUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioUtilities.h; path = EZAudio/EZAudioUtilities.h; sourceTree = "<group>"; };
-		24E6E952E941D5CD4B967EE84E095849 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		25A4DEAB08189CC80861AFE5B7AD68CF /* Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = Source/Auth.swift; sourceTree = "<group>"; };
-		279CD60FB582EFEBF0278AF23CFC76EF /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		2A2158259ED5D62CD3E8462EE1D78540 /* EZAudioFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatConverter.m; path = EZAudio/EZAudioFloatConverter.m; sourceTree = "<group>"; };
-		2B3E6A9BEEC2EA747900464F3F5054BD /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01B3F71F0F11FE73AE95B49175A2DBCE /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = EZAudio/EZOutput.h; sourceTree = "<group>"; };
+		06683FD4412C9BE38575E7BB110AA071 /* SecurityUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SecurityUtil.m; path = Source/SecurityUtil.m; sourceTree = "<group>"; };
+		0683E70714F309717687AF35A1BBFBF0 /* EZAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlayer.m; path = EZAudio/EZAudioPlayer.m; sourceTree = "<group>"; };
+		0E21E405B073AE692DF397FC383291EE /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = EZAudio/TPCircularBuffer.h; sourceTree = "<group>"; };
+		16EA698B41846F46A0FDF97C7725C330 /* BabelSerializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelSerializers.swift; path = Source/BabelSerializers.swift; sourceTree = "<group>"; };
+		1A2E86617AE50FB3E780771D662FD715 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		1A4D1204DE2D998264DC925F79260E7C /* EZAudioUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioUtilities.m; path = EZAudio/EZAudioUtilities.m; sourceTree = "<group>"; };
+		1DE16A7C847D167D9908175436B27005 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		1F46DD54BF673B492DC6CCAE8E2C7E09 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		1F64729C98EFE7A24D55CCE3AA79E79A /* EZAudioFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFile.h; path = EZAudio/EZAudioFile.h; sourceTree = "<group>"; };
+		1FCDF5EF7E346BDA50DDE1F6F0160C38 /* EZAudioFloatConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatConverter.m; path = EZAudio/EZAudioFloatConverter.m; sourceTree = "<group>"; };
+		224732070E38B6D39A5CAFAFA1529501 /* EZAudioFloatConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatConverter.h; path = EZAudio/EZAudioFloatConverter.h; sourceTree = "<group>"; };
+		2423C544EEC501EA0A8B210C858AD93E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25263754ADD5697492594AD36682CE0C /* EZAudioFFT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFFT.h; path = EZAudio/EZAudioFFT.h; sourceTree = "<group>"; };
+		25B593983F40BCADE3BFC978C32D051A /* EZAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudio.h; path = EZAudio/EZAudio.h; sourceTree = "<group>"; };
+		29E46C1A13476B3B9D8077EF4A348EDD /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = EZAudio/EZRecorder.h; sourceTree = "<group>"; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		2C750CEEBD0FCB8A885A87BBBBFCDD27 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		30193535625DC796A26A3F3665439268 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		30D7343B99BB174D0F34509D21CC7B75 /* DropboxClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropboxClient.swift; path = Source/DropboxClient.swift; sourceTree = "<group>"; };
-		34B27C18C8F100703B7411FB3623DCF0 /* EZOutput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZOutput.m; path = EZAudio/EZOutput.m; sourceTree = "<group>"; };
-		380AC2EECE2015EC4B1D3155DB463B09 /* EZMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZMicrophone.m; path = EZAudio/EZMicrophone.m; sourceTree = "<group>"; };
-		391A06F85BECA88CFF122D52FD4FDD80 /* EZAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlayer.m; path = EZAudio/EZAudioPlayer.m; sourceTree = "<group>"; };
-		414C01C180BFACE9B2CB6BCFEA56ECC1 /* EZAudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-umbrella.h"; sourceTree = "<group>"; };
-		4275EA835EAAE7BE1EB9E1A0C153E0CB /* EZAudioFloatData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatData.h; path = EZAudio/EZAudioFloatData.h; sourceTree = "<group>"; };
-		43EEE9577A1CFD707EE8152BB73B0139 /* EZAudioUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioUtilities.m; path = EZAudio/EZAudioUtilities.m; sourceTree = "<group>"; };
-		45F7B6381D24B3E6A615AE03D381E987 /* SecurityUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SecurityUtil.m; path = Source/SecurityUtil.m; sourceTree = "<group>"; };
-		48143E857068570986DAEA974C0F31F5 /* SwiftyDropbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyDropbox-dummy.m"; sourceTree = "<group>"; };
-		48CEFA685E1078ADBA2048252281A98E /* EZRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZRecorder.h; path = EZAudio/EZRecorder.h; sourceTree = "<group>"; };
-		4CF18BB79B439C9CD93D7FD7DD7AE1DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E3D7C54E3A96B9E01DF5B2C3D0AE33F /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		50A8995DB619BBF9D1584F814BBC5C36 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		517AE8E22873B2C4824B8653121A8760 /* EZAudio.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EZAudio.xcconfig; sourceTree = "<group>"; };
-		568B01A568858D72254B406A0C303DD4 /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		56F012D47D8A1759D7E7D97D681CBAAF /* EZPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZPlot.h; path = EZAudio/EZPlot.h; sourceTree = "<group>"; };
-		5726F825E045AAD9E0E062DDC07C1786 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		5A19A85C281E709C1AFE202D26F53521 /* EZAudioPlotGL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlotGL.h; path = EZAudio/EZAudioPlotGL.h; sourceTree = "<group>"; };
-		5A9AB60B0CC90442592005C0B3EB1552 /* EZAudioFFT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFFT.h; path = EZAudio/EZAudioFFT.h; sourceTree = "<group>"; };
-		5B31C017224C092DE82EAE7673BB6AB1 /* SecurityUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SecurityUtil.h; path = Source/SecurityUtil.h; sourceTree = "<group>"; };
-		606E3FBEEC90B2094D46EA9575793034 /* EZAudioDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDisplayLink.h; path = EZAudio/EZAudioDisplayLink.h; sourceTree = "<group>"; };
-		6342C7A25652FEC05D5BB39905191F3D /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
-		6691BA10803AE1A7790952A7FE3A6BBE /* TPCircularBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = EZAudio/TPCircularBuffer.h; sourceTree = "<group>"; };
-		69E23049E9B084DD0174BBE01C181F82 /* EZAudioFFT.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFFT.m; path = EZAudio/EZAudioFFT.m; sourceTree = "<group>"; };
-		6D72194C85AC686ED473E65FACE4A8CD /* TPCircularBuffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPCircularBuffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E1C05CBF7D9972B9C86EF42DDDE1B25 /* SwiftyDropbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyDropbox.xcconfig; sourceTree = "<group>"; };
-		72988F7D1529977FF4AAA621ABD8557B /* Client.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Source/Client.swift; sourceTree = "<group>"; };
-		75BD5ADCF26C4C8345E4DF9F983B5F8F /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		33F4FC0E96AD28B5B64833CA278759FB /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
+		37B7A8833E742B8816EC3315877A9156 /* Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = Source/Auth.swift; sourceTree = "<group>"; };
+		382A958011A29C9E77CA40385446F32E /* EZAudioPlotGL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlotGL.h; path = EZAudio/EZAudioPlotGL.h; sourceTree = "<group>"; };
+		3CD0FA7EE743F01B3A6385702606A408 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EFDBACA9501FC9A5D8068EEBE78A7C1 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		41BE36B1B978F4547F08C51B2471FABD /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		41D0047A76CCCD086E1923AE1E859EF1 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		420B5561AF22CA1B94F286E8E6FFBEDE /* EZAudioUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioUtilities.h; path = EZAudio/EZAudioUtilities.h; sourceTree = "<group>"; };
+		4364CE75DEA08464162C6FD95BCC52E5 /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = EZAudio/TPCircularBuffer.c; sourceTree = "<group>"; };
+		4508710F893618AC63DD9EF26563D129 /* EZAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4765B5252C245E055263040FBE6D9958 /* EZAudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EZAudio-dummy.m"; sourceTree = "<group>"; };
+		4CA83B4EA51B1A4DC908B8BC4E3F5285 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyDropbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D74C1CE3D32AF99CC5F9FA70ABF44F5 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		4DF3E4A352DE480B6C6D780AAD09E9BB /* Files.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Files.swift; path = Source/Files.swift; sourceTree = "<group>"; };
+		504B78068E23FB3110AFD134A71B7E81 /* SwiftyDropbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyDropbox.modulemap; sourceTree = "<group>"; };
+		51E8C1354E1DF1F845810DAA0B0186EF /* EZAudioDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDevice.h; path = EZAudio/EZAudioDevice.h; sourceTree = "<group>"; };
+		553DA59B2FB69F6D71ED60A1F40252A7 /* EZAudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-umbrella.h"; sourceTree = "<group>"; };
+		5668AB930C5B2E4CA2EFF06FD1268F0F /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		5B52C2CF016A584373653407B6875BFD /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		5D2FAB5717A1D3173BDC3579D7880AF2 /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
+		5E6431E074303EB28810FD1B82ADFC6C /* OAuth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuth.swift; path = Source/OAuth.swift; sourceTree = "<group>"; };
+		63016B888CE848E7C5186AD1DA9BB1BF /* SwiftyDropbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDropbox-umbrella.h"; sourceTree = "<group>"; };
+		64DDEFFCEEE8BEBE65F465389BCAB570 /* SwiftyDropbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyDropbox.h; path = Source/SwiftyDropbox.h; sourceTree = "<group>"; };
+		6E25A6CDEDF7C80FAF532F2B39C4355D /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		74324B2F7CA57B8EDE4CC889CD1FD252 /* EZAudioFloatData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioFloatData.h; path = EZAudio/EZAudioFloatData.h; sourceTree = "<group>"; };
+		74C7D060BA03BD80C1A805C86C46969E /* EZRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZRecorder.m; path = EZAudio/EZRecorder.m; sourceTree = "<group>"; };
+		7539FEA8F2D3B61480DF0E4471E59BA9 /* SwiftyDropbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyDropbox-prefix.pch"; sourceTree = "<group>"; };
+		75456168EFEF4EC37D08FA5839E7AD23 /* EZAudioFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFile.m; path = EZAudio/EZAudioFile.m; sourceTree = "<group>"; };
+		78BF2A5627EB8BC7830AF8E2D88EBAF5 /* EZAudioDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDevice.m; path = EZAudio/EZAudioDevice.m; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		7AD1FF51108719C4086B44F5DDC1A16A /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = EZAudio/EZAudioPlayer.h; sourceTree = "<group>"; };
-		7D252D02BE05D313F2BBC6F95883D032 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FFDBC8D925FC26648B8378DE860FF5B /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		816783172D4B1284D0472935D053A8DD /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
-		84A136DC02F7E735C3B92CB95DD186FB /* TPCircularBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = EZAudio/TPCircularBuffer.c; sourceTree = "<group>"; };
+		7B9BEC8972579358670289426DF3CAC1 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		7ED55FA7F45234CA3B298AE643661D5D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		7EF4E7F1A4160A4BE2173BB435CECF74 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		7F47A28C8BBEF1E6634F9C9104DF582A /* EZAudioFloatData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFloatData.m; path = EZAudio/EZAudioFloatData.m; sourceTree = "<group>"; };
+		811054473AAF5BDB36F8E7DF4C3B6F24 /* SharingRoutes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SharingRoutes.swift; path = Source/SharingRoutes.swift; sourceTree = "<group>"; };
+		815AC9745CEF561F7EDE229EE556F9AF /* UsersRoutes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsersRoutes.swift; path = Source/UsersRoutes.swift; sourceTree = "<group>"; };
+		81EF971681D07A2C0C9A0705BEAA96A1 /* DropboxUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropboxUtil.swift; path = Source/DropboxUtil.swift; sourceTree = "<group>"; };
+		823D83ABAEE5A88E660DF100C6553A5B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82C1CB46F62A43CF6AA9D349A9A4BE7B /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		83CDE44435A10CC1E306D1B5DD98C203 /* SwiftyDropbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyDropbox-dummy.m"; sourceTree = "<group>"; };
+		8438F16037C331A79ACC0E9C6FA93039 /* EZAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlayer.h; path = EZAudio/EZAudioPlayer.h; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		885B798C747B09CBBDC5819511D24B70 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		87F15C73BE5716EE105DDD63128C28D4 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		895A61EC45D38215A24B7E84762ED880 /* BabelValidators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelValidators.swift; path = Source/BabelValidators.swift; sourceTree = "<group>"; };
-		8CB885EB92F6211FE8AA71A062A30526 /* Files.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Files.swift; path = Source/Files.swift; sourceTree = "<group>"; };
-		959E56878F818EE889DA659A31244D51 /* EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-prefix.pch"; sourceTree = "<group>"; };
+		8A7D275AA0CE457FBE3943DE922DF855 /* Client.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Source/Client.swift; sourceTree = "<group>"; };
+		8E57B68402924B0027EDE37A9B98D637 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		920CA0931C630665BD81D191E35969EB /* EZAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZAudio-prefix.pch"; sourceTree = "<group>"; };
+		94E536400C6FDC344C9FDD1E4F407B0D /* EZAudioFFT.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioFFT.m; path = EZAudio/EZAudioFFT.m; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		9F042891A2EBDEEBE5F657F35EBF7515 /* SwiftyDropbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyDropbox.modulemap; sourceTree = "<group>"; };
-		A0529231D4F13077BFEE2EBCDC579C75 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		A063B3F24AAA2CC651BB36FA67053624 /* SwiftyDropbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyDropbox.h; path = Source/SwiftyDropbox.h; sourceTree = "<group>"; };
-		A99960E7A5B80F6F2C304CD58205458D /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
-		ABFD45B881FF0D76949E5362DD1CD674 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADE3D9EAA4E39DF58F173823D3C9535B /* EZOutput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZOutput.h; path = EZAudio/EZOutput.h; sourceTree = "<group>"; };
-		AFCB4181AB07FB40479F145E2821A7FB /* EZPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZPlot.m; path = EZAudio/EZPlot.m; sourceTree = "<group>"; };
-		B10620C1CE9503E96BC8D9021C44C461 /* EZRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZRecorder.m; path = EZAudio/EZRecorder.m; sourceTree = "<group>"; };
-		B21F0BDE39F70D0BAD12BF01044387AA /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		B4711C9E4FD1434B139552966DB5440D /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
-		B95F5AC39927194EF928D00B372F9CD7 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyDropbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1849BA6CFF0F38219F9C3A1A5EB830 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		A334C06BC07A528B219C0F939B8FC9B6 /* Sharing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sharing.swift; path = Source/Sharing.swift; sourceTree = "<group>"; };
+		A6305D346D110D7C6595BDA89D1F0AC1 /* EZAudioDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDisplayLink.h; path = EZAudio/EZAudioDisplayLink.h; sourceTree = "<group>"; };
+		AA859431C17222392E1AFC33AFF52321 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		AD5AAD94E4274EA52F2478128F931C07 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		B19E0BCFE979FC0A7C817E2B50AF7024 /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = EZAudio/EZAudioPlot.h; sourceTree = "<group>"; };
+		B58C76B84A0F542E185D81318743AB08 /* DropboxClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropboxClient.swift; path = Source/DropboxClient.swift; sourceTree = "<group>"; };
+		B60CD916A79B39E6FD4C300444B0AD51 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		B8E6FCE873AE5C00EFB8B13BB036A1DB /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		B9ACF52981BCFE7DB147D6BFF53D7D23 /* EZMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZMicrophone.h; path = EZAudio/EZMicrophone.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BD255E0DCB457D850BFBAB2889E35180 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		BF2022D0C9961654D6B816153455C8E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB245C0D431BCFCB31F1D1794008909E /* EZAudioPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioPlot.h; path = EZAudio/EZAudioPlot.h; sourceTree = "<group>"; };
+		C4D499AC2408EA85CB0FBD6DE4DBAF75 /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Source/Async.swift; sourceTree = "<group>"; };
+		C73DA709F2748233DD3740D060F7C86F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C9CF5EA3ADCAD89DCC344745F8B2DDC6 /* EZAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EZAudio.modulemap; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		CDFC05380AEA6EF3773F4E0463A92D02 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		D006FA3DA6129F36E247101A761DA80F /* EZAudio.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudio.m; path = EZAudio/EZAudio.m; sourceTree = "<group>"; };
+		CC33EA5D09578E3F8024408FCF280794 /* EZAudioPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlot.m; path = EZAudio/EZAudioPlot.m; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D0D61BA092B4C00702BFDB0F4106E9BC /* EZAudioPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlot.m; path = EZAudio/EZAudioPlot.m; sourceTree = "<group>"; };
+		D0820A00115BAF882DCC78A9507D3E2C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D17F9662011149A31FFE09953A8C1191 /* EZAudioPlotGL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlotGL.m; path = EZAudio/EZAudioPlotGL.m; sourceTree = "<group>"; };
+		D3C71EEA5B017B36EEA33DB00099A847 /* EZPlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZPlot.h; path = EZAudio/EZPlot.h; sourceTree = "<group>"; };
+		D525E9933C7B07FFF3DE0312FFC0CF5B /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		D72B54739289F27EC6C9C04ECB37E9F3 /* EZAudioDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioDisplayLink.m; path = EZAudio/EZAudioDisplayLink.m; sourceTree = "<group>"; };
+		D821210C4C30D59D610DA533DDDFC5B0 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		DA4F9C54D812EE4FE49628FDA2A85A05 /* EZAudioDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZAudioDevice.h; path = EZAudio/EZAudioDevice.h; sourceTree = "<group>"; };
-		DD7EA7346A352A15F67228D78B65105A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
-		E31B616116E72EA2BC241E80A8C7B0A7 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		E381C7377140B56924A1BC040306E160 /* Sharing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sharing.swift; path = Source/Sharing.swift; sourceTree = "<group>"; };
-		E6FCCA5DA6EF45F8E36FCBE7ABAC7413 /* Users.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Source/Users.swift; sourceTree = "<group>"; };
-		E70411EFD88AE6923D87C34343E1A2CD /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		DBD0AADCD23E4344F88C660B7BB360F2 /* EZAudio.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EZAudio.xcconfig; sourceTree = "<group>"; };
+		DD064BF2EE95450126BCF09E45D7AE96 /* EZAudio.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudio.m; path = EZAudio/EZAudio.m; sourceTree = "<group>"; };
+		DDA06FE17E4AB7D7F3653AC62E3B078F /* BabelValidators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelValidators.swift; path = Source/BabelValidators.swift; sourceTree = "<group>"; };
+		E137CE202D508E10B1D70C363BCC62A5 /* EZMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZMicrophone.m; path = EZAudio/EZMicrophone.m; sourceTree = "<group>"; };
+		E4BA97BB6B2D92AC3B26CBFEBEFA1EB5 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		E74080BF38F2FE03D56D8812907C1D0D /* EZPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZPlot.m; path = EZAudio/EZPlot.m; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA71E92820B6812F9DDEA471F7ED6DDE /* EZAudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EZAudio-dummy.m"; sourceTree = "<group>"; };
-		FD085B71E71779737CDE0C0B7D3F2736 /* BabelSerializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelSerializers.swift; path = Source/BabelSerializers.swift; sourceTree = "<group>"; };
-		FED9FC8398E84B6219F66FF8D2DD4E11 /* EZAudioPlotGL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZAudioPlotGL.m; path = EZAudio/EZAudioPlotGL.m; sourceTree = "<group>"; };
+		ECA78D320C4963D45A79D426902C2FFB /* EZOutput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZOutput.m; path = EZAudio/EZOutput.m; sourceTree = "<group>"; };
+		ECFBBEF3C41F1081E7D3660625AB0B7C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0C64A577588B7382F87C46576E84BBC /* FilesRoutes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FilesRoutes.swift; path = Source/FilesRoutes.swift; sourceTree = "<group>"; };
+		F1343751E4603C1CBBFF1C85B31CFAE6 /* SwiftyDropbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyDropbox.xcconfig; sourceTree = "<group>"; };
+		F66451F9872D82EC8D098DC2327E41D1 /* Users.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Source/Users.swift; sourceTree = "<group>"; };
+		F70F91F9B188D2D46403A99CDCB263CD /* SecurityUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SecurityUtil.h; path = Source/SecurityUtil.h; sourceTree = "<group>"; };
+		F91BEC5DB1D85267CF0976F48A41CA2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF6BABD0F368051E9C941304FBD72EE8 /* Team.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Team.swift; path = Source/Team.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14409D151BCE19B917E1ACDD56DC85F6 /* Frameworks */ = {
+		19D4FCA76F8A97D90E4B1CA55AE49E6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61137E758A762DBADEAAE6454CB06EA7 /* Foundation.framework in Frameworks */,
+				3228E20764B3FF8F81F38012775FA0B4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		523C575A0346BEAEA4E417A6848C69B5 /* Frameworks */ = {
+		AE50AD8953A2EC3157AA8B405A62D81F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44B8E42D6E8EE3E0524DFA98CB377D0A /* Foundation.framework in Frameworks */,
+				FE8FDE0E9CE99311D4F22EDFCFCDD537 /* Accelerate.framework in Frameworks */,
+				B3BE2B1BE7644B42473CCEB99B9E1ECD /* AudioToolbox.framework in Frameworks */,
+				DCB0FB7B0CE051884B06027FA90E2173 /* AVFoundation.framework in Frameworks */,
+				F022D6523B18913E5E2ED74F93525FCF /* Foundation.framework in Frameworks */,
+				1D3142712C36E98107619897B89C150B /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC8D313200A4FB7CEB46CF7ED5AF1861 /* Frameworks */ = {
+		B1729F851F648EC60EE93CDB3C8BAEAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D0E304F20B176BF33D6AE23CF6E600B /* Alamofire.framework in Frameworks */,
-				D5AD4575375228383422C3B7A5218327 /* Foundation.framework in Frameworks */,
+				F82198F34DD14753A42F4328CD5E7A6B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC58AFD2104C1BA0DD4166015D73112A /* Frameworks */ = {
+		FEE3F245C103C4B16A2F59BAE001FFA2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82D88EC77FD734D0DBD5547DE857B377 /* Accelerate.framework in Frameworks */,
-				DF2620A17006BE1EA4CFDF1391951FB4 /* AudioToolbox.framework in Frameworks */,
-				F307A784C6DB630B885E1FD28DF468AB /* AVFoundation.framework in Frameworks */,
-				5759E1633AB2AF8D732882034BE6A0EE /* Foundation.framework in Frameworks */,
-				A7114123845731BEB62F911783CB3A1C /* GLKit.framework in Frameworks */,
-				F330F40464BBCD50479F04D5DBBA5585 /* TPCircularBuffer.framework in Frameworks */,
+				06432C122D1CAE536122A621A3A86DC9 /* Alamofire.framework in Frameworks */,
+				0A7C708EABEBB243413F207BF29E2EEA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1BF4345532F4467A6E12EE3E583E519F /* Alamofire */ = {
+		3CF6D9762EED7100D8A50C314EBED99E /* SwiftyDropbox */ = {
 			isa = PBXGroup;
 			children = (
-				E31B616116E72EA2BC241E80A8C7B0A7 /* Alamofire.swift */,
-				A99960E7A5B80F6F2C304CD58205458D /* Download.swift */,
-				176D112AFA228BE2FF5C3FA7BD012AD3 /* Error.swift */,
-				75BD5ADCF26C4C8345E4DF9F983B5F8F /* Manager.swift */,
-				279CD60FB582EFEBF0278AF23CFC76EF /* MultipartFormData.swift */,
-				885B798C747B09CBBDC5819511D24B70 /* ParameterEncoding.swift */,
-				24E6E952E941D5CD4B967EE84E095849 /* Request.swift */,
-				A0529231D4F13077BFEE2EBCDC579C75 /* ResponseSerialization.swift */,
-				4E3D7C54E3A96B9E01DF5B2C3D0AE33F /* Result.swift */,
-				7FFDBC8D925FC26648B8378DE860FF5B /* ServerTrustPolicy.swift */,
-				B4711C9E4FD1434B139552966DB5440D /* Stream.swift */,
-				816783172D4B1284D0472935D053A8DD /* Upload.swift */,
-				50A8995DB619BBF9D1584F814BBC5C36 /* Validation.swift */,
-				2EFDE5C9929D626EC964C726DDAFDDF7 /* Support Files */,
+				C4D499AC2408EA85CB0FBD6DE4DBAF75 /* Async.swift */,
+				37B7A8833E742B8816EC3315877A9156 /* Auth.swift */,
+				16EA698B41846F46A0FDF97C7725C330 /* BabelSerializers.swift */,
+				DDA06FE17E4AB7D7F3653AC62E3B078F /* BabelValidators.swift */,
+				8A7D275AA0CE457FBE3943DE922DF855 /* Client.swift */,
+				B58C76B84A0F542E185D81318743AB08 /* DropboxClient.swift */,
+				81EF971681D07A2C0C9A0705BEAA96A1 /* DropboxUtil.swift */,
+				4DF3E4A352DE480B6C6D780AAD09E9BB /* Files.swift */,
+				F0C64A577588B7382F87C46576E84BBC /* FilesRoutes.swift */,
+				5E6431E074303EB28810FD1B82ADFC6C /* OAuth.swift */,
+				F70F91F9B188D2D46403A99CDCB263CD /* SecurityUtil.h */,
+				06683FD4412C9BE38575E7BB110AA071 /* SecurityUtil.m */,
+				A334C06BC07A528B219C0F939B8FC9B6 /* Sharing.swift */,
+				811054473AAF5BDB36F8E7DF4C3B6F24 /* SharingRoutes.swift */,
+				64DDEFFCEEE8BEBE65F465389BCAB570 /* SwiftyDropbox.h */,
+				FF6BABD0F368051E9C941304FBD72EE8 /* Team.swift */,
+				F66451F9872D82EC8D098DC2327E41D1 /* Users.swift */,
+				815AC9745CEF561F7EDE229EE556F9AF /* UsersRoutes.swift */,
+				D101072F97D7EC54430DA06AE6983A93 /* Support Files */,
 			);
-			path = Alamofire;
+			path = SwiftyDropbox;
 			sourceTree = "<group>";
 		};
-		1D77E66D1B7792D74B62FBF79E63AB03 /* Support Files */ = {
+		626BE02B583652D883A14A0561438CB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F8098826A53BDFBF408D7C9C48CD76B /* EZAudio.modulemap */,
-				517AE8E22873B2C4824B8653121A8760 /* EZAudio.xcconfig */,
-				FA71E92820B6812F9DDEA471F7ED6DDE /* EZAudio-dummy.m */,
-				959E56878F818EE889DA659A31244D51 /* EZAudio-prefix.pch */,
-				414C01C180BFACE9B2CB6BCFEA56ECC1 /* EZAudio-umbrella.h */,
-				7D252D02BE05D313F2BBC6F95883D032 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/EZAudio";
-			sourceTree = "<group>";
-		};
-		1E3F4D3F28A52F12D61937B6F748F7F2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2B3E6A9BEEC2EA747900464F3F5054BD /* Alamofire.framework */,
-				568B01A568858D72254B406A0C303DD4 /* EZAudio.framework */,
-				30193535625DC796A26A3F3665439268 /* Pods.framework */,
-				B95F5AC39927194EF928D00B372F9CD7 /* SwiftyDropbox.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		22936FD9898FC76E6D41A54F34A479DB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1BF4345532F4467A6E12EE3E583E519F /* Alamofire */,
-				9E28F6CB7FAAFDE65000ED16384AB1D8 /* EZAudio */,
-				BF6C3186B792EEB253C6D05360D645C0 /* SwiftyDropbox */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2EFDE5C9929D626EC964C726DDAFDDF7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BD255E0DCB457D850BFBAB2889E35180 /* Alamofire.modulemap */,
-				CDFC05380AEA6EF3773F4E0463A92D02 /* Alamofire.xcconfig */,
-				E70411EFD88AE6923D87C34343E1A2CD /* Alamofire-dummy.m */,
-				B21F0BDE39F70D0BAD12BF01044387AA /* Alamofire-prefix.pch */,
-				5726F825E045AAD9E0E062DDC07C1786 /* Alamofire-umbrella.h */,
-				BF2022D0C9961654D6B816153455C8E9 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
-		5AE51FF9189F3B38999E81A4C2E90B7D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				ABFD45B881FF0D76949E5362DD1CD674 /* Alamofire.framework */,
-				6D72194C85AC686ED473E65FACE4A8CD /* TPCircularBuffer.framework */,
-				9F196D328C20AC3205CB72A7F5EDAA48 /* iOS */,
+				3CD0FA7EE743F01B3A6385702606A408 /* Alamofire.framework */,
+				E0E8A2A77A554C9923FFA36B8F82ADCD /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5C0FA78A2B6B0E7E11C54CADB3E1FB01 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				20FF9FFB9963DFA797A7A960EBB94441 /* EZAudio.h */,
-				D006FA3DA6129F36E247101A761DA80F /* EZAudio.m */,
-				DA4F9C54D812EE4FE49628FDA2A85A05 /* EZAudioDevice.h */,
-				0788877F4F4B19110FD7D8A6244CDB27 /* EZAudioDevice.m */,
-				606E3FBEEC90B2094D46EA9575793034 /* EZAudioDisplayLink.h */,
-				0701D5D6C2B26222A283C6E84C550D1F /* EZAudioDisplayLink.m */,
-				5A9AB60B0CC90442592005C0B3EB1552 /* EZAudioFFT.h */,
-				69E23049E9B084DD0174BBE01C181F82 /* EZAudioFFT.m */,
-				05B357D014E2BB7CD831E414F587C2BF /* EZAudioFile.h */,
-				01F3EEFFE096F7E59A733211AEAC4797 /* EZAudioFile.m */,
-				096E475AFA7187FD797A19BAF6A3138E /* EZAudioFloatConverter.h */,
-				2A2158259ED5D62CD3E8462EE1D78540 /* EZAudioFloatConverter.m */,
-				4275EA835EAAE7BE1EB9E1A0C153E0CB /* EZAudioFloatData.h */,
-				0DC2342E208C9B3532BDA7F1864BCCD0 /* EZAudioFloatData.m */,
-				7AD1FF51108719C4086B44F5DDC1A16A /* EZAudioPlayer.h */,
-				391A06F85BECA88CFF122D52FD4FDD80 /* EZAudioPlayer.m */,
-				CB245C0D431BCFCB31F1D1794008909E /* EZAudioPlot.h */,
-				D0D61BA092B4C00702BFDB0F4106E9BC /* EZAudioPlot.m */,
-				5A19A85C281E709C1AFE202D26F53521 /* EZAudioPlotGL.h */,
-				FED9FC8398E84B6219F66FF8D2DD4E11 /* EZAudioPlotGL.m */,
-				21F47330C5C7F0869BBECDE42090441A /* EZAudioUtilities.h */,
-				43EEE9577A1CFD707EE8152BB73B0139 /* EZAudioUtilities.m */,
-				6342C7A25652FEC05D5BB39905191F3D /* EZMicrophone.h */,
-				380AC2EECE2015EC4B1D3155DB463B09 /* EZMicrophone.m */,
-				ADE3D9EAA4E39DF58F173823D3C9535B /* EZOutput.h */,
-				34B27C18C8F100703B7411FB3623DCF0 /* EZOutput.m */,
-				56F012D47D8A1759D7E7D97D681CBAAF /* EZPlot.h */,
-				AFCB4181AB07FB40479F145E2821A7FB /* EZPlot.m */,
-				48CEFA685E1078ADBA2048252281A98E /* EZRecorder.h */,
-				B10620C1CE9503E96BC8D9021C44C461 /* EZRecorder.m */,
-				84A136DC02F7E735C3B92CB95DD186FB /* TPCircularBuffer.c */,
-				6691BA10803AE1A7790952A7FE3A6BBE /* TPCircularBuffer.h */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		6894538C128454DF429231CF4CFDCBA2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4CF18BB79B439C9CD93D7FD7DD7AE1DF /* Info.plist */,
-				9F042891A2EBDEEBE5F657F35EBF7515 /* SwiftyDropbox.modulemap */,
-				6E1C05CBF7D9972B9C86EF42DDDE1B25 /* SwiftyDropbox.xcconfig */,
-				48143E857068570986DAEA974C0F31F5 /* SwiftyDropbox-dummy.m */,
-				1807E7B0A8687EA194D0275D2C59488F /* SwiftyDropbox-prefix.pch */,
-				10B6CBEBC247E1581792FC36EBA1848E /* SwiftyDropbox-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyDropbox";
 			sourceTree = "<group>";
 		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
@@ -410,32 +331,52 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				5AE51FF9189F3B38999E81A4C2E90B7D /* Frameworks */,
-				22936FD9898FC76E6D41A54F34A479DB /* Pods */,
-				1E3F4D3F28A52F12D61937B6F748F7F2 /* Products */,
+				626BE02B583652D883A14A0561438CB2 /* Frameworks */,
+				9859D751F89F247790ABEC64C55F9AF6 /* Pods */,
+				CF6DC005C447141BED083E0DD51642AF /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9E28F6CB7FAAFDE65000ED16384AB1D8 /* EZAudio */ = {
+		9859D751F89F247790ABEC64C55F9AF6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5C0FA78A2B6B0E7E11C54CADB3E1FB01 /* Core */,
-				1D77E66D1B7792D74B62FBF79E63AB03 /* Support Files */,
+				C738CD9EC8150452B9549B75119021ED /* Alamofire */,
+				A8DAC0DD8A5890FBB891BD68B7A00ED9 /* EZAudio */,
+				3CF6D9762EED7100D8A50C314EBED99E /* SwiftyDropbox */,
+				B2F0C0FDBE997FB16AC4FE77B9EAFA0E /* TPCircularBuffer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A16B42E662382716C0095423969C7AC0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D525E9933C7B07FFF3DE0312FFC0CF5B /* Alamofire.modulemap */,
+				8E57B68402924B0027EDE37A9B98D637 /* Alamofire.xcconfig */,
+				AD5AAD94E4274EA52F2478128F931C07 /* Alamofire-dummy.m */,
+				5668AB930C5B2E4CA2EFF06FD1268F0F /* Alamofire-prefix.pch */,
+				B8E6FCE873AE5C00EFB8B13BB036A1DB /* Alamofire-umbrella.h */,
+				F91BEC5DB1D85267CF0976F48A41CA2A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		A8DAC0DD8A5890FBB891BD68B7A00ED9 /* EZAudio */ = {
+			isa = PBXGroup;
+			children = (
+				CAC74627359DB7CACDA6756C1A1740DA /* Core */,
+				F9B76BFDFE72DFA81A8862C425D4BE09 /* Support Files */,
 			);
 			path = EZAudio;
 			sourceTree = "<group>";
 		};
-		9F196D328C20AC3205CB72A7F5EDAA48 /* iOS */ = {
+		B2F0C0FDBE997FB16AC4FE77B9EAFA0E /* TPCircularBuffer */ = {
 			isa = PBXGroup;
 			children = (
-				2C750CEEBD0FCB8A885A87BBBBFCDD27 /* Accelerate.framework */,
-				165D976BFA6B137A5A6003A743A928AB /* AudioToolbox.framework */,
-				167DC31FCF26891AAAB1C83794C89725 /* AVFoundation.framework */,
-				177CA864E7AB72B4D1BFCE4DB64E51B2 /* Foundation.framework */,
-				DD7EA7346A352A15F67228D78B65105A /* GLKit.framework */,
 			);
-			name = iOS;
+			path = TPCircularBuffer;
 			sourceTree = "<group>";
 		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
@@ -446,125 +387,184 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		BF6C3186B792EEB253C6D05360D645C0 /* SwiftyDropbox */ = {
+		C738CD9EC8150452B9549B75119021ED /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				25A4DEAB08189CC80861AFE5B7AD68CF /* Auth.swift */,
-				FD085B71E71779737CDE0C0B7D3F2736 /* BabelSerializers.swift */,
-				895A61EC45D38215A24B7E84762ED880 /* BabelValidators.swift */,
-				72988F7D1529977FF4AAA621ABD8557B /* Client.swift */,
-				30D7343B99BB174D0F34509D21CC7B75 /* DropboxClient.swift */,
-				8CB885EB92F6211FE8AA71A062A30526 /* Files.swift */,
-				5B31C017224C092DE82EAE7673BB6AB1 /* SecurityUtil.h */,
-				45F7B6381D24B3E6A615AE03D381E987 /* SecurityUtil.m */,
-				E381C7377140B56924A1BC040306E160 /* Sharing.swift */,
-				A063B3F24AAA2CC651BB36FA67053624 /* SwiftyDropbox.h */,
-				E6FCCA5DA6EF45F8E36FCBE7ABAC7413 /* Users.swift */,
-				6894538C128454DF429231CF4CFDCBA2 /* Support Files */,
+				9D1849BA6CFF0F38219F9C3A1A5EB830 /* Alamofire.swift */,
+				41BE36B1B978F4547F08C51B2471FABD /* Download.swift */,
+				33F4FC0E96AD28B5B64833CA278759FB /* Error.swift */,
+				D821210C4C30D59D610DA533DDDFC5B0 /* Manager.swift */,
+				87F15C73BE5716EE105DDD63128C28D4 /* MultipartFormData.swift */,
+				7EF4E7F1A4160A4BE2173BB435CECF74 /* NetworkReachabilityManager.swift */,
+				4D74C1CE3D32AF99CC5F9FA70ABF44F5 /* Notifications.swift */,
+				E4BA97BB6B2D92AC3B26CBFEBEFA1EB5 /* ParameterEncoding.swift */,
+				7B9BEC8972579358670289426DF3CAC1 /* Request.swift */,
+				1F46DD54BF673B492DC6CCAE8E2C7E09 /* Response.swift */,
+				B60CD916A79B39E6FD4C300444B0AD51 /* ResponseSerialization.swift */,
+				5B52C2CF016A584373653407B6875BFD /* Result.swift */,
+				6E25A6CDEDF7C80FAF532F2B39C4355D /* ServerTrustPolicy.swift */,
+				5D2FAB5717A1D3173BDC3579D7880AF2 /* Stream.swift */,
+				82C1CB46F62A43CF6AA9D349A9A4BE7B /* Timeline.swift */,
+				3EFDBACA9501FC9A5D8068EEBE78A7C1 /* Upload.swift */,
+				AA859431C17222392E1AFC33AFF52321 /* Validation.swift */,
+				A16B42E662382716C0095423969C7AC0 /* Support Files */,
 			);
-			path = SwiftyDropbox;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		CAC74627359DB7CACDA6756C1A1740DA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				25B593983F40BCADE3BFC978C32D051A /* EZAudio.h */,
+				DD064BF2EE95450126BCF09E45D7AE96 /* EZAudio.m */,
+				51E8C1354E1DF1F845810DAA0B0186EF /* EZAudioDevice.h */,
+				78BF2A5627EB8BC7830AF8E2D88EBAF5 /* EZAudioDevice.m */,
+				A6305D346D110D7C6595BDA89D1F0AC1 /* EZAudioDisplayLink.h */,
+				D72B54739289F27EC6C9C04ECB37E9F3 /* EZAudioDisplayLink.m */,
+				25263754ADD5697492594AD36682CE0C /* EZAudioFFT.h */,
+				94E536400C6FDC344C9FDD1E4F407B0D /* EZAudioFFT.m */,
+				1F64729C98EFE7A24D55CCE3AA79E79A /* EZAudioFile.h */,
+				75456168EFEF4EC37D08FA5839E7AD23 /* EZAudioFile.m */,
+				224732070E38B6D39A5CAFAFA1529501 /* EZAudioFloatConverter.h */,
+				1FCDF5EF7E346BDA50DDE1F6F0160C38 /* EZAudioFloatConverter.m */,
+				74324B2F7CA57B8EDE4CC889CD1FD252 /* EZAudioFloatData.h */,
+				7F47A28C8BBEF1E6634F9C9104DF582A /* EZAudioFloatData.m */,
+				8438F16037C331A79ACC0E9C6FA93039 /* EZAudioPlayer.h */,
+				0683E70714F309717687AF35A1BBFBF0 /* EZAudioPlayer.m */,
+				B19E0BCFE979FC0A7C817E2B50AF7024 /* EZAudioPlot.h */,
+				CC33EA5D09578E3F8024408FCF280794 /* EZAudioPlot.m */,
+				382A958011A29C9E77CA40385446F32E /* EZAudioPlotGL.h */,
+				D17F9662011149A31FFE09953A8C1191 /* EZAudioPlotGL.m */,
+				420B5561AF22CA1B94F286E8E6FFBEDE /* EZAudioUtilities.h */,
+				1A4D1204DE2D998264DC925F79260E7C /* EZAudioUtilities.m */,
+				B9ACF52981BCFE7DB147D6BFF53D7D23 /* EZMicrophone.h */,
+				E137CE202D508E10B1D70C363BCC62A5 /* EZMicrophone.m */,
+				01B3F71F0F11FE73AE95B49175A2DBCE /* EZOutput.h */,
+				ECA78D320C4963D45A79D426902C2FFB /* EZOutput.m */,
+				D3C71EEA5B017B36EEA33DB00099A847 /* EZPlot.h */,
+				E74080BF38F2FE03D56D8812907C1D0D /* EZPlot.m */,
+				29E46C1A13476B3B9D8077EF4A348EDD /* EZRecorder.h */,
+				74C7D060BA03BD80C1A805C86C46969E /* EZRecorder.m */,
+				4364CE75DEA08464162C6FD95BCC52E5 /* TPCircularBuffer.c */,
+				0E21E405B073AE692DF397FC383291EE /* TPCircularBuffer.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		CF6DC005C447141BED083E0DD51642AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				823D83ABAEE5A88E660DF100C6553A5B /* Alamofire.framework */,
+				4508710F893618AC63DD9EF26563D129 /* EZAudio.framework */,
+				2423C544EEC501EA0A8B210C858AD93E /* Pods.framework */,
+				4CA83B4EA51B1A4DC908B8BC4E3F5285 /* SwiftyDropbox.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D101072F97D7EC54430DA06AE6983A93 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0820A00115BAF882DCC78A9507D3E2C /* Info.plist */,
+				504B78068E23FB3110AFD134A71B7E81 /* SwiftyDropbox.modulemap */,
+				F1343751E4603C1CBBFF1C85B31CFAE6 /* SwiftyDropbox.xcconfig */,
+				83CDE44435A10CC1E306D1B5DD98C203 /* SwiftyDropbox-dummy.m */,
+				7539FEA8F2D3B61480DF0E4471E59BA9 /* SwiftyDropbox-prefix.pch */,
+				63016B888CE848E7C5186AD1DA9BB1BF /* SwiftyDropbox-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyDropbox";
+			sourceTree = "<group>";
+		};
+		E0E8A2A77A554C9923FFA36B8F82ADCD /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1A2E86617AE50FB3E780771D662FD715 /* Accelerate.framework */,
+				7ED55FA7F45234CA3B298AE643661D5D /* AudioToolbox.framework */,
+				1DE16A7C847D167D9908175436B27005 /* AVFoundation.framework */,
+				C73DA709F2748233DD3740D060F7C86F /* Foundation.framework */,
+				41D0047A76CCCD086E1923AE1E859EF1 /* GLKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F9B76BFDFE72DFA81A8862C425D4BE09 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9CF5EA3ADCAD89DCC344745F8B2DDC6 /* EZAudio.modulemap */,
+				DBD0AADCD23E4344F88C660B7BB360F2 /* EZAudio.xcconfig */,
+				4765B5252C245E055263040FBE6D9958 /* EZAudio-dummy.m */,
+				920CA0931C630665BD81D191E35969EB /* EZAudio-prefix.pch */,
+				553DA59B2FB69F6D71ED60A1F40252A7 /* EZAudio-umbrella.h */,
+				ECFBBEF3C41F1081E7D3660625AB0B7C /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/EZAudio";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		52CD04CE97D6D06165F52E026E4734B5 /* Headers */ = {
+		068806ECD76DA3726B72465C450B740F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96DBE3A3486BECA8950824B11373720D /* Pods-umbrella.h in Headers */,
+				65B9020C5A7BAFB87CEF1FB7D7970093 /* Pods-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7BD282155501A087675F4A38797613E /* Headers */ = {
+		B5F71024FDA2DFD5374BB10143BC15EA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62E5E44FC43C225CFDD494B96B4BFA0E /* SecurityUtil.h in Headers */,
-				3036059399576F63123F2F63F6D95E82 /* SwiftyDropbox-umbrella.h in Headers */,
-				22548636623D057D799F6DF34859F15E /* SwiftyDropbox.h in Headers */,
+				10C6F976C46C18269EC43DA531673AC8 /* SecurityUtil.h in Headers */,
+				34EB675F84CE1CB5AE7B86DBA190B5E5 /* SwiftyDropbox-umbrella.h in Headers */,
+				B5B5030AED3770FBCC2E11BDD20F0F0F /* SwiftyDropbox.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEBA339127917E209C75C1CD350CF53A /* Headers */ = {
+		EFDF3B631BBB965A372347705CA14854 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59E09171382D6891D9A33F22E847E131 /* EZAudio-umbrella.h in Headers */,
-				32A4E742DF3B37F80DD5084022ACA7B6 /* EZAudio.h in Headers */,
-				AECD157D67D5476DD7E36F49946CC09A /* EZAudioDevice.h in Headers */,
-				86D303C98C39D2076C8F28C660C452E3 /* EZAudioDisplayLink.h in Headers */,
-				D8066517E6029512E485DD79B9C12CD1 /* EZAudioFFT.h in Headers */,
-				A9E55B79610B0DA9694E5B85F3309889 /* EZAudioFile.h in Headers */,
-				279725D27633FC93DAD75142E0CA4C21 /* EZAudioFloatConverter.h in Headers */,
-				F8F61DAE346C6B0BD7CCB10DCA43AC78 /* EZAudioFloatData.h in Headers */,
-				20F47D3CFB1BF8B28404EB06E17DA983 /* EZAudioPlayer.h in Headers */,
-				593CC7717DE07063E27DFC943986913C /* EZAudioPlot.h in Headers */,
-				52C2705DB40262B8928D9EB3A02B31BB /* EZAudioPlotGL.h in Headers */,
-				BD6752FF69879F57E20AFF591F605531 /* EZAudioUtilities.h in Headers */,
-				6E739730785C355ECB014B6BEF854C0D /* EZMicrophone.h in Headers */,
-				2FF8B344EB4D5BD8865604BA2F48AA67 /* EZOutput.h in Headers */,
-				B950D61809F1FE73B009AD6CEC57E396 /* EZPlot.h in Headers */,
-				39EF68B5F9B19EF3055EEF68EE3C424E /* EZRecorder.h in Headers */,
-				84FEF3DF870A7333ADDEC3F0E2C5D1C1 /* TPCircularBuffer.h in Headers */,
+				9469DF81ECB494E84675969B5E13374C /* Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF115D13DFBDD03E0ABD3097C5108DCC /* Headers */ = {
+		F18699C2D490AA85D0FC785AF4341874 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A215FAB60CB15B6E5FA3A15E9E350D7D /* Alamofire-umbrella.h in Headers */,
+				49EE1C058B166D56D86D480CF037B519 /* EZAudio-umbrella.h in Headers */,
+				A9891F01657A2D34772A2EF8E73CC68F /* EZAudio.h in Headers */,
+				B5F7215924E31E3D795B5D3904ADD3A6 /* EZAudioDevice.h in Headers */,
+				AAA2CC04F78534B201412EBBB16DEA89 /* EZAudioDisplayLink.h in Headers */,
+				EC75F8F222A3AB9EDD24167CD882443F /* EZAudioFFT.h in Headers */,
+				5392B7409B94E0D7DB182E76FEF24371 /* EZAudioFile.h in Headers */,
+				9C483D6FC55AD732D4466F276FA76A95 /* EZAudioFloatConverter.h in Headers */,
+				E6F7DD6DC60B28F88DDE32B5310E8DE2 /* EZAudioFloatData.h in Headers */,
+				DE01C3CC0DF24A2BBF2453E83ADD811E /* EZAudioPlayer.h in Headers */,
+				C9115B715243EF6C5A919C36A649CB02 /* EZAudioPlot.h in Headers */,
+				3B99A19C494DA8538542BB1690AE03BF /* EZAudioPlotGL.h in Headers */,
+				3627BE59787CBAE4B7B24EA5D1BC1E32 /* EZAudioUtilities.h in Headers */,
+				3550E5A9A47ED6B8D4346C336805BE1A /* EZMicrophone.h in Headers */,
+				8DFCBA1D7B9551AEDFFC7FB0FC81D9C2 /* EZOutput.h in Headers */,
+				ABA8B5E03274A380CAD2E95EDFC35D6B /* EZPlot.h in Headers */,
+				CF3398B64472A645E5A0A4D71887E3A5 /* EZRecorder.h in Headers */,
+				D6F7260A4D8B3547086589B5A865599B /* TPCircularBuffer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */ = {
+		79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB53830DCDB9CCC560962769E044284E /* Build configuration list for PBXNativeTarget "EZAudio" */;
+			buildConfigurationList = 3CFB42910790CF0BDBCCEBAACD6B9367 /* Build configuration list for PBXNativeTarget "Alamofire" */;
 			buildPhases = (
-				1D8398944ED0221D02D46C25ED617450 /* Sources */,
-				FC58AFD2104C1BA0DD4166015D73112A /* Frameworks */,
-				CEBA339127917E209C75C1CD350CF53A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = EZAudio;
-			productName = EZAudio;
-			productReference = 568B01A568858D72254B406A0C303DD4 /* EZAudio.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		11934AC5ADAB9CA2C5242903DD003306 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E50C80A2EB285048AAF4155BF18C3FAE /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				E4E763CB4BB4C7098B08D66F66750173 /* Sources */,
-				523C575A0346BEAEA4E417A6848C69B5 /* Frameworks */,
-				52CD04CE97D6D06165F52E026E4734B5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A83453BA3FB91A500C50E3C4428F88AC /* PBXTargetDependency */,
-				7265A332FDB7CD013CA6858CA9B4F96D /* PBXTargetDependency */,
-				DF2B86547B9E849688161F3CB50DC61C /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = 30193535625DC796A26A3F3665439268 /* Pods.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4B2F30D90D85A544E9EFE2A49D392C25 /* Alamofire */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 70DA65F1729D88E78F64BE8BACBAD6AC /* Build configuration list for PBXNativeTarget "Alamofire" */;
-			buildPhases = (
-				5FBF281000F4380394A2338B903D6017 /* Sources */,
-				14409D151BCE19B917E1ACDD56DC85F6 /* Frameworks */,
-				EF115D13DFBDD03E0ABD3097C5108DCC /* Headers */,
+				95CC2C7E06DC188A05DAAEE9CAA555A3 /* Sources */,
+				B1729F851F648EC60EE93CDB3C8BAEAD /* Frameworks */,
+				EFDF3B631BBB965A372347705CA14854 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -572,25 +572,62 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 2B3E6A9BEEC2EA747900464F3F5054BD /* Alamofire.framework */;
+			productReference = 823D83ABAEE5A88E660DF100C6553A5B /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		584043DB422D53888A67B4DB0A3C5EB6 /* SwiftyDropbox */ = {
+		945EC9F349CC760FD91DAC61CE94C770 /* SwiftyDropbox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A012F36F8D87DCFC43000A8EAEB3A5AB /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */;
+			buildConfigurationList = D7326281A195359D38152BF6FA9A993E /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */;
 			buildPhases = (
-				A78AE9EE53591881E784B9AA61F01218 /* Sources */,
-				BC8D313200A4FB7CEB46CF7ED5AF1861 /* Frameworks */,
-				C7BD282155501A087675F4A38797613E /* Headers */,
+				98D609A8A32DF20630E99CC250E18F84 /* Sources */,
+				FEE3F245C103C4B16A2F59BAE001FFA2 /* Frameworks */,
+				B5F71024FDA2DFD5374BB10143BC15EA /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				65AA1BB945B06E1E9E52BEA696DC5D92 /* PBXTargetDependency */,
+				B0AB70AAE7FE418C79417BCE8E53153B /* PBXTargetDependency */,
 			);
 			name = SwiftyDropbox;
 			productName = SwiftyDropbox;
-			productReference = B95F5AC39927194EF928D00B372F9CD7 /* SwiftyDropbox.framework */;
+			productReference = 4CA83B4EA51B1A4DC908B8BC4E3F5285 /* SwiftyDropbox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9AF721EF7BC4239824B6BC956BF1249E /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 570A6CFC63D93C1EF53D38406EAD5CEB /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				3CBFC3F86551C36FCC148DF9866C253F /* Sources */,
+				19D4FCA76F8A97D90E4B1CA55AE49E6D /* Frameworks */,
+				068806ECD76DA3726B72465C450B740F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5981DA9D190478E6E4E20F09E775E1CC /* PBXTargetDependency */,
+				E37E4B9D77D9A72FDE37C3620DC0E32C /* PBXTargetDependency */,
+				293EA145AB8CDF2B5894BE22CF87D4A6 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 2423C544EEC501EA0A8B210C858AD93E /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AFE7EB5AF6BE103D8BA438EBD8A9EE8B /* EZAudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E37F17AC38FE7CE0C7CEE21F95660F92 /* Build configuration list for PBXNativeTarget "EZAudio" */;
+			buildPhases = (
+				FF5C3FF03328033C273824D708E900AA /* Sources */,
+				AE50AD8953A2EC3157AA8B405A62D81F /* Frameworks */,
+				F18699C2D490AA85D0FC785AF4341874 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EZAudio;
+			productName = EZAudio;
+			productReference = 4508710F893618AC63DD9EF26563D129 /* EZAudio.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -610,122 +647,133 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1E3F4D3F28A52F12D61937B6F748F7F2 /* Products */;
+			productRefGroup = CF6DC005C447141BED083E0DD51642AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B2F30D90D85A544E9EFE2A49D392C25 /* Alamofire */,
-				001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */,
-				11934AC5ADAB9CA2C5242903DD003306 /* Pods */,
-				584043DB422D53888A67B4DB0A3C5EB6 /* SwiftyDropbox */,
+				79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */,
+				AFE7EB5AF6BE103D8BA438EBD8A9EE8B /* EZAudio */,
+				9AF721EF7BC4239824B6BC956BF1249E /* Pods */,
+				945EC9F349CC760FD91DAC61CE94C770 /* SwiftyDropbox */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D8398944ED0221D02D46C25ED617450 /* Sources */ = {
+		3CBFC3F86551C36FCC148DF9866C253F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1FCCA6C435787351F76AA10C59BB945 /* EZAudio-dummy.m in Sources */,
-				F5613C4EB9D2500636782C986CAC16A7 /* EZAudio.m in Sources */,
-				F1F0FF89D47FF317FE466BA3E8110503 /* EZAudioDevice.m in Sources */,
-				D4825C79AF93929DB23D19CAA03D5A6B /* EZAudioDisplayLink.m in Sources */,
-				160564F40D913B70CDC5F842C20587A9 /* EZAudioFFT.m in Sources */,
-				555EDB63D0933185850181BB795D1757 /* EZAudioFile.m in Sources */,
-				144647B98725CD3445178F02C5C7593B /* EZAudioFloatConverter.m in Sources */,
-				0D58BDE3907BA7DE4055DF97E844EDA8 /* EZAudioFloatData.m in Sources */,
-				5B9AF696C3DA1C8D0FFB1BC72736F24D /* EZAudioPlayer.m in Sources */,
-				72EC1ECA88D2DCC3DCABA09ECB087D9F /* EZAudioPlot.m in Sources */,
-				9504F6C58BFE0BD0F71F0E22AD50ED73 /* EZAudioPlotGL.m in Sources */,
-				4FD18C45E8701899F7DF91BB8A01BB45 /* EZAudioUtilities.m in Sources */,
-				9927C82009821789ED4156C8B4BA1206 /* EZMicrophone.m in Sources */,
-				0D752FCCB6F74C8121837C377623BBA8 /* EZOutput.m in Sources */,
-				048C2CF88075F00658C826D63FA56315 /* EZPlot.m in Sources */,
-				5BC946B93B1A142245430AA9EFEF0D17 /* EZRecorder.m in Sources */,
-				1CA52AFA90462BA53DF229FB2690FEBF /* TPCircularBuffer.c in Sources */,
+				F122852D68D079EAB689E79B75467DF2 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5FBF281000F4380394A2338B903D6017 /* Sources */ = {
+		95CC2C7E06DC188A05DAAEE9CAA555A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8136D3B59D4753690000387A8082B54 /* Alamofire-dummy.m in Sources */,
-				E816509B4E3564E1A117CBDC0D845D69 /* Alamofire.swift in Sources */,
-				9077ECA2FA7B9C5D73365490A3D8898F /* Download.swift in Sources */,
-				FE1F95F519342B9266EB69B23B4336CF /* Error.swift in Sources */,
-				69A447D12E60E5C3451DA30C6BB4BF7F /* Manager.swift in Sources */,
-				D39B20327B1DAF6D8753ED5685DDE6DC /* MultipartFormData.swift in Sources */,
-				A8B5EDB7371475F62767B297B1A10CDE /* ParameterEncoding.swift in Sources */,
-				F16FEF1CB9703FE1887C8A618B84B7C6 /* Request.swift in Sources */,
-				848CEFBFC69DEBAF0E18885F3269F439 /* ResponseSerialization.swift in Sources */,
-				E6D041ABFBB48D9F1D8AA96E7D4C6C34 /* Result.swift in Sources */,
-				30A8F35FCAB29F5FBFC9F3F7E25A3B6B /* ServerTrustPolicy.swift in Sources */,
-				0EFD1FF643346FF85C83679F659672CA /* Stream.swift in Sources */,
-				E7B226D8BB16471AD63665A794036E44 /* Upload.swift in Sources */,
-				3E9392CB5BD9C0CC47B04EDB40639558 /* Validation.swift in Sources */,
+				ADF19C953CE2A7D0B72EC93A81FCCC26 /* Alamofire-dummy.m in Sources */,
+				8EB11202167FCDDF1257AAAB1D1FB244 /* Alamofire.swift in Sources */,
+				5CB05FBCB32D21E194B5ECF680CB6AE0 /* Download.swift in Sources */,
+				095406039B4D371E48D08B38A2975AC8 /* Error.swift in Sources */,
+				4081EA628AF0B73AC51FFB9D7AB3B89E /* Manager.swift in Sources */,
+				C7B6DD7C0456C50289A2C381DFE9FA3F /* MultipartFormData.swift in Sources */,
+				34CCDCA848A701466256BC2927DA8856 /* NetworkReachabilityManager.swift in Sources */,
+				BE41196F6A3903E59C3306FE3F8B43FE /* Notifications.swift in Sources */,
+				C0DB70AB368765DC64BFB5FEA75E0696 /* ParameterEncoding.swift in Sources */,
+				EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */,
+				62E8346F03C03E7F4D631361F325689E /* Response.swift in Sources */,
+				3EA8F215C9C1432D74E5CCA4834AA8C0 /* ResponseSerialization.swift in Sources */,
+				AA314156AC500125F4078EE968DB14C6 /* Result.swift in Sources */,
+				7B48852C4D848FA2DA416A98F6425869 /* ServerTrustPolicy.swift in Sources */,
+				AE4CF87C02C042DF13ED5B21C4FDC1E0 /* Stream.swift in Sources */,
+				16102E4E35FAA0FC4161282FECE56469 /* Timeline.swift in Sources */,
+				5BC19E6E0F199276003F0AF96838BCE5 /* Upload.swift in Sources */,
+				2D3405986FC586FA6C0A5E0B6BA7E64E /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A78AE9EE53591881E784B9AA61F01218 /* Sources */ = {
+		98D609A8A32DF20630E99CC250E18F84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB52792A18A6B1BCDE8E11D33538F58C /* Auth.swift in Sources */,
-				60C72C457C8AC8A5CFD6D055CF123649 /* BabelSerializers.swift in Sources */,
-				1121F72C55FE61BF7862AB80DE5C252D /* BabelValidators.swift in Sources */,
-				8CD97DBC0B1915AF4438EB7FF8E72E19 /* Client.swift in Sources */,
-				E0A752A13B9F1E6DA87803279914F488 /* DropboxClient.swift in Sources */,
-				B51FB9E6A881A6B6F466DA1E29347E6F /* Files.swift in Sources */,
-				670463425EBAD31BDF5AC15A8B463DE1 /* SecurityUtil.m in Sources */,
-				2C5996ACDE4403D2D502807884C3FF7A /* Sharing.swift in Sources */,
-				CD8A0C43D88D95AF8555391F9734F559 /* SwiftyDropbox-dummy.m in Sources */,
-				5AD593AB5E6DED3712043D43FEA43F53 /* Users.swift in Sources */,
+				B0AFE65EFEB459959AD5C042AA56E797 /* Async.swift in Sources */,
+				9B292B2028D1820FBF1753D6C3C9717B /* Auth.swift in Sources */,
+				06130DD733638893E3C6575CF1190FA3 /* BabelSerializers.swift in Sources */,
+				A8F42F1E91ABF34D9F8034133577E31D /* BabelValidators.swift in Sources */,
+				469A28EF273185EF037DF3F68590A65E /* Client.swift in Sources */,
+				9984834866B88EC823F4F7B531C854F1 /* DropboxClient.swift in Sources */,
+				829850FBCE04A6D846CE258C355C9CDE /* DropboxUtil.swift in Sources */,
+				399022E0FFB04E9032B6A42C2449BA2A /* Files.swift in Sources */,
+				372D7F5B9398BD48C891F9409AD261C5 /* FilesRoutes.swift in Sources */,
+				7685DD8498C2F9774068F0DAA07C79A6 /* OAuth.swift in Sources */,
+				19CC031EB2BD46801DB27D0A451FF78F /* SecurityUtil.m in Sources */,
+				639EDA0E26C0B0976959BF51EDB6981B /* Sharing.swift in Sources */,
+				156FBB280289B6753A30B28D8F620A47 /* SharingRoutes.swift in Sources */,
+				6B1C823D068B7E280D3563052832E091 /* SwiftyDropbox-dummy.m in Sources */,
+				7105AADA76BF50B76ED3159C8CE97D30 /* Team.swift in Sources */,
+				6A214027FE89DD7E039093A8FE171F17 /* Users.swift in Sources */,
+				71A0FEA19C44E479932A55922E9822CC /* UsersRoutes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4E763CB4BB4C7098B08D66F66750173 /* Sources */ = {
+		FF5C3FF03328033C273824D708E900AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C16CD4EC7A54E3EDA13CE953C877B81 /* Pods-dummy.m in Sources */,
+				0FECC8D25EC8363F00C283B4F8910B5B /* EZAudio-dummy.m in Sources */,
+				3AA555574B18AC7510094E8255D5595F /* EZAudio.m in Sources */,
+				6BCB7AA84C9815BA766882D86D034371 /* EZAudioDevice.m in Sources */,
+				20EFED6687563F9EEB47E935E5E82A82 /* EZAudioDisplayLink.m in Sources */,
+				0B2C8AE2E0E41295AFF65E3A35BBA88B /* EZAudioFFT.m in Sources */,
+				858710C352224DFDB75AAD05C9E03C50 /* EZAudioFile.m in Sources */,
+				BCDF3E92307E2E7B8C0B1D8F3C78A620 /* EZAudioFloatConverter.m in Sources */,
+				6C51E5EFB1E02C9080989817EDB6039C /* EZAudioFloatData.m in Sources */,
+				65D64AF7E2DC94B43E2FE076154E33BB /* EZAudioPlayer.m in Sources */,
+				54EA18DA6BF9C03BA13FE7C1F8A5F7AE /* EZAudioPlot.m in Sources */,
+				27642F5D229E425924BCEFE1D890FC1A /* EZAudioPlotGL.m in Sources */,
+				1074CF5E52B27E7931256039F3C0D0BD /* EZAudioUtilities.m in Sources */,
+				BA885281602D968B641936B077FC9B62 /* EZMicrophone.m in Sources */,
+				6A5CC0C310BD7F489342DC318802B331 /* EZOutput.m in Sources */,
+				92A0332F3227006E2BB2CAB3EE332F84 /* EZPlot.m in Sources */,
+				EAE0DF87FD44D81528CD46857EE754C4 /* EZRecorder.m in Sources */,
+				A896AD647EBB56EB06F17C6759F90DEF /* TPCircularBuffer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		65AA1BB945B06E1E9E52BEA696DC5D92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 4B2F30D90D85A544E9EFE2A49D392C25 /* Alamofire */;
-			targetProxy = CD050E5D1827014278B7A90C42E24933 /* PBXContainerItemProxy */;
-		};
-		7265A332FDB7CD013CA6858CA9B4F96D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EZAudio;
-			target = 001DFDFFBDE1DAFDF55B9CFE184B2781 /* EZAudio */;
-			targetProxy = 79493135EAB29708C71DBB670438A790 /* PBXContainerItemProxy */;
-		};
-		A83453BA3FB91A500C50E3C4428F88AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 4B2F30D90D85A544E9EFE2A49D392C25 /* Alamofire */;
-			targetProxy = 057C0E2D78ACCC533E72E6696C213D58 /* PBXContainerItemProxy */;
-		};
-		DF2B86547B9E849688161F3CB50DC61C /* PBXTargetDependency */ = {
+		293EA145AB8CDF2B5894BE22CF87D4A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyDropbox;
-			target = 584043DB422D53888A67B4DB0A3C5EB6 /* SwiftyDropbox */;
-			targetProxy = 4A841EF7562E1360AE266A6BA606723C /* PBXContainerItemProxy */;
+			target = 945EC9F349CC760FD91DAC61CE94C770 /* SwiftyDropbox */;
+			targetProxy = 172A844EF504C72CC0D9ABC352FCA6E1 /* PBXContainerItemProxy */;
+		};
+		5981DA9D190478E6E4E20F09E775E1CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = 79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */;
+			targetProxy = B98A9428FFF48D41F82B10D0A6A31A8E /* PBXContainerItemProxy */;
+		};
+		B0AB70AAE7FE418C79417BCE8E53153B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = 79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */;
+			targetProxy = 495A8348DFD9805FEC9669E128D7556B /* PBXContainerItemProxy */;
+		};
+		E37E4B9D77D9A72FDE37C3620DC0E32C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EZAudio;
+			target = AFE7EB5AF6BE103D8BA438EBD8A9EE8B /* EZAudio */;
+			targetProxy = 39E808117BBB67F16D366EFAC29BCC2D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		40C123A0630F0350B32B963B15F1BD01 /* Debug */ = {
+		174D60B9F24D1747040E28F125321629 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 517AE8E22873B2C4824B8653121A8760 /* EZAudio.xcconfig */;
+			baseConfigurationReference = DBD0AADCD23E4344F88C660B7BB360F2 /* EZAudio.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -750,89 +798,7 @@
 			};
 			name = Debug;
 		};
-		70B7F0C6A67FFEB0231B9578604C1F3F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDFC05380AEA6EF3773F4E0463A92D02 /* Alamofire.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7F6238B9BC63D0E931880BA55CC6DAE3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E1C05CBF7D9972B9C86EF42DDDE1B25 /* SwiftyDropbox.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDropbox/SwiftyDropbox-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyDropbox/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyDropbox/SwiftyDropbox.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftyDropbox;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		88F223C380001E3B62F357AA4723E359 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E1C05CBF7D9972B9C86EF42DDDE1B25 /* SwiftyDropbox.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDropbox/SwiftyDropbox-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyDropbox/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyDropbox/SwiftyDropbox.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftyDropbox;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9A98D3D0DCEEA6ADFC391A9BBA9C8B50 /* Release */ = {
+		3BB1096734AA61559C1930D8832847B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
 			buildSettings = {
@@ -862,37 +828,9 @@
 			};
 			name = Release;
 		};
-		9C65AA379D5885662980724FA4C9CFDD /* Debug */ = {
+		4109DCDA886AD9A418C5EA1081D5408F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDFC05380AEA6EF3773F4E0463A92D02 /* Alamofire.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9F2BB4773FF1AFEE705C15E81D014872 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 517AE8E22873B2C4824B8653121A8760 /* EZAudio.xcconfig */;
+			baseConfigurationReference = DBD0AADCD23E4344F88C660B7BB360F2 /* EZAudio.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -909,6 +847,119 @@
 				MODULEMAP_FILE = "Target Support Files/EZAudio/EZAudio.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = EZAudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		43663C83EE3113180FB2A7000570A43E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		59206D49B1EE275BEC8791345955E411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1343751E4603C1CBBFF1C85B31CFAE6 /* SwiftyDropbox.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDropbox/SwiftyDropbox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyDropbox/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyDropbox/SwiftyDropbox.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyDropbox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		727D57F79466958BF1313F90514EF2C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1343751E4603C1CBBFF1C85B31CFAE6 /* SwiftyDropbox.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyDropbox/SwiftyDropbox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyDropbox/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyDropbox/SwiftyDropbox.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyDropbox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		74F7FAC78E5CB4D327B99F47BF099326 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E57B68402924B0027EDE37A9B98D637 /* Alamofire.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -956,9 +1007,9 @@
 			};
 			name = Debug;
 		};
-		AA2A638149B744D3899622E75D5FC3F9 /* Debug */ = {
+		C3746E36F91278C40D0DCBA78D124E88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 8E57B68402924B0027EDE37A9B98D637 /* Alamofire.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -967,17 +1018,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
+				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1033,38 +1081,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70DA65F1729D88E78F64BE8BACBAD6AC /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+		3CFB42910790CF0BDBCCEBAACD6B9367 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C65AA379D5885662980724FA4C9CFDD /* Debug */,
-				70B7F0C6A67FFEB0231B9578604C1F3F /* Release */,
+				C3746E36F91278C40D0DCBA78D124E88 /* Debug */,
+				74F7FAC78E5CB4D327B99F47BF099326 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A012F36F8D87DCFC43000A8EAEB3A5AB /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */ = {
+		570A6CFC63D93C1EF53D38406EAD5CEB /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F6238B9BC63D0E931880BA55CC6DAE3 /* Debug */,
-				88F223C380001E3B62F357AA4723E359 /* Release */,
+				43663C83EE3113180FB2A7000570A43E /* Debug */,
+				3BB1096734AA61559C1930D8832847B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB53830DCDB9CCC560962769E044284E /* Build configuration list for PBXNativeTarget "EZAudio" */ = {
+		D7326281A195359D38152BF6FA9A993E /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40C123A0630F0350B32B963B15F1BD01 /* Debug */,
-				9F2BB4773FF1AFEE705C15E81D014872 /* Release */,
+				727D57F79466958BF1313F90514EF2C8 /* Debug */,
+				59206D49B1EE275BEC8791345955E411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E50C80A2EB285048AAF4155BF18C3FAE /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		E37F17AC38FE7CE0C7CEE21F95660F92 /* Build configuration list for PBXNativeTarget "EZAudio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA2A638149B744D3899622E75D5FC3F9 /* Debug */,
-				9A98D3D0DCEEA6ADFC391A9BBA9C8B50 /* Release */,
+				174D60B9F24D1747040E28F125321629 /* Debug */,
+				4109DCDA886AD9A418C5EA1081D5408F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
