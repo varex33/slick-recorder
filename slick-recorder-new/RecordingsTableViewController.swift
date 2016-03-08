@@ -33,47 +33,15 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
             for name in allRecordings{
                 let recording = RecordedAudio()
                 recording.audioTitle = name
+                let fileAttributes: [String: AnyObject] = (try NSFileManager.defaultManager().attributesOfItemAtPath("\(audioDir)/\(recording.audioTitle)"))
+                recording.recordingDate = fileAttributes[NSFileCreationDate]! as! NSDate
                 recordings.append(recording)
 
-                // get DATE substring from original file name
-                let dateRange = name.startIndex.advancedBy(0)..<name.startIndex.advancedBy(11)
-                let strDate = name.substringWithRange(dateRange)
-                
-                //get TIME substring from original file name
-                let timeRange = name.startIndex.advancedBy(14)..<name.startIndex.advancedBy(25)
-//                let strTime = name.substringWithRange(timeRange)
-              //  print(strTime)
-                
-                // convert string to date
-                formatDate.dateStyle = .MediumStyle
-                if let recordingDate = formatDate.dateFromString(strDate)
-                {
-                    // Detect if date have changed
-                    if count == 0 {
-                         tempDate = recordingDate
-                        print("first date: \(recordingDate)")
-     //                   let strDate = formatDate.stringFromDate(recordingDate!)
-     //                   let defaults = NSUserDefaults.standardUserDefaults()
-    //                    defaults.setValuesForKeysWithDictionary(strDate: )
-                    }
-                    else if tempDate != recordingDate{
-                        print("save new date \(recordingDate)")
-                        tempDate = recordingDate
-    //                    flag = false
-                    }
-                    else{
-                        print("same date \(recordingDate)")
-                       // print(recordingDate!)
-     //                   flag = false
-                    }
-                }
-                else{
-                    print("error processing date")
-                }
-
-                count++
-               // print(str)
             }
+            recordings.sortInPlace({ (recording1, recording2) -> Bool in
+                
+                return recording1.recordingDate.timeIntervalSince1970 > recording2.recordingDate.timeIntervalSince1970
+            })
         }
         catch{
             print("error filling array")
