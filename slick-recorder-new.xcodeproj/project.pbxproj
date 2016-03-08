@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		2689896F2A77D30E04105267 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CA68E9E337DECDAB5175E6 /* Pods.framework */; };
 		789004EC1C2206BE00A43D25 /* MicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789004EB1C2206BE00A43D25 /* MicViewController.swift */; };
-		78ADC4391C07B78A0042DCB7 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ADC4381C07B78A0042DCB7 /* KDCircularProgress.swift */; };
 		78ADC43B1C0A53ED0042DCB7 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ADC43A1C0A53ED0042DCB7 /* RecordedAudio.swift */; };
 		78C737081BF50D6B00C66C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C737071BF50D6B00C66C7D /* AppDelegate.swift */; };
 		78C7370A1BF50D6B00C66C7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C737091BF50D6B00C66C7D /* ViewController.swift */; };
 		78C7370D1BF50D6B00C66C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C7370B1BF50D6B00C66C7D /* Main.storyboard */; };
-		78C7370F1BF50D6B00C66C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C7370E1BF50D6B00C66C7D /* Assets.xcassets */; };
 		78C737121BF50D6B00C66C7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C737101BF50D6B00C66C7D /* LaunchScreen.storyboard */; };
 		78C7371D1BF50D6C00C66C7D /* slick_recorder_newTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7371C1BF50D6C00C66C7D /* slick_recorder_newTests.swift */; };
 		78C737281BF50D6C00C66C7D /* slick_recorder_newUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C737271BF50D6C00C66C7D /* slick_recorder_newUITests.swift */; };
@@ -23,6 +21,7 @@
 		78C7373A1BF6E14900C66C7D /* RecordingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C737391BF6E14900C66C7D /* RecordingsTableViewController.swift */; };
 		78C7373C1BF6E26900C66C7D /* PlayRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7373B1BF6E26900C66C7D /* PlayRecordingViewController.swift */; };
 		78C7373E1BF6F4ED00C66C7D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7373D1BF6F4ED00C66C7D /* Settings.swift */; };
+		78CDCEA31C5AC6CD00D9E2B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CDCEA21C5AC6CD00D9E2B8 /* Assets.xcassets */; };
 		78E6C4591C4EBE3300140684 /* wave-form.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E6C4581C4EBE3300140684 /* wave-form.m */; };
 /* End PBXBuildFile section */
 
@@ -45,13 +44,11 @@
 
 /* Begin PBXFileReference section */
 		789004EB1C2206BE00A43D25 /* MicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicViewController.swift; sourceTree = "<group>"; };
-		78ADC4381C07B78A0042DCB7 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		78ADC43A1C0A53ED0042DCB7 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		78C737041BF50D6B00C66C7D /* slick-recorder-new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slick-recorder-new.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C737071BF50D6B00C66C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C737091BF50D6B00C66C7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78C7370C1BF50D6B00C66C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		78C7370E1BF50D6B00C66C7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78C737111BF50D6B00C66C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78C737131BF50D6B00C66C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78C737181BF50D6C00C66C7D /* slick-recorder-newTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "slick-recorder-newTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +62,7 @@
 		78C737391BF6E14900C66C7D /* RecordingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsTableViewController.swift; sourceTree = "<group>"; };
 		78C7373B1BF6E26900C66C7D /* PlayRecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRecordingViewController.swift; sourceTree = "<group>"; };
 		78C7373D1BF6F4ED00C66C7D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		78CDCEA21C5AC6CD00D9E2B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78E6C4571C4EBE3200140684 /* slick-recorder-new-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "slick-recorder-new-Bridging-Header.h"; sourceTree = "<group>"; };
 		78E6C4581C4EBE3300140684 /* wave-form.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "wave-form.m"; sourceTree = "<group>"; };
 		78E6C45A1C4ED51E00140684 /* wave-form.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wave-form.h"; sourceTree = "<group>"; };
@@ -137,9 +135,8 @@
 				78C7370B1BF50D6B00C66C7D /* Main.storyboard */,
 				78C7373D1BF6F4ED00C66C7D /* Settings.swift */,
 				78C7373B1BF6E26900C66C7D /* PlayRecordingViewController.swift */,
-				78ADC4381C07B78A0042DCB7 /* KDCircularProgress.swift */,
-				78C7370E1BF50D6B00C66C7D /* Assets.xcassets */,
 				78C737101BF50D6B00C66C7D /* LaunchScreen.storyboard */,
+				78CDCEA21C5AC6CD00D9E2B8 /* Assets.xcassets */,
 				78C737131BF50D6B00C66C7D /* Info.plist */,
 			);
 			path = "slick-recorder-new";
@@ -289,7 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C737121BF50D6B00C66C7D /* LaunchScreen.storyboard in Resources */,
-				78C7370F1BF50D6B00C66C7D /* Assets.xcassets in Resources */,
+				78CDCEA31C5AC6CD00D9E2B8 /* Assets.xcassets in Resources */,
 				78C7370D1BF50D6B00C66C7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +364,6 @@
 				78C7370A1BF50D6B00C66C7D /* ViewController.swift in Sources */,
 				78C737361BF6DAB800C66C7D /* RecordSounds.swift in Sources */,
 				78C737381BF6E0B100C66C7D /* AudioUrl.swift in Sources */,
-				78ADC4391C07B78A0042DCB7 /* KDCircularProgress.swift in Sources */,
 				78C7373E1BF6F4ED00C66C7D /* Settings.swift in Sources */,
 				78ADC43B1C0A53ED0042DCB7 /* RecordedAudio.swift in Sources */,
 				78C7373A1BF6E14900C66C7D /* RecordingsTableViewController.swift in Sources */,
