@@ -304,7 +304,6 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                                 client.files.upload(path: recordingPath, body: data!).progress({(bytesWritten : Int64, totalBytesWritten : Int64, totalBytesExpectedToWrite : Int64) -> Void in
                                     
                                     let uploadProgress : Float  = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite) as Float;
-                                  //  print(uploadProgress)
                                     
                                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                         // Progressview inside view
@@ -316,9 +315,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                                         // Upadate progress bar
                                         progressBar.progress = uploadProgress
                                         // Show progress in label
-//                                        progressLabel.text = "\(uploadProgress * 100)%"
-                                        progressLabel.text = "\(uploadProgress)%"
-                                        
+                                        progressLabel.text = "\(Int(uploadProgress * 100))%"
+//                                        progressLabel.text = "100%"
                                         
                                         // If upload is completed delete pop up
                                         if totalBytesWritten == totalBytesExpectedToWrite{
