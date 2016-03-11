@@ -29,9 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let authResult = Dropbox.handleRedirectURL(url) {
             switch authResult {
             case .Success(let token):
+              NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "DropboxAccountConnected", object: self))
                 print("Success! User is logged into Dropbox.")
             case .Error( let error, let description):
                 print("Error: \(description)")
+                /*
+                let alert = UIAlertController(title: "Dropbox Error", message: "Unable to link to Dropbox", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                */
+                UIAlertView(title: "Dropbox Error", message: "Unable to link to Dropbox", delegate: nil, cancelButtonTitle: "Ok").show()
             }
         }
         

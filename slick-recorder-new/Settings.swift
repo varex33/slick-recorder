@@ -25,18 +25,11 @@ class Settings: UIViewController{
         restoreSwitchesStates()
 
         // Show dropbox user name on settings window
-        if let client = Dropbox.authorizedClient {
-            // Get the current user's account info
-//            client.usersGetCurrentAccount().response { response, error in
-            client.users.getCurrentAccount().response{ response, error in
-                if let account = response {
-                    self.userName.text = account.name.givenName
-                } else {
-                    print(error!)
-                }
-            }
+      
+        self.updateDropboxUser()
+        NSNotificationCenter.defaultCenter().addObserverForName("DropboxAccountConnected", object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
+            self.updateDropboxUser()
         }
-        
     }
 /*
     func saveSwitchesStates() {
@@ -44,10 +37,33 @@ class Settings: UIViewController{
 //        NSUserDefaults.standardUserDefaults().synchronize()
     }
 */
-    
-    
+  func updateDropboxUser() {
+    if let client = Dropbox.authorizedClient {
+        
+      // Get the current user's account info
+      //            client.usersGetCurrentAccount().response { response, error in
+      client.users.getCurrentAccount().response{ response, error in
+        if let account = response {
+          self.userName.text = account.name.givenName
+        } else {
+          print(error!)
+        }
+      }
+    }
+    else{
+        print("not authorized")
+    }
+  }
+  
     func restoreSwitchesStates() {
-        dropboxSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("open")
+        if let _ = Dropbox.authorizedClient {
+
+        dropboxSwitch.on = true
+        }
+        else{
+            dropboxSwitch.on = false
+            
+        }
     }
 
     @IBAction func dropboxSwitch(sender: UISwitch) {
@@ -65,6 +81,7 @@ class Settings: UIViewController{
         }
         else{
             Dropbox.unlinkClient()
+            self.userName.text = ""
             print("User is unlnked from dropbox")
         }
     }
