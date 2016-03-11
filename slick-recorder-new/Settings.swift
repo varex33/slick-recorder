@@ -39,6 +39,7 @@ class Settings: UIViewController{
 */
   func updateDropboxUser() {
     if let client = Dropbox.authorizedClient {
+        
       // Get the current user's account info
       //            client.usersGetCurrentAccount().response { response, error in
       client.users.getCurrentAccount().response{ response, error in
@@ -49,10 +50,20 @@ class Settings: UIViewController{
         }
       }
     }
+    else{
+        print("not authorized")
+    }
   }
   
     func restoreSwitchesStates() {
-        dropboxSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("open")
+        if let _ = Dropbox.authorizedClient {
+
+        dropboxSwitch.on = true
+        }
+        else{
+            dropboxSwitch.on = false
+            
+        }
     }
 
     @IBAction func dropboxSwitch(sender: UISwitch) {

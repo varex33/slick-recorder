@@ -273,75 +273,66 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                 }
             }
             
+            /****** Subview to show upload progress ****/
+            
+            self.previewView = UIView(frame: CGRectMake(25, 250, 250, 100))
+            self.previewView.backgroundColor = UIColor(red: 5 , green: 5, blue: 5, alpha: 0.5)
+            self.view.addSubview(self.previewView)
+            
+            // Label inside view
+            let label = UILabel(frame: CGRectMake(10, -5, 200, 100))
+            label.text = "Upload progress"
+            self.previewView.addSubview(label)
+            
+            let progressBar = UIProgressView(frame: CGRectMake(5, 60, 200, 10))
+            let progressLabel = UILabel(frame: CGRectMake(80, 60, 150, 40))
+            self.previewView.addSubview(progressBar)
+            self.previewView.addSubview(progressLabel)
+
+            
+            
             // Upload a file
             //  let fileData = "Hello!".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
             // Get Recording Path
             let recordingPath = dirPath.getRecordingDirectory()+"/"+recordedAudio.audioTitle
             let data = NSData(contentsOfFile: recordingPath)
             
-            client.files.upload(path: "/"+recordedAudio.audioTitle, body: data!).response { response, error in
+            client.files.upload(path: "/"+recordedAudio.audioTitle, body: data!).progress({(bytesWritten : Int64, totalBytesWritten : Int64, totalBytesExpectedToWrite : Int64) -> Void in
+                
+                let uploadProgress : Float  = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite) as Float;
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    // Progressview inside view
+                    
+                    // Upadate progress bar
+                    progressBar.progress = uploadProgress
+                    print (Int(uploadProgress * 100))
+                    // Show progress in label
+                    progressLabel.text = "\(Int(uploadProgress * 100))%"
+                    //                                   progressLabel.text = "100%"
+                    
+                    // If upload is completed delete pop up
+                    if totalBytesWritten == totalBytesExpectedToWrite{
+                        self.previewView.removeFromSuperview()
+                    }
+                    
+                });
+                
+            }).response { response, error in
                 if let metadata = response {
                     print("Uploaded file name: \(metadata.name)")
                     print("Uploaded file revision: \(metadata.rev)")
                     
-                    // Get file (or folder) metadata
-                    client.files.getMetadata(path: "/"+self.recordedAudio.audioTitle).response { response, error in
-                        if let metadata = response {
-                            //  print("Name: \(metadata.name)")
-                            if let file = metadata as? Files.FileMetadata {
-                                
-                                /****** Subview to show upload progress ****/
-                                
-                                    self.previewView = UIView(frame: CGRectMake(25, 250, 250, 100))
-                                    self.previewView.backgroundColor = UIColor(red: 5 , green: 5, blue: 5, alpha: 0.5)
-                                    self.view.addSubview(self.previewView)
-                                    
-                                    // Label inside view
-                                    let label = UILabel(frame: CGRectMake(10, -5, 200, 100))
-                                    label.text = "Upload progress"
-                                    self.previewView.addSubview(label)
-                                
-                                client.files.upload(path: recordingPath, body: data!).progress({(bytesWritten : Int64, totalBytesWritten : Int64, totalBytesExpectedToWrite : Int64) -> Void in
-                                    
-                                    let uploadProgress : Float  = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite) as Float;
-                                    
-                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                        // Progressview inside view
-                                        let progressBar = UIProgressView(frame: CGRectMake(5, 60, 200, 10))
-                                        let progressLabel = UILabel(frame: CGRectMake(80, 60, 150, 40))
-                                        self.previewView.addSubview(progressBar)
-                                        self.previewView.addSubview(progressLabel)
-
-                                        // Upadate progress bar
-                                        progressBar.progress = uploadProgress
-                                        // Show progress in label
-                                        progressLabel.text = "\(Int(uploadProgress * 100))%"
-//                                        progressLabel.text = "100%"
-                                        
-                                        // If upload is completed delete pop up
-                                        if totalBytesWritten == totalBytesExpectedToWrite{
-                                            self.previewView.removeFromSuperview()
-                                        }
-                                        
-                                    });
-                                    
-                                });
-                                
-                                print("This is a file.")
-                                print("File size: \(file.size)")
-                                print("int size: \(Int(file.size / 1000))")
-                            }
-                            
-                            
-                        } else {
-                            print(error!)
-                        }
-                    }
+                }
+                if let e = error{
+                    print(e)
                 }
             }
         } // End Dropbox.authorizedClient
         else{
             print("User not authorized in Dropbox")
+            UIAlertView(title: "Dropbox Error", message: "Unable to link to Dropbox", delegate: nil, cancelButtonTitle: "Ok").show()
+
         }
         
     }
