@@ -260,18 +260,18 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                 }
             }
             
-            // List folder
-//            client.users.getCurrentAccount().response{ response, error in
+            // List folder content 
+            /*
             client.files.listFolder(path: "").response { response, error in
                 if let result = response {
                     print("Folder contents:")
                     for entry in result.entries {
-                        print(entry.name)
+                       // print(entry.name)
                     }
                 } else {
                     print(error!)
                 }
-            }
+            }*/
             
             // Upload a file
             //  let fileData = "Hello!".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
@@ -287,7 +287,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                     // Get file (or folder) metadata
                     client.files.getMetadata(path: "/"+self.recordedAudio.audioTitle).response { response, error in
                         if let metadata = response {
-                            //  print("Name: \(metadata.name)")
+                              print("Name: \(metadata.name)")
                             if let file = metadata as? Files.FileMetadata {
                                 
                                 /****** Subview to show upload progress ****/
@@ -330,6 +330,9 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                                 print("This is a file.")
                                 print("File size: \(file.size)")
                                 print("int size: \(Int(file.size / 1000))")
+                            }
+                            else{
+                                print("this is a folder")
                             }
                             
                             
