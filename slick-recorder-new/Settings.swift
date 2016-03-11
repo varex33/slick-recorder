@@ -70,6 +70,7 @@ class Settings: UIViewController{
         }
         else{
             Dropbox.unlinkClient()
+            self.userName.text = ""
             print("User is unlnked from dropbox")
         }
     }
