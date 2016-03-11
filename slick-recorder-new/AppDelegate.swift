@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let authResult = Dropbox.handleRedirectURL(url) {
             switch authResult {
             case .Success(let token):
+              NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "DropboxAccountConnected", object: self))
                 print("Success! User is logged into Dropbox.")
             case .Error( let error, let description):
                 print("Error: \(description)")
