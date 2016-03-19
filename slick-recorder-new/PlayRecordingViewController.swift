@@ -260,18 +260,18 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                 }
             }
             
-            // List folder
-//            client.users.getCurrentAccount().response{ response, error in
+            // List folder content 
+            /*
             client.files.listFolder(path: "").response { response, error in
                 if let result = response {
                     print("Folder contents:")
                     for entry in result.entries {
-                        print(entry.name)
+                       // print(entry.name)
                     }
                 } else {
                     print(error!)
                 }
-            }
+            }*/
             
             /****** Subview to show upload progress ****/
             
@@ -306,10 +306,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                     
                     // Upadate progress bar
                     progressBar.progress = uploadProgress
-                    print (Int(uploadProgress * 100))
                     // Show progress in label
                     progressLabel.text = "\(Int(uploadProgress * 100))%"
-                    //                                   progressLabel.text = "100%"
                     
                     // If upload is completed delete pop up
                     if totalBytesWritten == totalBytesExpectedToWrite{
@@ -322,10 +320,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                 if let metadata = response {
                     print("Uploaded file name: \(metadata.name)")
                     print("Uploaded file revision: \(metadata.rev)")
-                    
-                }
-                if let e = error{
-                    print(e)
+
                 }
             }
         } // End Dropbox.authorizedClient
