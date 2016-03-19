@@ -18,11 +18,17 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     
     func fillRecordingsArray(){
         let audioDir = fileUrl.getRecordingDirectory()
-        if let allRecordings = NSFileManager.defaultManager().contentsOfDirectoryAtPath(audioDir, error: nil) as?[String]{
+        do{
+         let allRecordings = (try NSFileManager.defaultManager().contentsOfDirectoryAtPath(audioDir)) as [String]
             for name in allRecordings{
                 recordings.append(name)
             }
         }
+        catch{
+            print("error filling array")
+        }
+        // Sort Array by Date, last recording on top
+        recordings.sortInPlace({$0 > $1})
     }
     
 /*
@@ -46,7 +52,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     
     // Function to delete recordings 
     func deleteRecordingFromArray(recordingName: String){
-        let index = find(recordings, recordingName)
+        let index = recordings.indexOf(recordingName)
         recordings.removeAtIndex(index!)
     }
 
@@ -57,12 +63,9 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         return 1
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("recordingCell") as? UITableViewCell
-        if cell == nil{
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "recordingCell")
-        }
-        cell!.textLabel?.text = recordings[indexPath.row]
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("recordingCell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel?.text = recordings[indexPath.row]
+        return cell
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

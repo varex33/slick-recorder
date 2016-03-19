@@ -19,19 +19,21 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let dir = dirPath.getRecordingDirectory()
-        if let fullName = NSURL(fileURLWithPath: dir+"/"+fileName!){
+        do{
+        let fullName = NSURL(fileURLWithPath: dir+"/"+fileName!)
 
-        player = AVAudioPlayer(contentsOfURL: fullName, error: nil)
+        player = try? AVAudioPlayer(contentsOfURL: fullName)
         }
-    }
+        
 
+    }
     @IBAction func playSound(sender: UIButton) {
         player.prepareToPlay()
         player.play()
         btnPlay.enabled = false
         player.delegate = self
     }
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         if flag == true{
             btnPlay.enabled = true
         }

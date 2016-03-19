@@ -11,6 +11,7 @@ import UIKit
 import SwiftyDropbox
 
 class Settings: UIViewController{
+    @IBOutlet weak var dropboxUser: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,9 +20,22 @@ class Settings: UIViewController{
         if sender.on{
             if Dropbox.authorizedClient == nil{
                 Dropbox.authorizeFromController(self)
+                
+                if let client = Dropbox.authorizedClient {
+                // Get the current user's account info
+                    client.usersGetCurrentAccount().response { response, error in
+                        if let account = response {
+                            self.dropboxUser.text = account.name.givenName
+//                            print("Hello \(account.name.givenName)")
+                        } else {
+                            print(error!)
+                        }
+                    }
+                }
+
             }
             else{
-                println("User is already authorized")
+                print("User is already authorized")
             }
         }
     }

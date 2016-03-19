@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // Handle Dropbox authorization
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,15 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    // Handle Dropbox authorization
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
         if let authResult = Dropbox.handleRedirectURL(url) {
             switch authResult {
             case .Success(let token):
-                println("Success! User is logged into Dropbox.")
+                print("Success! User is logged into Dropbox.")
             case .Error(let error, let description):
-                println("Error: \(description)")
+                print("Error: \(description)")
             }
         }
         

@@ -5,7 +5,7 @@ import Security
 
 import Foundation
 
-public class DropboxAccessToken : Printable {
+public class DropboxAccessToken : CustomStringConvertible {
     var accessToken: String
     var uid: String
     
@@ -51,6 +51,8 @@ public enum OAuth2Error {
     }
 }
 
+private let kDBLinkNonce = "dropbox.sync.nonce"
+
 /// The result of an authorization attempt.
 ///
 /// - `Success` - The authorization succeeded. Includes a `DropboxAccessToken`.
@@ -61,19 +63,19 @@ public enum DropboxAuthResult {
 }
 
 private class Keychain {
-    class func set(#key: String, value: String) -> Bool {
+    class func set(key: String, value: String) -> Bool {
         if let data = value.dataUsingEncoding(NSUTF8StringEncoding) {
-            return set(key: key, value: data)
+            return set(key, value: data)
         } else {
             return false
         }
     }
     
-    class func set(#key: String, value: NSData) -> Bool {
+    class func set(key: String, value: NSData) -> Bool {
         let query : CFDictionaryRef = [
-            (      kSecClass as! String): kSecClassGenericPassword,
-            (kSecAttrAccount as! String): key,
-            (  kSecValueData as! String): value
+            (      kSecClass as String): kSecClassGenericPassword,
+            (kSecAttrAccount as String): key,
+            (  kSecValueData as String): value
         ]
         
         SecItemDelete(query)
@@ -83,17 +85,19 @@ private class Keychain {
     
     class func getAsData(key: String) -> NSData? {
         let query : CFDictionaryRef = [
-            (      kSecClass as! String): kSecClassGenericPassword,
-            (kSecAttrAccount as! String): key,
-            ( kSecReturnData as! String): kCFBooleanTrue,
-            ( kSecMatchLimit as! String): kSecMatchLimitOne
+            (      kSecClass as String): kSecClassGenericPassword,
+            (kSecAttrAccount as String): key,
+            ( kSecReturnData as String): kCFBooleanTrue,
+            ( kSecMatchLimit as String): kSecMatchLimitOne
         ]
         
-        var dataTypeRef : Unmanaged<AnyObject>?
-        let status = SecItemCopyMatching(query, &dataTypeRef)
+        var dataResult : AnyObject?
+        let status = withUnsafeMutablePointer(&dataResult) { (ptr) in
+            SecItemCopyMatching(query, UnsafeMutablePointer(ptr))
+        }
         
         if status == noErr {
-            return dataTypeRef?.takeRetainedValue() as? NSData
+            return dataResult as? NSData
         }
         
         return nil
@@ -101,17 +105,18 @@ private class Keychain {
     
     class func getAll() -> [String] {
         let query : CFDictionaryRef = [
-            (            kSecClass as! String): kSecClassGenericPassword,
-            ( kSecReturnAttributes as! String): kCFBooleanTrue,
-            (       kSecMatchLimit as! String): kSecMatchLimitAll
+            (            kSecClass as String): kSecClassGenericPassword,
+            ( kSecReturnAttributes as String): kCFBooleanTrue,
+            (       kSecMatchLimit as String): kSecMatchLimitAll
         ]
         
-        var dataTypeRef : Unmanaged<AnyObject>?
-        let status = SecItemCopyMatching(query, &dataTypeRef)
+        var dataResult : AnyObject?
+        let status = withUnsafeMutablePointer(&dataResult) { (ptr) in
+            SecItemCopyMatching(query, UnsafeMutablePointer(ptr))
+        }
         
         if status == noErr {
-            let results = dataTypeRef?.takeRetainedValue() as! [[String : AnyObject]]
-            
+            let results = dataResult as? [[String : AnyObject]] ?? []
             return results.map { d in d["acct"] as! String }
         
         }
@@ -130,8 +135,8 @@ private class Keychain {
     
     class func delete(key: String) -> Bool {
         let query : CFDictionaryRef = [
-            (kSecClass as! String) : kSecClassGenericPassword,
-            (kSecAttrAccount as! String): key
+            (kSecClass as String) : kSecClassGenericPassword,
+            (kSecAttrAccount as String): key
         ]
         
         return SecItemDelete(query) == noErr
@@ -139,7 +144,7 @@ private class Keychain {
     
     class func clear() -> Bool {
         let query : CFDictionaryRef = [
-            (kSecClass as! String) : kSecClassGenericPassword,
+            (kSecClass as String) : kSecClassGenericPassword,
         ]
         
         return SecItemDelete(query) == noErr
@@ -152,6 +157,8 @@ public class DropboxAuthManager {
     
     let appKey : String
     let redirectURL: NSURL
+    let dauthRedirectURL: NSURL
+
     let host: String
     
     
@@ -162,6 +169,7 @@ public class DropboxAuthManager {
         self.appKey = appKey
         self.host = host
         self.redirectURL = NSURL(string: "db-\(self.appKey)://2/token")!
+        self.dauthRedirectURL = NSURL(string: "db-\(self.appKey)://1/connect")!
     }
     
     convenience public init(appKey: String) {
@@ -182,10 +190,30 @@ public class DropboxAuthManager {
         return components.URL!
     }
     
+    private func dAuthURL(nonce: String?) -> NSURL {
+        let components = NSURLComponents()
+        components.scheme =  "dbapi-2"
+        components.host = "1"
+        components.path = "/connect"
+        
+        if let n = nonce {
+            let state = "oauth2:\(n)"
+            components.queryItems = [
+                NSURLQueryItem(name: "k", value: self.appKey),
+                NSURLQueryItem(name: "s", value: ""),
+                NSURLQueryItem(name: "state", value: state),
+            ]
+        }
+        return components.URL!
+    }
+    
     private func canHandleURL(url: NSURL) -> Bool {
-        return (url.scheme == self.redirectURL.scheme
-            &&  url.host == self.redirectURL.host
-            &&  url.path == self.redirectURL.path)
+        for known in [self.redirectURL, self.dauthRedirectURL] {
+            if (url.scheme == known.scheme &&  url.host == known.host && url.path == known.path) {
+                return true
+            }
+        }
+        return false
     }
     
     /// Present the OAuth2 authorization request page by presenting a web view controller modally
@@ -193,33 +221,55 @@ public class DropboxAuthManager {
     /// :param: controller
     ///         The controller to present from
     public func authorizeFromController(controller: UIViewController) {
-        let web = DropboxConnectController(
-            URL: self.authURL(),
-            tryIntercept: { url in
-                if self.canHandleURL(url) {
-                    UIApplication.sharedApplication().openURL(url)
-                    return true
-                } else {
-                    return false
+        if UIApplication.sharedApplication().canOpenURL(dAuthURL(nil)) {
+            let nonce = NSUUID().UUIDString
+            NSUserDefaults.standardUserDefaults().setObject(nonce, forKey: kDBLinkNonce)
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            UIApplication.sharedApplication().openURL(dAuthURL(nonce))
+        } else {
+            let web = DropboxConnectController(
+                URL: self.authURL(),
+                tryIntercept: { url in
+                    if self.canHandleURL(url) {
+                        UIApplication.sharedApplication().openURL(url)
+                        return true
+                    } else {
+                        return false
+                    }
                 }
-            }
-        )
-        
-        let navigationController = UINavigationController(rootViewController: web)
-        controller.presentViewController(navigationController, animated: true, completion: nil)
+            )
+            let navigationController = UINavigationController(rootViewController: web)
+            controller.presentViewController(navigationController, animated: true, completion: nil)
+        }
     }
     
-    
-    /// Try to handle a redirect back into the application
-    ///
-    /// :param: url
-    ///         The URL to attempt to handle
-    /// :returns: `nil` if SwiftyDropbox cannot handle the redirect URL, otherwise returns the `DropboxAuthResult`.
-    public func handleRedirectURL(url: NSURL) -> DropboxAuthResult? {
-        if !self.canHandleURL(url) {
-            return nil
+    private func extractfromDAuthURL(url: NSURL) -> DropboxAuthResult {
+        switch url.path ?? "" {
+        case "/connect":
+            var results = [String: String]()
+            let pairs  = url.query?.componentsSeparatedByString("&") ?? []
+            
+            for pair in pairs {
+                let kv = pair.componentsSeparatedByString("=")
+                results.updateValue(kv[1], forKey: kv[0])
+            }
+            let state = results["state"]?.componentsSeparatedByString("%3A") ?? []
+            
+            let nonce = NSUserDefaults.standardUserDefaults().objectForKey(kDBLinkNonce) as? String
+            if state.count == 2 && state[0] == "oauth2" && state[1] == nonce! {
+                let accessToken = results["oauth_token_secret"]!
+                let uid = results["uid"]!
+                return .Success(DropboxAccessToken(accessToken: accessToken, uid: uid))
+            } else {
+                return .Error(.Unknown, "Unable to verify link request")
+            }
+        default:
+            return .Error(.AccessDenied, "User cancelled Dropbox link")
         }
-        
+    }
+    
+    private func extractFromRedirectURL(url: NSURL) -> DropboxAuthResult {
         var results = [String: String]()
         let pairs  = url.fragment?.componentsSeparatedByString("&") ?? []
         
@@ -229,14 +279,39 @@ public class DropboxAuthManager {
         }
         
         if let error = results["error"] {
-            let desc = results["error_description"]?.stringByReplacingOccurrencesOfString("+", withString: " ").stringByReplacingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
+            let desc = results["error_description"]?.stringByReplacingOccurrencesOfString("+", withString: " ").stringByRemovingPercentEncoding
             return .Error(OAuth2Error(errorCode: error), desc ?? "")
         } else {
             let accessToken = results["access_token"]!
             let uid = results["uid"]!
-        
-            Keychain.set(key: uid, value: accessToken)
             return .Success(DropboxAccessToken(accessToken: accessToken, uid: uid))
+        }
+    }
+    
+    /// Try to handle a redirect back into the application
+    ///
+    /// :param: url
+    ///         The URL to attempt to handle
+    /// :returns: `nil` if SwiftyDropbox cannot handle the redirect URL, otherwise returns the `DropboxAuthResult`.
+    public func handleRedirectURL(url: NSURL) -> DropboxAuthResult? {
+        
+        if !self.canHandleURL(url) {
+            return nil
+        }
+        
+        let result : DropboxAuthResult
+        if url.host == "1" { // dauth
+            result = extractfromDAuthURL(url)
+        } else {
+            result = extractFromRedirectURL(url)
+        }
+        
+        switch result {
+        case .Success(let token):
+            Keychain.set(token.uid, value: token.accessToken)
+            return result
+        default:
+            return result
         }
     }
     
@@ -266,7 +341,7 @@ public class DropboxAuthManager {
     /// :param: user
     ///         The user whose token to retrieve
     /// :returns: An access token if present, otherwise `nil`.
-    public func getAccessToken(#user: String) -> DropboxAccessToken? {
+    public func getAccessToken(user: String) -> DropboxAccessToken? {
         if let accessToken = Keychain.get(user) {
             return DropboxAccessToken(accessToken: accessToken, uid: user)
         } else {
@@ -296,7 +371,7 @@ public class DropboxAuthManager {
     ///         The access token to save
     /// :returns: whether the operation succeeded
     public func storeAccessToken(token: DropboxAccessToken) -> Bool {
-        return Keychain.set(key: token.uid, value: token.accessToken)
+        return Keychain.set(token.uid, value: token.accessToken)
     }
     
     /// Utility function to return an arbitrary access token
@@ -327,7 +402,7 @@ public class DropboxConnectController : UIViewController, WKNavigationDelegate {
         self.tryIntercept = tryIntercept
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -362,7 +437,7 @@ public class DropboxConnectController : UIViewController, WKNavigationDelegate {
         decisionHandler: (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.URL, callback = self.tryIntercept {
             if callback(url: url) {
-                self.dismiss(animated: true)
+                self.dismiss(true)
                 return decisionHandler(.Cancel)
             }
         }
@@ -390,14 +465,14 @@ public class DropboxConnectController : UIViewController, WKNavigationDelegate {
     }
     
     func cancel(sender: AnyObject?) {
-        dismiss(asCancel: true, animated: (sender != nil))
+        dismiss(true, animated: (sender != nil))
     }
     
-    func dismiss(#animated: Bool) {
-        dismiss(asCancel: false, animated: animated)
+    func dismiss(animated: Bool) {
+        dismiss(false, animated: animated)
     }
     
-    func dismiss(#asCancel: Bool, animated: Bool) {
+    func dismiss(asCancel: Bool, animated: Bool) {
         webView.stopLoading()
         
         self.onWillDismiss?(didCancel: asCancel)

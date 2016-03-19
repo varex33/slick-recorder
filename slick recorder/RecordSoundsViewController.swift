@@ -38,15 +38,27 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     // Show stop button when recording starts
     btnPause.hidden = false
     micButton.hidden = true
-        println("recording in started ..")
+        print("recording in started ..")
+    // Recording Settings
+    
+        let recordSettings = [
+//            AVFormatIDKey: kAudioFormatMPEG4AAC
+            AVSampleRateKey: 16000.0,
+
+        ] as [String: AnyObject]
     var err : NSError?
-    recorder = AVAudioRecorder(URL: audioPath.getUrl() , settings: nil, error: &err)
+    do {
+        recorder = try AVAudioRecorder(URL: audioPath.getUrl() , settings: recordSettings)
+    } catch let error as NSError {
+        err = error
+        recorder = nil
+    }
     recorder.prepareToRecord()
     recorder.record()
     recorder.delegate = self
 
     }
-    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         
         if flag == true{
             // Get name of the recording  by using lastPathComponent
@@ -81,7 +93,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func pauseRecording(sender: UIButton) {
         recorder.pause()
-        println("recording paused")
+        print("recording paused")
         btnPause.hidden = true
         btnResumeRecording.hidden = false
     }
@@ -90,7 +102,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recorder.record()
         btnPause.hidden = false
         btnResumeRecording.hidden = true
-        println("recording after pause")
+        print("recording after pause")
     }
     /*
     // MARK: - Navigation
