@@ -1,6 +1,10 @@
 // Download.swift
 //
+<<<<<<< HEAD
 // Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+=======
+// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -211,8 +215,11 @@ extension Request {
             totalBytesWritten: Int64,
             totalBytesExpectedToWrite: Int64)
         {
+<<<<<<< HEAD
             if initialResponseTime == nil { initialResponseTime = CFAbsoluteTimeGetCurrent() }
 
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
             if let downloadTaskDidWriteData = downloadTaskDidWriteData {
                 downloadTaskDidWriteData(
                     session,

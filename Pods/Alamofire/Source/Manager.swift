@@ -1,6 +1,10 @@
 // Manager.swift
 //
+<<<<<<< HEAD
 // Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+=======
+// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -45,6 +49,7 @@ public class Manager {
     */
     public static let defaultHTTPHeaders: [String: String] = {
         // Accept-Encoding HTTP Header; see https://tools.ietf.org/html/rfc7230#section-4.2.3
+<<<<<<< HEAD
         let acceptEncoding: String = "gzip;q=1.0, compress;q=0.5"
 
         // Accept-Language HTTP Header; see https://tools.ietf.org/html/rfc7231#section-5.3.5
@@ -52,6 +57,23 @@ public class Manager {
             let quality = 1.0 - (Double(index) * 0.1)
             return "\(languageCode);q=\(quality)"
         }.joinWithSeparator(", ")
+=======
+        let acceptEncoding: String = "gzip;q=1.0,compress;q=0.5"
+
+        // Accept-Language HTTP Header; see https://tools.ietf.org/html/rfc7231#section-5.3.5
+        let acceptLanguage: String = {
+            var components: [String] = []
+            for (index, languageCode) in (NSLocale.preferredLanguages() as [String]).enumerate() {
+                let q = 1.0 - (Double(index) * 0.1)
+                components.append("\(languageCode);q=\(q)")
+                if q <= 0.5 {
+                    break
+                }
+            }
+
+            return components.joinWithSeparator(",")
+        }()
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 
         // User-Agent Header; see https://tools.ietf.org/html/rfc7231#section-5.5.3
         let userAgent: String = {
@@ -106,12 +128,19 @@ public class Manager {
     // MARK: - Lifecycle
 
     /**
+<<<<<<< HEAD
         Initializes the `Manager` instance with the specified configuration, delegate and server trust policy.
 
         - parameter configuration:            The configuration used to construct the managed session. 
                                               `NSURLSessionConfiguration.defaultSessionConfiguration()` by default.
         - parameter delegate:                 The delegate used when initializing the session. `SessionDelegate()` by
                                               default.
+=======
+        Initializes the `Manager` instance with the given configuration and server trust policy.
+
+        - parameter configuration:            The configuration used to construct the managed session. 
+                                              `NSURLSessionConfiguration.defaultSessionConfiguration()` by default.
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         - parameter serverTrustPolicyManager: The server trust policy manager to use for evaluating all server trust 
                                               challenges. `nil` by default.
 
@@ -119,6 +148,7 @@ public class Manager {
     */
     public init(
         configuration: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration(),
+<<<<<<< HEAD
         delegate: SessionDelegate = SessionDelegate(),
         serverTrustPolicyManager: ServerTrustPolicyManager? = nil)
     {
@@ -155,6 +185,15 @@ public class Manager {
         session.serverTrustPolicyManager = serverTrustPolicyManager
 
         delegate.sessionDidFinishEventsForBackgroundURLSession = { [weak self] session in
+=======
+        serverTrustPolicyManager: ServerTrustPolicyManager? = nil)
+    {
+        self.delegate = SessionDelegate()
+        self.session = NSURLSession(configuration: configuration, delegate: self.delegate, delegateQueue: nil)
+        self.session.serverTrustPolicyManager = serverTrustPolicyManager
+
+        self.delegate.sessionDidFinishEventsForBackgroundURLSession = { [weak self] session in
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
             guard let strongSelf = self else { return }
             dispatch_async(dispatch_get_main_queue()) { strongSelf.backgroundCompletionHandler?() }
         }
@@ -201,7 +240,14 @@ public class Manager {
     */
     public func request(URLRequest: URLRequestConvertible) -> Request {
         var dataTask: NSURLSessionDataTask!
+<<<<<<< HEAD
         dispatch_sync(queue) { dataTask = self.session.dataTaskWithRequest(URLRequest.URLRequest) }
+=======
+
+        dispatch_sync(queue) {
+            dataTask = self.session.dataTaskWithRequest(URLRequest.URLRequest)
+        }
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 
         let request = Request(session: session, task: dataTask)
         delegate[request.delegate.task] = request.delegate
@@ -225,12 +271,19 @@ public class Manager {
         subscript(task: NSURLSessionTask) -> Request.TaskDelegate? {
             get {
                 var subdelegate: Request.TaskDelegate?
+<<<<<<< HEAD
                 dispatch_sync(subdelegateQueue) { subdelegate = self.subdelegates[task.taskIdentifier] }
+=======
+                dispatch_sync(subdelegateQueue) {
+                    subdelegate = self.subdelegates[task.taskIdentifier]
+                }
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 
                 return subdelegate
             }
 
             set {
+<<<<<<< HEAD
                 dispatch_barrier_async(subdelegateQueue) { self.subdelegates[task.taskIdentifier] = newValue }
             }
         }
@@ -244,6 +297,14 @@ public class Manager {
             super.init()
         }
 
+=======
+                dispatch_barrier_async(subdelegateQueue) {
+                    self.subdelegates[task.taskIdentifier] = newValue
+                }
+            }
+        }
+
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         // MARK: - NSURLSessionDelegate
 
         // MARK: Override Closures
@@ -452,8 +513,11 @@ public class Manager {
                 delegate.URLSession(session, task: task, didCompleteWithError: error)
             }
 
+<<<<<<< HEAD
             NSNotificationCenter.defaultCenter().postNotificationName(Notifications.Task.DidComplete, object: task)
 
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
             self[task] = nil
         }
 

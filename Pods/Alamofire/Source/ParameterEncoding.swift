@@ -1,6 +1,10 @@
 // ParameterEncoding.swift
 //
+<<<<<<< HEAD
 // Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+=======
+// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -69,8 +73,13 @@ public enum ParameterEncoding {
     /**
         Creates a URL request by encoding parameters and applying them onto an existing request.
 
+<<<<<<< HEAD
         - parameter URLRequest: The request to have parameters applied.
         - parameter parameters: The parameters to apply.
+=======
+        - parameter URLRequest: The request to have parameters applied
+        - parameter parameters: The parameters to apply
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 
         - returns: A tuple containing the constructed request and the error that occurred during parameter encoding, 
                    if any.
@@ -82,7 +91,13 @@ public enum ParameterEncoding {
     {
         var mutableURLRequest = URLRequest.URLRequest
 
+<<<<<<< HEAD
         guard let parameters = parameters else { return (mutableURLRequest, nil) }
+=======
+        guard let parameters = parameters else {
+            return (mutableURLRequest, nil)
+        }
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 
         var encodingError: NSError? = nil
 
@@ -90,8 +105,12 @@ public enum ParameterEncoding {
         case .URL, .URLEncodedInURL:
             func query(parameters: [String: AnyObject]) -> String {
                 var components: [(String, String)] = []
+<<<<<<< HEAD
 
                 for key in parameters.keys.sort(<) {
+=======
+                for key in Array(parameters.keys).sort(<) {
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
                     let value = parameters[key]!
                     components += queryComponents(key, value)
                 }
@@ -116,10 +135,14 @@ public enum ParameterEncoding {
             }
 
             if let method = Method(rawValue: mutableURLRequest.HTTPMethod) where encodesParametersInURL(method) {
+<<<<<<< HEAD
                 if let
                     URLComponents = NSURLComponents(URL: mutableURLRequest.URL!, resolvingAgainstBaseURL: false)
                     where !parameters.isEmpty
                 {
+=======
+                if let URLComponents = NSURLComponents(URL: mutableURLRequest.URL!, resolvingAgainstBaseURL: false) {
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
                     let percentEncodedQuery = (URLComponents.percentEncodedQuery.map { $0 + "&" } ?? "") + query(parameters)
                     URLComponents.percentEncodedQuery = percentEncodedQuery
                     mutableURLRequest.URL = URLComponents.URL
@@ -142,10 +165,14 @@ public enum ParameterEncoding {
                 let options = NSJSONWritingOptions()
                 let data = try NSJSONSerialization.dataWithJSONObject(parameters, options: options)
 
+<<<<<<< HEAD
                 if mutableURLRequest.valueForHTTPHeaderField("Content-Type") == nil {
                     mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 }
 
+=======
+                mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
                 mutableURLRequest.HTTPBody = data
             } catch {
                 encodingError = error as NSError
@@ -157,11 +184,15 @@ public enum ParameterEncoding {
                     format: format,
                     options: options
                 )
+<<<<<<< HEAD
 
                 if mutableURLRequest.valueForHTTPHeaderField("Content-Type") == nil {
                     mutableURLRequest.setValue("application/x-plist", forHTTPHeaderField: "Content-Type")
                 }
 
+=======
+                mutableURLRequest.setValue("application/x-plist", forHTTPHeaderField: "Content-Type")
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
                 mutableURLRequest.HTTPBody = data
             } catch {
                 encodingError = error as NSError
@@ -183,7 +214,10 @@ public enum ParameterEncoding {
     */
     public func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
         var components: [(String, String)] = []
+<<<<<<< HEAD
 
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         if let dictionary = value as? [String: AnyObject] {
             for (nestedKey, value) in dictionary {
                 components += queryComponents("\(key)[\(nestedKey)]", value)
@@ -222,8 +256,11 @@ public enum ParameterEncoding {
         let allowedCharacterSet = NSCharacterSet.URLQueryAllowedCharacterSet().mutableCopy() as! NSMutableCharacterSet
         allowedCharacterSet.removeCharactersInString(generalDelimitersToEncode + subDelimitersToEncode)
 
+<<<<<<< HEAD
         var escaped = ""
 
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         //==========================================================================================================
         //
         //  Batching is required for escaping due to an internal bug in iOS 8.1 and 8.2. Encoding more than a few
@@ -235,6 +272,7 @@ public enum ParameterEncoding {
         //
         //==========================================================================================================
 
+<<<<<<< HEAD
         if #available(iOS 8.3, OSX 10.10, *) {
             escaped = string.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacterSet) ?? string
         } else {
@@ -252,6 +290,23 @@ public enum ParameterEncoding {
 
                 index = endIndex
             }
+=======
+        let batchSize = 50
+        var index = string.startIndex
+
+        var escaped = ""
+
+        while index != string.endIndex {
+            let startIndex = index
+            let endIndex = index.advancedBy(batchSize, limit: string.endIndex)
+            let range = Range(start: startIndex, end: endIndex)
+
+            let substring = string.substringWithRange(range)
+
+            escaped += substring.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacterSet) ?? substring
+
+            index = endIndex
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         }
 
         return escaped

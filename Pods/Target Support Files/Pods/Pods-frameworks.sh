@@ -85,11 +85,17 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
+<<<<<<< HEAD
   install_framework "Pods/EZAudio.framework"
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
   install_framework "Pods/SwiftyDropbox.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
+<<<<<<< HEAD
   install_framework "Pods/EZAudio.framework"
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
   install_framework "Pods/SwiftyDropbox.framework"
 fi

@@ -9,7 +9,11 @@ public func setAssertFunc( assertFunc: (Bool, String) -> Void) {
 }
 
 
+<<<<<<< HEAD
 public func arrayValidator<T>(minItems minItems : Int? = nil, maxItems : Int? = nil, itemValidator: T -> Void)(value : Array<T>) -> Void {
+=======
+public func arrayValidator<T>(minItems minItems : Int?, maxItems : Int?, itemValidator: T -> Void)(value : Array<T>) -> Void {
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
     if let min = minItems {
         _assertFunc(value.count >= min, "\(value) must have at least \(min) items")
     }
@@ -24,6 +28,13 @@ public func arrayValidator<T>(minItems minItems : Int? = nil, maxItems : Int? = 
     
 }
 
+<<<<<<< HEAD
+=======
+public func arrayValidator<T>(itemValidator itemValidator: T -> Void)(value : Array<T>) -> Void {
+    arrayValidator(minItems: nil, maxItems: nil, itemValidator: itemValidator)(value: value)
+}
+
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 public func stringValidator(minLength minLength : Int? = nil, maxLength : Int? = nil, pattern: String? = nil)(value: String) -> Void {
     let length = value.characters.count
     if let min = minLength {
@@ -34,8 +45,12 @@ public func stringValidator(minLength minLength : Int? = nil, maxLength : Int? =
     }
     
     if let pat = pattern {
+<<<<<<< HEAD
         // patterns much match entire input sequence
         let re = try! NSRegularExpression(pattern: "\\A(?:\(pat))\\z", options: NSRegularExpressionOptions())
+=======
+        let re = try! NSRegularExpression(pattern: pat, options: NSRegularExpressionOptions())
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         let matches = re.matchesInString(value, options: NSMatchingOptions(), range: NSMakeRange(0, length))
         _assertFunc(matches.count > 0, "\"\(value) must match pattern \"\(re.pattern)\"")
     }

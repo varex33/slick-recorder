@@ -1,13 +1,21 @@
 {
   "name": "SwiftyDropbox",
+<<<<<<< HEAD
   "version": "0.5",
+=======
+  "version": "0.2",
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
   "summary": "Dropbox Swift SDK for APIv2",
   "homepage": "https://dropbox.com/developers/",
   "license": "MIT",
   "authors": {
     "Ryan Pearl": "rpearl@dropbox.com"
   },
+<<<<<<< HEAD
   "source_files": "Source/*.{h,m,swift}",
+=======
+  "source_files": "Source/*.swift",
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
   "requires_arc": true,
   "platforms": {
     "ios": "8.0"

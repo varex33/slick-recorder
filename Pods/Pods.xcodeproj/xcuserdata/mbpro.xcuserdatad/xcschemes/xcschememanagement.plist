@@ -9,11 +9,14 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+<<<<<<< HEAD
 		<key>EZAudio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +30,34 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+<<<<<<< HEAD
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>945EC9F349CC760FD91DAC61CE94C770</key>
+=======
+		<key>03111BDFC9B6B6CDDC0AE8CBCCAA168D</key>
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< HEAD
 		<key>9AF721EF7BC4239824B6BC956BF1249E</key>
+=======
+		<key>4B2F30D90D85A544E9EFE2A49D392C25</key>
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< HEAD
 		<key>AFE7EB5AF6BE103D8BA438EBD8A9EE8B</key>
+=======
+		<key>93FEC8EBE6D4F1E80A223B65B652BF5D</key>
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 		<dict>
 			<key>primary</key>
 			<true/>

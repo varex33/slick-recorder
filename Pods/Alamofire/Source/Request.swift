@@ -1,6 +1,10 @@
 // Request.swift
 //
+<<<<<<< HEAD
 // Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+=======
+// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -48,9 +52,12 @@ public class Request {
     /// The progress of the request lifecycle.
     public var progress: NSProgress { return delegate.progress }
 
+<<<<<<< HEAD
     var startTime: CFAbsoluteTime?
     var endTime: CFAbsoluteTime?
 
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
     // MARK: - Lifecycle
 
     init(session: NSURLSession, task: NSURLSessionTask) {
@@ -58,6 +65,7 @@ public class Request {
 
         switch task {
         case is NSURLSessionUploadTask:
+<<<<<<< HEAD
             delegate = UploadTaskDelegate(task: task)
         case is NSURLSessionDataTask:
             delegate = DataTaskDelegate(task: task)
@@ -68,6 +76,16 @@ public class Request {
         }
 
         delegate.queue.addOperationWithBlock { self.endTime = CFAbsoluteTimeGetCurrent() }
+=======
+            self.delegate = UploadTaskDelegate(task: task)
+        case is NSURLSessionDataTask:
+            self.delegate = DataTaskDelegate(task: task)
+        case is NSURLSessionDownloadTask:
+            self.delegate = DownloadTaskDelegate(task: task)
+        default:
+            self.delegate = TaskDelegate(task: task)
+        }
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
     }
 
     // MARK: - Authentication
@@ -154,6 +172,7 @@ public class Request {
     // MARK: - State
 
     /**
+<<<<<<< HEAD
         Resumes the request.
     */
     public func resume() {
@@ -169,6 +188,19 @@ public class Request {
     public func suspend() {
         task.suspend()
         NSNotificationCenter.defaultCenter().postNotificationName(Notifications.Task.DidSuspend, object: task)
+=======
+        Suspends the request.
+    */
+    public func suspend() {
+        task.suspend()
+    }
+
+    /**
+        Resumes the request.
+    */
+    public func resume() {
+        task.resume()
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
     }
 
     /**
@@ -185,8 +217,11 @@ public class Request {
         } else {
             task.cancel()
         }
+<<<<<<< HEAD
 
         NSNotificationCenter.defaultCenter().postNotificationName(Notifications.Task.DidCancel, object: task)
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
     }
 
     // MARK: - TaskDelegate
@@ -204,9 +239,14 @@ public class Request {
         let progress: NSProgress
 
         var data: NSData? { return nil }
+<<<<<<< HEAD
         var error: NSError?
 
         var initialResponseTime: CFAbsoluteTime?
+=======
+        var error: ErrorType?
+
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         var credential: NSURLCredential?
 
         init(task: NSURLSessionTask) {
@@ -393,8 +433,11 @@ public class Request {
         }
 
         func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
+<<<<<<< HEAD
             if initialResponseTime == nil { initialResponseTime = CFAbsoluteTimeGetCurrent() }
 
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
             if let dataTaskDidReceiveData = dataTaskDidReceiveData {
                 dataTaskDidReceiveData(session, dataTask, data)
             } else {
@@ -468,6 +511,7 @@ extension Request: CustomDebugStringConvertible {
     func cURLRepresentation() -> String {
         var components = ["$ curl -i"]
 
+<<<<<<< HEAD
         guard let
             request = self.request,
             URL = request.URL,
@@ -476,16 +520,31 @@ extension Request: CustomDebugStringConvertible {
             return "$ curl command could not be created"
         }
 
+=======
+        guard let request = self.request else {
+            return "$ curl command could not be created"
+        }
+
+        let URL = request.URL
+
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         if let HTTPMethod = request.HTTPMethod where HTTPMethod != "GET" {
             components.append("-X \(HTTPMethod)")
         }
 
         if let credentialStorage = self.session.configuration.URLCredentialStorage {
             let protectionSpace = NSURLProtectionSpace(
+<<<<<<< HEAD
                 host: host,
                 port: URL.port?.integerValue ?? 0,
                 `protocol`: URL.scheme,
                 realm: host,
+=======
+                host: URL!.host!,
+                port: URL!.port?.integerValue ?? 0,
+                `protocol`: URL!.scheme,
+                realm: URL!.host!,
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
                 authenticationMethod: NSURLAuthenticationMethodHTTPBasic
             )
 
@@ -503,7 +562,11 @@ extension Request: CustomDebugStringConvertible {
         if session.configuration.HTTPShouldSetCookies {
             if let
                 cookieStorage = session.configuration.HTTPCookieStorage,
+<<<<<<< HEAD
                 cookies = cookieStorage.cookiesForURL(URL) where !cookies.isEmpty
+=======
+                cookies = cookieStorage.cookiesForURL(URL!) where !cookies.isEmpty
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
             {
                 let string = cookies.reduce("") { $0 + "\($1.name)=\($1.value ?? String());" }
                 components.append("-b \"\(string.substringToIndex(string.endIndex.predecessor()))\"")
@@ -534,13 +597,21 @@ extension Request: CustomDebugStringConvertible {
 
         if let
             HTTPBodyData = request.HTTPBody,
+<<<<<<< HEAD
             HTTPBody = String(data: HTTPBodyData, encoding: NSUTF8StringEncoding)
+=======
+            HTTPBody = NSString(data: HTTPBodyData, encoding: NSUTF8StringEncoding)
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
         {
             let escapedBody = HTTPBody.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
             components.append("-d \"\(escapedBody)\"")
         }
 
+<<<<<<< HEAD
         components.append("\"\(URL.absoluteString)\"")
+=======
+        components.append("\"\(URL!.absoluteString)\"")
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 
         return components.joinWithSeparator(" \\\n\t")
     }

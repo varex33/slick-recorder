@@ -1,6 +1,10 @@
 // Validation.swift
 //
+<<<<<<< HEAD
 // Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+=======
+// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -32,7 +36,11 @@ extension Request {
     */
     public enum ValidationResult {
         case Success
+<<<<<<< HEAD
         case Failure(NSError)
+=======
+        case Failure(ErrorType)
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
     }
 
     /**
@@ -94,7 +102,11 @@ extension Request {
         init?(_ string: String) {
             let components: [String] = {
                 let stripped = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+<<<<<<< HEAD
                 let split = stripped.substringToIndex(stripped.rangeOfString(";")?.startIndex ?? stripped.endIndex)
+=======
+                let split = stripped.substringToIndex(stripped.rangeOfString(";")?.endIndex ?? stripped.endIndex)
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
                 return split.componentsSeparatedByString("/")
             }()
 
@@ -130,8 +142,11 @@ extension Request {
     */
     public func validate<S : SequenceType where S.Generator.Element == String>(contentType acceptableContentTypes: S) -> Self {
         return validate { _, response in
+<<<<<<< HEAD
             guard let validData = self.delegate.data where validData.length > 0 else { return .Success }
 
+=======
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
             if let
                 responseContentType = response.MIMEType,
                 responseMIMEType = MIMEType(responseContentType)

@@ -1,12 +1,17 @@
 # SwiftyDropbox
 
+<<<<<<< HEAD
 A Swift SDK for integrating with the Dropbox API v2.
+=======
+A Swift SDK for integrating with the Dropbox API v2 (preview version).
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 
 ## Setup
 
 To get started with SwiftyDropbox, we recommend you add it to your project using CocoaPods.
 
 1. Install CocoaPods:
+<<<<<<< HEAD
     ```
     sudo gem install cocoapods
     ```
@@ -29,6 +34,23 @@ To get started with SwiftyDropbox, we recommend you add it to your project using
     ```
     pod install
     ```
+=======
+```sudo gem install cocoapods```
+
+1. If you've never used Cocoapods before, run:
+```pod setup```
+
+1. In your project directory, create a new file and call it "Podfile". Add the following text to the file:
+```
+  platform :ios, '8.0'
+  use_frameworks!
+
+  pod 'SwiftyDropbox', :git => 'git@github.com:dropbox/SwiftyDropbox.git', :branch => 'swift-2.0'
+``` 
+
+1. From the project directory, install the SwiftyDropbox SDK with:
+```pod install```
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 
 ## Creating an application
 
@@ -48,4 +70,8 @@ token for your own Dropbox account.
 
 ## Read more
 
+<<<<<<< HEAD
 Read more about SwiftyDropbox on our [developer site](https://www.dropbox.com/developers/documentation/swift).
+=======
+Read more about SwiftyDropbox on our [developer blog](https://blogs.dropbox.com/developers/2015/05/try-out-swiftydropbox-the-new-swift-sdk-for-dropbox-api-v2/).
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31

@@ -1,5 +1,9 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+<<<<<<< HEAD
 HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/SwiftyDropbox" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/TPCircularBuffer"
+=======
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/SwiftyDropbox" "${PODS_ROOT}/Headers/Public"
+>>>>>>> a455fe86e623f2f42c1b7a955c9afc70cd5c3f31
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES
