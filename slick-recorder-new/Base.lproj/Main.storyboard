@@ -277,14 +277,6 @@
                                     <action selector="pausePlaying:" destination="Up4-oM-bz0" eventType="touchUpInside" id="HJZ-RC-kuY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-Ng-r40">
-                                <rect key="frame" x="20" y="476" width="58" height="50"/>
-                                <state key="normal" image="cloud-light-blue50x25@1"/>
-                                <connections>
-                                    <action selector="stopPlaying:" destination="Up4-oM-bz0" eventType="touchUpInside" id="m1e-rc-Fsr"/>
-                                    <action selector="uploadToCloud:" destination="Up4-oM-bz0" eventType="touchUpInside" id="SG7-Ks-caG"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afP-eG-Pbj">
                                 <rect key="frame" x="541" y="478" width="39" height="47"/>
                                 <state key="normal" image="white-trash25x25@1"/>
@@ -310,22 +302,33 @@
                                 <rect key="frame" x="62" y="91" width="476" height="149"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-Ng-r40">
+                                <rect key="frame" x="33" y="481" width="141" height="45"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                <state key="normal" title="Upload to Dropbox">
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopPlaying:" destination="Up4-oM-bz0" eventType="touchUpInside" id="m1e-rc-Fsr"/>
+                                    <action selector="uploadToCloud:" destination="Up4-oM-bz0" eventType="touchUpInside" id="SG7-Ks-caG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21898020260000001" green="0.21898020260000001" blue="0.21898020260000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gDl-bS-cCB" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="13" id="0on-D1-2wG"/>
+                            <constraint firstItem="ynm-Ng-r40" firstAttribute="leading" secondItem="TIY-B6-wDw" secondAttribute="leadingMargin" constant="13" id="3wc-Z4-UlP"/>
                             <constraint firstItem="LqA-8k-fTE" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="HRm-tF-SI9"/>
                             <constraint firstItem="oeE-ho-maV" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="IVW-Co-U9r"/>
                             <constraint firstItem="gDl-bS-cCB" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="JOF-6t-3cQ"/>
                             <constraint firstItem="v5Q-uR-jJx" firstAttribute="top" secondItem="8Ee-BA-BD2" secondAttribute="bottom" constant="27" id="K58-lk-huP"/>
                             <constraint firstItem="LqA-8k-fTE" firstAttribute="top" secondItem="v5Q-uR-jJx" secondAttribute="bottom" constant="25" id="KiW-Ox-sKT"/>
-                            <constraint firstItem="ynm-Ng-r40" firstAttribute="leading" secondItem="TIY-B6-wDw" secondAttribute="leadingMargin" id="SbR-gD-SrK"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="6tF-xh-njN" secondAttribute="bottom" constant="112" id="VpP-bq-k0e"/>
                             <constraint firstItem="v5Q-uR-jJx" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="bKo-xd-FXc"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="afP-eG-Pbj" secondAttribute="bottom" constant="26" id="c2u-yN-Aax"/>
+                            <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="ynm-Ng-r40" secondAttribute="bottom" constant="25" id="eNo-F1-Vg0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eVq-2L-Ms5" secondAttribute="trailing" constant="60" id="l0s-ip-eh9"/>
                             <constraint firstItem="afP-eG-Pbj" firstAttribute="trailing" secondItem="TIY-B6-wDw" secondAttribute="trailingMargin" id="m42-tN-54d"/>
-                            <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="ynm-Ng-r40" secondAttribute="bottom" constant="25" id="pKB-V8-MUL"/>
                             <constraint firstItem="HBB-TW-2dc" firstAttribute="leading" secondItem="TIY-B6-wDw" secondAttribute="leadingMargin" constant="64" id="pxB-vc-AI5"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="eVq-2L-Ms5" secondAttribute="bottom" constant="112" id="t85-HF-gL8"/>
                             <constraint firstItem="6tF-xh-njN" firstAttribute="leading" secondItem="TIY-B6-wDw" secondAttribute="leadingMargin" constant="64" id="uU9-BP-KKU"/>
@@ -385,7 +388,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cloud-light-blue50x25@1" width="50" height="25"/>
         <image name="list-icon" width="25" height="25"/>
         <image name="mic-icon" width="25" height="25"/>
         <image name="record-button50x50@1" width="50" height="51"/>
