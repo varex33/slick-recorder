@@ -53,12 +53,12 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     //                    defaults.setValuesForKeysWithDictionary(strDate: )
                     }
                     else if tempDate != recordingDate{
-                        print("save new date \(recordingDate)")
+                      //  print("save new date \(recordingDate)")
                         tempDate = recordingDate
     //                    flag = false
                     }
                     else{
-                        print("same date \(recordingDate)")
+                        //print("same date \(recordingDate)")
                        // print(recordingDate!)
      //                   flag = false
                     }

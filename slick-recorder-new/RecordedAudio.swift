@@ -13,19 +13,5 @@ class RecordedAudio {
     var audioTitle: String!
     var recordingDate: NSDate!
     var recordingDirectory: NSString!
-    var fileName: String{
-        let date = NSDate()
-        let dateFormatter = NSDateFormatter()
-        //        dateFormatter.dateFormat = "yyyy-MM-dd 'at' HH:mm"
-        // Set Names for Date and Time
-        dateFormatter.dateStyle = .MediumStyle
-        dateFormatter.timeStyle = .MediumStyle
-        audioTitle = dateFormatter.stringFromDate(date)
-        recordingDate = date
-        return  dateFormatter.stringFromDate(date)
-    }
-    func test(){
-        print("test")
-    }
 
 }
