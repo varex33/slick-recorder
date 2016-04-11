@@ -19,9 +19,9 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
 //    var wave: WaveForm = WaveForm()
     
     @IBOutlet weak var btnResumeRecording: UIButton!
-    
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var btnPause: UIButton!
+    
     
     /*** EZAdio declarations ****/
     @IBOutlet weak var wavePlot: EZAudioPlotGL?
@@ -39,12 +39,20 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     var recordedAudio = RecordedAudio()
     
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         btnResumeRecording.hidden = true
-
+        
+        UIView.animateWithDuration(2, delay: 0.0, options:[UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
+            self.view.backgroundColor = UIColor.blackColor()
+            self.view.backgroundColor = UIColor.greenColor()
+            self.view.backgroundColor = UIColor.grayColor()
+            self.view.backgroundColor = UIColor.redColor()
+            }, completion: nil)
+    
+        
         //  Translation to Swift from EZAUDIO Objective C code
         
         // Customizing the audio plot that'll show the current microphone input/recording
