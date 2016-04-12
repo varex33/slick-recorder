@@ -54,9 +54,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             
             // EZAUDIO CONFIGURATION
             audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
-//            audioPlot?.backgroundColor = UIColor(red:0.6, green:0.6, blue:0.6, alpha:1.0)
-            audioPlot?.backgroundColor = UIColor(patternImage: UIImage(named: "audioPlot.png")!)
-//            audioPlot?.layer.contents = UIImage(named: "audioPlot.png")?.CGImage
+            audioPlot?.backgroundColor = nil
             audioPlot?.plotType = EZPlotType.Buffer
             audioPlot?.shouldFill = true
             audioPlot?.shouldMirror = true

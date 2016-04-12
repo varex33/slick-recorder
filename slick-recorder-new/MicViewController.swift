@@ -21,13 +21,16 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var btnResumeRecording: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var btnPause: UIButton!
-    
+
+/*** Initialize variables to show Blinking Label when recording starts **/
+    var timer = NSTimer()
+    var showRecLabel = true
+    @IBOutlet weak var blinkingRec: UIButton!
     
     /*** EZAdio declarations ****/
     @IBOutlet weak var wavePlot: EZAudioPlotGL?
      var microphone: EZMicrophone!
-    
-    var fileName: String? // save the name of recorded file
+     var fileName: String? // save the name of recorded file
     
     // Object to create an instance of AVAudioRecorder class
     var recorder: AVAudioRecorder!
@@ -36,23 +39,28 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     var audioPath = AudioUrl()
     
     var player: AVAudioPlayer! // Create recorder object
-    
     var recordedAudio = RecordedAudio()
     
-
+    func blink(){
+        print("test blink")
+        if (showRecLabel == false){
+            blinkingRec.hidden = false
+            showRecLabel = true
+        }
+        else{
+            blinkingRec.hidden = true
+            showRecLabel = false
+        }
+//        self.view.backgroundColor = UIColor.grayColor()
+//        self.view.backgroundColor = UIColor.redColor()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         btnResumeRecording.hidden = true
         
-        UIView.animateWithDuration(2, delay: 0.0, options:[UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
-            self.view.backgroundColor = UIColor.blackColor()
-            self.view.backgroundColor = UIColor.greenColor()
-            self.view.backgroundColor = UIColor.grayColor()
-            self.view.backgroundColor = UIColor.redColor()
-            }, completion: nil)
-    
-        
+        timer = NSTimer(timeInterval: 0.5, target: self, selector:"blink", userInfo: nil, repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         //  Translation to Swift from EZAUDIO Objective C code
         
         // Customizing the audio plot that'll show the current microphone input/recording
@@ -158,6 +166,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
 //        recButton.enabled = true
 //        recButton.hidden = false
         btnPause.hidden = true
+        timer.invalidate()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
