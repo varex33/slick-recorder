@@ -21,6 +21,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var btnResumeRecording: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var btnPause: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
 
 /*** Initialize variables to show Blinking Label when recording starts **/
     var timer = NSTimer()
@@ -41,8 +42,13 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     var player: AVAudioPlayer! // Create recorder object
     var recordedAudio = RecordedAudio()
     
+    // Initialize variables to show recording Time
+    var updater : CADisplayLink! = nil // tracks the time into the track
+    var updater_running : Bool = false // did the updater start?
+    var playing : Bool = false //indicates if track started playing
+
+    
     func blink(){
-        print("test blink")
         if (showRecLabel == false){
             blinkingRec.hidden = false
             showRecLabel = true
@@ -59,19 +65,21 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         super.viewDidLoad()
         btnResumeRecording.hidden = true
         
+        /**** REC blinking when Recording ****/
         timer = NSTimer(timeInterval: 0.5, target: self, selector:"blink", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
-        //  Translation to Swift from EZAUDIO Objective C code
         
-        // Customizing the audio plot that'll show the current microphone input/recording
+        
+        /*** DRAW WAVE WITH EZAUDIO ****/
 
+        // Customizing the audio plot that'll show the current microphone input/recording
         wavePlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
         wavePlot?.plotType = EZPlotType.Rolling
         wavePlot?.shouldFill = true
         wavePlot?.shouldMirror = true
         
         
-        // Start Recording
+        /*** START RECORDING ****/
         
         print("recording started ..")
         
@@ -97,23 +105,6 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         microphone = EZMicrophone(delegate: self, startsImmediately: true)
         
         
-        /*
-        // Recording Settings
-        let recordSettings = [
-//            AVFormatIDKey: kAudioFormatMPEG4AAC
-            AVSampleRateKey: 16000.0,
-            
-            ] as [String: AnyObject]
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            try AVAudioSession.sharedInstance().setActive(true)
-            recorder = try AVAudioRecorder(URL: audioPath.getUrl() , settings: recordSettings)
-        }
-        catch let error as NSError? {
-            recorder = nil
-            print(error!)
-        }
-        */
         if recorder != nil{
             recorder.prepareToRecord()
             recorder.record()
@@ -122,8 +113,25 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
         // Show pause button while recording
         btnPause.hidden = false
+        showRecordingTime();
         
     }
+    
+    func showRecordingTime(){
+        updater = CADisplayLink(target: self, selector: Selector("updateProgress"))
+        updater.frameInterval = 1
+        updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        updater_running = true
+    }
+    
+    func updateProgress() {
+        let timer = recorder.currentTime
+        let seconds = NSInteger(recorder.currentTime/60)
+        let minutes = NSInteger(seconds % 60)
+        timeLabel.text = NSString(format: "%.2d:%.2f",minutes, timer) as String
+        
+    }
+
     
     func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
         dispatch_async(dispatch_get_main_queue(), {() -> Void in

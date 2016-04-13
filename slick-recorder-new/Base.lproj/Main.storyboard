@@ -103,10 +103,21 @@
                                 <rect key="frame" x="249" y="81" width="100" height="50"/>
                                 <state key="normal" image="rec-label(35x55)"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5L-9z-USs">
+                                <rect key="frame" x="207" y="372" width="184" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3pV-ws-ThD"/>
+                                    <constraint firstAttribute="height" constant="30" id="fFx-aY-RAa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.22458419659300177" green="0.22458419659300177" blue="0.22458419659300177" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hJC-r2-kbU" firstAttribute="centerX" secondItem="x8L-DL-b95" secondAttribute="centerX" id="1AH-7c-Sy1"/>
+                            <constraint firstItem="r5L-9z-USs" firstAttribute="centerX" secondItem="x8L-DL-b95" secondAttribute="centerX" id="4cO-B2-5qW"/>
                             <constraint firstItem="8Sp-0Z-5mJ" firstAttribute="centerX" secondItem="x8L-DL-b95" secondAttribute="centerX" id="Bf2-9r-1Hq"/>
                             <constraint firstItem="hJC-r2-kbU" firstAttribute="top" secondItem="H3F-RZ-5Ps" secondAttribute="bottom" constant="143" id="E70-67-Kn6"/>
                             <constraint firstItem="Wcr-G7-OF7" firstAttribute="top" secondItem="ITb-ok-b24" secondAttribute="bottom" constant="79" id="FqF-Qb-rXG"/>
@@ -117,6 +128,7 @@
                             <constraint firstItem="Wcr-G7-OF7" firstAttribute="top" secondItem="fDD-nd-QMo" secondAttribute="bottom" constant="79" id="s7K-r2-dUf"/>
                             <constraint firstItem="fDD-nd-QMo" firstAttribute="leading" secondItem="x8L-DL-b95" secondAttribute="leadingMargin" constant="44" id="srh-nH-Ue7"/>
                             <constraint firstItem="k9i-rn-idT" firstAttribute="centerX" secondItem="x8L-DL-b95" secondAttribute="centerX" id="x32-sd-VYx"/>
+                            <constraint firstItem="r5L-9z-USs" firstAttribute="top" secondItem="hJC-r2-kbU" secondAttribute="bottom" constant="10" id="xIa-ae-LK6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OKN-Bs-gXb"/>
@@ -125,6 +137,7 @@
                         <outlet property="btnPause" destination="ITb-ok-b24" id="S7j-6E-7Zv"/>
                         <outlet property="btnResumeRecording" destination="fDD-nd-QMo" id="jOv-bw-W45"/>
                         <outlet property="stopButton" destination="EwQ-qa-6mJ" id="5gw-1u-Fxd"/>
+                        <outlet property="timeLabel" destination="r5L-9z-USs" id="h1r-WL-wCm"/>
                         <outlet property="wavePlot" destination="hJC-r2-kbU" id="zb3-FJ-MG9"/>
                     </connections>
                 </viewController>

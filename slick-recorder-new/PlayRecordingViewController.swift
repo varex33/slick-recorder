@@ -47,12 +47,11 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             // PATH TO AUDIO FILE
             let fullName = NSURL(fileURLWithPath: dir+"/"+recordedAudio.audioTitle)
             
-            //          print("This is the name \(recordedAudio.audioTitle)")
             showRecordingTime()
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
             
-            // EZAUDIO CONFIGURATION
+            /**** EZAUDIO CONFIGURATION ****/
             audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
             audioPlot?.backgroundColor = nil
             audioPlot?.plotType = EZPlotType.Buffer
@@ -67,8 +66,6 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             
             // PLAY AUDIO FILE
             player = try? AVAudioPlayer(contentsOfURL: fullName )
-            // player = try? AVAudioPlayer(contentsOfURL: recordedAudio.audioUrl )
-            //   btnPlay.enabled = false
             
             player.delegate = self
             player.prepareToPlay()
