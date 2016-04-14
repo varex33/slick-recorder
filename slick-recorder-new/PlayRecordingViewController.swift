@@ -23,6 +23,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     // EZAUDIO
     var ezPlayer : EZAudioPlayer!
     var audioFile: EZAudioFile!
+    var timer: NSTimer!
     
     @IBOutlet weak var audioSlider: UISlider!
     @IBOutlet weak var timeLabel: UILabel!
@@ -43,14 +44,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     override func viewDidLoad() {
         super.viewDidLoad()
         let dir = dirPath.getRecordingDirectory()
-        do{
-            // PATH TO AUDIO FILE
             let fullName = NSURL(fileURLWithPath: dir+"/"+recordedAudio.audioTitle)
-            
-            showRecordingTime()
-            let session = AVAudioSession.sharedInstance()
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            
+
             /**** EZAUDIO CONFIGURATION ****/
             audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
             audioPlot?.backgroundColor = nil
@@ -59,23 +54,20 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             audioPlot?.shouldMirror = true
             ezPlayer = EZAudioPlayer(delegate: self)
             // ezPlayer.shouldLoop = true
-            try session.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
             // call EZAudio function to process the waveform
             openFile(fullName)
             //   ezPlayer.play()
             
-            // PLAY AUDIO FILE
-            player = try? AVAudioPlayer(contentsOfURL: fullName )
             
-            player.delegate = self
-            player.prepareToPlay()
-            player.play()
+            /***  PLAY AUDIO FILE IMPLEMENTATION ***/
             
-            //           audioSlider.continuous = false
-        }
-        catch let error as NSError?{
-            print("Error intiating audio session \(error)")
-        }
+            showRecordingTime()
+            setSessionPlayAudio()
+            playAudio(fullName)
+
+//          try session.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker) // Animates Audio wave
+
+        
         // Cloud Button showed to the right of Navigation Bar
         /*
         let cloudButton = UIImage(named: "cloud")
@@ -83,6 +75,63 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         */
     }
     
+    func setSessionPlayAudio(){
+        let session = AVAudioSession.sharedInstance()
+        do{
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+        }
+        catch let error as NSError{
+            print("Unable to initialize session category")
+            print(error.localizedDescription)
+        }
+        do{
+            try session.setMode("AVAudioSessionCategoryOptionAllowBluetooth")
+        }
+        catch{
+            print("Unable to initialize session mode")
+            
+        }
+        do{
+            try session.setActive(true)
+        }
+        catch{
+            print("Unable to initialize set session active")
+        }
+    }
+    
+    func playAudio(fullName: NSURL){
+        do{
+            player = try AVAudioPlayer(contentsOfURL: fullName )
+            player.delegate = self
+            player.prepareToPlay()
+            self.player.play()
+            /*
+            self.timer = NSTimer(
+                timeInterval: 0.1,
+                target: self,
+                selector: "updatePlayingTimer",
+                userInfo: nil,
+                repeats: true)*/
+
+        }
+        catch let error as NSError?{
+            print("Error playing audio \(error)")
+        }
+        
+    }
+    /*
+    func updatePlayingTimer(){
+        let seconds = player.currentTime % 60
+        let minutes = player.currentTime / 60
+        timeLabel.text = String(formart: "%02:%02", minutes, seconds)
+        
+        // Animate Slider when playing 
+        audioSlider.minimumValue = 0.0
+        audioSlider.maximumValue = Float(player.duration)
+        audioSlider.setValue(Float(player.currentTime), animated: true)
+
+    }
+    */
     func openFile(filePath: NSURL){
         //        self.audioFile = [EZAudioFile audioFileWithURL:filePathURL];
         audioFile = EZAudioFile(URL: filePath)
@@ -173,16 +222,17 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         
     }
     
-    
     func updateProgress() {
-        let timer = player.currentTime
-        let seconds = NSInteger(player.currentTime/60)
-        let minutes = NSInteger(player.duration) / 60
+        
         audioSlider.minimumValue = 0.0
         audioSlider.maximumValue = Float(player.duration)
         audioSlider.setValue(Float(player.currentTime), animated: true)
+        
+   //     let timer = player.currentTime
+        let seconds = Int(player.currentTime / 60)
+        let minutes = Int(player.currentTime % 60)
         //        timeLabel.text = NSString(format: "%.2f : %.2f", current_time, total) as String
-        timeLabel.text = NSString(format: "%.2d:%.2d:%.2f",minutes, seconds, timer) as String
+        timeLabel.text = String(format: "%02d:%02d",minutes, seconds)
         
     }
     

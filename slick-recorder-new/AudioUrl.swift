@@ -27,7 +27,7 @@ class AudioUrl{
         return path[0]
     }
     func getUrl()->NSURL{
-        let url = (getRecordingDirectory() as NSString).stringByAppendingPathComponent(fileName+".wav")
+        let url = (getRecordingDirectory() as NSString).stringByAppendingPathComponent(fileName+".m4a")
         let finalUrl = NSURL(fileURLWithPath: url)
         return finalUrl
     }

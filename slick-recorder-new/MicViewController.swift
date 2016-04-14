@@ -48,19 +48,6 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     var playing : Bool = false //indicates if track started playing
 
     
-    func blink(){
-        if (showRecLabel == false){
-            blinkingRec.hidden = false
-            showRecLabel = true
-        }
-        else{
-            blinkingRec.hidden = true
-            showRecLabel = false
-        }
-//        self.view.backgroundColor = UIColor.grayColor()
-//        self.view.backgroundColor = UIColor.redColor()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         btnResumeRecording.hidden = true
@@ -79,56 +66,107 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         wavePlot?.shouldMirror = true
         
         
-        /*** START RECORDING ****/
+        /*** RECORDING IMPLEMENTATION ****/
+        
+        //Setups recording session and permission
+        recordWithPermission(true);
         
         print("recording started ..")
-        
-        // Create Audio Session
-        
-        let recordSettings = [
-            AVSampleRateKey: 16000.0
-            
-            ] as [String: AnyObject]
-
-        let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            recorder = try AVAudioRecorder(URL: audioPath.getUrl(), settings:recordSettings)
-
-        } catch let error as NSError? {
-            recorder = nil
-            print("This is the error:\(error!)")
-
-        }
         
         // Create an instance of the microphone and tell it to use this view controller instance as the delegate
         microphone = EZMicrophone(delegate: self, startsImmediately: true)
         
         
-        if recorder != nil{
-            recorder.prepareToRecord()
-            recorder.record()
-            recorder.delegate = self
-        }
         
         // Show pause button while recording
         btnPause.hidden = false
-        showRecordingTime();
         
     }
     
-    func showRecordingTime(){
-        updater = CADisplayLink(target: self, selector: Selector("updateProgress"))
-        updater.frameInterval = 1
-        updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        updater_running = true
+    func recordWithPermission(setup: Bool){
+        let session = AVAudioSession.sharedInstance()
+        if(session.respondsToSelector("requestRecordPermission:")){
+                    self.setSessionPlayAndRecord()
+                        if(setup){
+                            self.setupRecorder()
+                        }
+                        self.recorder.record()
+            
+                        self.timer = NSTimer.scheduledTimerWithTimeInterval(
+                            0.1,
+                            target: self,
+                            selector: "updateAudioTimer",
+                            userInfo: nil,
+                            repeats: true)
+        }
+        else{
+            print("Permission to record denied")
+        }
+        
+    }
+
+    func setSessionPlayAndRecord(){
+        let session = AVAudioSession.sharedInstance()
+        do{
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+        }
+        catch{
+            print("Unable to set Audio session caterogy")
+        }
+        do{
+            try session.setMode("AVAudioSessionModeVoiceChat")
+        }
+        catch{
+            print("Unable to set Audio session mode")
+        }
+        do{
+            try session.setActive(true)
+        }
+        catch{
+            print("Unable to set Audio session active")
+        }
     }
     
-    func updateProgress() {
-        let timer = recorder.currentTime
-        let seconds = NSInteger(recorder.currentTime/60)
-        let minutes = NSInteger(seconds % 60)
-        timeLabel.text = NSString(format: "%.2d:%.2f",minutes, timer) as String
+    func setupRecorder(){
+        let recordSettings:[String : AnyObject] = [
+            AVFormatIDKey: NSNumber(unsignedInt:kAudioFormatAppleLossless),
+            AVEncoderAudioQualityKey : AVAudioQuality.Max.rawValue,
+            AVEncoderBitRateKey : 128000,
+            AVNumberOfChannelsKey: 2,
+            AVSampleRateKey : 44100.0
+        ]
+        
+        do {
+            recorder = try AVAudioRecorder(URL: audioPath.getUrl(), settings:recordSettings)
+            recorder.delegate = self
+            recorder.meteringEnabled = true
+            recorder.prepareToRecord() // creates/overwrites the file at soundFileURL
+        } catch let error as NSError {
+            recorder = nil
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func blink(){
+        if (showRecLabel == false){
+            blinkingRec.hidden = false
+            showRecLabel = true
+        }
+        else{
+            blinkingRec.hidden = true
+            showRecLabel = false
+        }
+        //        self.view.backgroundColor = UIColor.grayColor()
+        //        self.view.backgroundColor = UIColor.redColor()
+    }
+
+    
+    func updateAudioTimer() {
+      //  let timer = recorder.currentTime
+        let seconds = NSInteger(recorder.currentTime % 60)
+        let minutes = NSInteger(seconds / 60)
+        timeLabel.text = NSString(format: "%.2d:%.2d",minutes, seconds) as String
         
     }
 
