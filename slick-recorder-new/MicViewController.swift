@@ -113,12 +113,13 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         catch{
             print("Unable to set Audio session caterogy")
         }
+        /*
         do{
             try session.setMode("AVAudioSessionModeVoiceChat")
         }
         catch{
             print("Unable to set Audio session mode")
-        }
+        }*/
         do{
             try session.setActive(true)
         }

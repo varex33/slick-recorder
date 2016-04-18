@@ -79,18 +79,20 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         let session = AVAudioSession.sharedInstance()
         do{
             try session.setCategory(AVAudioSessionCategoryPlayback)
+//            try session.setCategory(AVAudioSessionCategoryPlayback, withOptions: AVAudioSessionCategoryOptions.AllowBluetooth)
         }
         catch let error as NSError{
             print("Unable to initialize session category")
             print(error.localizedDescription)
         }
+        /*
         do{
             try session.setMode("AVAudioSessionCategoryOptionAllowBluetooth")
         }
         catch{
             print("Unable to initialize session mode")
             
-        }
+        }*/
         do{
             try session.setActive(true)
         }
@@ -105,33 +107,33 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             player.delegate = self
             player.prepareToPlay()
             self.player.play()
-            /*
+            playing = true // Boolean to control slider status and update playing status
             self.timer = NSTimer(
-                timeInterval: 0.1,
+                timeInterval: 1,
                 target: self,
                 selector: "updatePlayingTimer",
                 userInfo: nil,
-                repeats: true)*/
-
+                repeats: true)
+            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+            
         }
         catch let error as NSError?{
             print("Error playing audio \(error)")
         }
         
     }
-    /*
+    
     func updatePlayingTimer(){
-        let seconds = player.currentTime % 60
-        let minutes = player.currentTime / 60
-        timeLabel.text = String(formart: "%02:%02", minutes, seconds)
+        let seconds = Int(player.currentTime % 60)
+        let minutes = Int(player.currentTime / 60)
+        timeLabel.text = String(format: "%.2d:%.2d", minutes, seconds)
         
         // Animate Slider when playing 
         audioSlider.minimumValue = 0.0
         audioSlider.maximumValue = Float(player.duration)
         audioSlider.setValue(Float(player.currentTime), animated: true)
-
     }
-    */
+    
     func openFile(filePath: NSURL){
         //        self.audioFile = [EZAudioFile audioFileWithURL:filePathURL];
         audioFile = EZAudioFile(URL: filePath)
@@ -154,7 +156,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     }
     
     func showRecordingTime(){
-        updater = CADisplayLink(target: self, selector: Selector("updateProgress"))
+        updater = CADisplayLink(target: self, selector: Selector("updatePlayingTimer"))
         updater.frameInterval = 1
         updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         updater_running = true
@@ -213,7 +215,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             wasPlaying = true
         }
         player.currentTime = NSTimeInterval(round(audioSlider.value))
-        updateProgress()
+        updatePlayingTimer()
         // starts playing track again if it had been playing
         if (wasPlaying == true) {
             player.play()
@@ -222,25 +224,12 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         
     }
     
-    func updateProgress() {
-        
-        audioSlider.minimumValue = 0.0
-        audioSlider.maximumValue = Float(player.duration)
-        audioSlider.setValue(Float(player.currentTime), animated: true)
-        
-   //     let timer = player.currentTime
-        let seconds = Int(player.currentTime / 60)
-        let minutes = Int(player.currentTime % 60)
-        //        timeLabel.text = NSString(format: "%.2f : %.2f", current_time, total) as String
-        timeLabel.text = String(format: "%02d:%02d",minutes, seconds)
-        
-    }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         if flag == true{
             //            btnPlay.enabled = true
-            updateProgress()
-            
+            updatePlayingTimer()
+            self.timer.invalidate()
             //show playing time in h/m/s format
             let duration = NSInteger(player.duration)
             let seconds = duration
@@ -256,10 +245,11 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     @IBAction func playSelectedRecording(sender: UIButton) {
         if (playing == false) {
-            updater = CADisplayLink(target: self, selector: Selector("updateProgress"))
+            updater = CADisplayLink(target: self, selector: Selector("updatePlayingTimer"))
             updater.frameInterval = 1
             updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             updater_running = true
+            playing = true
             //        btnPlay.enabled = false
             btnPause.hidden = false
             btnPlay.hidden = true
@@ -268,31 +258,29 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             player.delegate = self
             player.prepareToPlay()
             player.play()
-            updateProgress()
+            updatePlayingTimer()
         }
         else {
-            updateProgress()
-            player.pause()
+            updatePlayingTimer()
+           // player.pause()
             playing = false
         }
     }
     
     
-    @IBAction func stopPlaying(sender: UIButton) {
-        player.stop()
-        //        btnPlay.enabled = true
-    }
     
     @IBAction func pausePlaying(sender: UIButton) {
         player.stop()
         btnPause.hidden = true
         btnPlay.hidden = false
+        playing = false
     }
     @IBAction func btnStop(sender: UIButton) {
         player.stop()
         player.currentTime = 0
         btnPause.hidden = true
         btnPlay.hidden = false
+        playing = false
     }
     
     @IBAction func uploadToCloud(sender: UIButton) {

@@ -296,7 +296,6 @@
                                 <state key="normal" image="white-stop-button-ver2@1"/>
                                 <connections>
                                     <action selector="btnStop:" destination="Up4-oM-bz0" eventType="touchUpInside" id="nMC-CC-1oY"/>
-                                    <action selector="stopPlaying:" destination="Up4-oM-bz0" eventType="touchUpInside" id="6a1-YN-DHI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tF-xh-njN">
@@ -311,7 +310,6 @@
                                 <state key="normal" image="white-trash25x25@1"/>
                                 <connections>
                                     <action selector="deleteAudioFile:" destination="Up4-oM-bz0" eventType="touchUpInside" id="UBw-Sj-hP8"/>
-                                    <action selector="stopPlaying:" destination="Up4-oM-bz0" eventType="touchUpInside" id="Qq2-7L-6J2"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBB-TW-2dc">
@@ -331,11 +329,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5Q-uR-jJx" customClass="EZAudioPlotGL">
-                                <rect key="frame" x="20" y="85" width="560" height="113"/>
+                                <rect key="frame" x="20" y="85" width="560" height="158"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="113" id="2ga-hN-qH1"/>
                                     <constraint firstAttribute="width" constant="560" id="Fux-lX-qa2"/>
+                                    <constraint firstAttribute="height" constant="158" id="Pd0-3a-2bu"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shouldFill" value="YES"/>
@@ -348,7 +346,6 @@
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopPlaying:" destination="Up4-oM-bz0" eventType="touchUpInside" id="m1e-rc-Fsr"/>
                                     <action selector="uploadToCloud:" destination="Up4-oM-bz0" eventType="touchUpInside" id="SG7-Ks-caG"/>
                                 </connections>
                             </button>
@@ -357,17 +354,17 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="eVq-2L-Ms5" secondAttribute="trailing" constant="60" id="1h1-qV-LmW"/>
                             <constraint firstItem="ynm-Ng-r40" firstAttribute="top" secondItem="6tF-xh-njN" secondAttribute="bottom" constant="46" id="6ef-id-KrK"/>
-                            <constraint firstItem="v5Q-uR-jJx" firstAttribute="trailing" secondItem="TIY-B6-wDw" secondAttribute="trailingMargin" id="E03-gB-xgX"/>
                             <constraint firstItem="LqA-8k-fTE" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="HRm-tF-SI9"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="ynm-Ng-r40" secondAttribute="bottom" constant="36" id="OTB-6T-8ud"/>
                             <constraint firstItem="gDl-bS-cCB" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="RYE-4V-7WM"/>
                             <constraint firstItem="LqA-8k-fTE" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="ZjS-jq-trx"/>
-                            <constraint firstItem="v5Q-uR-jJx" firstAttribute="leading" secondItem="TIY-B6-wDw" secondAttribute="leadingMargin" id="aVp-9j-OcB"/>
                             <constraint firstItem="6tF-xh-njN" firstAttribute="leading" secondItem="TIY-B6-wDw" secondAttribute="leadingMargin" constant="64" id="b1l-pA-BEe"/>
                             <constraint firstItem="oeE-ho-maV" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="bSK-Xt-adn"/>
                             <constraint firstItem="gDl-bS-cCB" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="20" id="cHr-zt-jsY"/>
+                            <constraint firstItem="v5Q-uR-jJx" firstAttribute="leading" secondItem="TIY-B6-wDw" secondAttribute="leadingMargin" id="cn1-fO-wZa"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="eVq-2L-Ms5" secondAttribute="bottom" constant="112" id="eTp-lU-orK"/>
                             <constraint firstItem="ynm-Ng-r40" firstAttribute="top" secondItem="HBB-TW-2dc" secondAttribute="bottom" constant="47" id="ggb-IS-hUt"/>
+                            <constraint firstItem="v5Q-uR-jJx" firstAttribute="trailing" secondItem="TIY-B6-wDw" secondAttribute="trailingMargin" id="oe2-IQ-3Wq"/>
                             <constraint firstItem="v5Q-uR-jJx" firstAttribute="top" secondItem="8Ee-BA-BD2" secondAttribute="bottom" constant="21" id="pA0-et-3Uy"/>
                             <constraint firstItem="E6N-MO-9Lf" firstAttribute="top" secondItem="afP-eG-Pbj" secondAttribute="bottom" constant="38" id="pYJ-7y-hcV"/>
                             <constraint firstItem="oeE-ho-maV" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="20" id="qrI-61-vMe"/>
