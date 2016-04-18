@@ -228,6 +228,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         if flag == true{
             //            btnPlay.enabled = true
+            playing = false
             updatePlayingTimer()
             self.timer.invalidate()
             //show playing time in h/m/s format
@@ -266,7 +267,6 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             playing = false
         }
     }
-    
     
     
     @IBAction func pausePlaying(sender: UIButton) {

@@ -108,7 +108,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     func setSessionPlayAndRecord(){
         let session = AVAudioSession.sharedInstance()
         do{
-            try session.setCategory(AVAudioSessionCategoryPlayback)
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         }
         catch{
             print("Unable to set Audio session caterogy")
