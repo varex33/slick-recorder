@@ -130,7 +130,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     func setupRecorder(){
         let recordSettings:[String : AnyObject] = [
-            AVFormatIDKey: NSNumber(unsignedInt:kAudioFormatAppleLossless),
+            AVFormatIDKey: NSNumber(unsignedInt:kAudioFormatMPEG4AAC),
             AVEncoderAudioQualityKey : AVAudioQuality.Max.rawValue,
             AVEncoderBitRateKey : 128000,
             AVNumberOfChannelsKey: 2,
