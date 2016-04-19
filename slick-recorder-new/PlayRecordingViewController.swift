@@ -87,7 +87,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         }
         /*
         do{
-            try session.setMode("AVAudioSessionCategoryOptionAllowBluetooth")
+            try session.setMode("AVAudioSessionModeVoiceChat")
         }
         catch{
             print("Unable to initialize session mode")
