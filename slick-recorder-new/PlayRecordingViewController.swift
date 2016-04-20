@@ -14,7 +14,7 @@ import SwiftyDropbox
 class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAudioPlayerDelegate{
     
     //    @IBOutlet weak var circularProgress: UIView!
-    @IBOutlet weak var btnStop: UIButton!
+//    @IBOutlet weak var btnStop: UIButton!
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var audioPlot: EZAudioPlotGL!
     @IBOutlet weak var btnPause: UIButton!
@@ -275,13 +275,14 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         btnPlay.hidden = false
         playing = false
     }
+    /*
     @IBAction func btnStop(sender: UIButton) {
         player.stop()
         player.currentTime = 0
         btnPause.hidden = true
         btnPlay.hidden = false
         playing = false
-    }
+    }*/
     
     @IBAction func uploadToCloud(sender: UIButton) {
         // Verify user is logged into Dropbox
