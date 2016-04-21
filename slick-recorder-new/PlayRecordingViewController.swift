@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 import SwiftyDropbox
-
+import MediaPlayer
 
 class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAudioPlayerDelegate{
     
@@ -18,6 +18,9 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var audioPlot: EZAudioPlotGL!
     @IBOutlet weak var btnPause: UIButton!
+    @IBOutlet weak var fileName: UILabel!
+    @IBOutlet weak var volumeView: UIView!
+    @IBOutlet weak var volumeSlider: UISlider!
 
     
     // EZAUDIO
@@ -45,7 +48,17 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         super.viewDidLoad()
         let dir = dirPath.getRecordingDirectory()
             let fullName = NSURL(fileURLWithPath: dir+"/"+recordedAudio.audioTitle)
-
+        
+            self.fileName.text = recordedAudio.audioTitle //  Display File Name below slider
+        
+            volumeView.backgroundColor = UIColor.clearColor()
+            let audioVolume = MPVolumeView(frame: CGRectMake(5, 10, 230, 50))
+            volumeView.addSubview(audioVolume)
+            audioVolume.showsVolumeSlider = false
+        
+            volumeSlider.minimumValueImage = UIImage(named: "min-volume")
+            volumeSlider.maximumValueImage = UIImage(named: "max-volume")
+    
             /**** EZAUDIO CONFIGURATION ****/
             audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
             audioPlot?.backgroundColor = nil
@@ -75,6 +88,9 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         */
     }
     
+    @IBAction func changeVolume(sender: UISlider) {
+        player.volume = volumeSlider.value
+    }
     func setSessionPlayAudio(){
         let session = AVAudioSession.sharedInstance()
         do{
