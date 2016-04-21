@@ -203,6 +203,13 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
             recordedAudio.audioTitle = recorder.url.lastPathComponent
 //            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
             print("recording finished")
+            let session = AVAudioSession.sharedInstance()
+            do{
+                try session.setActive(false)
+            }
+            catch{
+                print("unable to deactive session")
+            }
         }
         
     }

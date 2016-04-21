@@ -51,13 +51,17 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         
             self.fileName.text = recordedAudio.audioTitle //  Display File Name below slider
         
+        /** ADD VOLUME USING MPVOLUMEVIEW, HIDE SLIDER AND ONLY SHOW ROUTE BUTTON **/
             volumeView.backgroundColor = UIColor.clearColor()
             let audioVolume = MPVolumeView(frame: CGRectMake(5, 10, 230, 50))
             volumeView.addSubview(audioVolume)
             audioVolume.showsVolumeSlider = false
         
+        /** ADD VOLUME SLIDER USING UISLIDER **/
             volumeSlider.minimumValueImage = UIImage(named: "min-volume")
             volumeSlider.maximumValueImage = UIImage(named: "max-volume")
+        
+            audioSlider.setThumbImage(UIImage(named: "slider_thumb"), forState: UIControlState.Normal)
     
             /**** EZAUDIO CONFIGURATION ****/
             audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
