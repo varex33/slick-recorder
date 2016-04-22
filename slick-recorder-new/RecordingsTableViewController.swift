@@ -12,7 +12,7 @@ import CoreData
 
 class RecordingsTableViewController: UITableViewController, UITabBarControllerDelegate, NSFetchedResultsControllerDelegate{
 //    var recordings = [String]() // Array of Strings that contain recordings name
-    var recordings = [RecordedAudio]() // Array of Strings that contain recordings name
+    var recordings = [RecordedAudio]() // Array of objects that contain recordings info
 
     var recordingsSize = [String]()
     var fileUrl = AudioUrl() // Object to pull audio filepath
@@ -53,8 +53,6 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         // Before showing table we must call fillRecordingsArray to populate Array of Recordings
         fillRecordingsArray()
         
-        // Sort Array by Date, lastest recording on top
-//        recordings.sortInPlace(){$0 < $1}
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -165,7 +163,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        // save in recording the name if the recording to be deleted
+        // save in recording the name of the row selected
         let recording = recordings[indexPath.row]
         
         // Attemp to delete file from directory
@@ -177,6 +175,34 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         }
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        // save in recording the name of the row selected
+        let recording = recordings[indexPath.row]
+
+        let renameFile = UITableViewRowAction(style: .Normal, title: "Re Name") { action, index in
+            print("rename")
+        }
+        renameFile.backgroundColor = UIColor.grayColor()
+        
+        let deleteFile = UITableViewRowAction(style: .Destructive, title: "Delete") { action, index in
+
+            if self.fileUrl.deleteRecording(recording.audioTitle){
+                // if file was deleted from directory successfully we then delete file from Array or recordings
+                self.deleteRecordingFromArray(recording.audioTitle)
+                    // Delete the row from the data source
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+            
+        }
+     //   renameFile.backgroundColor = UIColor.grayColor()
+        
+        return [renameFile, deleteFile]
+        
+        
+        
     }
     
     

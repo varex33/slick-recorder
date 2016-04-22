@@ -33,15 +33,15 @@ class AudioUrl{
     }
     func deleteRecording(recName: String)-> Bool{
         let recodingPath = (getRecordingDirectory() as NSString).stringByAppendingPathComponent(recName)
-        let ok: Bool
+        let flag: Bool
         do {
             try NSFileManager.defaultManager().removeItemAtPath(recodingPath)
-            ok = true
+            flag = true
         } catch let error as NSError? {
-            ok = false
+            flag = false
             print(error!)
         }
         
-        return ok
+        return flag
     }
 }
