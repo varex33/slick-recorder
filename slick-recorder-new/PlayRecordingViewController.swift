@@ -33,8 +33,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBOutlet weak var totalTime: UILabel!
     
     var player: AVAudioPlayer!
-    //    var fileName: String! // Saves the file Name recived from Table View
-    var recordedAudio: RecordedAudio!
+    var recordedAudio: RecordedAudio! // Saves the file Name recived from Table View
     var dirPath = AudioUrl() // Get the directory path of the recording
     
     // variables used to update UISlider when playing a sound

@@ -184,6 +184,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
 
         let renameFile = UITableViewRowAction(style: .Normal, title: "Re Name") { action, index in
             print("rename")
+            self.performSegueWithIdentifier("renameFile", sender: recording)
         }
         renameFile.backgroundColor = UIColor.grayColor()
         
@@ -223,20 +224,18 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let player: PlayRecordingViewController = segue.destinationViewController as! PlayRecordingViewController
-        
-        // we only need to send the audio file name to play so sender is casted as string
-//        let data = sender as! String
-        let data = sender as? RecordedAudio
-//        player.fileName = data
-        player.recordedAudio = data
+        if segue.identifier == "playAudioCell"{
+            let player: PlayRecordingViewController = segue.destinationViewController as! PlayRecordingViewController
+            let data = sender as? RecordedAudio
+            player.recordedAudio = data
+        }
         
         // Hide tabbar on next scene (playRecording)
         let destViewController = segue.destinationViewController as! PlayRecordingViewController
         destViewController.hidesBottomBarWhenPushed = true
         
-        
     }
+    
     
     
 }
