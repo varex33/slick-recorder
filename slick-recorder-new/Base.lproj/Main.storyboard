@@ -378,6 +378,14 @@
                                     <action selector="changeVolume:" destination="Up4-oM-bz0" eventType="valueChanged" id="SBM-hM-1Lo"/>
                                 </connections>
                             </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zxp-ee-vRO">
+                                <rect key="frame" x="180" y="267" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="L4r-pa-wQa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.21898020260000001" green="0.21898020260000001" blue="0.21898020260000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -387,6 +395,7 @@
                             <constraint firstItem="oeE-ho-maV" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="5Zb-tR-WzJ"/>
                             <constraint firstItem="6tF-xh-njN" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="80" id="8Y5-cc-0bh"/>
                             <constraint firstItem="uIq-gC-cVR" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="24" id="IEh-OZ-apx"/>
+                            <constraint firstItem="Zxp-ee-vRO" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="KaJ-Xx-QRl"/>
                             <constraint firstItem="fJW-v8-l6G" firstAttribute="top" secondItem="HBB-TW-2dc" secondAttribute="bottom" constant="50" id="MDz-cx-nZq"/>
                             <constraint firstItem="HBB-TW-2dc" firstAttribute="leading" secondItem="sOg-D6-GWQ" secondAttribute="trailing" constant="35" id="NYI-um-Fsn"/>
                             <constraint firstItem="mvg-Ql-CA8" firstAttribute="leading" secondItem="HBB-TW-2dc" secondAttribute="trailing" constant="35" id="P2i-60-c4n"/>
@@ -397,6 +406,7 @@
                             <constraint firstItem="gDl-bS-cCB" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="Vk7-7z-KGZ"/>
                             <constraint firstItem="6tF-xh-njN" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="W8b-0C-Pyq"/>
                             <constraint firstAttribute="bottom" secondItem="afP-eG-Pbj" secondAttribute="bottom" constant="24" id="ZdZ-gT-zPs"/>
+                            <constraint firstItem="Zxp-ee-vRO" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="25" id="aTP-ae-5AP"/>
                             <constraint firstItem="v5Q-uR-jJx" firstAttribute="top" secondItem="oeE-ho-maV" secondAttribute="bottom" constant="23" id="fao-UW-u5q"/>
                             <constraint firstItem="uIq-gC-cVR" firstAttribute="centerX" secondItem="TIY-B6-wDw" secondAttribute="centerX" id="hWy-pf-QaT"/>
                             <constraint firstItem="mvg-Ql-CA8" firstAttribute="top" secondItem="LqA-8k-fTE" secondAttribute="bottom" constant="80" id="heD-Nu-sWn"/>
@@ -416,6 +426,7 @@
                         <outlet property="btnPause" destination="6tF-xh-njN" id="oLp-Rr-5kj"/>
                         <outlet property="btnPlay" destination="HBB-TW-2dc" id="JjV-ji-ZQj"/>
                         <outlet property="fileName" destination="uIq-gC-cVR" id="3wc-p6-jWb"/>
+                        <outlet property="renameFile" destination="Zxp-ee-vRO" id="Mk6-99-zDf"/>
                         <outlet property="timeLabel" destination="oeE-ho-maV" id="pGW-OM-gef"/>
                         <outlet property="totalTime" destination="gDl-bS-cCB" id="Cyd-X4-Sh4"/>
                         <outlet property="volumeSlider" destination="aVw-8Z-Ij7" id="w0B-7f-yli"/>

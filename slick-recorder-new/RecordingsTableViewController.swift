@@ -115,6 +115,17 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         let audioName = recordings[indexPath.row].audioTitle
         cell.detailTextLabel?.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb"
         
+        /**** Show File size on the right of the tableview cell ****/
+        let rightView = UIView(frame: CGRectMake(260, 20, 60, 30))
+        cell.contentView.addSubview(rightView)
+        
+        let labelRight = UILabel(frame: CGRectMake(5, 7, 50, 25))
+        labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb"
+        labelRight.textColor = UIColor.whiteColor()
+        labelRight.font = labelRight.font.fontWithSize(12)
+        rightView.addSubview(labelRight)
+        
+        
         // Color Cell Text
 //        cell.backgroundColor = UIColor(red: 0.8, green: 0.6, blue: 0.8, alpha: 1)
         cell.backgroundColor = UIColor.darkGrayColor()
@@ -181,13 +192,13 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         
         // save in recording the name of the row selected
         let recording = recordings[indexPath.row]
-
+/*
         let renameFile = UITableViewRowAction(style: .Normal, title: "Re Name") { action, index in
             print("rename")
             self.performSegueWithIdentifier("renameFile", sender: recording)
         }
         renameFile.backgroundColor = UIColor.grayColor()
-        
+  */
         let deleteFile = UITableViewRowAction(style: .Destructive, title: "Delete") { action, index in
 
             if self.fileUrl.deleteRecording(recording.audioTitle){
@@ -200,9 +211,8 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         }
      //   renameFile.backgroundColor = UIColor.grayColor()
         
-        return [renameFile, deleteFile]
-        
-        
+  //      return [renameFile, deleteFile]
+        return [deleteFile]
         
     }
     

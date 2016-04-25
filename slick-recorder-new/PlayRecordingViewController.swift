@@ -11,7 +11,7 @@ import AVFoundation
 import SwiftyDropbox
 import MediaPlayer
 
-class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAudioPlayerDelegate{
+class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAudioPlayerDelegate, UITextFieldDelegate{
     
     //    @IBOutlet weak var circularProgress: UIView!
 //    @IBOutlet weak var btnStop: UIButton!
@@ -22,6 +22,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var volumeSlider: UISlider!
 
+    @IBOutlet weak var renameFile: UITextField!
     
     // EZAUDIO
     var ezPlayer : EZAudioPlayer!
@@ -45,10 +46,18 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dir = dirPath.getRecordingDirectory()
+            let dir = dirPath.getRecordingDirectory()
             let fullName = NSURL(fileURLWithPath: dir+"/"+recordedAudio.audioTitle)
-        
+
+        /** DISPLAY AND EDIT AUDIO FILE NAME **/
             self.fileName.text = recordedAudio.audioTitle //  Display File Name below slider
+            renameFile.delegate = self
+            renameFile.hidden = true
+            fileName.userInteractionEnabled = true
+            let selector: Selector = "audioNameEdit"
+            let tapGesture = UITapGestureRecognizer(target: self, action: selector)
+            tapGesture.numberOfTapsRequired = 1
+            fileName.addGestureRecognizer(tapGesture)
         
         /** ADD VOLUME USING MPVOLUMEVIEW, HIDE SLIDER AND ONLY SHOW ROUTE BUTTON **/
             volumeView.backgroundColor = UIColor.clearColor()
@@ -90,6 +99,28 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         let cloudButton = UIImage(named: "cloud")
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(image: cloudButton, style: .Plain, target: self, action: "uploadFileToCloud"), animated: true)
         */
+    }
+    
+    func audioNameEdit(){
+        renameFile.hidden = false
+        fileName.hidden = true
+        renameFile.text = fileName.text
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        renameFile.hidden = true
+        fileName.hidden = false
+        fileName.text = renameFile.text
+        let newName = (dirPath.getRecordingDirectory() as NSString).stringByAppendingPathComponent(renameFile.text!)
+        do{
+            try newName.writeToFile(newName, atomically: true, encoding: NSUTF8StringEncoding)
+        }
+        catch{
+            print("unable to save file")
+        }
+        
+        return true
     }
     
     @IBAction func changeVolume(sender: UISlider) {
