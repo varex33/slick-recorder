@@ -125,7 +125,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         let rightView = UIView(frame: CGRectMake(260, 20, 70, 30))
         cell.contentView.addSubview(rightView)
         
-        let labelRight = UILabel(frame: CGRectMake(5, 7, 70, 25))
+        let labelRight = UILabel(frame: CGRectMake(0, 10, 70, 25))
         labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb"
         labelRight.textColor = UIColor.whiteColor()
         labelRight.font = labelRight.font.fontWithSize(12)

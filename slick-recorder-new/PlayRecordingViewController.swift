@@ -64,7 +64,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             let audioVolume = MPVolumeView(frame: CGRectMake(5, 10, 230, 50))
             volumeView.addSubview(audioVolume)
             audioVolume.showsVolumeSlider = false
-            audioVolume.showsRouteButton = true
+            audioVolume.showsRouteButton = false
         
         /** ADD VOLUME SLIDER USING UISLIDER **/
             volumeSlider.minimumValueImage = UIImage(named: "min-volume")

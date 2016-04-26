@@ -13,6 +13,12 @@ class ViewController: UITabBarController, UITabBarControllerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.sharedApplication().idleTimerDisabled = true // Prevent App from going to sleep
+        
+//        UITabBar.appearance().selectedImageTintColor = UIColor(red: 1, green: 0.6, blue: 0.2, alpha: 1)
+        
+        UITabBar.appearance().tintColor = UIColor.whiteColor() // Custom color for tabbar icons
+        
         // used to control tabs on tabbar
         self.delegate = self
         

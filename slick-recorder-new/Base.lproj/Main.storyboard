@@ -14,6 +14,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.77965296961325969" green="0.3137913696838745" blue="0.15918355173840029" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.16968807552817688" green="0.16968807552817688" blue="0.16968807552817688" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="VUm-UF-DUh" kind="relationship" relationship="viewControllers" id="MRl-wi-JWO"/>
@@ -222,11 +224,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recordingCell" textLabel="U6G-MY-Bde" detailTextLabel="7Yn-1Q-xdb" rowHeight="45" style="IBUITableViewCellStyleSubtitle" id="0m9-5y-V1N">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recordingCell" textLabel="U6G-MY-Bde" detailTextLabel="7Yn-1Q-xdb" rowHeight="45" style="IBUITableViewCellStyleSubtitle" id="0m9-5y-V1N">
                                 <rect key="frame" x="0.0" y="92" width="600" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0m9-5y-V1N" id="GIX-XE-P1k">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U6G-MY-Bde">
@@ -319,10 +321,10 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shouldFill" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-Ng-r40">
-                                <rect key="frame" x="30" y="546" width="124" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-Ng-r40">
+                                <rect key="frame" x="80" y="548" width="25" height="25"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
-                                <state key="normal" title="Upload to Cloud">
+                                <state key="normal" image="uploadButton25x25">
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -361,7 +363,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJW-v8-l6G">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJW-v8-l6G">
                                 <rect key="frame" x="175" y="422" width="250" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -480,6 +482,7 @@
         <image name="rec-label(35x55)" width="57" height="31"/>
         <image name="record-button50x50@1" width="50" height="51"/>
         <image name="toolicon" width="24" height="24"/>
+        <image name="uploadButton25x25" width="25" height="25"/>
         <image name="white-pause-50x50@1" width="50" height="50"/>
         <image name="white-play-50x50@1" width="50" height="50"/>
         <image name="white-stop-button-ver2@1" width="50" height="50"/>
