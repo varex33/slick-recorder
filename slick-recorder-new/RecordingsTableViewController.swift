@@ -27,7 +27,6 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
             let allRecordings = (try NSFileManager.defaultManager().contentsOfDirectoryAtPath(audioDir)) as [String]
             // Remove all recordings from array when rows are added or deleted so user can see only available rows
             recordings.removeAll()
-            var counter = 0
             for name in allRecordings{
                 let recording = RecordedAudio()
 
@@ -38,10 +37,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
                 let fileAttributes: [String: AnyObject] = (try NSFileManager.defaultManager().attributesOfItemAtPath("\(audioDir)/\(recording.audioTitle)"))
                 recording.recordingDate = fileAttributes[NSFileCreationDate]! as! NSDate
                 recordings.append(recording)
-
-                recording.recordingGivenTitle = "My Recording \(allRecordings.count - counter) " + recording.audioTitle
-                print(recording.recordingGivenTitle)
-                counter += 1
+                
 
             }
             recordings.sortInPlace({ (recording1, recording2) -> Bool in
@@ -116,10 +112,9 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         let cell = tableView.dequeueReusableCellWithIdentifier("recordingCell", forIndexPath: indexPath) as UITableViewCell ?? UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "recordingCell")
 
         /*** Display Name of Audio files by counting the number of recordings **/
-//        let totalRecordings = recordings.count
-//        cell.textLabel?.text = "My Recording \(totalRecordings - indexPath.row )"
-          cell.textLabel?.text = recordings[indexPath.row].recordingGivenTitle
-//          print("Index: \(indexPath.row)")
+        let totalRecordings = recordings.count
+        cell.textLabel?.text = "My Recording \(totalRecordings - indexPath.row )"
+//          cell.textLabel?.text = recordings[indexPath.row].recordingGivenTitle
         
         /*** Show File Date time Information as Row Detail ****/
         let audioName = recordings[indexPath.row].audioTitle
