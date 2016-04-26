@@ -326,6 +326,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         btnPlay.hidden = false
         playing = false
     }
+    
     /*
     @IBAction func btnStop(sender: UIButton) {
         player.stop()
