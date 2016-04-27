@@ -21,8 +21,10 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBOutlet weak var fileName: UILabel!
     @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var volumeSlider: UISlider!
-
     @IBOutlet weak var renameFile: UITextField!
+    
+    @IBOutlet weak var playDuration: UILabel!
+    @IBOutlet weak var playCurrentTime: UILabel!
     
     // EZAUDIO
     var ezPlayer : EZAudioPlayer!
@@ -177,12 +179,18 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     func updatePlayingTimer(){
         let seconds = Int(player.currentTime % 60)
         let minutes = Int(player.currentTime / 60)
-        timeLabel.text = String(format: "%.2d:%.2d", minutes, seconds)
+        let totalSecDuration = Int(player.duration % 60)
+        let totalMinDuration = Int(player.duration / 60)
+
+//        timeLabel.text = String(format: "%.2d:%.2d", minutes, seconds)
         
         // Animate Slider when playing 
         audioSlider.minimumValue = 0.0
         audioSlider.maximumValue = Float(player.duration)
         audioSlider.setValue(Float(player.currentTime), animated: true)
+
+        self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds)
+        self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, totalSecDuration - seconds )
     }
     
     func openFile(filePath: NSURL){
@@ -282,7 +290,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             playing = false
             updatePlayingTimer()
             self.timer.invalidate()
-            //show playing time in h/m/s format
+            //show playing time on top of playing scene
+            /*
             let duration = NSInteger(player.duration)
             let seconds = duration
             let minutes = seconds / 60
@@ -290,6 +299,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             timeLabel.hidden = true
             totalTime.hidden = false
             totalTime.text = NSString(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds) as String
+*/
         }
         btnPlay.hidden = false
         btnPause.hidden = true
@@ -306,7 +316,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             btnPause.hidden = false
             btnPlay.hidden = true
             totalTime.hidden = true
-            timeLabel.hidden = false
+        //    timeLabel.hidden = false
             player.delegate = self
             player.prepareToPlay()
             player.play()
