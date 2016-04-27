@@ -189,8 +189,22 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         audioSlider.maximumValue = Float(player.duration)
         audioSlider.setValue(Float(player.currentTime), animated: true)
 
+        /*** Show Current / Total Time on the sides of Time slider **/
         self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds)
         self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, totalSecDuration - seconds )
+    }
+    
+    @IBAction func fowardButton(sender: UIButton) {
+        player.currentTime += 10
+        updatePlayingTimer()
+        showRecordingTime()
+        
+    }
+    
+    @IBAction func rewindButton(sender: UIButton) {
+        player.currentTime -= 10
+        updatePlayingTimer()
+        showRecordingTime()
     }
     
     func openFile(filePath: NSURL){
@@ -258,6 +272,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         }
         updater.invalidate()
         updater_running = false
+
         super.viewWillDisappear(animated)
     }
     
@@ -283,6 +298,37 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         
     }
     
+    func audioPlayerBeginInterruption(player: AVAudioPlayer) {
+        player.stop()
+        btnPause.hidden = true
+        btnPlay.hidden = false
+        playing = false
+    }
+    
+    func audioPlayerEndInterruption(player: AVAudioPlayer) {
+        if (playing == false) {
+            updater = CADisplayLink(target: self, selector: Selector("updatePlayingTimer"))
+            updater.frameInterval = 1
+            updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            updater_running = true
+            playing = true
+            //        btnPlay.enabled = false
+            btnPause.hidden = false
+            btnPlay.hidden = true
+            totalTime.hidden = true
+            //    timeLabel.hidden = false
+            player.delegate = self
+            player.prepareToPlay()
+            player.play()
+            updatePlayingTimer()
+        }
+        else {
+            updatePlayingTimer()
+            // player.pause()
+            playing = false
+        }
+
+    }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         if flag == true{
