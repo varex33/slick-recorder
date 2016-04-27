@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-115" y="678"/>
         </scene>
-        <!--record-->
+        <!--Record Sounds View Controller-->
         <scene sceneID="NOZ-u1-Q6Z">
             <objects>
                 <viewController storyboardIdentifier="Storyboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ozC-0e-OoO" customClass="RecordSoundsViewController" customModule="slick_recorder_new" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21898020260000001" green="0.21898020260000001" blue="0.21898020260000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="record" image="mic-icon" id="jmr-Ph-Nkd"/>
+                    <tabBarItem key="tabBarItem" title="" image="red-mic" id="jmr-Ph-Nkd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljr-jq-J21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -443,7 +443,7 @@
         <scene sceneID="P1E-4S-r1J">
             <objects>
                 <navigationController title="Recorded Files" id="VUm-UF-DUh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="files" image="list-icon" id="lxE-Na-Szs"/>
+                    <tabBarItem key="tabBarItem" title="" image="archives-icon" id="lxE-Na-Szs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XeE-H1-xZv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -456,11 +456,11 @@
             </objects>
             <point key="canvasLocation" x="-663" y="1439"/>
         </scene>
-        <!--settings-->
+        <!--Navigation Controller-->
         <scene sceneID="tai-Nb-XP6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pP4-7J-Ifs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="settings" image="toolicon" id="Eoa-tR-hBO"/>
+                    <tabBarItem key="tabBarItem" title="" image="toolicon" id="Eoa-tR-hBO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eYK-0t-4vE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -477,10 +477,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list-icon" width="25" height="25"/>
-        <image name="mic-icon" width="25" height="25"/>
+        <image name="archives-icon" width="25" height="25"/>
         <image name="rec-label(35x55)" width="57" height="31"/>
         <image name="record-button50x50@1" width="50" height="51"/>
+        <image name="red-mic" width="25" height="25"/>
         <image name="toolicon" width="24" height="24"/>
         <image name="uploadButton25x25" width="25" height="25"/>
         <image name="white-pause-50x50@1" width="50" height="50"/>
