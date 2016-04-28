@@ -29,7 +29,6 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     // EZAUDIO
     var ezPlayer : EZAudioPlayer!
     var audioFile: EZAudioFile!
-    var timer: NSTimer!
     
     @IBOutlet weak var audioSlider: UISlider!
     @IBOutlet weak var timeLabel: UILabel!
@@ -42,7 +41,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     // variables used to update UISlider when playing a sound
     var updater : CADisplayLink! = nil // tracks the time into the track
     var updater_running : Bool = false // did the updater start?
-    var playing : Bool = false //indicates if track started playing
+    var playing = false //indicates if track started playing
+    var timer: NSTimer! // Tracks the time into the track
     
     var previewView = UIView()
     
@@ -89,7 +89,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             
             /***  PLAY AUDIO FILE IMPLEMENTATION ***/
             
-            showRecordingTime()
+            updateTimeSlider()
             setSessionPlayAudio()
             playAudio(fullName)
 
@@ -128,6 +128,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBAction func changeVolume(sender: UISlider) {
         player.volume = volumeSlider.value
     }
+    
     func setSessionPlayAudio(){
         let session = AVAudioSession.sharedInstance()
         do{
@@ -161,6 +162,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             player.prepareToPlay()
             self.player.play()
             playing = true // Boolean to control slider status and update playing status
+            updateTimeSlider()
+            /*
             self.timer = NSTimer(
                 timeInterval: 1,
                 target: self,
@@ -168,6 +171,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                 userInfo: nil,
                 repeats: true)
             NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+*/
             
         }
         catch let error as NSError?{
@@ -189,7 +193,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         audioSlider.maximumValue = Float(player.duration)
         audioSlider.setValue(Float(player.currentTime), animated: true)
 
-        /*** Show Current / Total Time on the sides of Time slider **/
+        /*** Show Current / Total Time on the sides of  Slider **/
         self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds)
         self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, totalSecDuration - seconds )
     }
@@ -197,14 +201,12 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     @IBAction func fowardButton(sender: UIButton) {
         player.currentTime += 10
         updatePlayingTimer()
-        showRecordingTime()
         
     }
     
     @IBAction func rewindButton(sender: UIButton) {
         player.currentTime -= 10
         updatePlayingTimer()
-        showRecordingTime()
     }
     
     func openFile(filePath: NSURL){
@@ -228,7 +230,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         
     }
     
-    func showRecordingTime(){
+    func updateTimeSlider(){
         updater = CADisplayLink(target: self, selector: Selector("updatePlayingTimer"))
         updater.frameInterval = 1
         updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
@@ -269,9 +271,11 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     override func viewWillDisappear(animated: Bool) {
         if playing == true {
             player.stop()
+//            self.timer.invalidate()
+            updater.invalidate()
+            updater_running = false
+
         }
-        updater.invalidate()
-        updater_running = false
 
         super.viewWillDisappear(animated)
     }
@@ -283,7 +287,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     @IBAction func progressSlider(sender: UISlider) {
         // if the track was playing store true, so we can restart playing after changing the track position
-        var wasPlaying : Bool = false
+        var wasPlaying = false
         if playing == true {
             player.pause()
             wasPlaying = true
@@ -307,10 +311,6 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     func audioPlayerEndInterruption(player: AVAudioPlayer) {
         if (playing == false) {
-            updater = CADisplayLink(target: self, selector: Selector("updatePlayingTimer"))
-            updater.frameInterval = 1
-            updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-            updater_running = true
             playing = true
             //        btnPlay.enabled = false
             btnPause.hidden = false
@@ -322,12 +322,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             player.play()
             updatePlayingTimer()
         }
-        else {
-            updatePlayingTimer()
-            // player.pause()
-            playing = false
-        }
-
+        
     }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
@@ -335,7 +330,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             //            btnPlay.enabled = true
             playing = false
             updatePlayingTimer()
-            self.timer.invalidate()
+            updater.invalidate()
+            updater_running = false
             //show playing time on top of playing scene
             /*
             let duration = NSInteger(player.duration)
@@ -353,10 +349,6 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     @IBAction func playSelectedRecording(sender: UIButton) {
         if (playing == false) {
-            updater = CADisplayLink(target: self, selector: Selector("updatePlayingTimer"))
-            updater.frameInterval = 1
-            updater.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-            updater_running = true
             playing = true
             //        btnPlay.enabled = false
             btnPause.hidden = false
@@ -367,11 +359,6 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             player.prepareToPlay()
             player.play()
             updatePlayingTimer()
-        }
-        else {
-            updatePlayingTimer()
-           // player.pause()
-            playing = false
         }
     }
     

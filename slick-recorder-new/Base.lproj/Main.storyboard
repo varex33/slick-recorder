@@ -340,17 +340,17 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-Ql-CA8">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-Ql-CA8">
                                 <rect key="frame" x="360" y="317" width="50" height="50"/>
-                                <state key="normal" image="white-play-50x50@1"/>
+                                <state key="normal" image="forward"/>
                                 <connections>
                                     <action selector="fowardButton:" destination="Up4-oM-bz0" eventType="touchUpInside" id="HHC-HY-48V"/>
                                     <action selector="playSelectedRecording:" destination="Up4-oM-bz0" eventType="touchUpInside" id="08l-ZJ-Ike"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOg-D6-GWQ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOg-D6-GWQ">
                                 <rect key="frame" x="190" y="317" width="50" height="50"/>
-                                <state key="normal" image="white-play-50x50@1"/>
+                                <state key="normal" image="rewind"/>
                                 <connections>
                                     <action selector="playSelectedRecording:" destination="Up4-oM-bz0" eventType="touchUpInside" id="F82-UQ-sOr"/>
                                     <action selector="rewindButton:" destination="Up4-oM-bz0" eventType="touchUpInside" id="faj-HT-kRH"/>
@@ -507,9 +507,11 @@
     </scenes>
     <resources>
         <image name="archives-icon" width="25" height="25"/>
+        <image name="forward" width="37" height="37"/>
         <image name="rec-label(35x55)" width="57" height="31"/>
         <image name="record-button50x50@1" width="50" height="51"/>
         <image name="red-mic" width="25" height="25"/>
+        <image name="rewind" width="37" height="37"/>
         <image name="toolicon" width="24" height="24"/>
         <image name="uploadButton25x25" width="25" height="25"/>
         <image name="white-pause-50x50@1" width="50" height="50"/>
