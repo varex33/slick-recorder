@@ -46,6 +46,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     var previewView = UIView()
     
+    var recordingsQueqe: AVQueuePlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             let dir = dirPath.getRecordingDirectory()
@@ -61,12 +63,14 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             tapGesture.numberOfTapsRequired = 1
             fileName.addGestureRecognizer(tapGesture)
         
-        /** ADD VOLUME USING MPVOLUMEVIEW, HIDE SLIDER AND ONLY SHOW ROUTE BUTTON **/
+        /** ADD VOLUME USING MPVOLUMEVIEW, HIDE SLIDER AND ROUTE BUTTON POSTPONED UNTIL FINDING A WAY TO SET SPEAKER ICONS ON THE SIDES OF SLIDER (if useing again, need too add view to storyboard)**/
+        /*
             volumeView.backgroundColor = UIColor.clearColor()
             let audioVolume = MPVolumeView(frame: CGRectMake(5, 10, 230, 50))
             volumeView.addSubview(audioVolume)
             audioVolume.showsVolumeSlider = false
             audioVolume.showsRouteButton = false
+        */
         
         /** ADD VOLUME SLIDER USING UISLIDER **/
             volumeSlider.minimumValueImage = UIImage(named: "min-volume")
@@ -485,8 +489,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             }
         })
         let actionNo = UIAlertAction(title: "No", style: .Default, handler: {(alert: UIAlertAction) in
-            self.btnPause.hidden = true
-            self.btnPlay.hidden = false
+            self.btnPause.hidden = false
+            self.btnPlay.hidden = true
         })
         alert.addAction(actionYes)
         alert.addAction(actionNo)
