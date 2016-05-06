@@ -19,6 +19,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     var formatDate = NSDateFormatter()
     var count = 0
     var tempDate = NSDate()
+    var player: AVAudioPlayer!
     
     func fillRecordingsArray(){
         let audioDir = fileUrl.getRecordingDirectory()
@@ -105,7 +106,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         
     }
     
-    // MARK: - Table view data source
+        // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -126,19 +127,100 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         cell.detailTextLabel?.text = recordings[indexPath.row].audioTitle
         cell.detailTextLabel?.font = cell.detailTextLabel?.font.fontWithSize(12)
         
-        /**** Show File size on the right of the tableview cell ****/
         
-            let rightView = UIView(frame: CGRectMake(0, 20, 80, 30))
-         //   cell.contentView.addSubview(rightView)
-            let labelRight = UILabel(frame: CGRectMake(40, 10, 60, 20))
-            labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb"
-            labelRight.textColor = UIColor.whiteColor()
-            labelRight.font = labelRight.font.fontWithSize(12)
-            rightView.addSubview(labelRight)
         
-            cell.accessoryView = rightView // Add Custom View in AccesoryView
+        /**** SHOW AUDIO FILE SIZE AND TIME DURATION TO THE RIGHT OF TABLEVIEW ****/
+        
+        do{
+            let dir = fileUrl.getRecordingDirectory()
+            let fullName = NSURL(fileURLWithPath: dir+"/"+recordings[indexPath.row].audioTitle)
+            try player = AVAudioPlayer(contentsOfURL: fullName)
+            let minutes = Int(player.duration / 60)
+            let seconds = Int(player.duration % 60)
             
-        
+            if minutes == 0{ // Re arragenge subview space and show only seconds
+                
+                /**** Show File size on the right of the tableview cell ****/
+                
+                let rightView = UIView(frame: CGRectMake(0, 20, 100, 30))
+                //rightView.backgroundColor = UIColor.yellowColor()
+                let labelRight = UILabel(frame: CGRectMake(25, 14, 55, 20))
+                //labelRight.backgroundColor = UIColor.blueColor()
+                labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb |"
+                labelRight.textColor = UIColor.whiteColor()
+                labelRight.font = labelRight.font.fontWithSize(12)
+                rightView.addSubview(labelRight)
+                
+                
+                /**** Show Audio File Duration on the right of Table view ****/
+
+                let labelDuration = UILabel(frame: CGRectMake(70,14,35,20))
+                //labelDuration.backgroundColor = UIColor.blackColor()
+                labelDuration.text = String(format: " %.2ds", seconds)
+                labelDuration.font = labelRight.font.fontWithSize(12)
+                labelDuration.textColor = UIColor.whiteColor()
+                rightView.addSubview(labelDuration)
+                cell.accessoryView = rightView // Add Custom View in AccesoryView
+                
+            }
+            else{
+                if minutes < 10{ // Re arragenge subview space if minutes is only 1 digit
+                    
+                    /**** Show File size on the right of the tableview cell ****/
+                    
+                    let rightView = UIView(frame: CGRectMake(0, 20, 110, 30))
+                    //rightView.backgroundColor = UIColor.yellowColor()
+                    let labelRight = UILabel(frame: CGRectMake(20, 14, 45, 20))
+                    //labelRight.backgroundColor = UIColor.blueColor()
+                    labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb |"
+                    labelRight.textColor = UIColor.whiteColor()
+                    labelRight.font = labelRight.font.fontWithSize(12)
+                    rightView.addSubview(labelRight)
+                    
+                    
+                    /**** Show Audio File Duration on the right of Table view ****/
+                    
+                    let labelDuration = UILabel(frame: CGRectMake(60,14,55,20))
+                    //labelDuration.backgroundColor = UIColor.blackColor()
+                    labelDuration.text = String(format: " %.1dm %.2ds", minutes, seconds)
+                    labelDuration.font = labelRight.font.fontWithSize(12)
+                    labelDuration.textColor = UIColor.whiteColor()
+                    rightView.addSubview(labelDuration)
+                    cell.accessoryView = rightView // Add Custom View in AccesoryView
+
+                    
+                }
+                else{
+                    /**** Show File size on the right of the tableview cell ****/
+                    
+                    let rightView = UIView(frame: CGRectMake(0, 20, 110, 30))
+                    //   cell.contentView.addSubview(rightView)
+                    //rightView.backgroundColor = UIColor.yellowColor()
+                    let labelRight = UILabel(frame: CGRectMake(10, 14, 55, 20))
+                    //labelRight.backgroundColor = UIColor.blueColor()
+                    labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb |"
+                    labelRight.textColor = UIColor.whiteColor()
+                    labelRight.font = labelRight.font.fontWithSize(12)
+                    rightView.addSubview(labelRight)
+                    
+                    
+                    /**** Show Audio File Duration on the right of Table view ****/
+
+                    let labelDuration = UILabel(frame: CGRectMake(60,14,55,20))
+                    //labelDuration.backgroundColor = UIColor.blackColor()
+                    labelDuration.text = String(format: " %.1dm %.2ds", minutes, seconds)
+                    labelDuration.font = labelRight.font.fontWithSize(12)
+                    labelDuration.textColor = UIColor.whiteColor()
+                    rightView.addSubview(labelDuration)
+                    cell.accessoryView = rightView // Add Custom View in AccesoryView
+                }
+               
+            }
+            //print(String(format: "%.1d:%.2d", minutes, seconds))
+        }
+        catch{
+            print("unable to open audio file")
+        }
         
         // Color Cell Text
 //        cell.backgroundColor = UIColor(red: 0.8, green: 0.6, blue: 0.8, alpha: 1)
