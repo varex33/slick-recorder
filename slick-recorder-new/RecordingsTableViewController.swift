@@ -61,7 +61,9 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         
         self.tableView.delegate = self
         
-
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
     }
     override func viewWillAppear(animated: Bool) {
@@ -109,12 +111,15 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         return 1
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("recordingCell", forIndexPath: indexPath) as UITableViewCell ?? UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "recordingCell")
+        
 
         /*** Display Name of Audio files by counting the number of recordings **/
         let totalRecordings = recordings.count
         cell.textLabel?.text = "My Recording \(totalRecordings - indexPath.row )"
 //          cell.textLabel?.text = recordings[indexPath.row].recordingGivenTitle
+        
         
         /*** Show File Date time Information as Row Detail ****/
         let audioName = recordings[indexPath.row].audioTitle
@@ -122,14 +127,17 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
         cell.detailTextLabel?.font = cell.detailTextLabel?.font.fontWithSize(12)
         
         /**** Show File size on the right of the tableview cell ****/
-        let rightView = UIView(frame: CGRectMake(250, 20, 80, 30))
-        cell.contentView.addSubview(rightView)
         
-        let labelRight = UILabel(frame: CGRectMake(0, 10, 80, 25))
-        labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb"
-        labelRight.textColor = UIColor.whiteColor()
-        labelRight.font = labelRight.font.fontWithSize(12)
-        rightView.addSubview(labelRight)
+            let rightView = UIView(frame: CGRectMake(0, 20, 80, 30))
+         //   cell.contentView.addSubview(rightView)
+            let labelRight = UILabel(frame: CGRectMake(40, 10, 60, 20))
+            labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb"
+            labelRight.textColor = UIColor.whiteColor()
+            labelRight.font = labelRight.font.fontWithSize(12)
+            rightView.addSubview(labelRight)
+        
+            cell.accessoryView = rightView // Add Custom View in AccesoryView
+            
         
         
         // Color Cell Text
