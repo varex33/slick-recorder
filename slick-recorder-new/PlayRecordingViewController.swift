@@ -187,8 +187,9 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     func updatePlayingTimer(){
         let seconds = Int(player.currentTime % 60)
         let minutes = Int(player.currentTime / 60)
-        let totalSecDuration = Int(player.duration % 60)
+      //  let totalSecDuration = Int(player.duration % 60)
         let totalMinDuration = Int(player.duration / 60)
+        let hour = 60
 
 //        timeLabel.text = String(format: "%.2d:%.2d", minutes, seconds)
         
@@ -199,7 +200,12 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
 
         /*** Show Current / Total Time on the sides of  Slider **/
         self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds)
-        self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, totalSecDuration - seconds )
+        if totalMinDuration - hour > 0{
+            self.playDuration.text = String(format: "-%.1d:%.1d:%.2d", (totalMinDuration - minutes) / hour, totalMinDuration - minutes, seconds )
+        }
+        else{
+            self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, seconds )
+        }
     }
     
     @IBAction func fowardButton(sender: UIButton) {
