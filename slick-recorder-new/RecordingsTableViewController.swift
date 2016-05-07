@@ -164,7 +164,33 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
                 
             }
             else{
-                if minutes < 10{ // Re arragenge subview space if minutes is only 1 digit
+                if minutes > 60 {
+                    /**** Show File size on the right of the tableview cell ****/
+                    
+                    let rightView = UIView(frame: CGRectMake(0, 20, 110, 30))
+                    //   cell.contentView.addSubview(rightView)
+                    //rightView.backgroundColor = UIColor.yellowColor()
+                    let labelRight = UILabel(frame: CGRectMake(10, 14, 55, 20))
+                    //labelRight.backgroundColor = UIColor.blueColor()
+                    labelRight.text = String(format: "%.1f", getAudioFileSize(audioName)/1000000)+"Mb |"
+                    labelRight.textColor = UIColor.whiteColor()
+                    labelRight.font = labelRight.font.fontWithSize(12)
+                    rightView.addSubview(labelRight)
+                    
+                    
+                    /**** Show Audio File Duration on the right of Table view ****/
+                    
+                    let labelDuration = UILabel(frame: CGRectMake(60,14,55,20))
+                    //labelDuration.backgroundColor = UIColor.blackColor()
+                    labelDuration.text = String(format: " %.1dh %.2dm", minutes / 60, minutes - 60)
+                    labelDuration.font = labelRight.font.fontWithSize(12)
+                    labelDuration.textColor = UIColor.whiteColor()
+                    rightView.addSubview(labelDuration)
+                    cell.accessoryView = rightView // Add Custom View in AccesoryView
+
+                    
+                }
+                else if minutes < 10{ // Re arragenge subview space if minutes is only 1 digit
                     
                     /**** Show File size on the right of the tableview cell ****/
                     
