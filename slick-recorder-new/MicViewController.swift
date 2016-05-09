@@ -31,7 +31,6 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     /*** EZAdio declarations ****/
     @IBOutlet weak var wavePlot: EZAudioPlotGL?
      var microphone: EZMicrophone!
-     var fileName: String? // save the name of recorded file
     
     // Object to create an instance of AVAudioRecorder class
     var recorder: AVAudioRecorder!
@@ -50,6 +49,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         btnResumeRecording.hidden = true
         
         /**** REC blinking when Recording ****/
@@ -75,7 +75,6 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
         // Create an instance of the microphone and tell it to use this view controller instance as the delegate
         microphone = EZMicrophone(delegate: self, startsImmediately: true)
-        
         
         
         // Show pause button while recording

@@ -18,8 +18,8 @@
                         <color key="barTintColor" red="0.16968807552817688" green="0.16968807552817688" blue="0.16968807552817688" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="VUm-UF-DUh" kind="relationship" relationship="viewControllers" id="MRl-wi-JWO"/>
                         <segue destination="ozC-0e-OoO" kind="relationship" relationship="viewControllers" id="D5R-6I-qLP"/>
+                        <segue destination="VUm-UF-DUh" kind="relationship" relationship="viewControllers" id="MRl-wi-JWO"/>
                         <segue destination="pP4-7J-Ifs" kind="relationship" relationship="viewControllers" id="j4L-Cd-iyf"/>
                     </connections>
                 </tabBarController>
@@ -38,9 +38,68 @@
                     <view key="view" contentMode="scaleToFill" id="rvJ-Vs-3su">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74R-aF-9A2">
+                                <rect key="frame" x="192" y="192" width="216" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="Xaj-ke-Ka0"/>
+                                    <constraint firstAttribute="height" constant="60" id="ZXP-2s-HJw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9b-f8-3f0" customClass="EZAudioPlotGL">
+                                <rect key="frame" x="31" y="28" width="539" height="154"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="539" id="2Ro-3o-BH7"/>
+                                    <constraint firstAttribute="height" constant="154" id="NlN-B0-kbh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi3-o3-iCC">
+                                <rect key="frame" x="30" y="355" width="150" height="150"/>
+                                <state key="normal" image="red-btn-mic"/>
+                                <connections>
+                                    <action selector="startRecording:" destination="ozC-0e-OoO" eventType="touchUpInside" id="ftg-cc-kI5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g82-qE-7Bb">
+                                <rect key="frame" x="420" y="355" width="150" height="150"/>
+                                <state key="normal" image="red-btn-mic"/>
+                                <connections>
+                                    <action selector="stopButton:" destination="ozC-0e-OoO" eventType="touchUpInside" id="MFM-QQ-DiZ"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEM-3x-aji">
+                                <rect key="frame" x="80" y="405" width="50" height="50"/>
+                                <state key="normal" image="white-pause-50x50@1"/>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="ozC-0e-OoO" eventType="touchUpInside" id="kfB-Z7-AYS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.21898020260000001" green="0.21898020260000001" blue="0.21898020260000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rzf-Vm-eSY" firstAttribute="top" secondItem="Xi3-o3-iCC" secondAttribute="bottom" constant="46" id="79c-Ia-HHh"/>
+                            <constraint firstItem="rzf-Vm-eSY" firstAttribute="top" secondItem="g82-qE-7Bb" secondAttribute="bottom" constant="46" id="CKO-dt-fLi"/>
+                            <constraint firstItem="74R-aF-9A2" firstAttribute="centerX" secondItem="rvJ-Vs-3su" secondAttribute="centerX" id="Fnf-OO-mJP"/>
+                            <constraint firstItem="i9b-f8-3f0" firstAttribute="centerX" secondItem="rvJ-Vs-3su" secondAttribute="centerX" id="NOd-md-CAj"/>
+                            <constraint firstItem="rzf-Vm-eSY" firstAttribute="top" secondItem="vEM-3x-aji" secondAttribute="bottom" constant="96" id="ZOH-V3-k8a"/>
+                            <constraint firstItem="74R-aF-9A2" firstAttribute="top" secondItem="i9b-f8-3f0" secondAttribute="bottom" constant="10" id="jJx-fE-raV"/>
+                            <constraint firstItem="Xi3-o3-iCC" firstAttribute="leading" secondItem="rvJ-Vs-3su" secondAttribute="leadingMargin" constant="10" id="sro-CM-QzI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g82-qE-7Bb" secondAttribute="trailing" constant="10" id="vaX-Sr-T5z"/>
+                            <constraint firstItem="vEM-3x-aji" firstAttribute="leading" secondItem="rvJ-Vs-3su" secondAttribute="leadingMargin" constant="60" id="zzJ-ue-Odq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="mic-icon" id="jmr-Ph-Nkd"/>
+                    <connections>
+                        <outlet property="audioPlot" destination="i9b-f8-3f0" id="a3X-gt-pVg"/>
+                        <outlet property="btnPause" destination="vEM-3x-aji" id="AUR-mU-FbV"/>
+                        <outlet property="recordButton" destination="Xi3-o3-iCC" id="7aa-uR-GGS"/>
+                        <outlet property="timeLabel" destination="74R-aF-9A2" id="fhV-Fx-OrC"/>
+                        <outlet property="wavePlot" destination="i9b-f8-3f0" id="4zp-xq-LkN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljr-jq-J21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -529,6 +588,7 @@
         <image name="mic-icon" width="25" height="25"/>
         <image name="rec-label(35x55)" width="57" height="31"/>
         <image name="record-button50x50@1" width="50" height="51"/>
+        <image name="red-btn-mic" width="150" height="150"/>
         <image name="rewind-arrow" width="50" height="50"/>
         <image name="rewind-red" width="50" height="50"/>
         <image name="toolicon" width="24" height="24"/>

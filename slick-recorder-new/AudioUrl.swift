@@ -9,7 +9,6 @@
 import Foundation
 // Class to get the path of the audio file
 class AudioUrl{
-    var recordedAudio: RecordedAudio!
     var fileName: String{
         let date = NSDate()
         let dateFormatter = NSDateFormatter()
