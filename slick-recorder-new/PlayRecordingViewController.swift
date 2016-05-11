@@ -199,12 +199,16 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         audioSlider.setValue(Float(player.currentTime), animated: true)
 
         /*** Show Current / Total Time on the sides of  Slider **/
-        self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds)
+        
         if totalMinDuration - hour > 0{
+            self.playCurrentTime.text = String(format: "%.1d:%.2d:%.2d", minutes / 60, minutes, seconds) // Left Timer
             self.playDuration.text = String(format: "-%.1d:%.1d:%.2d", (totalMinDuration - minutes) / hour, totalMinDuration - minutes, seconds )
         }
         else{
-            self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, seconds )
+            self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds) // Left Timer
+            //self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, Int(player.duration)  - seconds ) // Right Timer
+            self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, seconds ) // Right Timer
+
         }
     }
     

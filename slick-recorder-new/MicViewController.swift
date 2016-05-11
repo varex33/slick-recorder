@@ -22,6 +22,8 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var btnPause: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var initialTimeLabel: UILabel!
 
 /*** Initialize variables to show Blinking Label when recording starts **/
     var timer = NSTimer()
@@ -50,6 +52,10 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    @IBAction func startRecording(sender: UIButton) {
         btnResumeRecording.hidden = true
         
         /**** REC blinking when Recording ****/
@@ -58,7 +64,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
         
         /*** DRAW WAVE WITH EZAUDIO ****/
-
+        
         // Customizing the audio plot that'll show the current microphone input/recording
         wavePlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
         wavePlot?.plotType = EZPlotType.Rolling
@@ -79,10 +85,13 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
         
         // Show pause button while recording
+        initialTimeLabel.hidden = true
+        timeLabel.hidden = false
+        recordButton.hidden = true
         btnPause.hidden = false
+
         
     }
-    
     func recordWithPermission(setup: Bool){
         let session = AVAudioSession.sharedInstance()
         if(session.respondsToSelector("requestRecordPermission:")){
@@ -167,7 +176,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
       //  let timer = recorder.currentTime
         let seconds = NSInteger(recorder.currentTime % 60)
         let minutes = NSInteger(seconds / 60)
-        timeLabel.text = NSString(format: "%.2d:%.2d",minutes, seconds) as String
+        timeLabel.text = NSString(format: "%.2d:%.2d:%.2d",minutes / 60, minutes, seconds) as String
         
     }
 
