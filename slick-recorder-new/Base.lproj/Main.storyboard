@@ -82,24 +82,28 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDD-nd-QMo">
-                                <rect key="frame" x="64" y="470" width="50" height="51"/>
-                                <state key="normal" image="record-button50x50@1"/>
+                                <rect key="frame" x="25" y="407" width="200" height="114"/>
+                                <state key="normal" image="rectangle-resume"/>
                                 <connections>
                                     <action selector="resumeRecording:" destination="F34-HX-FHQ" eventType="touchUpInside" id="EjL-zl-x9K"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Sp-0Z-5mJ">
-                                <rect key="frame" x="300" y="-81" width="0.0" height="44"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Sp-0Z-5mJ">
+                                <rect key="frame" x="300" y="0.0" width="0.0" height="44"/>
                                 <items>
                                     <navigationItem id="DHI-Zl-avJ"/>
                                 </items>
                             </navigationBar>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITb-ok-b24">
-                                <rect key="frame" x="64" y="471" width="50" height="50"/>
-                                <state key="normal" image="white-pause-50x50@1"/>
+                                <rect key="frame" x="25" y="407" width="200" height="114"/>
+                                <state key="normal" image="rectangle-pause"/>
                                 <connections>
                                     <action selector="pauseRecording:" destination="F34-HX-FHQ" eventType="touchUpInside" id="b89-Bq-9oe"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9i-rn-idT">
+                                <rect key="frame" x="272" y="40" width="57" height="31"/>
+                                <state key="normal" image="rec-label(35x55)"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6g-Hw-r3h">
                                 <rect key="frame" x="25" y="407" width="200" height="114"/>
@@ -109,7 +113,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-Q5-2ON">
-                                <rect key="frame" x="224" y="331" width="153" height="46"/>
+                                <rect key="frame" x="224" y="321" width="153" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="ca3-fS-YWI"/>
                                     <constraint firstAttribute="height" constant="46" id="yrL-8n-HRs"/>
@@ -119,7 +123,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k18-9Z-PTP">
-                                <rect key="frame" x="224" y="322" width="153" height="46"/>
+                                <rect key="frame" x="224" y="321" width="153" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Baq-9D-BEa"/>
                                     <constraint firstAttribute="width" constant="153" id="TUk-H6-UPO"/>
@@ -128,10 +132,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9i-rn-idT">
-                                <rect key="frame" x="272" y="40" width="57" height="31"/>
-                                <state key="normal" image="rec-label(35x55)"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.22458419659300177" green="0.22458419659300177" blue="0.22458419659300177" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -141,15 +141,15 @@
                             <constraint firstItem="8Sp-0Z-5mJ" firstAttribute="centerX" secondItem="x8L-DL-b95" secondAttribute="centerX" id="Bf2-9r-1Hq"/>
                             <constraint firstItem="hJC-r2-kbU" firstAttribute="top" secondItem="H3F-RZ-5Ps" secondAttribute="bottom" constant="100" id="E70-67-Kn6"/>
                             <constraint firstItem="Wcr-G7-OF7" firstAttribute="top" secondItem="ITb-ok-b24" secondAttribute="bottom" constant="79" id="FqF-Qb-rXG"/>
-                            <constraint firstItem="u9I-Q5-2ON" firstAttribute="top" secondItem="hJC-r2-kbU" secondAttribute="bottom" constant="19" id="GUE-rS-5ws"/>
+                            <constraint firstItem="u9I-Q5-2ON" firstAttribute="top" secondItem="hJC-r2-kbU" secondAttribute="bottom" constant="9" id="GUE-rS-5ws"/>
                             <constraint firstItem="Wcr-G7-OF7" firstAttribute="top" secondItem="m6g-Hw-r3h" secondAttribute="bottom" constant="79" id="LKS-sg-62F"/>
                             <constraint firstItem="Wcr-G7-OF7" firstAttribute="top" secondItem="EwQ-qa-6mJ" secondAttribute="bottom" constant="79" id="NHf-K0-QWl"/>
-                            <constraint firstItem="k18-9Z-PTP" firstAttribute="top" secondItem="hJC-r2-kbU" secondAttribute="bottom" constant="10" id="SE4-kG-19h"/>
-                            <constraint firstItem="ITb-ok-b24" firstAttribute="leading" secondItem="x8L-DL-b95" secondAttribute="leadingMargin" constant="44" id="dLN-hJ-XYP"/>
+                            <constraint firstItem="k18-9Z-PTP" firstAttribute="top" secondItem="hJC-r2-kbU" secondAttribute="bottom" constant="9" id="SE4-kG-19h"/>
+                            <constraint firstItem="ITb-ok-b24" firstAttribute="leading" secondItem="x8L-DL-b95" secondAttribute="leadingMargin" constant="5" id="dLN-hJ-XYP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EwQ-qa-6mJ" secondAttribute="trailing" constant="5" id="iJA-xI-PcP"/>
                             <constraint firstItem="hJC-r2-kbU" firstAttribute="top" secondItem="k9i-rn-idT" secondAttribute="bottom" constant="49" id="oRe-w4-gNG"/>
                             <constraint firstItem="Wcr-G7-OF7" firstAttribute="top" secondItem="fDD-nd-QMo" secondAttribute="bottom" constant="79" id="s7K-r2-dUf"/>
-                            <constraint firstItem="fDD-nd-QMo" firstAttribute="leading" secondItem="x8L-DL-b95" secondAttribute="leadingMargin" constant="44" id="srh-nH-Ue7"/>
+                            <constraint firstItem="fDD-nd-QMo" firstAttribute="leading" secondItem="x8L-DL-b95" secondAttribute="leadingMargin" constant="5" id="srh-nH-Ue7"/>
                             <constraint firstItem="k18-9Z-PTP" firstAttribute="centerX" secondItem="x8L-DL-b95" secondAttribute="centerX" id="tbp-fn-R4l"/>
                             <constraint firstItem="k9i-rn-idT" firstAttribute="centerX" secondItem="x8L-DL-b95" secondAttribute="centerX" id="x32-sd-VYx"/>
                         </constraints>
@@ -552,8 +552,9 @@
         <image name="forward-red" width="50" height="50"/>
         <image name="mic-icon" width="25" height="25"/>
         <image name="rec-label(35x55)" width="57" height="31"/>
-        <image name="record-button50x50@1" width="50" height="51"/>
+        <image name="rectangle-pause" width="200" height="114"/>
         <image name="rectangle-record" width="200" height="114"/>
+        <image name="rectangle-resume" width="200" height="114"/>
         <image name="rectangle-stop" width="200" height="114"/>
         <image name="rewind-arrow" width="50" height="50"/>
         <image name="rewind-red" width="50" height="50"/>
