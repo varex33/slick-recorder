@@ -16,6 +16,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, EZM
     @IBOutlet weak var audioPlot: EZAudioPlotGL!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var initialTimeLabel: UILabel!
+    
+    @IBOutlet weak var btnResumeRecording: UIButton!
     
     @IBOutlet weak var btnPause: UIButton!
     /*** EZAdio declarations ****/
@@ -53,7 +56,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, EZM
         /*** AUDIO WAVE WITH EZAUDIO ****/
         
         // Customizing the audio plot that'll show the current microphone input/recording
-        wavePlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+      //  wavePlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
         wavePlot?.plotType = EZPlotType.Rolling
         wavePlot?.shouldFill = true
         wavePlot?.shouldMirror = true
@@ -63,6 +66,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, EZM
         microphone = EZMicrophone(delegate: self, startsImmediately: true)
 
     }
+    func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
+        dispatch_async(dispatch_get_main_queue(), {() -> Void in
+            self.wavePlot?.updateBuffer(buffer[0], withBufferSize: bufferSize);
+        });
+    }
+
     
     func recordWithPermission(setup: Bool){
         let session = AVAudioSession.sharedInstance()
@@ -132,9 +141,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, EZM
     
     func updateAudioTimer() {
         //  let timer = recorder.currentTime
+        initialTimeLabel.hidden = true
         let seconds = NSInteger(recorder.currentTime % 60)
-        let minutes = NSInteger(seconds / 60)
-        timeLabel.text = NSString(format: "%.2d:%.2d:.2d",minutes, seconds, recorder.currentTime) as String
+//        let minutes = NSInteger(seconds / 60)
+        timeLabel.text = NSString(format: "%.2d:%.2d:%.2d", (Int(recorder.currentTime)  / 3600) ,Int((recorder.currentTime) / 60), seconds) as String
+       // print(recorder.currentTime)
         
     }
 
@@ -142,16 +153,44 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, EZM
         recorder.pause()
         print("recording paused")
         btnPause.hidden = true
-        recordButton.hidden = false
+        recordButton.hidden = true
+        btnResumeRecording.hidden = false
         microphone.stopFetchingAudio()
 
     }
+    
+    @IBAction func resumeRecording(sender: UIButton) {
+        recorder.record()
+        btnPause.hidden = false
+        btnResumeRecording.hidden = true
+        recordButton.hidden = true
+        microphone.startFetchingAudio()
+        print("recording after pause")
+
+    }
     @IBAction func stopButton(sender: UIButton) {
+        
         recorder.stop()
         btnPause.hidden = true
         timer.invalidate()
+        print("recordint stop")
         self.dismissViewControllerAnimated(true, completion: nil)
 
     }
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+        
+        if flag == true{
+            print("recording finished")
+            let session = AVAudioSession.sharedInstance()
+            do{
+                try session.setActive(false)
+            }
+            catch{
+                print("unable to deactive session")
+            }
+        }
+        
+    }
+
     
 }

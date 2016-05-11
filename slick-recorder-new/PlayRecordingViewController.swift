@@ -188,9 +188,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         let seconds = Int(player.currentTime % 60)
         let minutes = Int(player.currentTime / 60)
       //  let totalSecDuration = Int(player.duration % 60)
-        let totalMinDuration = Int(player.duration / 60)
-        let hour = 60
-
+        let totalSecDuration = Int(player.duration / 60)
+        
 //        timeLabel.text = String(format: "%.2d:%.2d", minutes, seconds)
         
         // Animate Slider when playing 
@@ -199,12 +198,17 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         audioSlider.setValue(Float(player.currentTime), animated: true)
 
         /*** Show Current / Total Time on the sides of  Slider **/
-        self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds)
-        if totalMinDuration - hour > 0{
-            self.playDuration.text = String(format: "-%.1d:%.1d:%.2d", (totalMinDuration - minutes) / hour, totalMinDuration - minutes, seconds )
+        self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds) // Left Timer
+        
+        // Right Timer
+        if totalSecDuration - 60 > 0{ // If total time is more than 1hr
+            self.playDuration.text = String(format: "-%.1d:%.1d:%.2d", (totalSecDuration - minutes) / 60, (totalSecDuration % 60) - (Int(player.currentTime) / 60), (Int(player.duration) % 60) - seconds )
+            print(Int(player.duration))
         }
         else{
-            self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, seconds )
+            self.playDuration.text = String(format: "-%.1d:%.2d", totalSecDuration - minutes, (Int(player.duration) % 60) - seconds )
+           // print(Int(player.duration))
+
         }
     }
     
