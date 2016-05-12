@@ -24,11 +24,16 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var initialTimeLabel: UILabel!
+    @IBOutlet weak var buttonClose: UIButton!
 
 /*** Initialize variables to show Blinking Label when recording starts **/
     var timer = NSTimer()
-    var showRecLabel = true
+    var blinkRecFlag = true
+    var blinkPauseFlag = false
     @IBOutlet weak var blinkingRec: UIButton!
+    @IBOutlet weak var blinkingRec2: UIButton!
+    
+    @IBOutlet weak var blinkingPause: UIButton!
     
     /*** EZAdio declarations ****/
     @IBOutlet weak var wavePlot: EZAudioPlotGL?
@@ -44,10 +49,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     var player: AVAudioPlayer! // Create recorder object
     var recordedAudio = RecordedAudio()
     
-    // Initialize variables to show recording Time
-    var updater : CADisplayLink! = nil // tracks the time into the track
-    var updater_running : Bool = false // did the updater start?
-    var playing : Bool = false //indicates if track started playing
+     var recording : Bool = false //indicates if track started recording
 
     
     override func viewDidLoad() {
@@ -97,10 +99,10 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         if(session.respondsToSelector("requestRecordPermission:")){
                     self.setSessionPlayAndRecord()
                         if(setup){
-                            self.setupRecorder()
+                            setupRecorder()
                         }
-                        self.recorder.record()
-            
+                            recorder.record()
+                            recording = true
                         self.timer = NSTimer.scheduledTimerWithTimeInterval(
                             0.1,
                             target: self,
@@ -159,13 +161,31 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     }
     
     func blink(){
-        if (showRecLabel == false){
-            blinkingRec.hidden = false
-            showRecLabel = true
+        if recording == true{
+            blinkingPause.hidden = true
+            if (blinkRecFlag == true){
+                blinkingRec.hidden = false
+                blinkingRec2.hidden = true
+                blinkRecFlag = false
+            }
+        else{
+                blinkingRec.hidden = true
+                blinkingRec2.hidden = false
+                blinkRecFlag = true
+            }
         }
         else{
             blinkingRec.hidden = true
-            showRecLabel = false
+            blinkingRec2.hidden = true
+            if (blinkPauseFlag == true){
+                blinkingPause.hidden = false
+                blinkPauseFlag = false
+            }
+            else{
+                blinkingPause.hidden = true
+                blinkPauseFlag = true
+            }
+            
         }
         //        self.view.backgroundColor = UIColor.grayColor()
         //        self.view.backgroundColor = UIColor.redColor()
@@ -177,7 +197,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         let seconds = NSInteger(recorder.currentTime % 60)
         let minutes = NSInteger(seconds / 60)
         timeLabel.text = NSString(format: "%.2d:%.2d:%.2d",minutes / 60, minutes, seconds) as String
-        
+       
     }
 
     
@@ -223,6 +243,17 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
     }
     
+    @IBAction func quitRecording(sender: UIButton) {
+        
+        if recording == true || blinkPauseFlag == true{
+            recorder.stop()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else{
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
     @IBAction func stopRecording(sender: UIButton) {
         recorder.stop()
         btnResumeRecording.enabled = true
@@ -235,6 +266,8 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     @IBAction func pauseRecording(sender: UIButton) {
         recorder.pause()
+        blinkPauseFlag = true
+        recording = false
         print("recording paused")
         btnPause.hidden = true
         btnResumeRecording.hidden = false
@@ -244,6 +277,8 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBAction func resumeRecording(sender: UIButton) {
         recorder.record()
         btnPause.hidden = false
+        blinkingPause.hidden = true
+        recording = true
         btnResumeRecording.hidden = true
         microphone.startFetchingAudio()
         print("recording after pause")
