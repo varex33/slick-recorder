@@ -25,6 +25,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var initialTimeLabel: UILabel!
     @IBOutlet weak var buttonClose: UIButton!
+    @IBOutlet weak var waveContainer: UIView!
 
 /*** Initialize variables to show Blinking Label when recording starts **/
     var timer = NSTimer()
@@ -54,6 +55,8 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // waveContainer.backgroundColor = UIColor(red:0.5, green:0.5, blue:1.0, alpha:0.5)
+        waveContainer.backgroundColor = UIColor(patternImage: UIImage(named: "wave-container.png")!)
         
     }
     
@@ -68,12 +71,13 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         /*** DRAW WAVE WITH EZAUDIO ****/
         
         // Customizing the audio plot that'll show the current microphone input/recording
-        wavePlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+      //  wavePlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
         wavePlot?.plotType = EZPlotType.Rolling
         wavePlot?.shouldFill = true
         wavePlot?.shouldMirror = true
-        
-        
+
+       // wavePlot?.backgroundColor = UIColor(patternImage: UIImage(named: "web-container.png")!)
+       
         /*** RECORDING IMPLEMENTATION ****/
         
         //Setups recording session and permission
@@ -195,7 +199,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     func updateAudioTimer() {
       //  let timer = recorder.currentTime
         let seconds = NSInteger(recorder.currentTime % 60)
-        let minutes = NSInteger(seconds / 60)
+        let minutes = NSInteger(recorder.currentTime / 60)
         timeLabel.text = NSString(format: "%.2d:%.2d:%.2d",minutes / 60, minutes, seconds) as String
        
     }
@@ -259,7 +263,6 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         btnResumeRecording.enabled = true
 //        recButton.enabled = true
 //        recButton.hidden = false
-        btnPause.hidden = true
         timer.invalidate()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
