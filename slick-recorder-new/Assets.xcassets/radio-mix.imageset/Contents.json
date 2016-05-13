@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "botton-close.png",
+      "filename" : "radio-mix.png",
       "scale" : "1x"
     },
     {
@@ -11,7 +11,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "botton-close@3x.png",
+      "filename" : "radio-mix@3x.png",
       "scale" : "3x"
     }
   ],

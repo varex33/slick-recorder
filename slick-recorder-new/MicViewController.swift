@@ -28,6 +28,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var waveContainer: UIView!
     @IBOutlet weak var readyLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var radioMicButton: UIButton!
 
 /*** Initialize variables to show Blinking Label when recording starts **/
     var timer = NSTimer()
@@ -67,8 +68,10 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     }
     
     @IBAction func startRecording(sender: UIButton) {
+        waveContainer.hidden = false
         btnResumeRecording.hidden = true
         readyLabel.hidden = true
+        radioMicButton.hidden = true
         /**** REC blinking when Recording ****/
         timer = NSTimer(timeInterval: 0.5, target: self, selector:"blink", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)

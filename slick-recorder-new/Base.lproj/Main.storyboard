@@ -68,10 +68,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJC-r2-kbU" customClass="EZAudioPlotGL">
                                 <rect key="frame" x="20" y="90" width="560" height="192"/>
                                 <subviews>
-                                    <view alpha="0.94999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M58-E0-ORw">
+                                    <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M58-E0-ORw">
                                         <rect key="frame" x="0.0" y="-1" width="560" height="193"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="READY " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW2-vd-lTq">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="READY " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW2-vd-lTq">
                                         <rect key="frame" x="241" y="71" width="78" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="78" id="O3u-NN-L4G"/>
@@ -81,6 +81,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sq3-iH-vcW">
+                                        <rect key="frame" x="193" y="13" width="175" height="166"/>
+                                        <state key="normal" image="radio-mix"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -88,7 +92,9 @@
                                     <constraint firstAttribute="width" constant="560" id="FpS-S1-s3c"/>
                                     <constraint firstItem="M58-E0-ORw" firstAttribute="centerX" secondItem="hJC-r2-kbU" secondAttribute="centerX" id="M2s-Zb-nGq"/>
                                     <constraint firstAttribute="height" constant="192" id="QfL-Lh-UxY"/>
+                                    <constraint firstItem="Sq3-iH-vcW" firstAttribute="centerX" secondItem="hJC-r2-kbU" secondAttribute="centerX" id="jSF-6a-0Pj"/>
                                     <constraint firstItem="WW2-vd-lTq" firstAttribute="centerX" secondItem="hJC-r2-kbU" secondAttribute="centerX" id="opn-va-bZf"/>
+                                    <constraint firstItem="Sq3-iH-vcW" firstAttribute="centerY" secondItem="hJC-r2-kbU" secondAttribute="centerY" id="z5X-XS-Vky"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -232,6 +238,7 @@
                         <outlet property="buttonClose" destination="onN-Mg-syb" id="oNd-nw-CXt"/>
                         <outlet property="dateLabel" destination="w1a-QG-WoT" id="RjW-WW-tqK"/>
                         <outlet property="initialTimeLabel" destination="u9I-Q5-2ON" id="txw-Vu-igz"/>
+                        <outlet property="radioMicButton" destination="Sq3-iH-vcW" id="akV-M7-RKw"/>
                         <outlet property="readyLabel" destination="WW2-vd-lTq" id="Tdh-kT-Zab"/>
                         <outlet property="recordButton" destination="m6g-Hw-r3h" id="Ppf-Fp-0u7"/>
                         <outlet property="stopButton" destination="EwQ-qa-6mJ" id="5gw-1u-Fxd"/>
@@ -629,6 +636,7 @@
         <image name="forward-red" width="50" height="50"/>
         <image name="mic-icon" width="25" height="25"/>
         <image name="pause-blinking" width="75" height="38"/>
+        <image name="radio-mix" width="175" height="166"/>
         <image name="rectangle-pause" width="200" height="114"/>
         <image name="rectangle-record" width="200" height="114"/>
         <image name="rectangle-resume" width="200" height="114"/>
