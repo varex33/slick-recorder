@@ -26,9 +26,12 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var initialTimeLabel: UILabel!
     @IBOutlet weak var buttonClose: UIButton!
     @IBOutlet weak var waveContainer: UIView!
+    @IBOutlet weak var readyLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
 
 /*** Initialize variables to show Blinking Label when recording starts **/
     var timer = NSTimer()
+    var date = NSDate()
     var blinkRecFlag = true
     var blinkPauseFlag = false
     @IBOutlet weak var blinkingRec: UIButton!
@@ -39,6 +42,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     /*** EZAdio declarations ****/
     @IBOutlet weak var wavePlot: EZAudioPlotGL?
      var microphone: EZMicrophone!
+    
      var fileName: String? // save the name of recorded file
     
     // Object to create an instance of AVAudioRecorder class
@@ -55,14 +59,16 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // waveContainer.backgroundColor = UIColor(red:0.5, green:0.5, blue:1.0, alpha:0.5)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
+        dateLabel.text = dateFormatter.stringFromDate(date)
         waveContainer.backgroundColor = UIColor(patternImage: UIImage(named: "wave-container.png")!)
         
     }
     
     @IBAction func startRecording(sender: UIButton) {
         btnResumeRecording.hidden = true
-        
+        readyLabel.hidden = true
         /**** REC blinking when Recording ****/
         timer = NSTimer(timeInterval: 0.5, target: self, selector:"blink", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
