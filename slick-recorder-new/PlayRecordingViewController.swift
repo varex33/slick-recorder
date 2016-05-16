@@ -285,9 +285,17 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     override func viewWillDisappear(animated: Bool) {
         if playing == true {
             player.stop()
+            print("player stopped")
+            let session = AVAudioSession.sharedInstance()
+            do{
+                try session.setActive(false)
+                updater.invalidate()
+                updater_running = false
+            }
+            catch{
+                print("unable to deactivate session")
+            }
 //            self.timer.invalidate()
-            updater.invalidate()
-            updater_running = false
 
         }
 
@@ -346,6 +354,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             updatePlayingTimer()
             updater.invalidate()
             updater_running = false
+            print("finish playing: \(flag)")
             //show playing time on top of playing scene
             /*
             let duration = NSInteger(player.duration)

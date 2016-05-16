@@ -245,13 +245,8 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
             recordedAudio.audioTitle = recorder.url.lastPathComponent
 //            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
             print("recording finished")
-            let session = AVAudioSession.sharedInstance()
-            do{
-                try session.setActive(false)
-            }
-            catch{
-                print("unable to deactive session")
-            }
+            self.dismissViewControllerAnimated(true, completion: nil)
+
         }
         
     }
@@ -269,11 +264,20 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     @IBAction func stopRecording(sender: UIButton) {
         recorder.stop()
-        btnResumeRecording.enabled = true
+        microphone.stopFetchingAudio()
+        let session = AVAudioSession.sharedInstance()
+        do{
+            try session.setActive(false)
+            btnResumeRecording.enabled = true
+            timer.invalidate()
+        }
+        catch let error as NSError{
+            print("unable to deactive session")
+            print(error.localizedDescription)
+        }
+
 //        recButton.enabled = true
 //        recButton.hidden = false
-        timer.invalidate()
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func pauseRecording(sender: UIButton) {
