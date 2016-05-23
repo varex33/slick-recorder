@@ -81,8 +81,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             audioSlider.setThumbImage(UIImage(named: "slider_thumb"), forState: UIControlState.Normal)
     
             /**** EZAUDIO CONFIGURATION ****/
-            audioPlot.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
-            audioPlot?.backgroundColor = nil
+            //audioPlot.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+            audioPlot.backgroundColor = UIColor(red: 0.816, green: 0.349, blue: 0.255, alpha: 1)
             audioPlot?.plotType = EZPlotType.Rolling
             audioPlot?.shouldFill = true
             audioPlot?.shouldMirror = true
@@ -99,7 +99,15 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             setSessionPlayAudio()
          //   playAudio(fullName)
             ezPlayer.play()
-//          try session.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker) // Animates Audio wave
+        /*
+        self.timer = NSTimer(
+            timeInterval: 1,
+            target: self,
+            selector: "updatePlayingTimer",
+            userInfo: nil,
+            repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+*/
 
         
         // Cloud Button showed to the right of Navigation Bar
@@ -265,6 +273,17 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             
         })
     }
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        if flag == true{
+            //            btnPlay.enabled = true
+           // ezPlayer.isPlaying = false
+            updatePlayingTimer()
+            print("finish playing: \(flag)")
+                    }
+        btnPlay.hidden = false
+        btnPause.hidden = true
+
+    }
 
    /*
     func updateTimeSlider(){
@@ -409,12 +428,14 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             updatePlayingTimer()
         }*/
         
-        if ezPlayer.isPlaying{
-            player.pause()
-            btnPause.hidden = false
-            btnPlay.hidden = true
-            totalTime.hidden = true
+        if audioPlot.shouldMirror && audioPlot.plotType == EZPlotType.Buffer{
+            audioPlot.shouldMirror = false
+            audioPlot.shouldFill = false
         }
+        btnPause.hidden = false
+        btnPlay.hidden = true
+        ezPlayer.play()
+
 
     }
     
@@ -426,11 +447,12 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         btnPlay.hidden = false
         playing = false
  */
-        if audioPlot.shouldMirror && audioPlot.plotType == EZPlotType.Buffer{
-            audioPlot.shouldMirror = false
-            audioPlot.shouldFill = false
+        if ezPlayer.isPlaying{
+            ezPlayer.pause()
+            btnPause.hidden = true
+            btnPlay.hidden = false
+       //     totalTime.hidden = true
         }
-        ezPlayer.play()
     }
     
     /*
