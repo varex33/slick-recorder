@@ -11,7 +11,7 @@ import AVFoundation
 import SwiftyDropbox
 //import MediaPlayer
 
-class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAudioPlayerDelegate, UITextFieldDelegate{
+class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITextFieldDelegate{
     
     //    @IBOutlet weak var circularProgress: UIView!
 //    @IBOutlet weak var btnStop: UIButton!
@@ -87,17 +87,18 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             audioPlot?.shouldFill = true
             audioPlot?.shouldMirror = true
             ezPlayer = EZAudioPlayer(delegate: self)
-            // ezPlayer.shouldLoop = true
-            // call EZAudio function to process the waveform
-            openFile(fullName)
-       
-            
-            
+        
+        
             /***  PLAY AUDIO FILE IMPLEMENTATION ***/
             
            // updateTimeSlider()
+        //
+        // Listen for EZAudioPlayer notifications
+        //
+            setupNotifications()
+
             setSessionPlayAudio()
-         //   playAudio(fullName)
+            openFile(fullName)
             ezPlayer.play()
         /*
         self.timer = NSTimer(
@@ -117,6 +118,38 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         */
     }
     
+    //------------------------------------------------------------------------------
+    //pragma mark - Notifications
+    //------------------------------------------------------------------------------
+    func setupNotifications(){
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(EZAudioPlayerDidChangeAudioFileNotification,
+                                                                object: self.player,
+                                                                queue: nil,
+                                                                usingBlock: audioPlayerDidChangeAudioFile)
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(EZAudioPlayerDidChangePlayStateNotification,
+                                                                object: self.player,
+                                                                queue: nil,
+                                                                usingBlock: audioPlayerDidChangePlayState)
+    }
+    
+    func audioPlayerDidChangeAudioFile(notificacion: NSNotification){
+        ezPlayer = notificacion.object as! EZAudioPlayer
+        print("Player changed audio file:", ezPlayer.audioFile)
+    }
+    
+    func audioPlayerDidChangePlayState(notification: NSNotification){
+        ezPlayer = notification.object as! EZAudioPlayer
+        print("Player changed playin state: ", ezPlayer.isPlaying)
+        if ezPlayer.isPlaying == false{
+            btnPlay.hidden = false
+            btnPause.hidden = true
+        }
+
+    }
+
+
     func audioNameEdit(){
         renameFile.hidden = false
         fileName.hidden = true
@@ -273,19 +306,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             
         })
     }
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        if flag == true{
-            //            btnPlay.enabled = true
-           // ezPlayer.isPlaying = false
-            updatePlayingTimer()
-            print("finish playing: \(flag)")
-                    }
-        btnPlay.hidden = false
-        btnPause.hidden = true
-
-    }
-
-   /*
+      /*
     func updateTimeSlider(){
         updater = CADisplayLink(target: self, selector: Selector("updatePlayingTimer"))
         updater.frameInterval = 1
