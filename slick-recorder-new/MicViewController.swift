@@ -210,7 +210,6 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         let seconds = NSInteger(recorder.currentTime % 60)
         let minutes = NSInteger(recorder.currentTime / 60)
         timeLabel.text = NSString(format: "%.2d:%.2d:%.2d",minutes / 60, minutes, seconds) as String
-       
     }
 
     

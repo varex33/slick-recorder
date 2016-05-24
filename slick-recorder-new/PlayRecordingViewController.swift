@@ -65,6 +65,11 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
             tapGesture.numberOfTapsRequired = 1
             fileName.addGestureRecognizer(tapGesture)
         
+        // SHOW ZERO ON TIMER LABELS BEFORE NSTIMER KICKS UP
+            playCurrentTime.text = String(format: "%.1d:%.2d", 0, 0) // Left Timer
+            playDuration.text = String(format: "-%.1d:%.2d", 0, 0 ) // Right Timer
+
+        
         /** ADD VOLUME USING MPVOLUMEVIEW, HIDE SLIDER AND ROUTE BUTTON POSTPONED UNTIL FINDING A WAY TO SET SPEAKER ICONS ON THE SIDES OF SLIDER (if useing again, need too add view to storyboard)**/
         /*
             volumeView.backgroundColor = UIColor.clearColor()
@@ -82,7 +87,7 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
     
             /**** EZAUDIO CONFIGURATION ****/
             //audioPlot.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
-            audioPlot.backgroundColor = UIColor(red: 0.816, green: 0.349, blue: 0.255, alpha: 1)
+           // audioPlot.backgroundColor = UIColor(red: 0.816, green: 0.349, blue: 0.255, alpha: 1)
             audioPlot?.plotType = EZPlotType.Rolling
             audioPlot?.shouldFill = true
             audioPlot?.shouldMirror = true
@@ -96,20 +101,12 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         // Listen for EZAudioPlayer notifications
         //
             setupNotifications()
-
+        //
             setSessionPlayAudio()
             openFile(fullName)
             ezPlayer.play()
-        /*
-        self.timer = NSTimer(
-            timeInterval: 1,
-            target: self,
-            selector: "updatePlayingTimer",
-            userInfo: nil,
-            repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
-*/
 
+     
         
         // Cloud Button showed to the right of Navigation Bar
         /*
@@ -136,7 +133,7 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
     
     func audioPlayerDidChangeAudioFile(notificacion: NSNotification){
         ezPlayer = notificacion.object as! EZAudioPlayer
-        print("Player changed audio file:", ezPlayer.audioFile)
+     //   print("Player changed audio file:", ezPlayer.audioFile)
     }
     
     func audioPlayerDidChangePlayState(notification: NSNotification){
@@ -145,6 +142,7 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         if ezPlayer.isPlaying == false{
             btnPlay.hidden = false
             btnPause.hidden = true
+            self.timer.invalidate()
         }
 
     }
@@ -156,6 +154,8 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         renameFile.text = fileName.text
     }
     
+    /// CHANGE FILE NAME POSTPONED
+    /*
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         renameFile.hidden = true
@@ -171,6 +171,7 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         
         return true
     }
+    */
     
     @IBAction func changeVolume(sender: UISlider) {
         ezPlayer.volume = volumeSlider.value
@@ -195,70 +196,45 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         }*/
         do{
             try session.setActive(true)
+            
+            // INITIALIZE TIMERS ON THE SIDES OF SLIDER
+            self.timer = NSTimer(
+                timeInterval: 1,
+                target: self,
+                selector: #selector(PlayRecordingViewController.updatePlayingTimer),
+                userInfo: nil,
+                repeats: true)
+            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+
         }
         catch{
             print("Unable to initialize set session active")
         }
     }
     
-    /*
-    @IBAction func changeWaveLenght(sender: UISlider) {
-        let val = sender.value
-        audioPlot.setRollingHistoryLength(Int32(val))
-        print(val)
-    }*/
- /*
-    func playAudio(fullName: NSURL){
-        do{
-            player = try AVAudioPlayer(contentsOfURL: fullName )
-            player.delegate = self
-            player.prepareToPlay()
-            self.player.play()
-            playing = true // Boolean to control slider status and update playing status
-           // updateTimeSlider()
-            
-            self.timer = NSTimer(
-                timeInterval: 1,
-                target: self,
-                selector: "updatePlayingTimer",
-                userInfo: nil,
-                repeats: true)
-            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
-
-            
-        }
-        catch let error as NSError?{
-            print("Error playing audio \(error)")
-        }
-        
-    }*/
-    
     func updatePlayingTimer(){
-        let seconds = Int(ezPlayer.currentTime % 60)
-        let minutes = Int(ezPlayer.currentTime / 60)
-      //  let totalSecDuration = Int(player.duration % 60)
-        let totalMinDuration = Int(ezPlayer.duration / 60)
-        let hour = 60
+            let seconds = Int(ezPlayer.currentTime % 60)
+            let minutes = Int(ezPlayer.currentTime / 60)
+          //  let totalSecDuration = Int(player.duration % 60)
+            let totalMinDuration = Int(ezPlayer.duration / 60)
+            let hour = 60
+         //   print("durationnn: \(Int(ezPlayer.duration / 60))")
 
-//        timeLabel.text = String(format: "%.2d:%.2d", minutes, seconds)
+    //        timeLabel.text = String(format: "%.2d:%.2d", minutes, seconds)
+            
+            /*** Show Current / Total Time on the sides of  Slider **/
+            
+            if totalMinDuration - hour > 0{
+                self.playCurrentTime.text = String(format: "%.1d:%.2d:%.2d", minutes / 60, minutes, seconds) // Left Timer
+                self.playDuration.text = String(format: "-%.1d:%.1d:%.2d", (totalMinDuration - minutes) / hour, totalMinDuration - minutes, seconds )
+            }
+            else{
+                self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds) // Left Timer
+                //self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, Int(player.duration)  - seconds ) // Right Timer
+                self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, seconds ) // Right Timer
+
+            }
         
-        // Animate Slider when playing 
-        audioSlider.minimumValue = 0.0
-        audioSlider.maximumValue = Float(ezPlayer.duration)
-        audioSlider.setValue(Float(ezPlayer.currentTime), animated: true)
-
-        /*** Show Current / Total Time on the sides of  Slider **/
-        
-        if totalMinDuration - hour > 0{
-            self.playCurrentTime.text = String(format: "%.1d:%.2d:%.2d", minutes / 60, minutes, seconds) // Left Timer
-            self.playDuration.text = String(format: "-%.1d:%.1d:%.2d", (totalMinDuration - minutes) / hour, totalMinDuration - minutes, seconds )
-        }
-        else{
-            self.playCurrentTime.text = String(format: "%.1d:%.2d", minutes, seconds) // Left Timer
-            //self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, Int(player.duration)  - seconds ) // Right Timer
-            self.playDuration.text = String(format: "-%.1d:%.2d", totalMinDuration - minutes, seconds ) // Right Timer
-
-        }
     }
     
     @IBAction func fowardButton(sender: UIButton) {
@@ -292,6 +268,7 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         //
         ezPlayer.audioFile = audioFile
         
+        
     }
     
     func audioPlayer(audioPlayer: EZAudioPlayer!, playedAudio buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32, inAudioFile audioFile: EZAudioFile!) {
@@ -302,8 +279,14 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
     
     func audioPlayer(audioPlayer: EZAudioPlayer!, updatedPosition framePosition: Int64, inAudioFile audioFile: EZAudioFile!) {
         dispatch_async(dispatch_get_main_queue(), {
-            self.audioSlider.value = Float(framePosition)
-            
+            if !self.audioSlider.touchInside{
+                self.audioSlider.value = Float(framePosition)
+                
+                if self.audioSlider.value == 0{
+                    self.playCurrentTime.text = String(format: "%.1d:%.2d", 0, 0) // Left Timer
+                    self.playDuration.text = String(format: "-%.1d:%.2d", 0, 0 ) // Right Timer
+                }
+            }
         })
     }
       /*
@@ -358,7 +341,7 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
             catch{
                 print("unable to deactivate session")
             }
-//            self.timer.invalidate()
+            self.timer.invalidate()
 
         }
 
@@ -369,85 +352,7 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
-    @IBAction func progressSlider(sender: UISlider) {
-        // if the track was playing store true, so we can restart playing after changing the track position
-        var wasPlaying = false
-        if playing == true {
-            player.pause()
-            wasPlaying = true
-        }
-        player.currentTime = NSTimeInterval(round(audioSlider.value))
-        updatePlayingTimer()
-        // starts playing track again if it had been playing
-        if (wasPlaying == true) {
-            player.play()
-            wasPlaying = false
-        }
-        
-    }
-    */
-    /*
-    func audioPlayerBeginInterruption(player: AVAudioPlayer) {
-        player.stop()
-        btnPause.hidden = true
-        btnPlay.hidden = false
-        playing = false
-    }
-    
-    func audioPlayerEndInterruption(player: AVAudioPlayer) {
-        if (playing == false) {
-            playing = true
-            //        btnPlay.enabled = false
-            btnPause.hidden = false
-            btnPlay.hidden = true
-            totalTime.hidden = true
-            //    timeLabel.hidden = false
-            player.delegate = self
-            player.prepareToPlay()
-            player.play()
-            updatePlayingTimer()
-        }
-        
-    }
-    
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        if flag == true{
-            //            btnPlay.enabled = true
-            playing = false
-            updatePlayingTimer()
-            updater.invalidate()
-            updater_running = false
-            print("finish playing: \(flag)")
-            //show playing time on top of playing scene
-            /*
-            let duration = NSInteger(player.duration)
-            let seconds = duration
-            let minutes = seconds / 60
-            let hours = seconds / 3600
-            timeLabel.hidden = true
-            totalTime.hidden = false
-            totalTime.text = NSString(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds) as String
-*/
-        }
-        btnPlay.hidden = false
-        btnPause.hidden = true
-    }
-    */
-    @IBAction func playSelectedRecording(sender: UIButton) {
-        /*
-        if (playing == false) {
-            playing = true
-            //        btnPlay.enabled = false
-            btnPause.hidden = false
-            btnPlay.hidden = true
-            totalTime.hidden = true
-        //    timeLabel.hidden = false
-            player.delegate = self
-            player.prepareToPlay()
-            player.play()
-            updatePlayingTimer()
-        }*/
+       @IBAction func playSelectedRecording(sender: UIButton) {
         
         if audioPlot.shouldMirror && audioPlot.plotType == EZPlotType.Buffer{
             audioPlot.shouldMirror = false
@@ -455,20 +360,23 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         }
         btnPause.hidden = false
         btnPlay.hidden = true
+        
+        // INITIALIZE TIMERS ON THE SIDES OF SLIDER
+        self.timer = NSTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(PlayRecordingViewController.updatePlayingTimer),
+            userInfo: nil,
+            repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+
         ezPlayer.play()
 
 
     }
     
-    
     @IBAction func pausePlaying(sender: UIButton) {
-        /*
-        player.stop()
-        btnPause.hidden = true
-        btnPlay.hidden = false
-        playing = false
- */
-        if ezPlayer.isPlaying{
+          if ezPlayer.isPlaying{
             ezPlayer.pause()
             btnPause.hidden = true
             btnPlay.hidden = false

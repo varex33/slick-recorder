@@ -68,9 +68,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJC-r2-kbU" customClass="EZAudioPlotGL">
                                 <rect key="frame" x="20" y="90" width="560" height="192"/>
                                 <subviews>
-                                    <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M58-E0-ORw">
-                                        <rect key="frame" x="0.0" y="-1" width="560" height="193"/>
-                                    </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="READY " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW2-vd-lTq">
                                         <rect key="frame" x="241" y="71" width="78" height="34"/>
                                         <constraints>
@@ -85,6 +82,9 @@
                                         <rect key="frame" x="193" y="13" width="175" height="166"/>
                                         <state key="normal" image="radio-mix"/>
                                     </button>
+                                    <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M58-E0-ORw">
+                                        <rect key="frame" x="0.0" y="-1" width="560" height="193"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -98,7 +98,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.21898020257826878" green="0.21898020257826878" blue="0.21898020257826878" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.20236147469999999" green="0.20236147469999999" blue="0.20236147469999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="gain">
                                         <real key="value" value="-5"/>
@@ -193,7 +193,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.22458419659300177" green="0.22458419659300177" blue="0.22458419659300177" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.20236147469999999" green="0.20236147469999999" blue="0.20236147469999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hJC-r2-kbU" firstAttribute="centerX" secondItem="x8L-DL-b95" secondAttribute="centerX" id="1AH-7c-Sy1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k9i-rn-idT" secondAttribute="trailing" constant="5" id="1oi-o5-MA7"/>
@@ -388,6 +388,9 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shouldFill" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.20236147469999999" green="0.20236147469999999" blue="0.20236147469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQY-zq-4Gy">
@@ -395,9 +398,6 @@
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LqA-8k-fTE">
                                         <rect key="frame" x="19" y="5" width="562" height="31"/>
-                                        <connections>
-                                            <action selector="progressSlider:" destination="Up4-oM-bz0" eventType="valueChanged" id="190-CT-GHm"/>
-                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tF-xh-njN">
                                         <rect key="frame" x="275" y="105" width="50" height="50"/>
@@ -424,7 +424,7 @@
                                             <action selector="rewindButton:" destination="Up4-oM-bz0" eventType="touchUpInside" id="faj-HT-kRH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVs-4X-Cef">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVs-4X-Cef">
                                         <rect key="frame" x="449" y="178" width="50" height="50"/>
                                         <state key="normal" image="forward-arrow"/>
                                         <connections>
@@ -469,7 +469,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQM-AP-58z">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQM-AP-58z">
                                         <rect key="frame" x="74" y="178" width="50" height="50"/>
                                         <state key="normal" image="rewind-arrow"/>
                                         <connections>
@@ -497,7 +497,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.20236147469458987" green="0.20236147469458987" blue="0.20236147469458987" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6tF-xh-njN" firstAttribute="leading" secondItem="sOg-D6-GWQ" secondAttribute="trailing" constant="50" id="0vf-BN-B71"/>
                                     <constraint firstAttribute="trailing" secondItem="bVs-4X-Cef" secondAttribute="trailing" constant="101" id="2KC-aJ-EkR"/>
