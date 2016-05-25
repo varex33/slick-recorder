@@ -68,7 +68,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     }
     
     @IBAction func startRecording(sender: UIButton) {
-        waveContainer.hidden = false
+        waveContainer.hidden = true
         btnResumeRecording.hidden = true
         readyLabel.hidden = true
         radioMicButton.hidden = true
