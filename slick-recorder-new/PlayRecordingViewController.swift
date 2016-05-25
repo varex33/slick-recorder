@@ -113,6 +113,8 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         let cloudButton = UIImage(named: "cloud")
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(image: cloudButton, style: .Plain, target: self, action: "uploadFileToCloud"), animated: true)
         */
+        
+
     }
     
     //------------------------------------------------------------------------------
@@ -393,6 +395,8 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         playing = false
     }*/
     
+   
+    
     @IBAction func uploadToCloud(sender: UIButton) {
         // Verify user is logged into Dropbox
         if let client = Dropbox.authorizedClient {
@@ -421,17 +425,22 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
             
             /****** Subview to show upload progress ****/
             
-            self.previewView = UIView(frame: CGRectMake(25, 250, 250, 100))
-            self.previewView.backgroundColor = UIColor(red: 5 , green: 5, blue: 5, alpha: 0.5)
+            self.previewView = UIView(frame: CGRectMake(35, 250, 250, 100))
+            self.previewView.backgroundColor = UIColor(red: 5 , green: 5, blue: 5, alpha: 0.8)
+            //previewView.backgroundColor = UIColor.yellowColor()
+            previewView.layer.shadowColor = UIColor.blackColor().CGColor
+            previewView.layer.shadowOpacity = 1
+            previewView.layer.shadowOffset = CGSizeZero
+            previewView.layer.shadowRadius = 20
             self.view.addSubview(self.previewView)
             
             // Label inside view
-            let label = UILabel(frame: CGRectMake(10, -5, 200, 100))
+            let label = UILabel(frame: CGRectMake(20, -5, 200, 100))
             label.text = "Upload progress"
             self.previewView.addSubview(label)
             
-            let progressBar = UIProgressView(frame: CGRectMake(5, 60, 200, 10))
-            let progressLabel = UILabel(frame: CGRectMake(80, 60, 150, 40))
+            let progressBar = UIProgressView(frame: CGRectMake(18, 60, 200, 10))
+            let progressLabel = UILabel(frame: CGRectMake(120, 60, 150, 40))
             self.previewView.addSubview(progressBar)
             self.previewView.addSubview(progressLabel)
 
