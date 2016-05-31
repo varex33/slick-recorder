@@ -293,13 +293,24 @@
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jy-wL-e4w">
+                                <rect key="frame" x="488" y="148" width="62" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="PAv-Ff-4KC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.35143153653134812" green="0.80382612179487178" blue="0.091400098186476764" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20236147469999999" green="0.20236147469999999" blue="0.20236147469999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="qnM-jA-vGQ" secondAttribute="trailing" constant="30" id="04d-G4-CzY"/>
                             <constraint firstItem="4jn-Vr-Jy6" firstAttribute="top" secondItem="ATk-ze-MVO" secondAttribute="bottom" constant="14" id="9hX-H3-DBy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Jy-wL-e4w" secondAttribute="trailing" constant="30" id="SAg-Zs-KK5"/>
                             <constraint firstItem="4jn-Vr-Jy6" firstAttribute="leading" secondItem="OnM-hA-Ztm" secondAttribute="trailing" constant="14" id="dlG-F2-j8j"/>
                             <constraint firstItem="ATk-ze-MVO" firstAttribute="top" secondItem="ful-eD-fNY" secondAttribute="bottom" constant="84" id="eCY-yq-Xvk"/>
+                            <constraint firstItem="7Jy-wL-e4w" firstAttribute="top" secondItem="ful-eD-fNY" secondAttribute="bottom" constant="84" id="eCy-6O-ycC"/>
                             <constraint firstItem="OnM-hA-Ztm" firstAttribute="top" secondItem="ATk-ze-MVO" secondAttribute="bottom" constant="14" id="hv9-JW-64g"/>
                             <constraint firstItem="ATk-ze-MVO" firstAttribute="leading" secondItem="A0W-Iw-gsF" secondAttribute="leadingMargin" constant="7" id="jvT-br-ehS"/>
                             <constraint firstItem="qnM-jA-vGQ" firstAttribute="top" secondItem="ful-eD-fNY" secondAttribute="bottom" constant="84" id="r4q-3r-7Ra"/>
@@ -308,6 +319,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recordings" id="Vml-8m-jIe"/>
                     <connections>
+                        <outlet property="dropboxEnabled" destination="7Jy-wL-e4w" id="38L-89-IVC"/>
                         <outlet property="dropboxSwitch" destination="qnM-jA-vGQ" id="NPs-c6-DZT"/>
                         <outlet property="userName" destination="4jn-Vr-Jy6" id="6sq-bY-KRo"/>
                     </connections>
@@ -323,8 +335,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="wxF-92-W9N">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="recordingCell" textLabel="U6G-MY-Bde" detailTextLabel="7Yn-1Q-xdb" rowHeight="45" style="IBUITableViewCellStyleSubtitle" id="0m9-5y-V1N">
                                 <rect key="frame" x="0.0" y="92" width="600" height="45"/>
@@ -349,6 +360,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.20236147469999999" green="0.20236147469999999" blue="0.20236147469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="Up4-oM-bz0" kind="show" identifier="playAudioCell" trigger="accessoryAction" id="WLP-Yd-Y0O"/>
                                 </connections>

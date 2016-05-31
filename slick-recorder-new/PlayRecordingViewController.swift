@@ -486,7 +486,7 @@ class PlayRecordingViewController: UIViewController, EZAudioPlayerDelegate, UITe
         } // End Dropbox.authorizedClient
         else{
             print("User not authorized in Dropbox")
-            UIAlertView(title: "Dropbox Error", message: "Unable to link to Dropbox", delegate: nil, cancelButtonTitle: "Ok").show()
+            UIAlertView(title: "Dropbox is Disabled", message: "Go to settings to enable", delegate: nil, cancelButtonTitle: "Ok").show()
 
         }
         

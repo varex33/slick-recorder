@@ -14,6 +14,7 @@ class Settings: UIViewController{
     
     @IBOutlet weak var dropboxSwitch: UISwitch!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var dropboxEnabled: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +45,9 @@ class Settings: UIViewController{
       //            client.usersGetCurrentAccount().response { response, error in
       client.users.getCurrentAccount().response{ response, error in
         if let account = response {
-          self.userName.text = account.name.givenName
+          self.userName.text = account.name.givenName+" "+account.name.surname
         } else {
-          print(error!)
+          print("The following error occured: \(error!)")
         }
       }
     }
@@ -57,7 +58,6 @@ class Settings: UIViewController{
   
     func restoreSwitchesStates() {
         if let _ = Dropbox.authorizedClient {
-
         dropboxSwitch.on = true
         }
         else{
@@ -68,16 +68,26 @@ class Settings: UIViewController{
 
     @IBAction func dropboxSwitch(sender: UISwitch) {
 //        Dropbox.authorizeFromController(self)
-        NSUserDefaults.standardUserDefaults().setBool(dropboxSwitch.on, forKey: "open")
+ //       NSUserDefaults.standardUserDefaults().setBool(dropboxSwitch.on, forKey: "open")
 
         if sender.on {
+            Dropbox.authorizeFromController(self)
+
             if Dropbox.authorizedClient == nil{
-                Dropbox.authorizeFromController(self)
-                
+               //   Dropbox.authorizeFromController(self)
+                 dropboxSwitch.on = false
+                /*** Dropbox sing in only works when setting switch off which will confuse the use. So as temporal solution we hide switch and show enabled in a label. Since this only happens at sing in, the next time users open settings the swtich will be visible ***/
+                dropboxSwitch.hidden = true
+                dropboxEnabled.hidden = false
+                /*
+                if dropboxSwitch.on == false{
+                    dropboxSwitch.on = true
+                }*/
             }
             else{
                 print("User is already authorized")
             }
+ 
         }
         else{
             Dropbox.unlinkClient()
