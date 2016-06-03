@@ -415,7 +415,7 @@
                                             <action selector="pausePlaying:" destination="Up4-oM-bz0" eventType="touchUpInside" id="HJZ-RC-kuY"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-Ql-CA8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-Ql-CA8">
                                         <rect key="frame" x="360" y="135" width="50" height="50"/>
                                         <state key="normal" image="forward-red"/>
                                         <connections>
@@ -423,7 +423,7 @@
                                             <action selector="playSelectedRecording:" destination="Up4-oM-bz0" eventType="touchUpInside" id="08l-ZJ-Ike"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOg-D6-GWQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOg-D6-GWQ">
                                         <rect key="frame" x="175" y="135" width="50" height="50"/>
                                         <state key="normal" image="rewind-red">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
