@@ -25,6 +25,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
     
     @IBOutlet weak var playDuration: UILabel!
     @IBOutlet weak var playCurrentTime: UILabel!
+    @IBOutlet weak var imageHolder: UIImageView! // animated background image
+    var imageArray = [UIImage]()
     
     // EZAUDIO
     var ezPlayer : EZAudioPlayer!
@@ -99,7 +101,15 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
          self.navigationItem.setRightBarButtonItem(UIBarButtonItem(image: cloudButton, style: .Plain, target: self, action: "uploadFileToCloud"), animated: true)
          */
         
-        
+        for index in 1...30{
+            let imageName = "matrix\(index).jpg"
+            print(imageName)
+            imageArray.append(UIImage(named: imageName)!)
+        }
+         imageHolder.animationImages = imageArray
+        imageHolder.animationDuration = 2
+        imageHolder.startAnimating()
+
     }
     
     func audioNameEdit(){
@@ -361,6 +371,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         }
         btnPlay.hidden = false
         btnPause.hidden = true
+        imageHolder.stopAnimating()
+
     }
     
     @IBAction func playSelectedRecording(sender: UIButton) {
@@ -373,6 +385,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             player.prepareToPlay()
             player.play()
             updatePlayingTimer()
+            imageHolder.startAnimating()
         }
     }
     
@@ -382,6 +395,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         btnPause.hidden = true
         btnPlay.hidden = false
         playing = false
+        imageHolder.stopAnimating()
     }
     
     /*
