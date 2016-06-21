@@ -84,6 +84,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         audioPlot?.plotType = EZPlotType.Buffer
         audioPlot?.shouldFill = true
         audioPlot?.shouldMirror = true
+        audioPlot.gain = Float(3.0) // Set the wave form high
         ezPlayer = EZAudioPlayer(delegate: self)
         openFile(fullName)
         
@@ -101,9 +102,10 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
          self.navigationItem.setRightBarButtonItem(UIBarButtonItem(image: cloudButton, style: .Plain, target: self, action: "uploadFileToCloud"), animated: true)
          */
         
+        /*** MATRIX BACKGROUND ****/
         for index in 1...30{
             let imageName = "matrix\(index).jpg"
-            print(imageName)
+           // print(imageName)
             imageArray.append(UIImage(named: imageName)!)
         }
          imageHolder.animationImages = imageArray

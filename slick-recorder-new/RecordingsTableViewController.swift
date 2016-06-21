@@ -33,7 +33,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
 
                 /** RECORDING FILE NAME **/
                 recording.audioTitle = name
-                
+                print("here \(name)")
                 /*** GET RECORDING DATE ***/
                 let fileAttributes: [String: AnyObject] = (try NSFileManager.defaultManager().attributesOfItemAtPath("\(audioDir)/\(recording.audioTitle)"))
                 recording.recordingDate = fileAttributes[NSFileCreationDate]! as! NSDate
@@ -70,14 +70,13 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     override func viewWillAppear(animated: Bool) {
 //        self.tabBar.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height)
     }
-    
+/*
     override func viewDidAppear(animated: Bool) {
         fillRecordingsArray()
         self.tableView.reloadData()
 
-//        print("calling view did appear")
     }
-    
+ */
     // Function to delete recordings
     func deleteRecordingFromArray(recordingName: String){
         let index = recordings.indexOf { (recording) -> Bool in
@@ -245,7 +244,7 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
             //print(String(format: "%.1d:%.2d", minutes, seconds))
         }
         catch{
-            print("unable to open audio file")
+            print("unable to open audio fileeeee")
         }
         
         // Color Cell Text
