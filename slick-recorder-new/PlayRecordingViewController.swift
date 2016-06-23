@@ -73,6 +73,8 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
          audioVolume.showsRouteButton = false
          */
         
+        
+
         /** ADD VOLUME SLIDER USING UISLIDER **/
         volumeSlider.minimumValueImage = UIImage(named: "min-volume")
         volumeSlider.maximumValueImage = UIImage(named: "max-volume")
@@ -80,7 +82,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         audioSlider.setThumbImage(UIImage(named: "slider_thumb"), forState: UIControlState.Normal)
         
         /**** EZAUDIO CONFIGURATION ****/
-        //  audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+        /*  audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0) */
         audioPlot?.backgroundColor = UIColor.blackColor()
         audioPlot?.plotType = EZPlotType.Buffer
         audioPlot?.shouldFill = true
@@ -443,12 +445,12 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
             self.view.addSubview(self.previewView)
             
             // Label inside view
-            let label = UILabel(frame: CGRectMake(10, -5, 200, 100))
+            let label = UILabel(frame: CGRectMake(60, -5, 200, 100))
             label.text = "Upload progress"
             self.previewView.addSubview(label)
             
-            let progressBar = UIProgressView(frame: CGRectMake(5, 60, 200, 10))
-            let progressLabel = UILabel(frame: CGRectMake(80, 60, 150, 40))
+            let progressBar = UIProgressView(frame: CGRectMake(30, 60, 200, 10))
+            let progressLabel = UILabel(frame: CGRectMake(100, 60, 150, 40))
             self.previewView.addSubview(progressBar)
             self.previewView.addSubview(progressLabel)
             
@@ -467,14 +469,22 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
                     
                     // Upadate progress bar
                     progressBar.progress = uploadProgress
-                    print (Int(uploadProgress * 100))
+                   // print (Int(uploadProgress * 100))
                     // Show progress in label
                     progressLabel.text = "\(Int(uploadProgress * 100))%"
                     //                                   progressLabel.text = "100%"
                     
-                    // If upload is completed delete pop up
+                    // If upload is completed hide pop up and show compleation pop up
                     if totalBytesWritten == totalBytesExpectedToWrite{
                         self.previewView.removeFromSuperview()
+                        let alert = UIAlertController(title: "File Uploaded", message: "File succesfully uploaded to Dropbox", preferredStyle: .Alert)
+                        let action = UIAlertAction(title: "Ok", style: .Default, handler: {(alert: UIAlertAction) in
+                            if self.playing{
+                                self.player.play()
+                            }
+                        })
+                        alert.addAction(action)
+                        self.presentViewController(alert, animated: true, completion: nil)
                     }
                     
                 });
