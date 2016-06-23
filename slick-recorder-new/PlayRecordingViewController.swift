@@ -52,9 +52,10 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         super.viewDidLoad()
         let dir = dirPath.getRecordingDirectory()
         let fullName = NSURL(fileURLWithPath: dir+"/"+recordedAudio.audioTitle)
-        
-        /** DISPLAY AND EDIT AUDIO FILE NAME **/
         self.fileName.text = recordedAudio.audioTitle //  Display File Name below slider
+        
+        /** DISPLAY AND EDIT AUDIO FILE NAME (postponed)**/
+        /*
         renameFile.delegate = self
         renameFile.hidden = true
         fileName.userInteractionEnabled = true
@@ -62,7 +63,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         let tapGesture = UITapGestureRecognizer(target: self, action: selector)
         tapGesture.numberOfTapsRequired = 1
         fileName.addGestureRecognizer(tapGesture)
-        
+        */
         /** ADD VOLUME USING MPVOLUMEVIEW, HIDE SLIDER AND ROUTE BUTTON POSTPONED UNTIL FINDING A WAY TO SET SPEAKER ICONS ON THE SIDES OF SLIDER (if useing again, need too add view to storyboard)**/
         /*
          volumeView.backgroundColor = UIColor.clearColor()
@@ -80,7 +81,7 @@ class PlayRecordingViewController: UIViewController,AVAudioPlayerDelegate, EZAud
         
         /**** EZAUDIO CONFIGURATION ****/
         //  audioPlot?.color = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
-        //  audioPlot?.backgroundColor = nil
+        audioPlot?.backgroundColor = UIColor.blackColor()
         audioPlot?.plotType = EZPlotType.Buffer
         audioPlot?.shouldFill = true
         audioPlot?.shouldMirror = true

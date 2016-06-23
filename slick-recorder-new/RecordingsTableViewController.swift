@@ -70,13 +70,13 @@ class RecordingsTableViewController: UITableViewController, UITabBarControllerDe
     override func viewWillAppear(animated: Bool) {
 //        self.tabBar.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height)
     }
-/*
+
     override func viewDidAppear(animated: Bool) {
         fillRecordingsArray()
         self.tableView.reloadData()
 
     }
- */
+ 
     // Function to delete recordings
     func deleteRecordingFromArray(recordingName: String){
         let index = recordings.indexOf { (recording) -> Bool in

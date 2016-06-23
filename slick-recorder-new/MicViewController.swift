@@ -165,7 +165,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
             recorder = try AVAudioRecorder(URL: audioPath.getUrl(), settings:recordSettings)
             recorder.delegate = self
             recorder.meteringEnabled = true
-            recorder.prepareToRecord() // creates/overwrites the file at soundFileURL
+          //  recorder.prepareToRecord() // creates/overwrites the file at soundFileURL
         } catch let error as NSError {
             recorder = nil
             print(error.localizedDescription)
@@ -262,17 +262,22 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     }
     
     @IBAction func stopRecording(sender: UIButton) {
-        recorder.stop()
-        microphone.stopFetchingAudio()
-        let session = AVAudioSession.sharedInstance()
-        do{
-            try session.setActive(false)
-            btnResumeRecording.enabled = true
-            timer.invalidate()
+        if recording{
+            recorder.stop()
+            microphone.stopFetchingAudio()
+            let session = AVAudioSession.sharedInstance()
+            do{
+                try session.setActive(false)
+                btnResumeRecording.enabled = true
+                timer.invalidate()
+            }
+            catch let error as NSError{
+                print("unable to deactive session")
+                print(error.localizedDescription)
+            }
         }
-        catch let error as NSError{
-            print("unable to deactive session")
-            print(error.localizedDescription)
+        else{
+             self.dismissViewControllerAnimated(true, completion: nil)
         }
 
 //        recButton.enabled = true
