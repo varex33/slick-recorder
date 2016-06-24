@@ -165,6 +165,19 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         }
     }
     
+    func closeAudioSession(){
+        let session = AVAudioSession.sharedInstance()
+        do{
+            try session.setActive(false)
+            timer.invalidate()
+        }
+        catch let error as NSError{
+            print("unable to deactive session")
+            print(error.localizedDescription)
+        }
+    }
+
+
     func setupRecorder(){
         let recordSettings:[String : AnyObject] = [
             AVFormatIDKey: NSNumber(unsignedInt:kAudioFormatMPEG4AAC),
@@ -265,8 +278,10 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     @IBAction func quitRecording(sender: UIButton) {
         
-        if recording == true || blinkPauseFlag == true{
+        if recording == true || btnResumeRecording.hidden == false{
             recorder.stop()
+            microphone.stopFetchingAudio()
+            closeAudioSession()
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else{
