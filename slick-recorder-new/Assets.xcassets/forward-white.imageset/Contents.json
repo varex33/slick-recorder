@@ -6,12 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "rewind-red@2x.png",
+      "filename" : "forward-white@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "rewind-red@3x.png",
+      "filename" : "forward-white@3x.png",
       "scale" : "3x"
     }
   ],

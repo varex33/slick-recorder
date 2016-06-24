@@ -25,18 +25,20 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var initialTimeLabel: UILabel!
     @IBOutlet weak var buttonClose: UIButton!
-    @IBOutlet weak var waveContainer: UIView!
     @IBOutlet weak var readyLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var radioMicButton: UIButton!
+    @IBOutlet weak var matrixHolder: UIImageView!
+    @IBOutlet weak var greenNeon: UIButton!
+    @IBOutlet weak var neonMessage: UILabel!
+    var imageArray = [UIImage]()
 
 /*** Initialize variables to show Blinking Label when recording starts **/
     var timer = NSTimer()
     var date = NSDate()
     var blinkRecFlag = true
     var blinkPauseFlag = false
-    @IBOutlet weak var blinkingRec: UIButton!
-    @IBOutlet weak var blinkingRec2: UIButton!
+//    @IBOutlet weak var blinkingRec: UIButton!
+//    @IBOutlet weak var blinkingRec2: UIButton!
     
     @IBOutlet weak var blinkingPause: UIButton!
     
@@ -63,15 +65,26 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .MediumStyle
         dateLabel.text = dateFormatter.stringFromDate(date)
-        waveContainer.backgroundColor = UIColor(patternImage: UIImage(named: "wave-container.png")!)
-        
     }
     
     @IBAction func startRecording(sender: UIButton) {
-        waveContainer.hidden = true
         btnResumeRecording.hidden = true
-        readyLabel.hidden = true
-        radioMicButton.hidden = true
+     //   readyLabel.hidden = true
+        dateLabel.hidden = false
+        timeLabel.hidden = false
+        greenNeon.hidden = true
+        neonMessage.hidden = true
+        
+        /** Matrix Animation ****/
+        
+        for index in 1...30 {
+            let matrixImage = "matrix\(index).jpg"
+            imageArray.append(UIImage(named: matrixImage)!)
+        }
+        matrixHolder.animationImages = imageArray
+        matrixHolder.animationDuration = 2
+        matrixHolder.startAnimating()
+            
         /**** REC blinking when Recording ****/
         timer = NSTimer(timeInterval: 0.5, target: self, selector:"blink", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
@@ -177,19 +190,19 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         if recording == true{
             blinkingPause.hidden = true
             if (blinkRecFlag == true){
-                blinkingRec.hidden = false
-                blinkingRec2.hidden = true
+//                blinkingRec.hidden = false
+//                blinkingRec2.hidden = true
                 blinkRecFlag = false
             }
         else{
-                blinkingRec.hidden = true
-                blinkingRec2.hidden = false
+//                blinkingRec.hidden = true
+//                blinkingRec2.hidden = false
                 blinkRecFlag = true
             }
         }
         else{
-            blinkingRec.hidden = true
-            blinkingRec2.hidden = true
+//            blinkingRec.hidden = true
+//            blinkingRec2.hidden = true
             if (blinkPauseFlag == true){
                 blinkingPause.hidden = false
                 blinkPauseFlag = false
@@ -292,11 +305,13 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         btnPause.hidden = true
         btnResumeRecording.hidden = false
         microphone.stopFetchingAudio()
+        matrixHolder.stopAnimating()
     }
     
     @IBAction func resumeRecording(sender: UIButton) {
         recorder.record()
         btnPause.hidden = false
+        matrixHolder.startAnimating()
         blinkingPause.hidden = true
         recording = true
         btnResumeRecording.hidden = true
