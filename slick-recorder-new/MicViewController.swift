@@ -25,11 +25,12 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var initialTimeLabel: UILabel!
     @IBOutlet weak var buttonClose: UIButton!
-    @IBOutlet weak var readyLabel: UILabel!
+    @IBOutlet weak var buttonFinish: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var matrixHolder: UIImageView!
     @IBOutlet weak var greenNeon: UIButton!
     @IBOutlet weak var neonMessage: UILabel!
+    
     var imageArray = [UIImage]()
 
 /*** Initialize variables to show Blinking Label when recording starts **/
@@ -40,7 +41,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
 //    @IBOutlet weak var blinkingRec: UIButton!
 //    @IBOutlet weak var blinkingRec2: UIButton!
     
-    @IBOutlet weak var blinkingPause: UIButton!
+//    @IBOutlet weak var blinkingPause: UIButton!
     
     /*** EZAdio declarations ****/
     @IBOutlet weak var wavePlot: EZAudioPlotGL?
@@ -69,6 +70,8 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     @IBAction func startRecording(sender: UIButton) {
         btnResumeRecording.hidden = true
+        buttonClose.hidden = true
+        buttonFinish.hidden = false
      //   readyLabel.hidden = true
         dateLabel.hidden = false
         timeLabel.hidden = false
@@ -86,9 +89,10 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         matrixHolder.startAnimating()
             
         /**** REC blinking when Recording ****/
+        /*
         timer = NSTimer(timeInterval: 0.5, target: self, selector:"blink", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
-        
+        */
         
         /*** DRAW WAVE WITH EZAUDIO ****/
         
@@ -199,39 +203,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         
     }
     
-    func blink(){
-        if recording == true{
-            blinkingPause.hidden = true
-            if (blinkRecFlag == true){
-//                blinkingRec.hidden = false
-//                blinkingRec2.hidden = true
-                blinkRecFlag = false
-            }
-        else{
-//                blinkingRec.hidden = true
-//                blinkingRec2.hidden = false
-                blinkRecFlag = true
-            }
-        }
-        else{
-//            blinkingRec.hidden = true
-//            blinkingRec2.hidden = true
-            if (blinkPauseFlag == true){
-                blinkingPause.hidden = false
-                blinkPauseFlag = false
-            }
-            else{
-                blinkingPause.hidden = true
-                blinkPauseFlag = true
-            }
-            
-        }
-        //        self.view.backgroundColor = UIColor.grayColor()
-        //        self.view.backgroundColor = UIColor.redColor()
-    }
-
-    
-    func updateAudioTimer() {
+      func updateAudioTimer() {
       //  let timer = recorder.currentTime
         let seconds = NSInteger(recorder.currentTime % 60)
         let minutes = NSInteger(recorder.currentTime / 60)
@@ -278,15 +250,20 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
     
     @IBAction func quitRecording(sender: UIButton) {
         
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func finishRecording(sender: UIButton) {
         if recording == true || btnResumeRecording.hidden == false{
             recorder.stop()
             microphone.stopFetchingAudio()
             closeAudioSession()
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-        else{
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+
+        
     }
     
     @IBAction func stopRecording(sender: UIButton) {
@@ -327,7 +304,7 @@ class MicViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlaye
         recorder.record()
         btnPause.hidden = false
         matrixHolder.startAnimating()
-        blinkingPause.hidden = true
+     //   blinkingPause.hidden = true
         recording = true
         btnResumeRecording.hidden = true
         microphone.startFetchingAudio()
